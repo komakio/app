@@ -1,33 +1,66 @@
-/* eslint-disable prettier/prettier */
-import React, {Component} from 'react';
+import React, { memo } from 'react';
 
 import Swiper from 'react-native-swiper';
-import {OnBoardingSlide} from './slide';
-import {View} from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
+import { Subheading, Button, Title } from 'react-native-paper';
 
-export class OnBoarding extends Component {
-  render() {
-    return (
-      <Swiper showsButtons={false} loop={false} activeDotColor="#6200ee">
-        <OnBoardingSlide
-          title="Help those in need"
-          subheading="Please?"
-          sourceImage={require('../../images/virus.png')}
-          backgroundColor="#9DD6EB"
-        />
-        {/* <OnBoardingSlide
-          title="Help those in need"
-          subheading="Please?"
-          sourceImage={require('../../images/virus.png')}
-          backgroundColor="#97CAE5"
-        /> */}
-        {/* <OnBoardingSlide
-          title="Help those in need"
-          subheading="Please?"
-          sourceImage={require('../../images/virus.png')}
-          backgroundColor="#92BBD9"
-        /> */}
-      </Swiper>
-    );
-  }
-}
+const styles = StyleSheet.create({
+  slide: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    // color: '#fff',
+    fontSize: 30,
+    marginTop: 30,
+  },
+  subheading: {
+    // color: '#fff',
+    fontSize: 23,
+    marginTop: 15,
+    marginBottom: 30,
+  },
+});
+
+const slides = [
+  {
+    title: 'Help someone in need',
+    subheading: 'Please ?',
+    backgroundColor: '#9DD6EB',
+  },
+  { title: 'Joon', subheading: 'dasd', backgroundColor: '#97CAE5' },
+  { title: 'Without background', subheading: 'Yo', backgroundColor: 'white' },
+];
+
+const IMAGE_SIZE = 250;
+
+export const OnBoarding = memo(() => {
+  return (
+    <Swiper showsButtons={false} loop={false} activeDotColor="#6200ee">
+      {slides.map(slide => (
+        <View
+          key={slide.title}
+          style={[styles.slide, { backgroundColor: slide.backgroundColor }]}
+        >
+          <Image
+            style={{ width: IMAGE_SIZE, height: (IMAGE_SIZE * 955) / 1200 }}
+            source={require('../../images/virus.png')}
+          />
+          <Title style={styles.title}>{slide.title}</Title>
+          <Subheading style={styles.subheading}>{slide.subheading}</Subheading>
+
+          <Button
+            icon="camera"
+            mode="contained"
+            onPress={() => {
+              console.log('pluf');
+            }}
+          >
+            Get started
+          </Button>
+        </View>
+      ))}
+    </Swiper>
+  );
+});
