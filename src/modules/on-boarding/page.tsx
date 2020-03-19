@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 
+import { useNavigation, StackActions } from '@react-navigation/native';
 import Swiper from 'react-native-swiper';
 import { StyleSheet, View, Image } from 'react-native';
 import { Subheading, Button, Title } from 'react-native-paper';
@@ -36,6 +37,7 @@ const slides = [
 const IMAGE_SIZE = 250;
 
 export const OnBoarding = memo(() => {
+  const navigation = useNavigation();
   return (
     <Swiper showsButtons={false} loop={false} activeDotColor="#6200ee">
       {slides.map(slide => (
@@ -53,9 +55,7 @@ export const OnBoarding = memo(() => {
           <Button
             icon="camera"
             mode="contained"
-            onPress={() => {
-              console.log('pluf');
-            }}
+            onPress={() => navigation.dispatch(StackActions.replace('Login'))}
           >
             Get started
           </Button>
