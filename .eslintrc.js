@@ -18,9 +18,9 @@ module.exports = {
     'react/display-name': 0,
     // '@typescript-eslint/no-use-before-define': 0,
     // '@typescript-eslint/camelcase': 0,
-    // 'react/no-unescaped-entities': 0,
-    // 'react-hooks/rules-of-hooks': 'error',
-    // 'react-hooks/exhaustive-deps': 'error',
+    'react/no-unescaped-entities': 0,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
     // '@typescript-eslint/no-unused-vars': 'error',
     // '@typescript-eslint/ban-ts-ignore': 0,
     // 'prefer-const': [
