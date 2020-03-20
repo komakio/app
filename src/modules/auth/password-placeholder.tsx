@@ -1,9 +1,7 @@
-import { TouchableRipple } from 'react-native-paper';
 import React, { memo, FC } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { View, StyleSheet, PixelRatio } from 'react-native';
 
-const dotBackgroundColor = '#e0e0e0';
+const dotBackgroundColor = 'white';
 const dotSize = 20;
 
 const styles = StyleSheet.create({
@@ -16,7 +14,7 @@ const styles = StyleSheet.create({
     height: dotSize,
     borderRadius: dotSize,
     borderColor: dotBackgroundColor,
-    borderWidth: 1,
+    borderWidth: 1 / PixelRatio.get(),
     marginRight: 5,
   },
   dotActive: {
