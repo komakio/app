@@ -5,6 +5,7 @@ import Swiper from 'react-native-swiper';
 import { StyleSheet, View, Image } from 'react-native';
 import { Subheading, Button, Title } from 'react-native-paper';
 import { useTranslation } from 'react-i18next';
+import { useUserStore } from '../../stores';
 
 const styles = StyleSheet.create({
   slide: {
@@ -40,6 +41,7 @@ const IMAGE_SIZE = 250;
 export const OnBoarding = memo(() => {
   const navigation = useNavigation();
   const { t } = useTranslation();
+  const userStore = useUserStore();
 
   return (
     <Swiper showsButtons={false} loop={false} activeDotColor="#6200ee">
@@ -62,7 +64,7 @@ export const OnBoarding = memo(() => {
             mode="contained"
             onPress={() => navigation.dispatch(StackActions.replace('Login'))}
           >
-            Get started
+            Get started - {userStore.test}
           </Button>
         </View>
       ))}
