@@ -4,6 +4,7 @@ import { useNavigation, StackActions } from '@react-navigation/native';
 import Swiper from 'react-native-swiper';
 import { StyleSheet, View, Image } from 'react-native';
 import { Subheading, Button, Title } from 'react-native-paper';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   slide: {
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
 
 const slides = [
   {
-    title: 'Help someone in need',
+    title: 'HELLO',
     subheading: 'Please ?',
     backgroundColor: '#9DD6EB',
   },
@@ -38,6 +39,8 @@ const IMAGE_SIZE = 250;
 
 export const OnBoarding = memo(() => {
   const navigation = useNavigation();
+  const { t } = useTranslation();
+
   return (
     <Swiper showsButtons={false} loop={false} activeDotColor="#6200ee">
       {slides.map(slide => (
@@ -49,8 +52,10 @@ export const OnBoarding = memo(() => {
             style={{ width: IMAGE_SIZE, height: (IMAGE_SIZE * 955) / 1200 }}
             source={require('../../images/virus.png')}
           />
-          <Title style={styles.title}>{slide.title}</Title>
-          <Subheading style={styles.subheading}>{slide.subheading}</Subheading>
+          <Title style={styles.title}>{t(slide.title)}</Title>
+          <Subheading style={styles.subheading}>
+            {t(slide.subheading)}
+          </Subheading>
 
           <Button
             icon="camera"
