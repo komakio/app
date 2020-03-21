@@ -56,6 +56,7 @@ export const Layout = memo(({ children }) => {
         >
           <AnimatedText
             transition="fontSize"
+            bold={true}
             style={[
               styles.headerText,
               {
