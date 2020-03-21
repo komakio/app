@@ -29,11 +29,11 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: 'black',
-    fontFamily: 'Sen-Bold',
   },
+  mainView: { flex: 1 },
 });
 
-export const Intro = memo(({ children }) => {
+export const Layout = memo(({ children }) => {
   const [ready, setReady] = useState<boolean>(false);
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export const Intro = memo(({ children }) => {
         </View>
       </View>
 
-      {ready && children}
+      {ready && <View style={styles.mainView}>{children}</View>}
     </View>
   );
 });

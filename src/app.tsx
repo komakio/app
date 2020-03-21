@@ -1,14 +1,14 @@
 import React, { memo } from 'react';
 import { Providers } from './providers';
 import { Router } from './router';
-import { Intro } from './intro';
+import { Layout } from './layout';
 
 export const App = memo(() => {
   return (
     <Providers>
-      <Intro>
+      <Layout>
         <Router />
-      </Intro>
+      </Layout>
     </Providers>
   );
 });
