@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'wehelp' do
-  # Pods for wehelp
+target 'komak' do
+  # Pods for komak
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -34,8 +34,7 @@ target 'wehelp' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-
-  target 'wehelpTests' do
+  target 'komakTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -43,10 +42,10 @@ target 'wehelp' do
   use_native_modules!
 end
 
-target 'wehelp-tvOS' do
-  # Pods for wehelp-tvOS
+target 'komak-tvOS' do
+  # Pods for komak-tvOS
 
-  target 'wehelp-tvOSTests' do
+  target 'komak-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
