@@ -36,6 +36,9 @@
 		E16E70EF4ADB4AF881A2DB99 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91239101A25D468B9B28C0D3 /* FontAwesome5_Solid.ttf */; };
 		E91A89B18E5948CF80A4E1DD /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7369EDFC2AA7493CB6ED5DA1 /* Feather.ttf */; };
 		EEEC7912664449838A5BC7F3 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CB305515ACF48019FAEA59B /* FontAwesome.ttf */; };
+		2EAD734C4865482B8EB00CD1 /* Sen-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76C8565A8BCF43BCBEDB19E2 /* Sen-Bold.otf */; };
+		56F18E6194054839B8B55E82 /* Sen-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF93EC21451142BEAB3FD588 /* Sen-ExtraBold.otf */; };
+		94079457F0FD49CD8A67AC89 /* Sen-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B3DB4ADE89DF4AF5AD3D8425 /* Sen-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,9 @@
 		F5784CC3AEE24A08B90A9D42 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		FC1450ACBF4EEB33AF9F81E8 /* libPods-komakTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-komakTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2C6AF2EFCB4FC5B5DAA7AE /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		76C8565A8BCF43BCBEDB19E2 /* Sen-Bold.otf */ = {isa = PBXFileReference; name = "Sen-Bold.otf"; path = "../assets/fonts/Sen-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CF93EC21451142BEAB3FD588 /* Sen-ExtraBold.otf */ = {isa = PBXFileReference; name = "Sen-ExtraBold.otf"; path = "../assets/fonts/Sen-ExtraBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B3DB4ADE89DF4AF5AD3D8425 /* Sen-Regular.otf */ = {isa = PBXFileReference; name = "Sen-Regular.otf"; path = "../assets/fonts/Sen-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +255,9 @@
 				C4FDECD94B7D4E08A7DE8C76 /* Octicons.ttf */,
 				D54C4E08F67B436EBF384152 /* SimpleLineIcons.ttf */,
 				4F9E71AEFBC340A49F844624 /* Zocial.ttf */,
+				76C8565A8BCF43BCBEDB19E2 /* Sen-Bold.otf */,
+				CF93EC21451142BEAB3FD588 /* Sen-ExtraBold.otf */,
+				B3DB4ADE89DF4AF5AD3D8425 /* Sen-Regular.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -411,6 +420,9 @@
 				619404BD9B7048B689795B65 /* Octicons.ttf in Resources */,
 				79442589ED354F64AB6AFC9A /* SimpleLineIcons.ttf in Resources */,
 				A76398CEB31340CF871214ED /* Zocial.ttf in Resources */,
+				2EAD734C4865482B8EB00CD1 /* Sen-Bold.otf in Resources */,
+				56F18E6194054839B8B55E82 /* Sen-ExtraBold.otf in Resources */,
+				94079457F0FD49CD8A67AC89 /* Sen-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
