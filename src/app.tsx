@@ -9,6 +9,7 @@ import { CreateProfileType } from './modules/profile/create/type';
 import { CreateProfileInfo } from './modules/profile/create/infos';
 import { MapTest } from './modules/map';
 import i18n from './i18n';
+import { RootStore, RootStoreContext } from './stores/root-store';
 
 const Stack = createStackNavigator();
 
@@ -24,75 +25,78 @@ const theme = {
 };
 
 export const App = memo(() => {
+  const rootStore = new RootStore();
   return (
-    <I18nextProvider i18n={i18n}>
-      <PaperProvider theme={theme}>
-        <NavigationContainer>
-          <Stack.Navigator
-            screenOptions={{
-              cardStyle: { backgroundColor: 'white' },
-              headerStyle: { backgroundColor: theme.colors.primary },
-            }}
-          >
-            <Stack.Screen
-              options={{ headerShown: false }}
-              name="OnBoarding"
-              component={OnBoarding}
-            />
-            <Stack.Screen
-              options={{
-                headerShown: false,
-                // headerStyle: { backgroundColor: '#6200ee', borderBottomWidth: 0 },
-                // cardStyle: { backgroundColor: '#6200ee', borderTopWidth: 0 },
-                headerTintColor: 'white',
+    <RootStoreContext.Provider value={rootStore}>
+      <I18nextProvider i18n={i18n}>
+        <PaperProvider theme={theme}>
+          <NavigationContainer>
+            <Stack.Navigator
+              screenOptions={{
+                cardStyle: { backgroundColor: 'white' },
+                headerStyle: { backgroundColor: theme.colors.primary },
               }}
-              name="Login"
-              component={Login}
-            />
-            <Stack.Screen
-              options={{
-                headerShown: false,
-                // headerStyle: { backgroundColor: 'blue', borderBottomWidth: 0 },
-                // headerTitleStyle: { color: 'white' },
-                // cardStyle: { backgroundColor: '#6200ee', borderTopWidth: 0 },
-                // headerTintColor: 'blue',
-                // headerTransparent: true,
-              }}
-              name="CreateProfile-Type"
-              component={CreateProfileType}
-            />
-            <Stack.Screen
-              options={
-                {
-                  // headerShown: false,
+            >
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="OnBoarding"
+                component={OnBoarding}
+              />
+              <Stack.Screen
+                options={{
+                  headerShown: false,
+                  // headerStyle: { backgroundColor: '#6200ee', borderBottomWidth: 0 },
+                  // cardStyle: { backgroundColor: '#6200ee', borderTopWidth: 0 },
+                  headerTintColor: 'white',
+                }}
+                name="Login"
+                component={Login}
+              />
+              <Stack.Screen
+                options={{
+                  headerShown: false,
                   // headerStyle: { backgroundColor: 'blue', borderBottomWidth: 0 },
                   // headerTitleStyle: { color: 'white' },
                   // cardStyle: { backgroundColor: '#6200ee', borderTopWidth: 0 },
                   // headerTintColor: 'blue',
                   // headerTransparent: true,
+                }}
+                name="CreateProfile-Type"
+                component={CreateProfileType}
+              />
+              <Stack.Screen
+                options={
+                  {
+                    // headerShown: false,
+                    // headerStyle: { backgroundColor: 'blue', borderBottomWidth: 0 },
+                    // headerTitleStyle: { color: 'white' },
+                    // cardStyle: { backgroundColor: '#6200ee', borderTopWidth: 0 },
+                    // headerTintColor: 'blue',
+                    // headerTransparent: true,
+                  }
                 }
-              }
-              name="CreateProfile-Infos"
-              component={CreateProfileInfo}
-            />
-            <Stack.Screen
-              options={
-                {
-                  // headerShown: false,
-                  // headerStyle: { backgroundColor: 'blue', borderBottomWidth: 0 },
-                  // headerTitleStyle: { color: 'white' },
-                  // cardStyle: { backgroundColor: '#6200ee', borderTopWidth: 0 },
-                  // headerTintColor: 'blue',
-                  // headerTransparent: true,
+                name="CreateProfile-Infos"
+                component={CreateProfileInfo}
+              />
+              <Stack.Screen
+                options={
+                  {
+                    // headerShown: false,
+                    // headerStyle: { backgroundColor: 'blue', borderBottomWidth: 0 },
+                    // headerTitleStyle: { color: 'white' },
+                    // cardStyle: { backgroundColor: '#6200ee', borderTopWidth: 0 },
+                    // headerTintColor: 'blue',
+                    // headerTransparent: true,
+                  }
                 }
-              }
-              name="Map"
-              component={MapTest}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
-        {/* <OnBoarding /> */}
-      </PaperProvider>
-    </I18nextProvider>
+                name="Map"
+                component={MapTest}
+              />
+            </Stack.Navigator>
+          </NavigationContainer>
+          {/* <OnBoarding /> */}
+        </PaperProvider>
+      </I18nextProvider>
+    </RootStoreContext.Provider>
   );
 });
