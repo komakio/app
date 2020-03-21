@@ -1,8 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.wehelp">
+  package="io.komak.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -10,6 +9,11 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+
+      <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="@string/GOOGLE_MAPS_API_KEY"/>
+
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"

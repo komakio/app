@@ -6,6 +6,7 @@ import { OnBoarding } from './modules/on-boarding/page';
 import { Login } from './modules/auth/login';
 import { CreateProfileType } from './modules/profile/create/type';
 import { CreateProfileInfo } from './modules/profile/create/infos';
+import { MapTest } from './modules/map';
 
 const Stack = createStackNavigator();
 
@@ -34,7 +35,7 @@ export const App = memo(() => {
             options={{ headerShown: false }}
             name="OnBoarding"
             component={OnBoarding}
-          /> */}
+          />
           <Stack.Screen
             options={{
               headerShown: false,
@@ -70,6 +71,20 @@ export const App = memo(() => {
             }
             name="CreateProfile-Infos"
             component={CreateProfileInfo}
+          /> */}
+          <Stack.Screen
+            options={
+              {
+                // headerShown: false,
+                // headerStyle: { backgroundColor: 'blue', borderBottomWidth: 0 },
+                // headerTitleStyle: { color: 'white' },
+                // cardStyle: { backgroundColor: '#6200ee', borderTopWidth: 0 },
+                // headerTintColor: 'blue',
+                // headerTransparent: true,
+              }
+            }
+            name="Map"
+            component={MapTest}
           />
         </Stack.Navigator>
       </NavigationContainer>

@@ -1,4 +1,4 @@
-package com.wehelp;
+package io.komak.app;
 
 import android.app.Application;
 import android.content.Context;
