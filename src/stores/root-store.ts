@@ -5,9 +5,9 @@ export class RootStore {
   public userStore = new UserStore(this);
 }
 
-export const RootStoreContext: Context<
-  RootStore
-> = createContext<RootStore | null>(null);
+export const RootStoreContext: Context<RootStore> = createContext<RootStore>(
+  null
+);
 
 export const useRootStore = (): RootStore => {
   return useContext(RootStoreContext);
