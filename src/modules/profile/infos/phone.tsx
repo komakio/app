@@ -19,6 +19,11 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
   },
+  buttonContainer: {
+    alignSelf: 'flex-start',
+    paddingHorizontal: 20,
+    marginTop: 10,
+  },
 });
 
 export const ProfileInfosPhone = observer(() => {
@@ -40,7 +45,9 @@ export const ProfileInfosPhone = observer(() => {
         keyboardType="number-pad"
       />
 
-      <Button onPress={navigation.goBack}>Done</Button>
+      <View style={styles.buttonContainer}>
+        <Button onPress={navigation.goBack}>Done</Button>
+      </View>
     </KeyboardAvoidingView>
   );
 });
