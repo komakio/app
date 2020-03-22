@@ -5,6 +5,9 @@ export class ProfileFlowStore {
   public rootStore: RootStore;
 
   @observable
+  public role: 'helper' | 'needer';
+
+  @observable
   public firstName: string;
 
   @observable
@@ -15,6 +18,9 @@ export class ProfileFlowStore {
 
   @observable
   public dialCode: string;
+
+  @observable
+  public address: string;
 
   @observable
   public coords: [number, number];

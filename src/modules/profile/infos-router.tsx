@@ -4,6 +4,7 @@ import { InfosMain } from './infos-main';
 import { ProfileInfosName } from './infos/name';
 import { Theme } from '../../shared/variables/theme';
 import { ProfileInfosPhone } from './infos/phone';
+import { ProfileInfosAddress } from './infos/address';
 
 const Stack = createStackNavigator();
 
@@ -37,6 +38,11 @@ export const InfosRouter = memo(() => {
       <Stack.Screen
         name="profile-infos-phone"
         component={ProfileInfosPhone}
+        options={modalOptions}
+      />
+      <Stack.Screen
+        name="profile-infos-address"
+        component={ProfileInfosAddress}
         options={modalOptions}
       />
     </Stack.Navigator>
