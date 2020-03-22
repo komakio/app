@@ -8,6 +8,7 @@ import { TextInput } from '../../../shared/text-input';
 import { useProfileFlowStore } from '../../../stores';
 import { ModalArrowClose } from './modal-arrow-close';
 import { Button } from '../../../shared/button';
+import { colors } from '../../../shared/variables/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -45,7 +46,7 @@ export const ProfileInfosName = observer(() => {
         onChangeText={firstName => (profileFlowStore.firstName = firstName)}
         autoCorrect={false}
         placeholder="John"
-        placeholderTextColor={'#1A78E6'}
+        placeholderTextColor={colors.blue}
       />
 
       <TextInput
@@ -54,7 +55,7 @@ export const ProfileInfosName = observer(() => {
         onChangeText={lastName => (profileFlowStore.lastName = lastName)}
         autoCorrect={false}
         placeholder="Doe"
-        placeholderTextColor={'#1A78E6'}
+        placeholderTextColor={colors.blue}
       />
 
       <View style={styles.buttonContainer}>

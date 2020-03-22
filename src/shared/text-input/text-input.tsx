@@ -7,6 +7,7 @@ import {
   PixelRatio,
 } from 'react-native';
 import { Text } from '../text';
+import { colors } from '../variables/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -23,8 +24,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Sen',
     width: '100%',
     backgroundColor: 'transparent',
-    borderColor: '#1A78E6',
-    color: '#1A78E6',
+    borderColor: colors.blue,
+    color: colors.blue,
     borderEndWidth: 3,
     borderRadius: 20,
     padding: 18,

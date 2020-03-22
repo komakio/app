@@ -12,6 +12,7 @@ import {
   TouchableOpacity,
   TouchableNativeFeedback,
 } from 'react-native-gesture-handler';
+import { colors } from '../variables/theme';
 
 const styles = StyleSheet.create({
   commonButton: {
@@ -23,8 +24,8 @@ const styles = StyleSheet.create({
   },
 
   disabledButton: {
-    backgroundColor: '#E3E3E3',
-    borderColor: '#E3E3E3',
+    backgroundColor: colors.gray,
+    borderColor: colors.gray,
   },
 
   smallButton: {
@@ -38,23 +39,23 @@ const styles = StyleSheet.create({
   },
 
   blueButton: {
-    backgroundColor: '#1A78E6',
-    borderColor: '#1A78E6',
+    backgroundColor: colors.blue,
+    borderColor: colors.blue,
   },
 
   greenButton: {
-    backgroundColor: '#3BE338',
-    borderColor: '#3BE338',
+    backgroundColor: colors.green,
+    borderColor: colors.green,
   },
 
   redButton: {
-    backgroundColor: '#E34238',
-    borderColor: '#E34238',
+    backgroundColor: colors.red,
+    borderColor: colors.red,
   },
 
   grayButton: {
-    backgroundColor: '#E3E3E3',
-    borderColor: '#E3E3E3',
+    backgroundColor: colors.gray,
+    borderColor: colors.gray,
   },
 
   commonText: {

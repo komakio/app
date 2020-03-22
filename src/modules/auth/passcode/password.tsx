@@ -1,6 +1,7 @@
 import React, { memo, FC, useState } from 'react';
 import { View, StyleSheet, PixelRatio, Text } from 'react-native';
 import { VirtualKeyboard } from '../../../shared/virtual-keyboard';
+import { colors } from '../../../shared/variables/theme';
 
 const dotSize = 64;
 
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   dotActive: {
-    borderColor: '#1A78E6',
+    borderColor: colors.blue,
   },
   circle: {
     backgroundColor: 'blue',

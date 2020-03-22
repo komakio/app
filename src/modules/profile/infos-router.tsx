@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { InfosMain } from './infos-main';
 import { ProfileInfosName } from './infos/name';
-import { Theme } from '../../shared/variables/theme';
+import { Theme, colors } from '../../shared/variables/theme';
 import { ProfileInfosPhone } from './infos/phone';
 import { ProfileInfosAddress } from './infos/address';
 
@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 
 const modalOptions = {
   cardStyle: {
-    backgroundColor: '#E3E3E3',
+    backgroundColor: colors.gray,
     borderTopLeftRadius: Theme.borderRadius,
     borderTopRightRadius: Theme.borderRadius,
   },
