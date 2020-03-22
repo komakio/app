@@ -8,7 +8,7 @@ import { TextInput } from '../../../shared/text-input';
 import { useProfileFlowStore } from '../../../stores';
 import { ModalArrowClose } from './modal-arrow-close';
 import { Button } from '../../../shared/button';
-import { colors } from '../../../shared/variables/theme';
+import { colors } from '../../../shared/variables/colors';
 
 const styles = StyleSheet.create({
   container: {

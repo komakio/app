@@ -12,7 +12,7 @@ import {
   TouchableOpacity,
   TouchableNativeFeedback,
 } from 'react-native-gesture-handler';
-import { colors } from '../variables/theme';
+import { colors } from '../variables/colors';
 
 const styles = StyleSheet.create({
   commonButton: {

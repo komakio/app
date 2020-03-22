@@ -2,9 +2,10 @@ import React, { memo } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { InfosMain } from './infos-main';
 import { ProfileInfosName } from './infos/name';
-import { Theme, colors } from '../../shared/variables/theme';
+import { Theme } from '../../shared/variables/theme';
 import { ProfileInfosPhone } from './infos/phone';
 import { ProfileInfosAddress } from './infos/address';
+import { colors } from '../../shared/variables/colors';
 
 const Stack = createStackNavigator();
 

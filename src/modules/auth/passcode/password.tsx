@@ -1,7 +1,7 @@
 import React, { memo, FC, useState } from 'react';
-import { View, StyleSheet, PixelRatio, Text } from 'react-native';
+import { View, StyleSheet, PixelRatio } from 'react-native';
 import { VirtualKeyboard } from '../../../shared/virtual-keyboard';
-import { colors } from '../../../shared/variables/theme';
+import { colors } from '../../../shared/variables/colors';
 
 const dotSize = 64;
 

@@ -7,7 +7,7 @@ import {
   PixelRatio,
 } from 'react-native';
 import { Text } from '../text';
-import { colors } from '../variables/theme';
+import { colors } from '../variables/colors';
 
 const styles = StyleSheet.create({
   container: {

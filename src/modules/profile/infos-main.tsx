@@ -7,7 +7,6 @@ import { Geolocation } from '../../utils/geolocation';
 import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../shared/button';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { ApprovedIcon } from '../../shared/approved-icon';
 
 const styles = StyleSheet.create({
