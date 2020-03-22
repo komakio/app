@@ -12,11 +12,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    textAlign: 'center',
+    paddingBottom: 22,
+    paddingTop: 22,
+    paddingHorizontal: 16,
+  },
+  description: {
+    fontSize: 24,
+    textAlign: 'center',
+    paddingHorizontal: 16,
+    paddingBottom: 22,
   },
 });
 
@@ -37,24 +46,43 @@ export const InfosMain = observer(() => {
   return (
     <View style={styles.container}>
       <Text bold={true} style={styles.title}>
-        We need your infos
+        Thank you for helping your local community.
       </Text>
 
-      <Button onPress={() => navigation.navigate('profile-infos-name')}>
+      <Text style={styles.description}>
+        We just need two things to set you up.
+      </Text>
+
+      <Button
+        theme="gray"
+        size="big"
+        bold
+        onPress={() => navigation.navigate('profile-infos-name')}
+      >
         {profileFlowStore.firstName && profileFlowStore.lastName ? '✓' : ''}{' '}
-        Name
+        Your name
       </Button>
 
-      <Button onPress={getGeolocation}>
-        {profileFlowStore.coords ? '✓' : ''} Geolocation
+      <Button theme="gray" bold size="big" onPress={getGeolocation}>
+        {profileFlowStore.coords ? '✓' : ''} Enable geolocation
       </Button>
 
-      <Button onPress={() => navigation.navigate('profile-infos-phone')}>
+      <Button
+        theme="gray"
+        size="big"
+        bold
+        onPress={() => navigation.navigate('profile-infos-phone')}
+      >
         {profileFlowStore.phone && profileFlowStore.dialCode ? '✓' : ''} Phone
       </Button>
 
       {profileFlowStore.role === 'needer' && (
-        <Button onPress={() => navigation.navigate('profile-infos-address')}>
+        <Button
+          size="big"
+          theme="gray"
+          bold
+          onPress={() => navigation.navigate('profile-infos-address')}
+        >
           {profileFlowStore.address ? '✓' : ''} Address
         </Button>
       )}

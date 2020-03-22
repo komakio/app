@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
+    paddingBottom: 60,
   },
 });
 
@@ -34,8 +35,12 @@ export const ProfileType = memo(() => {
         What is you status ?
       </Text>
 
-      <Button onPress={changeStatus('helper')}>Healthy</Button>
-      <Button onPress={changeStatus('needer')}>Sick</Button>
+      <Button theme="green" size="big" onPress={changeStatus('helper')}>
+        Healthy
+      </Button>
+      <Button theme="red" size="big" onPress={changeStatus('needer')}>
+        Sick
+      </Button>
     </View>
   );
 });
