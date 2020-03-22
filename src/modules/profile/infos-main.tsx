@@ -1,11 +1,12 @@
-import React, { memo } from 'react';
-import Geolocation from '@react-native-community/geolocation';
-import { StyleSheet, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, Alert } from 'react-native';
 import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { Text } from '../../shared/text';
 import { useProfileFlowStore } from '../../stores';
+import { Geolocation } from '../../utils/geolocation';
 import { observer } from 'mobx-react-lite';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   container: {
@@ -22,15 +23,15 @@ const styles = StyleSheet.create({
 export const InfosMain = observer(() => {
   const navigation = useNavigation();
   const profileFlowStore = useProfileFlowStore();
+  const { t } = useTranslation();
 
-  const getGeolocation = () => {
-    Geolocation.getCurrentPosition(
-      info =>
-        (profileFlowStore.coords = [
-          info.coords.longitude,
-          info.coords.latitude,
-        ])
-    );
+  const getGeolocation = async () => {
+    try {
+      const infos = await Geolocation.get();
+      profileFlowStore.coords = [infos.coords.longitude, infos.coords.latitude];
+    } catch (error) {
+      Alert.alert('Location', t(error));
+    }
   };
 
   return (
