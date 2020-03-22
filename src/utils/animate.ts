@@ -1,4 +1,4 @@
-import { LayoutAnimation, Easing } from 'react-native';
+import { LayoutAnimation } from 'react-native';
 
 export function animate(duration: number) {
   LayoutAnimation.configureNext(

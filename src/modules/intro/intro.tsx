@@ -15,8 +15,9 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     textAlign: 'center',
+    paddingBottom: 22,
   },
-  button: {
+  buttonContainer: {
     marginTop: 50,
     marginBottom: 100,
   },
@@ -30,13 +31,11 @@ export const Intro = memo(() => {
       <Text style={styles.title} bold={true}>
         Thank you for making an impact
       </Text>
-
-      <Button
-        style={styles.button}
-        onPress={() => navigation.navigate('profile-type')}
-      >
-        Get started
-      </Button>
+      <View style={styles.buttonContainer}>
+        <Button onPress={() => navigation.navigate('profile-type')}>
+          Get started
+        </Button>
+      </View>
     </View>
   );
 });

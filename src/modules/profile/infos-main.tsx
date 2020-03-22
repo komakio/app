@@ -12,11 +12,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    textAlign: 'center',
+    paddingBottom: 22,
+    paddingTop: 22,
+    paddingHorizontal: 16,
+  },
+  description: {
+    fontSize: 24,
+    textAlign: 'center',
+    paddingHorizontal: 16,
+    paddingBottom: 22,
+  },
+  buttonContainer: {
+    marginBottom: 10,
+    marginTop: 10,
   },
 });
 
@@ -37,26 +50,49 @@ export const InfosMain = observer(() => {
   return (
     <View style={styles.container}>
       <Text bold={true} style={styles.title}>
-        We need your infos
+        Thank you for helping your local community.
       </Text>
 
-      <Button onPress={() => navigation.navigate('profile-infos-name')}>
-        {profileFlowStore.firstName && profileFlowStore.lastName ? '✓' : ''}{' '}
-        Name
-      </Button>
+      <Text style={styles.description}>
+        We just need two things to set you up.
+      </Text>
 
-      <Button onPress={getGeolocation}>
-        {profileFlowStore.coords ? '✓' : ''} Geolocation
-      </Button>
+      <View style={styles.buttonContainer}>
+        <Button
+          theme="gray"
+          size="big"
+          onPress={() => navigation.navigate('profile-infos-name')}
+        >
+          {profileFlowStore.firstName && profileFlowStore.lastName ? '✓' : ''}{' '}
+          Your name
+        </Button>
+      </View>
 
-      <Button onPress={() => navigation.navigate('profile-infos-phone')}>
-        {profileFlowStore.phone && profileFlowStore.dialCode ? '✓' : ''} Phone
-      </Button>
+      <View style={styles.buttonContainer}>
+        <Button theme="gray" size="big" onPress={getGeolocation}>
+          {profileFlowStore.coords ? '✓' : ''} Enable geolocation
+        </Button>
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button
+          theme="gray"
+          size="big"
+          onPress={() => navigation.navigate('profile-infos-phone')}
+        >
+          {profileFlowStore.phone && profileFlowStore.dialCode ? '✓' : ''} Phone
+        </Button>
+      </View>
 
       {profileFlowStore.role === 'needer' && (
-        <Button onPress={() => navigation.navigate('profile-infos-address')}>
-          {profileFlowStore.address ? '✓' : ''} Address
-        </Button>
+        <View style={styles.buttonContainer}>
+          <Button
+            size="big"
+            theme="gray"
+            onPress={() => navigation.navigate('profile-infos-address')}
+          >
+            {profileFlowStore.address ? '✓' : ''} Address
+          </Button>
+        </View>
       )}
 
       {profileFlowStore.isValid() && (

@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     display: 'flex',
     height: headerHeight,
+    fontWeight: 'bold',
   },
   headerText: {
     color: 'black',
