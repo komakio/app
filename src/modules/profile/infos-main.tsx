@@ -58,6 +58,10 @@ export const InfosMain = observer(() => {
           {profileFlowStore.address ? '✓' : ''} Address
         </Button>
       )}
+
+      {profileFlowStore.isValid() && (
+        <Button onPress={() => navigation.navigate('signup')}>GO</Button>
+      )}
     </View>
   );
 });
