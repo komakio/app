@@ -27,6 +27,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingBottom: 22,
   },
+  buttonContainer: {
+    marginBottom: 10,
+    marginTop: 10,
+  },
 });
 
 export const InfosMain = observer(() => {
@@ -53,38 +57,42 @@ export const InfosMain = observer(() => {
         We just need two things to set you up.
       </Text>
 
-      <Button
-        theme="gray"
-        size="big"
-        bold
-        onPress={() => navigation.navigate('profile-infos-name')}
-      >
-        {profileFlowStore.firstName && profileFlowStore.lastName ? '✓' : ''}{' '}
-        Your name
-      </Button>
+      <View style={styles.buttonContainer}>
+        <Button
+          theme="gray"
+          size="big"
+          onPress={() => navigation.navigate('profile-infos-name')}
+        >
+          {profileFlowStore.firstName && profileFlowStore.lastName ? '✓' : ''}{' '}
+          Your name
+        </Button>
+      </View>
 
-      <Button theme="gray" bold size="big" onPress={getGeolocation}>
-        {profileFlowStore.coords ? '✓' : ''} Enable geolocation
-      </Button>
-
-      <Button
-        theme="gray"
-        size="big"
-        bold
-        onPress={() => navigation.navigate('profile-infos-phone')}
-      >
-        {profileFlowStore.phone && profileFlowStore.dialCode ? '✓' : ''} Phone
-      </Button>
+      <View style={styles.buttonContainer}>
+        <Button theme="gray" size="big" onPress={getGeolocation}>
+          {profileFlowStore.coords ? '✓' : ''} Enable geolocation
+        </Button>
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button
+          theme="gray"
+          size="big"
+          onPress={() => navigation.navigate('profile-infos-phone')}
+        >
+          {profileFlowStore.phone && profileFlowStore.dialCode ? '✓' : ''} Phone
+        </Button>
+      </View>
 
       {profileFlowStore.role === 'needer' && (
-        <Button
-          size="big"
-          theme="gray"
-          bold
-          onPress={() => navigation.navigate('profile-infos-address')}
-        >
-          {profileFlowStore.address ? '✓' : ''} Address
-        </Button>
+        <View style={styles.buttonContainer}>
+          <Button
+            size="big"
+            theme="gray"
+            onPress={() => navigation.navigate('profile-infos-address')}
+          >
+            {profileFlowStore.address ? '✓' : ''} Address
+          </Button>
+        </View>
       )}
     </View>
   );

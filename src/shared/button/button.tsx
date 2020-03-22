@@ -16,8 +16,6 @@ import {
 const styles = StyleSheet.create({
   commonButton: {
     borderRadius: 20,
-    marginBottom: 10,
-    marginTop: 10,
   },
 
   disabledButton: {
@@ -86,14 +84,7 @@ interface ButtonProps {
 }
 
 export const Button: FC<ButtonProps> = memo(
-  ({
-    onPress,
-    theme = 'blue',
-    children,
-    style,
-    size = 'small',
-    disabled = false,
-  }) => {
+  ({ onPress, theme = 'blue', children, size = 'small', disabled = false }) => {
     const buttonStyles = [
       styles.commonButton,
       size === 'small' && styles.smallButton,
@@ -103,7 +94,6 @@ export const Button: FC<ButtonProps> = memo(
       theme === 'green' && styles.greenButton,
       theme === 'gray' && styles.grayButton,
       disabled && styles.disabledButton,
-      style,
     ];
 
     const textStyle = [
