@@ -3,26 +3,32 @@ import {
   StyleSheet,
   Text as RNText,
   TextProps as RNTextProps,
-  TextProperties,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 
 const styles = StyleSheet.create({
-  text: { fontFamily: 'Sen-Bold' },
+  textBold: { fontFamily: 'Sen-Bold' },
+  text: { fontFamily: 'Sen' },
 });
 
-type TextProps = RNTextProps;
+interface TextProps extends RNTextProps {
+  bold?: boolean;
+}
 
 export const Text: FC<TextProps> = memo(props => (
-  <RNText {...props} style={[styles.text, props.style]} />
+  <RNText
+    {...props}
+    style={[props.bold ? styles.textBold : styles.text, props.style]}
+  />
 ));
 
 interface AnimatableTextProps
   extends TextProps,
-    Animatable.AnimatableProperties<{ fontSize: number }> {
-  //   transition: string;
-}
+    Animatable.AnimatableProperties<{ fontSize: number }> {}
 
 export const AnimatedText: FC<AnimatableTextProps> = memo(props => (
-  <Animatable.Text {...props} style={[styles.text, props.style]} />
+  <Animatable.Text
+    {...props}
+    style={[props.bold ? styles.textBold : styles.text, props.style]}
+  />
 ));

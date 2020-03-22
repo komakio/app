@@ -9,9 +9,5 @@ export class UserStore {
 
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
-
-    setInterval(() => {
-      this.test++;
-    }, 1000);
   }
 }

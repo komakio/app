@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginBottom: 100,
   },
-  //   actionButtonRow: { flexDirection: 'row', marginBottom: 20 },
 });
 
 export const Intro = memo(() => {
@@ -30,7 +29,9 @@ export const Intro = memo(() => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Thank you for making an impact</Text>
+      <Text style={styles.title} bold={true}>
+        Thank you for making an impact
+      </Text>
 
       <Button
         style={styles.button}

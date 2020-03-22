@@ -1,17 +1,9 @@
-import React, { memo, useState } from 'react';
-import LinearGradient from 'react-native-linear-gradient';
+import React, { memo } from 'react';
 
-import {
-  StyleSheet,
-  View,
-  StatusBar,
-  Text,
-  PixelRatio,
-  Image,
-} from 'react-native';
-import { Title, Button } from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
+import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
-import { Subheading } from 'react-native-paper';
+import { Text } from '../../shared/text';
 
 const styles = StyleSheet.create({
   container: {
@@ -22,10 +14,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    // color: 'white',
-    // marginBottom: 50,
   },
-  //   actionButtonRow: { flexDirection: 'row', marginBottom: 20 },
 });
 
 export const ProfileType = memo(() => {
@@ -33,17 +22,19 @@ export const ProfileType = memo(() => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>What is you status ?</Text>
+      <Text style={styles.title} bold={true}>
+        What is you status ?
+      </Text>
 
       <Button
         mode="contained"
-        onPress={() => navigation.navigate('profile-type2')}
+        onPress={() => navigation.navigate('profile-infos')}
       >
         Healthy
       </Button>
       <Button
         mode="contained"
-        onPress={() => navigation.navigate('profile-type2')}
+        onPress={() => navigation.navigate('profile-infos')}
       >
         Sick
       </Button>
