@@ -17,7 +17,13 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    paddingHorizontal: 20,
+    lineHeight: 40,
+  },
+  buttonContainer: {
+    alignSelf: 'flex-start',
+    paddingHorizontal: 20,
+    marginTop: 10,
   },
 });
 
@@ -38,6 +44,8 @@ export const ProfileInfosName = observer(() => {
         value={profileFlowStore.firstName}
         onChangeText={firstName => (profileFlowStore.firstName = firstName)}
         autoCorrect={false}
+        placeholder="John"
+        placeholderTextColor={'#1A78E6'}
       />
 
       <TextInput
@@ -45,9 +53,13 @@ export const ProfileInfosName = observer(() => {
         value={profileFlowStore.lastName}
         onChangeText={lastName => (profileFlowStore.lastName = lastName)}
         autoCorrect={false}
+        placeholder="Doe"
+        placeholderTextColor={'#1A78E6'}
       />
 
-      <Button onPress={navigation.goBack}>Done</Button>
+      <View style={styles.buttonContainer}>
+        <Button onPress={navigation.goBack}>Done</Button>
+      </View>
     </KeyboardAvoidingView>
   );
 });
