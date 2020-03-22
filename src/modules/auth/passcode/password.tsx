@@ -40,7 +40,7 @@ interface DotProps {
 const Dot: FC<DotProps> = memo(({ active }) => {
   return (
     <View style={[styles.dot, active && styles.dotActive]}>
-      {active && <View style={[styles.circle]} />}
+      {active && <View style={styles.circle} />}
     </View>
   );
 });

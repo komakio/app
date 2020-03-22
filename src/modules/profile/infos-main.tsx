@@ -65,18 +65,14 @@ export const InfosMain = observer(() => {
           size="big"
           onPress={() => navigation.navigate('profile-infos-name')}
         >
-          {profileFlowStore.firstName && profileFlowStore.lastName ? (
-            <ApprovedIcon />
-          ) : (
-            ''
-          )}{' '}
+          {profileFlowStore.coords && <ApprovedIcon />}
           Your name
         </Button>
       </View>
 
       <View style={styles.buttonContainer}>
         <Button theme="gray" size="big" onPress={getGeolocation}>
-          {profileFlowStore.coords ? <ApprovedIcon /> : ''} Enable geolocation
+          {profileFlowStore.coords && <ApprovedIcon />} Enable geolocation
         </Button>
       </View>
       <View style={styles.buttonContainer}>
@@ -85,11 +81,9 @@ export const InfosMain = observer(() => {
           size="big"
           onPress={() => navigation.navigate('profile-infos-phone')}
         >
-          {profileFlowStore.phone && profileFlowStore.dialCode ? (
+          {profileFlowStore.phone && profileFlowStore.dialCode && (
             <ApprovedIcon />
-          ) : (
-            ''
-          )}{' '}
+          )}
           Phone
         </Button>
       </View>
@@ -101,7 +95,7 @@ export const InfosMain = observer(() => {
             theme="gray"
             onPress={() => navigation.navigate('profile-infos-address')}
           >
-            {profileFlowStore.address ? <ApprovedIcon /> : ''} Address
+            {profileFlowStore.coords && <ApprovedIcon />} Address
           </Button>
         </View>
       )}

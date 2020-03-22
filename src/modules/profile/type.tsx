@@ -44,7 +44,7 @@ export const ProfileType = memo(() => {
         </Button>
       </View>
       <Button theme="red" size="big" onPress={changeStatus('needer')}>
-        Sick
+        In need
       </Button>
     </View>
   );
