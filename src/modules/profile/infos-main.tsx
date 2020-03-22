@@ -44,21 +44,29 @@ export const InfosMain = observer(() => {
         mode="contained"
         onPress={() => navigation.navigate('profile-infos-name')}
       >
-        {profileFlowStore.firstName && profileFlowStore.lastName ? 'Done' : ''}{' '}
+        {profileFlowStore.firstName && profileFlowStore.lastName ? '✓' : ''}{' '}
         Name
       </Button>
 
       <Button mode="contained" onPress={getGeolocation}>
-        {profileFlowStore.coords ? 'Done' : ''} Geolocation
+        {profileFlowStore.coords ? '✓' : ''} Geolocation
       </Button>
 
       <Button
         mode="contained"
         onPress={() => navigation.navigate('profile-infos-phone')}
       >
-        {profileFlowStore.phone && profileFlowStore.dialCode ? 'Done' : ''}{' '}
-        Phone
+        {profileFlowStore.phone && profileFlowStore.dialCode ? '✓' : ''} Phone
       </Button>
+
+      {profileFlowStore.role === 'needer' && (
+        <Button
+          mode="contained"
+          onPress={() => navigation.navigate('profile-infos-address')}
+        >
+          {profileFlowStore.address ? '✓' : ''} Address
+        </Button>
+      )}
     </View>
   );
 });

@@ -4,6 +4,8 @@ import { StyleSheet, View } from 'react-native';
 import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { Text } from '../../shared/text';
+import { ProfileFlowStore } from '../../stores/profile-flow-store';
+import { useProfileFlowStore } from '../../stores';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,6 +21,12 @@ const styles = StyleSheet.create({
 
 export const ProfileType = memo(() => {
   const navigation = useNavigation();
+  const profileFlowStore = useProfileFlowStore();
+
+  const changeStatus = (role: ProfileFlowStore['role']) => () => {
+    profileFlowStore.role = role;
+    navigation.navigate('profile-infos');
+  };
 
   return (
     <View style={styles.container}>
@@ -26,16 +34,10 @@ export const ProfileType = memo(() => {
         What is you status ?
       </Text>
 
-      <Button
-        mode="contained"
-        onPress={() => navigation.navigate('profile-infos')}
-      >
+      <Button mode="contained" onPress={changeStatus('helper')}>
         Healthy
       </Button>
-      <Button
-        mode="contained"
-        onPress={() => navigation.navigate('profile-infos')}
-      >
+      <Button mode="contained" onPress={changeStatus('needer')}>
         Sick
       </Button>
     </View>
