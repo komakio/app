@@ -1,9 +1,8 @@
 import React, { memo, FC, useState } from 'react';
-import { View, StyleSheet, PixelRatio } from 'react-native';
+import { View, StyleSheet, PixelRatio, Text } from 'react-native';
 import { VirtualKeyboard } from '../../../shared/virtual-keyboard';
 
-const dotBackgroundColor = 'black';
-const dotSize = 50;
+const dotSize = 64;
 
 const styles = StyleSheet.create({
   container: {
@@ -13,12 +12,24 @@ const styles = StyleSheet.create({
     width: dotSize,
     height: dotSize,
     borderRadius: 10,
-    borderColor: dotBackgroundColor,
+    borderTopWidth: 4,
+    borderBottomWidth: 4,
+    borderLeftWidth: 4,
+    borderRightWidth: 4,
+    borderColor: 'rgba(26, 120, 230, 0.5)',
     borderWidth: 1 / PixelRatio.get(),
     marginRight: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   dotActive: {
-    backgroundColor: dotBackgroundColor,
+    borderColor: '#1A78E6',
+  },
+  circle: {
+    backgroundColor: 'blue',
+    width: 20,
+    height: 20,
+    borderRadius: 100,
   },
 });
 
@@ -27,7 +38,11 @@ interface DotProps {
 }
 
 const Dot: FC<DotProps> = memo(({ active }) => {
-  return <View style={[styles.dot, active && styles.dotActive]} />;
+  return (
+    <View style={[styles.dot, active && styles.dotActive]}>
+      {active && <View style={[styles.circle]} />}
+    </View>
+  );
 });
 
 interface PasswordProps {

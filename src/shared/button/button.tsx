@@ -15,7 +15,11 @@ import {
 
 const styles = StyleSheet.create({
   commonButton: {
+    display: 'flex',
     borderRadius: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    flexShrink: 1,
   },
 
   disabledButton: {
@@ -69,14 +73,8 @@ const styles = StyleSheet.create({
   },
 });
 
-/**
- * I've use the button from React-native because it is simple
- * But we should use a combination of TouchableOpacity (IOS)/ TouchableNativeFeedback (android) + View
- */
-
 interface ButtonProps {
   onPress: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
-  children: string | string[];
   style?: StyleProp<ViewStyle>;
   size?: 'small' | 'big';
   theme?: 'blue' | 'green' | 'red' | 'gray';
