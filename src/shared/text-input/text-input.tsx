@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     borderWidth: 1 / PixelRatio.get(),
     fontFamily: 'Sen',
     width: '100%',
+    backgroundColor: 'white',
   },
   // text: { fontFamily: 'Sen' },
 });

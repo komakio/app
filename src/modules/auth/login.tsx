@@ -1,12 +1,9 @@
 // import React, { memo, useState } from 'react';
 
 // import { StyleSheet, View, StatusBar } from 'react-native';
-// import { Title } from 'react-native-paper';
 // import { ActionButton } from './action-button';
 // import { PasswordPlaceholder } from './password-placeholder';
 // import { useNavigation, StackActions } from '@react-navigation/native';
-// import LinearGradient from 'react-native-linear-gradient';
-// import { gradient } from '../../gradient';
 
 // const styles = StyleSheet.create({
 //   container: {

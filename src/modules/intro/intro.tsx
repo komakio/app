@@ -1,11 +1,9 @@
-import React, { memo, useState } from 'react';
-import LinearGradient from 'react-native-linear-gradient';
+import React, { memo } from 'react';
 
-import { StyleSheet, View, StatusBar, PixelRatio, Image } from 'react-native';
-import { Title, Button } from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Subheading } from 'react-native-paper';
 import { Text } from '../../shared/text';
+import { Button } from '../../shared/button';
 
 const styles = StyleSheet.create({
   container: {
@@ -35,7 +33,6 @@ export const Intro = memo(() => {
 
       <Button
         style={styles.button}
-        mode="contained"
         onPress={() => navigation.navigate('profile-type')}
       >
         Get started

@@ -38,7 +38,7 @@ export const Layout = memo(({ children }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      animate();
+      animate(700);
       setReady(true);
     }, 1000);
   }, []);
