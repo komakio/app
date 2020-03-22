@@ -5,26 +5,16 @@ import {
   NativeTouchEvent,
   StyleProp,
   ViewStyle,
-  PixelRatio,
+  Platform,
 } from 'react-native';
 import { Text } from '../text';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {
+  TouchableOpacity,
+  TouchableNativeFeedback,
+} from 'react-native-gesture-handler';
 
 const styles = StyleSheet.create({
-  container: {
-    borderWidth: 1 / PixelRatio.get(),
-    borderColor: 'grey',
-  },
-
-  smallContainer: {
-    padding: 10,
-  },
-
-  bigContainer: {
-    padding: 20,
-  },
-
-  button: {
+  commonButton: {
     borderRadius: 20,
     marginBottom: 10,
     marginTop: 10,
@@ -37,10 +27,12 @@ const styles = StyleSheet.create({
 
   smallButton: {
     width: 165,
+    padding: 10,
   },
 
   bigButton: {
     width: 246,
+    padding: 20,
   },
 
   blueButton: {
@@ -63,9 +55,11 @@ const styles = StyleSheet.create({
     borderColor: '#E3E3E3',
   },
 
-  text: {
+  commonText: {
     color: 'white',
     textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 
   disabledText: {
@@ -74,10 +68,6 @@ const styles = StyleSheet.create({
 
   blackText: {
     color: 'black',
-  },
-
-  boldText: {
-    fontWeight: 'bold',
   },
 });
 
@@ -93,7 +83,6 @@ interface ButtonProps {
   size?: 'small' | 'big';
   theme?: 'blue' | 'green' | 'red' | 'gray';
   disabled?: boolean;
-  bold?: boolean;
 }
 
 export const Button: FC<ButtonProps> = memo(
@@ -104,48 +93,43 @@ export const Button: FC<ButtonProps> = memo(
     style,
     size = 'small',
     disabled = false,
-    bold = false,
   }) => {
-    const buttonStyle = [style, styles.container, styles.button];
-    const textStyle = [styles.text];
+    const buttonStyles = [
+      styles.commonButton,
+      size === 'small' && styles.smallButton,
+      size === 'big' && styles.bigButton,
+      theme === 'blue' && styles.blueButton,
+      theme === 'red' && styles.redButton,
+      theme === 'green' && styles.greenButton,
+      theme === 'gray' && styles.grayButton,
+      disabled && styles.disabledButton,
+      style,
+    ];
 
-    if (size === 'small') {
-      buttonStyle.push(styles.smallContainer, styles.smallButton);
-    }
-
-    if (size === 'big') {
-      buttonStyle.push(styles.bigContainer, styles.bigButton);
-    }
-
-    if (theme === 'blue') {
-      buttonStyle.push(styles.blueButton);
-    }
-
-    if (theme === 'red') {
-      buttonStyle.push(styles.redButton);
-    }
-
-    if (theme === 'gray') {
-      buttonStyle.push(styles.grayButton);
-      textStyle.push(styles.blackText);
-    }
-
-    if (theme === 'green') {
-      buttonStyle.push(styles.greenButton);
-    }
-
-    if (disabled) {
-      buttonStyle.push(styles.disabledButton, styles.disabledText);
-    }
-
-    if (bold) {
-      textStyle.push(styles.boldText);
+    const textStyle = [
+      [
+        styles.commonText,
+        theme === 'gray' && styles.blackText,
+        disabled && styles.disabledText,
+      ],
+    ];
+    if (Platform.OS === 'android') {
+      return (
+        <TouchableNativeFeedback
+          onPress={onPress}
+          style={buttonStyles}
+          disabled={disabled}
+          background={TouchableNativeFeedback.Ripple('#EEE')}
+        >
+          <Text style={textStyle}>{children}</Text>
+        </TouchableNativeFeedback>
+      );
     }
 
     return (
       <TouchableOpacity
         onPress={onPress}
-        style={buttonStyle}
+        style={buttonStyles}
         disabled={disabled}
       >
         <Text style={textStyle}>{children}</Text>

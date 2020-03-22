@@ -9,12 +9,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     paddingHorizontal: 50,
   },
   title: {
     fontSize: 24,
     textAlign: 'center',
+    paddingBottom: 22,
   },
   button: {
     marginTop: 50,
