@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
-import { Button } from 'react-native-paper';
 
 import { observer } from 'mobx-react-lite';
 import { useNavigation } from '@react-navigation/native';
@@ -8,6 +7,7 @@ import { Text } from '../../../shared/text';
 import { TextInput } from '../../../shared/text-input';
 import { useProfileFlowStore } from '../../../stores';
 import { ModalArrowClose } from './modal-arrow-close';
+import { Button } from '../../../shared/button';
 
 const styles = StyleSheet.create({
   container: {
@@ -47,9 +47,7 @@ export const ProfileInfosName = observer(() => {
         autoCorrect={false}
       />
 
-      <Button mode="contained" onPress={navigation.goBack}>
-        Done
-      </Button>
+      <Button onPress={navigation.goBack}>Done</Button>
     </KeyboardAvoidingView>
   );
 });

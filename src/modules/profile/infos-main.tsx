@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, View, Alert } from 'react-native';
-import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { Text } from '../../shared/text';
 import { useProfileFlowStore } from '../../stores';
 import { Geolocation } from '../../utils/geolocation';
 import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
+import { Button } from '../../shared/button';
 
 const styles = StyleSheet.create({
   container: {
@@ -40,30 +40,21 @@ export const InfosMain = observer(() => {
         We need your infos
       </Text>
 
-      <Button
-        mode="contained"
-        onPress={() => navigation.navigate('profile-infos-name')}
-      >
+      <Button onPress={() => navigation.navigate('profile-infos-name')}>
         {profileFlowStore.firstName && profileFlowStore.lastName ? '✓' : ''}{' '}
         Name
       </Button>
 
-      <Button mode="contained" onPress={getGeolocation}>
+      <Button onPress={getGeolocation}>
         {profileFlowStore.coords ? '✓' : ''} Geolocation
       </Button>
 
-      <Button
-        mode="contained"
-        onPress={() => navigation.navigate('profile-infos-phone')}
-      >
+      <Button onPress={() => navigation.navigate('profile-infos-phone')}>
         {profileFlowStore.phone && profileFlowStore.dialCode ? '✓' : ''} Phone
       </Button>
 
       {profileFlowStore.role === 'needer' && (
-        <Button
-          mode="contained"
-          onPress={() => navigation.navigate('profile-infos-address')}
-        >
+        <Button onPress={() => navigation.navigate('profile-infos-address')}>
           {profileFlowStore.address ? '✓' : ''} Address
         </Button>
       )}

@@ -24,15 +24,12 @@
     "react-native-code-push": "^6.1.1",
     "react-native-config": "^1.0.0",
     "react-native-gesture-handler": "^1.6.0",
-    "react-native-linear-gradient": "^2.5.6",
     "react-native-localize": "^1.3.4",
     "react-native-maps": "0.27.1",
-    "react-native-paper": "^3.6.0",
     "react-native-reanimated": "^1.7.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.3.0",
     "react-native-status-bar-height": "^3.0.0-alpha.1",
-    "react-native-swiper": "^1.6.0-nightly.5",
     "react-native-vector-icons": "^6.6.0"
   },
   "devDependencies": {
