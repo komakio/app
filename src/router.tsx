@@ -5,6 +5,8 @@ import { ProfileType } from './modules/profile/type';
 import { RouterAnimations } from './utils/router-animations';
 import { Intro } from './modules/intro/intro';
 import { InfosRouter } from './modules/profile/infos-router';
+import { Signup } from './modules/auth/signup';
+import { Authenticated } from './modules/authenticated/authenticated';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +26,8 @@ export const Router = memo(() => {
         <Stack.Screen name="intro" component={Intro} />
         <Stack.Screen name="profile-type" component={ProfileType} />
         <Stack.Screen name="profile-infos" component={InfosRouter} />
+        <Stack.Screen name="signup" component={Signup} />
+        <Stack.Screen name="authenticated" component={Authenticated} />
       </Stack.Navigator>
     </NavigationContainer>
   );

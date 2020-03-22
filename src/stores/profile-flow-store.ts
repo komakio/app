@@ -8,24 +8,40 @@ export class ProfileFlowStore {
   public role: 'helper' | 'needer';
 
   @observable
-  public firstName: string;
+  public firstName = '';
 
   @observable
-  public lastName: string;
+  public lastName = '';
 
   @observable
-  public phone: string;
+  public phone = '';
 
   @observable
-  public dialCode: string;
+  public dialCode = 'd';
 
   @observable
-  public address: string;
+  public address = '';
 
   @observable
   public coords: [number, number];
 
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
+  }
+
+  public isValid() {
+    if (
+      !this.role ||
+      !this.firstName ||
+      !this.lastName ||
+      !this.phone ||
+      !this.dialCode ||
+      !this.coords ||
+      (this.role === 'needer' && !this.address)
+    ) {
+      return false;
+    }
+
+    return true;
   }
 }
