@@ -12,33 +12,27 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		1D41571E0D018ABA211E7C97 /* libPods-komak-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 147DC4920F4A0C5998B5FEB3 /* libPods-komak-tvOS.a */; };
 		2895F8C1768E4CACB9DDEBC1 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F9865CF0D44897A1B20993 /* MaterialCommunityIcons.ttf */; };
 		2A3A34BBDCD346D3B281A8DA /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5784CC3AEE24A08B90A9D42 /* FontAwesome5_Brands.ttf */; };
-		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* komakTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* komakTests.m */; };
+		2EAD734C4865482B8EB00CD1 /* Sen-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76C8565A8BCF43BCBEDB19E2 /* Sen-Bold.otf */; };
 		3B2EC22880C546998C1BEE26 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ECC3903CDE341148F48772E /* MaterialIcons.ttf */; };
 		4F4D6EFF1E494637860D82A1 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76E522E5DD5F49F7B9F2E8B8 /* Ionicons.ttf */; };
 		50F66E96689B42EB80FDAF5A /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC2C6AF2EFCB4FC5B5DAA7AE /* Entypo.ttf */; };
+		56F18E6194054839B8B55E82 /* Sen-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF93EC21451142BEAB3FD588 /* Sen-ExtraBold.otf */; };
 		58F9E54E0BDA89D24160339E /* libPods-komak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E2A8BB7C7F9F12E0302BBC7 /* libPods-komak.a */; };
 		619404BD9B7048B689795B65 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4FDECD94B7D4E08A7DE8C76 /* Octicons.ttf */; };
 		791C96E57D844BAD9B293231 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 171FE40D3A554D6CA4CAC5B5 /* FontAwesome5_Regular.ttf */; };
 		79442589ED354F64AB6AFC9A /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D54C4E08F67B436EBF384152 /* SimpleLineIcons.ttf */; };
+		94079457F0FD49CD8A67AC89 /* Sen-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B3DB4ADE89DF4AF5AD3D8425 /* Sen-Regular.otf */; };
 		A76398CEB31340CF871214ED /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9E71AEFBC340A49F844624 /* Zocial.ttf */; };
 		A848FDA81CE347399539724F /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D45E69EACF70450AA32FCA61 /* EvilIcons.ttf */; };
 		A99E30B486B74F7E9F1A0DF0 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB38B0FDBB08466F9344DF83 /* Foundation.ttf */; };
-		AAFF29D4702358285131BF13 /* libPods-komak-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F14C4AF8DB451A9B68135051 /* libPods-komak-tvOSTests.a */; };
 		B46448E70D5C957FE2DB11F8 /* libPods-komakTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1450ACBF4EEB33AF9F81E8 /* libPods-komakTests.a */; };
 		C3E09735DE164159B40D3E17 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 699909C29F1A4453AD3BE076 /* AntDesign.ttf */; };
 		D780E020EA3D413EABE35412 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3455E1165D34D3DA3C44D81 /* Fontisto.ttf */; };
 		E16E70EF4ADB4AF881A2DB99 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91239101A25D468B9B28C0D3 /* FontAwesome5_Solid.ttf */; };
 		E91A89B18E5948CF80A4E1DD /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7369EDFC2AA7493CB6ED5DA1 /* Feather.ttf */; };
 		EEEC7912664449838A5BC7F3 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CB305515ACF48019FAEA59B /* FontAwesome.ttf */; };
-		2EAD734C4865482B8EB00CD1 /* Sen-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76C8565A8BCF43BCBEDB19E2 /* Sen-Bold.otf */; };
-		56F18E6194054839B8B55E82 /* Sen-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF93EC21451142BEAB3FD588 /* Sen-ExtraBold.otf */; };
-		94079457F0FD49CD8A67AC89 /* Sen-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B3DB4ADE89DF4AF5AD3D8425 /* Sen-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,13 +42,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = komak;
-		};
-		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "komak-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -73,8 +60,6 @@
 		147DC4920F4A0C5998B5FEB3 /* libPods-komak-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-komak-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		171FE40D3A554D6CA4CAC5B5 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		1E2A8BB7C7F9F12E0302BBC7 /* libPods-komak.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-komak.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E47B1E0B4A5D006451C7 /* komak-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "komak-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* komak-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "komak-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38A192099AE309028E6DB832 /* Pods-komak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-komak.release.xcconfig"; path = "Target Support Files/Pods-komak/Pods-komak.release.xcconfig"; sourceTree = "<group>"; };
 		476E7D4E8F7E9F06E1508C01 /* Pods-komakTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-komakTests.debug.xcconfig"; path = "Target Support Files/Pods-komakTests/Pods-komakTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F9E71AEFBC340A49F844624 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
@@ -83,6 +68,7 @@
 		699909C29F1A4453AD3BE076 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		7369EDFC2AA7493CB6ED5DA1 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		7674246A381CE2D5A9A99973 /* Pods-komak-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-komak-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-komak-tvOSTests/Pods-komak-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		76C8565A8BCF43BCBEDB19E2 /* Sen-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sen-Bold.otf"; path = "../assets/fonts/Sen-Bold.otf"; sourceTree = "<group>"; };
 		76E522E5DD5F49F7B9F2E8B8 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		7ECC3903CDE341148F48772E /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		91239101A25D468B9B28C0D3 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
@@ -90,7 +76,9 @@
 		96BCD55A44F85FEE1E36C529 /* Pods-komak-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-komak-tvOS.release.xcconfig"; path = "Target Support Files/Pods-komak-tvOS/Pods-komak-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		9A10AAAABE750CD9AA8CA8AB /* Pods-komakTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-komakTests.release.xcconfig"; path = "Target Support Files/Pods-komakTests/Pods-komakTests.release.xcconfig"; sourceTree = "<group>"; };
 		9CB305515ACF48019FAEA59B /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		B3DB4ADE89DF4AF5AD3D8425 /* Sen-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sen-Regular.otf"; path = "../assets/fonts/Sen-Regular.otf"; sourceTree = "<group>"; };
 		C4FDECD94B7D4E08A7DE8C76 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		CF93EC21451142BEAB3FD588 /* Sen-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sen-ExtraBold.otf"; path = "../assets/fonts/Sen-ExtraBold.otf"; sourceTree = "<group>"; };
 		D45E69EACF70450AA32FCA61 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		D54C4E08F67B436EBF384152 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		DB38B0FDBB08466F9344DF83 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
@@ -102,9 +90,6 @@
 		F5784CC3AEE24A08B90A9D42 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		FC1450ACBF4EEB33AF9F81E8 /* libPods-komakTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-komakTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2C6AF2EFCB4FC5B5DAA7AE /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		76C8565A8BCF43BCBEDB19E2 /* Sen-Bold.otf */ = {isa = PBXFileReference; name = "Sen-Bold.otf"; path = "../assets/fonts/Sen-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CF93EC21451142BEAB3FD588 /* Sen-ExtraBold.otf */ = {isa = PBXFileReference; name = "Sen-ExtraBold.otf"; path = "../assets/fonts/Sen-ExtraBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B3DB4ADE89DF4AF5AD3D8425 /* Sen-Regular.otf */ = {isa = PBXFileReference; name = "Sen-Regular.otf"; path = "../assets/fonts/Sen-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,22 +106,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				58F9E54E0BDA89D24160339E /* libPods-komak.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2D02E4781E0B4A5D006451C7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1D41571E0D018ABA211E7C97 /* libPods-komak-tvOS.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2D02E48D1E0B4A5D006451C7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AAFF29D4702358285131BF13 /* libPods-komak-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,8 +199,6 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* Komak.app */,
 				00E356EE1AD99517003FC87E /* komakTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* komak-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* komak-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -305,45 +272,6 @@
 			productReference = 13B07F961A680F5B00A75B9A /* Komak.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* komak-tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "komak-tvOS" */;
-			buildPhases = (
-				118DC477E978088299718CDB /* [CP] Check Pods Manifest.lock */,
-				FD10A7F122414F3F0027D42C /* Start Packager */,
-				2D02E4771E0B4A5D006451C7 /* Sources */,
-				2D02E4781E0B4A5D006451C7 /* Frameworks */,
-				2D02E4791E0B4A5D006451C7 /* Resources */,
-				2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "komak-tvOS";
-			productName = "komak-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* komak-tvOS.app */;
-			productType = "com.apple.product-type.application";
-		};
-		2D02E48F1E0B4A5D006451C7 /* komak-tvOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "komak-tvOSTests" */;
-			buildPhases = (
-				E95CF1B7EE25D6906424997A /* [CP] Check Pods Manifest.lock */,
-				2D02E48C1E0B4A5D006451C7 /* Sources */,
-				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
-				2D02E48E1E0B4A5D006451C7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
-			);
-			name = "komak-tvOSTests";
-			productName = "komak-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* komak-tvOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -355,16 +283,13 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = PVZAQR5AWK;
+						ProvisioningStyle = Manual;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
-					2D02E47A1E0B4A5D006451C7 = {
-						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
-					};
-					2D02E48F1E0B4A5D006451C7 = {
-						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 2D02E47A1E0B4A5D006451C7;
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = PVZAQR5AWK;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -384,8 +309,6 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* komak */,
 				00E356ED1AD99517003FC87E /* komakTests */,
-				2D02E47A1E0B4A5D006451C7 /* komak-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* komak-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -426,21 +349,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2D02E4791E0B4A5D006451C7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2D02E48E1E0B4A5D006451C7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -456,7 +364,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh < /dev/null\n";
 		};
 		088EF5F8E180B1C3AA3FADF4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -506,42 +414,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-komak/Pods-komak-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		118DC477E978088299718CDB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-komak-tvOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native Code And Images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
 		61ECBE914EE37F60FEFFB5D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -586,48 +458,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E95CF1B7EE25D6906424997A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-komak-tvOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Start Packager";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FD10A7F122414F3F0027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -666,23 +497,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2D02E4771E0B4A5D006451C7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
-				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2D02E48C1E0B4A5D006451C7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2DCD954D1E0B4F2C00145EB5 /* komakTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -690,11 +504,6 @@
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* komak */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
-		};
-		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* komak-tvOS */;
-			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -716,6 +525,9 @@
 			baseConfigurationReference = 476E7D4E8F7E9F06E1508C01 /* Pods-komakTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = PVZAQR5AWK;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -730,6 +542,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/komak.app/komak";
 			};
 			name = Debug;
@@ -739,7 +553,10 @@
 			baseConfigurationReference = 9A10AAAABE750CD9AA8CA8AB /* Pods-komakTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = PVZAQR5AWK;
 				INFOPLIST_FILE = komakTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -750,6 +567,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/komak.app/komak";
 			};
 			name = Release;
@@ -759,8 +578,10 @@
 			baseConfigurationReference = 625B6A5FDA46EFD51DA7EA43 /* Pods-komak.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 9;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = PVZAQR5AWK;
 				INFOPLIST_FILE = komak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0.0;
@@ -771,6 +592,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.komak.app;
 				PRODUCT_NAME = Komak;
+				PROVISIONING_PROFILE_SPECIFIER = "match Development io.komak.app";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -780,7 +602,10 @@
 			baseConfigurationReference = 38A192099AE309028E6DB832 /* Pods-komak.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = PVZAQR5AWK;
 				INFOPLIST_FILE = komak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0.0;
@@ -791,117 +616,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.komak.app;
 				PRODUCT_NAME = Komak;
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore io.komak.app";
 				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Release;
-		};
-		2D02E4971E0B4A5E006451C7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 912AB5FEF6A9640CFAAE5BE7 /* Pods-komak-tvOS.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_TESTABILITY = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "komak-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.komak-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
-			};
-			name = Debug;
-		};
-		2D02E4981E0B4A5E006451C7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96BCD55A44F85FEE1E36C529 /* Pods-komak-tvOS.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "komak-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.komak-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
-			};
-			name = Release;
-		};
-		2D02E4991E0B4A5E006451C7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7674246A381CE2D5A9A99973 /* Pods-komak-tvOSTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_TESTABILITY = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "komak-tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.komak-tvOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/komak-tvOS.app/komak-tvOS";
-				TVOS_DEPLOYMENT_TARGET = 10.1;
-			};
-			name = Debug;
-		};
-		2D02E49A1E0B4A5E006451C7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 532A9BDE832D01CCF468AD19 /* Pods-komak-tvOSTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "komak-tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.komak-tvOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/komak-tvOS.app/komak-tvOS";
-				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
 		};
@@ -1021,24 +737,6 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "komak-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2D02E4971E0B4A5E006451C7 /* Debug */,
-				2D02E4981E0B4A5E006451C7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "komak-tvOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2D02E4991E0B4A5E006451C7 /* Debug */,
-				2D02E49A1E0B4A5E006451C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,0 +1,8 @@
+app_identifier("io.komak.app") # The bundle identifier of your app
+apple_id("tmathieu.apple@fastmail.com") # Your Apple email address
+
+itc_team_id("121231942") # App Store Connect Team ID
+team_id("PVZAQR5AWK") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
