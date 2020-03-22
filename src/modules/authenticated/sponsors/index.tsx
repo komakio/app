@@ -4,22 +4,19 @@ import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Text } from '../../../shared/text';
 import { Button } from '../../../shared/button';
+import { Image } from 'react-native-animatable';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'flex-end',
+    // justifyContent: 'flex-end',
     paddingHorizontal: 50,
   },
   title: {
     fontSize: 24,
     textAlign: 'center',
-    marginBottom: 100,
-  },
-  button: {
-    marginTop: 50,
-    marginBottom: 100,
+    marginTop: 100,
   },
 });
 
@@ -28,16 +25,13 @@ export const AuthenticatedSponsors = memo(() => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title} bold={true}>
-        Sponsors
+      <Text bold={true} style={styles.title}>
+        Those companies gracefully helped us
       </Text>
-
-      {/* <Button
-        style={styles.button}
-        onPress={() => navigation.navigate('profile-type')}
-      >
-        Get started
-      </Button> */}
+      <Image
+        style={{ maxWidth: '50%', resizeMode: 'contain' }}
+        source={require('../../../images/sponsors/oceanio.png')}
+      />
     </View>
   );
 });
