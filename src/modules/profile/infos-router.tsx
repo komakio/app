@@ -19,7 +19,6 @@ const modalOptions = {
 
 export const InfosRouter = memo(() => {
   return (
-    // <NavigationContainer>
     <Stack.Navigator
       mode="modal"
       screenOptions={{
@@ -47,6 +46,5 @@ export const InfosRouter = memo(() => {
         options={modalOptions}
       />
     </Stack.Navigator>
-    // </NavigationContainer>
   );
 });

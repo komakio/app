@@ -9,6 +9,8 @@ import {
 } from '@react-navigation/native';
 import { Password } from './passcode/password';
 import { Text } from '../../shared/text';
+import { UsersApi } from '../../api/user';
+import { storage, Storage } from '../../utils/storage';
 
 const styles = StyleSheet.create({
   container: {
@@ -30,21 +32,35 @@ export const Signup = memo(() => {
   const navigation = useNavigation();
   const [error, setError] = useState('');
 
-  const onCompletePassword = (password: string, onFail: () => void) => {
+  const onCompletePassword = async (password: string, onFail: () => void) => {
     setError(null);
-    setTimeout(() => {
-      if (password === '1234') {
-        navigation.dispatch(
-          CommonActions.reset({
-            index: 1,
-            routes: [{ name: 'authenticated' }],
-          })
-        );
-      } else {
-        setError('Wrong password');
-        onFail();
-      }
-    }, 1000);
+
+    try {
+      const data = await UsersApi.loginRegister(password);
+      navigation.dispatch(
+        CommonActions.reset({
+          index: 1,
+          routes: [{ name: 'authenticated' }],
+        })
+      );
+      await Storage.setJson('accessToken', {
+        token: data.accessToken.accessToken,
+        expiration: data.accessToken.expiration,
+      });
+    } catch (e) {
+      setError('This device is already registered with another password.');
+      console.log(e);
+    }
+
+    onFail();
+    // setTimeout(() => {
+    //   if (password === '1234') {
+
+    //   } else {
+    //     setError('Wrong password');
+    //     onFail();
+    //   }
+    // }, 1000);
   };
 
   return (

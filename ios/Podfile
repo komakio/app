@@ -41,13 +41,3 @@ target 'komak' do
 
   use_native_modules!
 end
-
-target 'komak-tvOS' do
-  # Pods for komak-tvOS
-
-  target 'komak-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end

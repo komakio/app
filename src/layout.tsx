@@ -1,5 +1,5 @@
 import React, { memo, useState, useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, StatusBar } from 'react-native';
 import { statusBarHeight } from './utils/status-bar';
 import { animate } from './utils/animate';
 import { AnimatedText } from './shared/text';
@@ -39,13 +39,14 @@ export const Layout = memo(({ children }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      animate(700);
+      animate(500);
       setReady(true);
     }, 1000);
   }, []);
 
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor="grey" barStyle="dark-content" />
       <View style={styles.animatedHeaderContainer}>
         <View
           style={[

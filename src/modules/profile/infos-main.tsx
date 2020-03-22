@@ -8,10 +8,13 @@ import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../shared/button';
 import { ApprovedIcon } from '../../shared/approved-icon';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const styles = StyleSheet.create({
-  container: {
+  scrollView: {
     flex: 1,
+  },
+  container: {
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
@@ -49,13 +52,16 @@ export const InfosMain = observer(() => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView
+      style={styles.scrollView}
+      contentContainerStyle={styles.container}
+    >
       <Text bold={true} style={styles.title}>
         Thank you for helping your local community.
       </Text>
 
       <Text style={styles.description}>
-        We just need two things to set you up.
+        We just need a few things to set you up.
       </Text>
 
       <View style={styles.buttonContainer}>
@@ -102,6 +108,6 @@ export const InfosMain = observer(() => {
       {profileFlowStore.isValid() && (
         <Button onPress={() => navigation.navigate('signup')}>GO</Button>
       )}
-    </View>
+    </ScrollView>
   );
 });
