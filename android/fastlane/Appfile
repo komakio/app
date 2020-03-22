@@ -1,0 +1,2 @@
+json_key_file("~/Documents/fastlane/api-4885008406583794520-847044-ca94b70273ff.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+package_name("io.komak.app") # e.g. com.krausefx.app
