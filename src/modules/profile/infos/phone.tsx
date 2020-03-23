@@ -39,7 +39,7 @@ export const ProfileInfosPhone = observer(() => {
       </View>
 
       <TextInput
-        label="Phones"
+        label="Phone"
         value={profileFlowStore.phone}
         onChangeText={phone => (profileFlowStore.phone = phone)}
         keyboardType="number-pad"

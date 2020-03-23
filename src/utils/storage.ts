@@ -14,4 +14,8 @@ export class Storage {
     const res = await AsyncStorage.getItem(key);
     return JSON.parse(res);
   }
+
+  public static async remove(key: string) {
+    return AsyncStorage.removeItem(key);
+  }
 }

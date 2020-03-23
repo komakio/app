@@ -48,6 +48,10 @@ export const TextInput: FC<TextInputProps> = memo(props => (
     <Text bold={true} style={styles.label}>
       {props.label}
     </Text>
-    <RNTextInput {...props} style={[styles.input, props.style]} />
+    <RNTextInput
+      {...props}
+      placeholderTextColor={colors.lightBlue}
+      style={[styles.input, props.style]}
+    />
   </View>
 ));

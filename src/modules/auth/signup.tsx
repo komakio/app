@@ -11,6 +11,7 @@ import { Password } from './passcode/password';
 import { Text } from '../../shared/text';
 import { UsersApi } from '../../api/user';
 import { storage, Storage } from '../../utils/storage';
+import { useUserStore } from '../../stores';
 
 const styles = StyleSheet.create({
   container: {
@@ -30,23 +31,20 @@ const styles = StyleSheet.create({
 
 export const Signup = memo(() => {
   const navigation = useNavigation();
+  const userStore = useUserStore();
   const [error, setError] = useState('');
 
   const onCompletePassword = async (password: string, onFail: () => void) => {
     setError(null);
 
     try {
-      const data = await UsersApi.loginRegister(password);
+      await userStore.signup(password);
       navigation.dispatch(
         CommonActions.reset({
           index: 1,
           routes: [{ name: 'authenticated' }],
         })
       );
-      await Storage.setJson('accessToken', {
-        token: data.accessToken.accessToken,
-        expiration: data.accessToken.expiration,
-      });
     } catch (e) {
       setError('This device is already registered with another password.');
       console.log(e);

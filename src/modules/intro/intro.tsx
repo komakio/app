@@ -5,6 +5,7 @@ import { useNavigation, StackActions } from '@react-navigation/native';
 import { Text } from '../../shared/text';
 import { Button } from '../../shared/button';
 import { Storage } from '../../utils/storage';
+import { useUserStore } from '../../stores';
 
 const styles = StyleSheet.create({
   container: {
@@ -26,11 +27,11 @@ const styles = StyleSheet.create({
 
 export const Intro = memo(() => {
   const navigation = useNavigation();
+  const userStore = useUserStore();
 
   useEffect(() => {
     const isLoggedIn = async () => {
-      const data = await Storage.getJson('accessToken');
-      if (data?.token) {
+      if (userStore.isLoggedIn()) {
         navigation.dispatch(StackActions.replace('authenticated'));
       }
     };
