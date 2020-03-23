@@ -5,12 +5,13 @@ import { ProfileInfosName } from './infos/name';
 import { Theme } from '../../shared/variables/theme';
 import { ProfileInfosPhone } from './infos/phone';
 import { ProfileInfosAddress } from './infos/address';
+import { colors } from '../../shared/variables/colors';
 
 const Stack = createStackNavigator();
 
 const modalOptions = {
   cardStyle: {
-    backgroundColor: '#E3E3E3',
+    backgroundColor: colors.gray,
     borderTopLeftRadius: Theme.borderRadius,
     borderTopRightRadius: Theme.borderRadius,
   },

@@ -12,15 +12,20 @@ import {
   TouchableOpacity,
   TouchableNativeFeedback,
 } from 'react-native-gesture-handler';
+import { colors } from '../variables/colors';
 
 const styles = StyleSheet.create({
   commonButton: {
+    display: 'flex',
     borderRadius: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    flexShrink: 1,
   },
 
   disabledButton: {
-    backgroundColor: '#E3E3E3',
-    borderColor: '#E3E3E3',
+    backgroundColor: colors.gray,
+    borderColor: colors.gray,
   },
 
   smallButton: {
@@ -34,23 +39,23 @@ const styles = StyleSheet.create({
   },
 
   blueButton: {
-    backgroundColor: '#1A78E6',
-    borderColor: '#1A78E6',
+    backgroundColor: colors.blue,
+    borderColor: colors.blue,
   },
 
   greenButton: {
-    backgroundColor: '#3BE338',
-    borderColor: '#3BE338',
+    backgroundColor: colors.green,
+    borderColor: colors.green,
   },
 
   redButton: {
-    backgroundColor: '#E34238',
-    borderColor: '#E34238',
+    backgroundColor: colors.red,
+    borderColor: colors.red,
   },
 
   grayButton: {
-    backgroundColor: '#E3E3E3',
-    borderColor: '#E3E3E3',
+    backgroundColor: colors.gray,
+    borderColor: colors.gray,
   },
 
   commonText: {
@@ -69,14 +74,8 @@ const styles = StyleSheet.create({
   },
 });
 
-/**
- * I've use the button from React-native because it is simple
- * But we should use a combination of TouchableOpacity (IOS)/ TouchableNativeFeedback (android) + View
- */
-
 interface ButtonProps {
   onPress: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
-  children: string | string[];
   style?: StyleProp<ViewStyle>;
   size?: 'small' | 'big';
   theme?: 'blue' | 'green' | 'red' | 'gray';

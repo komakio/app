@@ -7,6 +7,7 @@ import { Geolocation } from '../../utils/geolocation';
 import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../shared/button';
+import { ApprovedIcon } from '../../shared/approved-icon';
 
 const styles = StyleSheet.create({
   container: {
@@ -63,14 +64,14 @@ export const InfosMain = observer(() => {
           size="big"
           onPress={() => navigation.navigate('profile-infos-name')}
         >
-          {profileFlowStore.firstName && profileFlowStore.lastName ? '✓' : ''}{' '}
+          {profileFlowStore.coords && <ApprovedIcon />}
           Your name
         </Button>
       </View>
 
       <View style={styles.buttonContainer}>
         <Button theme="gray" size="big" onPress={getGeolocation}>
-          {profileFlowStore.coords ? '✓' : ''} Enable geolocation
+          {profileFlowStore.coords && <ApprovedIcon />} Enable geolocation
         </Button>
       </View>
       <View style={styles.buttonContainer}>
@@ -79,7 +80,10 @@ export const InfosMain = observer(() => {
           size="big"
           onPress={() => navigation.navigate('profile-infos-phone')}
         >
-          {profileFlowStore.phone && profileFlowStore.dialCode ? '✓' : ''} Phone
+          {profileFlowStore.phone && profileFlowStore.dialCode && (
+            <ApprovedIcon />
+          )}
+          Phone
         </Button>
       </View>
 
@@ -90,7 +94,7 @@ export const InfosMain = observer(() => {
             theme="gray"
             onPress={() => navigation.navigate('profile-infos-address')}
           >
-            {profileFlowStore.address ? '✓' : ''} Address
+            {profileFlowStore.coords && <ApprovedIcon />} Address
           </Button>
         </View>
       )}
