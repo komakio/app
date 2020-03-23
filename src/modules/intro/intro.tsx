@@ -45,7 +45,7 @@ export const Intro = memo(() => {
       </Text>
       <View style={styles.buttonContainer}>
         <Button onPress={() => navigation.navigate('profile-type')}>
-          Get started
+          Get started AA
         </Button>
       </View>
     </View>
