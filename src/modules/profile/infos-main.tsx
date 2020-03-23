@@ -10,7 +10,7 @@ import { Button } from '../../shared/button';
 import { ApprovedIcon } from '../../shared/approved-icon';
 import { ScrollView } from 'react-native-gesture-handler';
 import { CheckBoxButton } from '../../shared/button/checkbox-button';
-import { NavBar } from '../nav-bar/nav-bar';
+import { BottomNavbar } from '../nav-bar/nav-bar';
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -109,7 +109,7 @@ export const InfosMain = observer(() => {
           <Button onPress={() => navigation.navigate('signup')}>GO</Button>
         )}
       </ScrollView>
-      <NavBar onBack={() => navigation.goBack()} />
+      <BottomNavbar onBack={navigation.goBack} />
     </View>
   );
 });

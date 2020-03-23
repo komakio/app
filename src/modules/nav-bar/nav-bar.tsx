@@ -5,49 +5,56 @@ import {
   NativeTouchEvent,
   View,
 } from 'react-native';
-import { NavButton } from './nav-button';
+import { NavButton } from './button-navbar';
 
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    height: 48,
   },
 
   back: {
     flexDirection: 'row',
-    width: 220,
+    width: 280,
+    flex: 3,
   },
 
   next: {
     flexDirection: 'row-reverse',
-    width: 220,
+    width: 150,
+    flex: 1,
   },
 });
 
-interface NavBarProps {
+interface BottomNavbarProps {
   onBack?: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
-  OnNext?: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
+  onNext?: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
 }
 
-export const NavBar: FC<NavBarProps> = memo(({ onBack, OnNext }) => {
-  return (
-    <View style={styles.container}>
-      {onBack && (
-        <NavButton
-          onPress={onBack}
-          iconName="arrow-left"
-          text="Back"
-          style={styles.back}
-        />
-      )}
-      {onBack && (
-        <NavButton
-          onPress={OnNext}
-          iconName="arrow-right"
-          text="Next"
-          style={styles.next}
-        />
-      )}
-    </View>
-  );
-});
+export const BottomNavbar: FC<BottomNavbarProps> = memo(
+  ({ onBack, onNext }) => {
+    return (
+      <View style={styles.container}>
+        {onBack && (
+          <NavButton
+            onPress={onBack}
+            iconName="arrow-left"
+            text="Back"
+            style={onNext ? styles.back : [styles.back, { width: 500 }]}
+          />
+        )}
+        {onNext && (
+          <NavButton
+            onPress={onNext}
+            iconName="arrow-right"
+            text="Next"
+            style={styles.next}
+          />
+        )}
+      </View>
+    );
+  }
+);

@@ -1,4 +1,4 @@
-export const rgbaTOHex = (hex: string, opacity: number) => {
+export const rgbaToHex = (hex: string, opacity: number) => {
   hex = hex.replace('#', '');
   const r = parseInt(hex.substring(0, 2), 16);
   const g = parseInt(hex.substring(2, 4), 16);

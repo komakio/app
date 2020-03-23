@@ -17,16 +17,15 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.grey100,
-    height: 48,
     fontSize: 20,
     alignItems: 'center',
+    alignContent: 'flex-start',
     paddingHorizontal: 12,
   },
 
   textStyle: {
     color: colors.green100,
     fontWeight: 'bold',
-    flex: 1,
   },
 
   icon: {

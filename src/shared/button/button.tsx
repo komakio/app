@@ -3,8 +3,6 @@ import {
   StyleSheet,
   NativeSyntheticEvent,
   NativeTouchEvent,
-  StyleProp,
-  ViewStyle,
   Platform,
 } from 'react-native';
 import { Text } from '../text';
@@ -13,7 +11,7 @@ import {
   TouchableNativeFeedback,
 } from 'react-native-gesture-handler';
 import { colors } from '../variables/colors';
-import { rgbaTOHex } from '../../utils/colors';
+import { rgbaToHex } from '../../utils/colors';
 
 const styles = StyleSheet.create({
   commonButton: {
@@ -24,7 +22,7 @@ const styles = StyleSheet.create({
   },
 
   disabledButton: {
-    backgroundColor: rgbaTOHex(colors.green100, 0.5),
+    backgroundColor: rgbaToHex(colors.green100, 0.5),
   },
 
   smallButton: {
