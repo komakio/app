@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    flexShrink: 1,
   },
 
   disabledButton: {
@@ -53,11 +52,6 @@ const styles = StyleSheet.create({
     borderColor: colors.red400,
   },
 
-  // grayButton: {
-  //   backgroundColor: colors.gray,
-  //   borderColor: colors.gray,
-  // },
-
   commonText: {
     color: 'white',
     textAlign: 'center',
@@ -76,7 +70,6 @@ const styles = StyleSheet.create({
 
 interface ButtonProps {
   onPress: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
-  style?: StyleProp<ViewStyle>;
   size?: 'small' | 'big';
   theme?: 'blue' | 'green' | 'red' | 'gray';
   disabled?: boolean;
