@@ -66,7 +66,6 @@ export const InfosMain = observer(() => {
 
       <View style={styles.buttonContainer}>
         <Button
-          theme="gray"
           size="big"
           onPress={() => navigation.navigate('profile-infos-name')}
         >
@@ -78,13 +77,12 @@ export const InfosMain = observer(() => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <Button theme="gray" size="big" onPress={getGeolocation}>
+        <Button size="big" onPress={getGeolocation}>
           {profileFlowStore.coords && <ApprovedIcon />} Enable geolocation
         </Button>
       </View>
       <View style={styles.buttonContainer}>
         <Button
-          theme="gray"
           size="big"
           onPress={() => navigation.navigate('profile-infos-phone')}
         >
@@ -99,7 +97,6 @@ export const InfosMain = observer(() => {
         <View style={styles.buttonContainer}>
           <Button
             size="big"
-            theme="gray"
             onPress={() => navigation.navigate('profile-infos-address')}
           >
             {profileFlowStore.address && <ApprovedIcon />} Address
