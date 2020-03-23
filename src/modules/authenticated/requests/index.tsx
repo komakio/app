@@ -1,11 +1,7 @@
 import React, { memo } from 'react';
 
 import { StyleSheet, View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import { Text } from '../../../shared/text';
-import { Button } from '../../../shared/button';
-import { useNotificationsStore } from '../../../stores';
-import { observer } from 'mobx-react-lite';
 
 const styles = StyleSheet.create({
   container: {
