@@ -9,3 +9,8 @@ export const useProfileFlowStore = () => {
   const rootStore = useRootStore();
   return rootStore.profileFlowStore;
 };
+
+export const useNotificationsStore = () => {
+  const rootStore = useRootStore();
+  return rootStore.notificationsStore;
+};

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -8,6 +8,7 @@ import { AuthenticatedSponsors } from './sponsors';
 import { AuthenticatedSettings } from './settings';
 import { Platform } from 'react-native';
 import { IconWithBadge } from './icon-with-badge';
+import { useNotificationsStore } from '../../stores';
 
 const Tab = createBottomTabNavigator();
 const AndroidTab = createMaterialBottomTabNavigator();
@@ -43,7 +44,12 @@ const screens = [
 
 export const Authenticated = memo(() => {
   //   const navigation = useNavigation();
+  const notificationsStore = useNotificationsStore();
   const activeRequests = 3;
+
+  useEffect(() => {
+    notificationsStore.registerForNotifications();
+  }, [notificationsStore]);
 
   if (Platform.OS === 'android') {
     return (
