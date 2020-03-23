@@ -30,7 +30,7 @@ export const Intro = memo(() => {
   useEffect(() => {
     const isLoggedIn = async () => {
       const data = await Storage.getJson('accessToken');
-      if (data.token) {
+      if (data?.token) {
         navigation.dispatch(StackActions.replace('authenticated'));
       }
     };
