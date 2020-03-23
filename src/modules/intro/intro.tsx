@@ -1,9 +1,10 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 
 import { StyleSheet, View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, StackActions } from '@react-navigation/native';
 import { Text } from '../../shared/text';
 import { Button } from '../../shared/button';
+import { Storage } from '../../utils/storage';
 
 const styles = StyleSheet.create({
   container: {
@@ -25,6 +26,16 @@ const styles = StyleSheet.create({
 
 export const Intro = memo(() => {
   const navigation = useNavigation();
+
+  useEffect(() => {
+    const isLoggedIn = async () => {
+      const data = await Storage.getJson('accessToken');
+      if (data?.token) {
+        navigation.dispatch(StackActions.replace('authenticated'));
+      }
+    };
+    isLoggedIn();
+  });
 
   return (
     <View style={styles.container}>

@@ -17,7 +17,7 @@ export class ProfileFlowStore {
   public phone = '';
 
   @observable
-  public dialCode = 'd';
+  public dialCode = '-';
 
   @observable
   public address = '';
