@@ -70,7 +70,9 @@ export const InfosMain = observer(() => {
           size="big"
           onPress={() => navigation.navigate('profile-infos-name')}
         >
-          {profileFlowStore.coords && <ApprovedIcon />}
+          {profileFlowStore.firstName && profileFlowStore.lastName && (
+            <ApprovedIcon />
+          )}
           Your name
         </Button>
       </View>
@@ -100,7 +102,7 @@ export const InfosMain = observer(() => {
             theme="gray"
             onPress={() => navigation.navigate('profile-infos-address')}
           >
-            {profileFlowStore.coords && <ApprovedIcon />} Address
+            {profileFlowStore.address && <ApprovedIcon />} Address
           </Button>
         </View>
       )}
