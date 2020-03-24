@@ -3,12 +3,14 @@ import { View, StyleSheet, StatusBar } from 'react-native';
 import { statusBarHeight } from './utils/status-bar';
 import { animate } from './utils/animate';
 import { AnimatedText } from './shared/text';
+import { colors } from './shared/variables/colors';
 
 const headerHeight = 50;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: statusBarHeight + headerHeight,
+    backgroundColor: colors.grey200,
   },
   animatedHeaderContainer: {
     position: 'absolute',
@@ -62,7 +64,7 @@ export const Layout = memo(({ children }) => {
             style={[
               styles.headerText,
               {
-                fontSize: ready ? 24 : 36,
+                fontSize: ready ? 36 : 48,
               },
             ]}
           >

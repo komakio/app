@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.grey100,
     height: 48,
-    width: 272,
     borderRadius: 8,
     flexDirection: 'row',
     fontSize: 20,
@@ -28,10 +27,8 @@ const styles = StyleSheet.create({
   },
 
   textStyle: {
-    color: 'black',
-    fontWeight: 'bold',
     flex: 6,
-    textAlign: 'left',
+    fontSize: 18,
   },
 
   iconContainer: {
@@ -59,7 +56,9 @@ export const CheckBoxButton: FC<CheckboxButtonProps> = memo(
               <Icon name="checkbox-blank-circle-outline" size={24} />
             )}
           </View>
-          <Text style={styles.textStyle}>{children}</Text>
+          <Text style={styles.textStyle} bold={true}>
+            {children}
+          </Text>
         </TouchableNativeFeedback>
       );
     }
@@ -70,7 +69,9 @@ export const CheckBoxButton: FC<CheckboxButtonProps> = memo(
           {checked && <ApprovedIcon />}
           {!checked && <Icon name="checkbox-blank-circle-outline" size={24} />}
         </View>
-        <Text style={styles.textStyle}>{children}</Text>{' '}
+        <Text style={styles.textStyle} bold={true}>
+          {children}
+        </Text>
       </TouchableOpacity>
     );
   }

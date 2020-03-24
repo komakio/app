@@ -7,7 +7,6 @@ import { Geolocation } from '../../utils/geolocation';
 import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../shared/button';
-import { ApprovedIcon } from '../../shared/approved-icon';
 import { ScrollView } from 'react-native-gesture-handler';
 import { CheckBoxButton } from '../../shared/button/checkbox-button';
 import { BottomNavbar } from '../nav-bar/nav-bar';
@@ -20,23 +19,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     flex: 1,
+    paddingHorizontal: 16,
   },
   title: {
     fontSize: 24,
-    textAlign: 'center',
-    paddingBottom: 22,
-    paddingTop: 22,
-    paddingHorizontal: 16,
+    marginBottom: 12,
+    marginTop: 16,
   },
   description: {
-    fontSize: 24,
-    textAlign: 'center',
-    paddingHorizontal: 16,
-    paddingBottom: 22,
+    fontSize: 20,
+    marginBottom: 22,
   },
   buttonContainer: {
-    marginBottom: 10,
-    marginTop: 10,
+    width: '100%',
+    marginVertical: 10,
   },
 });
 
@@ -54,16 +50,29 @@ export const InfosMain = observer(() => {
     }
   };
 
+  const goToSignup = () => navigation.navigate('signup');
+
   return (
     <View style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container}>
-        <Text bold={true} style={styles.title}>
-          Thank you for helping your local community.
-        </Text>
+        {profileFlowStore.role === 'helper' && (
+          <View>
+            <Text bold={true} style={styles.title}>
+              Thank you for helping your local community.
+            </Text>
 
-        <Text style={styles.description}>
-          We just need a few things to set you up.
-        </Text>
+            <Text style={styles.description}>
+              We just need a few things to set you up.
+            </Text>
+          </View>
+        )}
+        {profileFlowStore.role === 'needer' && (
+          <View>
+            <Text bold={true} style={styles.title}>
+              We just need a few things to set you up.
+            </Text>
+          </View>
+        )}
 
         <View style={styles.buttonContainer}>
           <CheckBoxButton
@@ -96,20 +105,19 @@ export const InfosMain = observer(() => {
 
         {profileFlowStore.role === 'needer' && (
           <View style={styles.buttonContainer}>
-            <Button
-              size="big"
+            <CheckBoxButton
               onPress={() => navigation.navigate('profile-infos-address')}
+              checked={!!profileFlowStore.address}
             >
-              {profileFlowStore.address && <ApprovedIcon />} Address
-            </Button>
+              Phone
+            </CheckBoxButton>
           </View>
         )}
-
-        {profileFlowStore.isValid() && (
-          <Button onPress={() => navigation.navigate('signup')}>GO</Button>
-        )}
       </ScrollView>
-      <BottomNavbar onBack={navigation.goBack} />
+      <BottomNavbar
+        onBack={navigation.goBack}
+        onNext={profileFlowStore.isValid() && goToSignup}
+      />
     </View>
   );
 });
