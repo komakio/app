@@ -5,12 +5,10 @@ import {
   NativeTouchEvent,
   Platform,
   View,
-} from 'react-native';
-import { Text } from '../text';
-import {
   TouchableOpacity,
   TouchableNativeFeedback,
-} from 'react-native-gesture-handler';
+} from 'react-native';
+import { Text } from '../text';
 import { colors } from '../variables/colors';
 import { ApprovedIcon } from '../approved-icon';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -18,12 +16,12 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.grey100,
-    height: 48,
     borderRadius: 8,
     flexDirection: 'row',
     fontSize: 20,
     alignItems: 'center',
     paddingHorizontal: 12,
+    paddingVertical: 10,
   },
 
   textStyle: {

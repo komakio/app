@@ -1,22 +1,23 @@
 import React from 'react';
-import { StyleSheet, View, Alert } from 'react-native';
+import { StyleSheet, View, Alert, Linking } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Text } from '../../shared/text';
 import { useProfileFlowStore } from '../../stores';
 import { Geolocation } from '../../utils/geolocation';
 import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
-import { Button } from '../../shared/button';
+import { Button, Touchable } from '../../shared/button';
 import { ScrollView } from 'react-native-gesture-handler';
 import { CheckBoxButton } from '../../shared/button/checkbox-button';
 import { BottomNavbar } from '../nav-bar/nav-bar';
+import { colors } from '../../shared/variables/colors';
 
 const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
   },
   container: {
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'flex-start',
     flex: 1,
     paddingHorizontal: 16,
@@ -34,6 +35,9 @@ const styles = StyleSheet.create({
     width: '100%',
     marginVertical: 10,
   },
+  termsServiceText: {
+    color: colors.green300,
+  },
 });
 
 export const InfosMain = observer(() => {
@@ -50,7 +54,7 @@ export const InfosMain = observer(() => {
     }
   };
 
-  const goToAuthenticated = () => navigation.navigate('authenticated');
+  const goToAuthenticated = () => navigation.navigate('consents');
 
   return (
     <View style={{ flex: 1 }}>
@@ -109,10 +113,25 @@ export const InfosMain = observer(() => {
               onPress={() => navigation.navigate('profile-infos-address')}
               checked={!!profileFlowStore.address}
             >
-              Phone
+              Address
             </CheckBoxButton>
           </View>
         )}
+
+        <View style={styles.buttonContainer}>
+          <CheckBoxButton
+            onPress={() => (profileFlowStore.terms = !profileFlowStore.terms)}
+            checked={profileFlowStore.terms}
+          >
+            I have read and agree with the terms of service
+          </CheckBoxButton>
+        </View>
+        <Touchable
+          onPress={() => Linking.openURL('https://komak.io/terms-of-service/')}
+          textStyle={styles.termsServiceText}
+        >
+          <Text>Read terms of service</Text>
+        </Touchable>
       </ScrollView>
       <BottomNavbar
         onBack={navigation.goBack}

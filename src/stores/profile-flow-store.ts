@@ -23,6 +23,9 @@ export class ProfileFlowStore {
   public address = '';
 
   @observable
+  public terms = false;
+
+  @observable
   public coords: [number, number];
 
   constructor(rootStore: RootStore) {
@@ -37,6 +40,7 @@ export class ProfileFlowStore {
       !this.phone ||
       !this.dialCode ||
       !this.coords ||
+      !this.terms ||
       (this.role === 'needer' && !this.address)
     ) {
       return false;
