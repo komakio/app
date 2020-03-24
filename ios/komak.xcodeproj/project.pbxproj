@@ -61,12 +61,14 @@
 		147DC4920F4A0C5998B5FEB3 /* libPods-komak-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-komak-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		171FE40D3A554D6CA4CAC5B5 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		1E2A8BB7C7F9F12E0302BBC7 /* libPods-komak.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-komak.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3822770321C20D326E30F96F /* Pods-komakTests.releaseadhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-komakTests.releaseadhoc.xcconfig"; path = "Target Support Files/Pods-komakTests/Pods-komakTests.releaseadhoc.xcconfig"; sourceTree = "<group>"; };
 		38A192099AE309028E6DB832 /* Pods-komak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-komak.release.xcconfig"; path = "Target Support Files/Pods-komak/Pods-komak.release.xcconfig"; sourceTree = "<group>"; };
 		476E7D4E8F7E9F06E1508C01 /* Pods-komakTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-komakTests.debug.xcconfig"; path = "Target Support Files/Pods-komakTests/Pods-komakTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F9E71AEFBC340A49F844624 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		532A9BDE832D01CCF468AD19 /* Pods-komak-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-komak-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-komak-tvOSTests/Pods-komak-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		625B6A5FDA46EFD51DA7EA43 /* Pods-komak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-komak.debug.xcconfig"; path = "Target Support Files/Pods-komak/Pods-komak.debug.xcconfig"; sourceTree = "<group>"; };
 		699909C29F1A4453AD3BE076 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		6EF78C1191D639FC1345257C /* Pods-komak.releaseadhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-komak.releaseadhoc.xcconfig"; path = "Target Support Files/Pods-komak/Pods-komak.releaseadhoc.xcconfig"; sourceTree = "<group>"; };
 		7369EDFC2AA7493CB6ED5DA1 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		7674246A381CE2D5A9A99973 /* Pods-komak-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-komak-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-komak-tvOSTests/Pods-komak-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		76C8565A8BCF43BCBEDB19E2 /* Sen-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sen-Bold.otf"; path = "../assets/fonts/Sen-Bold.otf"; sourceTree = "<group>"; };
@@ -171,6 +173,8 @@
 				532A9BDE832D01CCF468AD19 /* Pods-komak-tvOSTests.release.xcconfig */,
 				476E7D4E8F7E9F06E1508C01 /* Pods-komakTests.debug.xcconfig */,
 				9A10AAAABE750CD9AA8CA8AB /* Pods-komakTests.release.xcconfig */,
+				6EF78C1191D639FC1345257C /* Pods-komak.releaseadhoc.xcconfig */,
+				3822770321C20D326E30F96F /* Pods-komakTests.releaseadhoc.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -597,12 +601,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = komak/Komak.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = PVZAQR5AWK;
 				INFOPLIST_FILE = komak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 0.9.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -623,11 +627,11 @@
 				CODE_SIGN_ENTITLEMENTS = komak/Komak.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = PVZAQR5AWK;
 				INFOPLIST_FILE = komak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 0.9.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -739,6 +743,102 @@
 			};
 			name = Release;
 		};
+		E4D0909324294CB7004304FC /* ReleaseAdhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = ReleaseAdhoc;
+		};
+		E4D0909424294CB7004304FC /* ReleaseAdhoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EF78C1191D639FC1345257C /* Pods-komak.releaseadhoc.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = komak/Komak.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = PVZAQR5AWK;
+				INFOPLIST_FILE = komak/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.9.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.komak.app;
+				PRODUCT_NAME = Komak;
+				PROVISIONING_PROFILE_SPECIFIER = "match Development io.komak.app";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = ReleaseAdhoc;
+		};
+		E4D0909524294CB7004304FC /* ReleaseAdhoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3822770321C20D326E30F96F /* Pods-komakTests.releaseadhoc.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = PVZAQR5AWK;
+				INFOPLIST_FILE = komakTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/komak.app/komak";
+			};
+			name = ReleaseAdhoc;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -747,6 +847,7 @@
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
 				00E356F71AD99517003FC87E /* Release */,
+				E4D0909524294CB7004304FC /* ReleaseAdhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -756,6 +857,7 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+				E4D0909424294CB7004304FC /* ReleaseAdhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -765,6 +867,7 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+				E4D0909324294CB7004304FC /* ReleaseAdhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

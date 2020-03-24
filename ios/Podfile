@@ -1,6 +1,11 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
+project 'komak',
+    'Debug' => :debug,
+    'Release' => :release,
+    'ReleaseAdhoc' => :release
+
 target 'komak' do
   # Pods for komak
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"

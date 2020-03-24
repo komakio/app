@@ -1,7 +1,7 @@
 import messaging from '@react-native-firebase/messaging';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 import DeviceInfo from 'react-native-device-info';
-import { Alert } from 'react-native';
+import { Alert, Platform } from 'react-native';
 
 export class Messaging {
   public static async registerForRemoteNotifications() {
@@ -15,11 +15,14 @@ export class Messaging {
     if (await DeviceInfo.isEmulator()) {
       return;
     }
-    await PushNotificationIOS.requestPermissions({
-      alert: true,
-      badge: true,
-      sound: true,
-    });
+    if (Platform.OS === 'ios') {
+      await PushNotificationIOS.requestPermissions({
+        alert: true,
+        badge: true,
+        sound: true,
+      });
+    }
+
     return messaging().requestPermission();
   }
 
