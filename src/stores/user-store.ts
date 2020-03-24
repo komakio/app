@@ -17,22 +17,26 @@ export class UserStore {
     this.init();
   }
 
-  public async signup(password: string) {
-    const data = await UsersApi.loginRegister(password);
-    await Storage.setJson('accessToken', {
-      token: data.accessToken.accessToken,
-      expiration: data.accessToken.expiration,
-    });
-  }
-
   public async socialSignup(type: 'google' | 'apple') {
     if (type === 'apple') {
-      await this.rootStore.socialLoginStore.appleLogin();
+      const user = await this.rootStore.socialLoginStore.appleLogin();
+      if (!user) {
+        return false;
+      }
     }
     if (type === 'google') {
-      await this.rootStore.socialLoginStore.googleLogin();
+      const user = await this.rootStore.socialLoginStore.googleLogin();
+      if (!user) {
+        return false;
+      }
     }
     this.user = 'Success';
+    await Storage.setJson('accessToken', {
+      token: 'yo',
+      expiration: 1000000000,
+    });
+
+    return true;
   }
 
   public async logout() {

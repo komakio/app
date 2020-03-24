@@ -49,11 +49,11 @@
 		</dict>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Need location to match users so that they can help each other</string>
+	<string>This allows us to match you up with the closest users to your location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Need location to match users so that they can help each other</string>
+	<string>This allows us to match you up with the closest users to your location.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Need location to match users so that they can help each other</string>
+	<string>This allows us to match you up with the closest users to your location.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>

@@ -33,9 +33,11 @@ export class SocialLoginStore {
 
   public async googleLogin() {
     try {
+      console.log('user info');
       //   await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
       console.log(userInfo);
+      return true;
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         // user cancelled the login flow
@@ -46,6 +48,8 @@ export class SocialLoginStore {
       } else {
         // some other error happened
       }
+
+      return false;
     }
   }
 
@@ -71,5 +75,7 @@ export class SocialLoginStore {
       console.log(credentialState);
       // user is authenticated
     }
+
+    return true;
   }
 }
