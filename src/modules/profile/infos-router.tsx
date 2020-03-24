@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 
 const modalOptions = {
   cardStyle: {
-    backgroundColor: colors.gray,
+    backgroundColor: colors.grey100,
     borderTopLeftRadius: Theme.borderRadius,
     borderTopRightRadius: Theme.borderRadius,
   },

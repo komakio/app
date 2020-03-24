@@ -4,7 +4,6 @@ import { StyleSheet, View } from 'react-native';
 import { useNavigation, StackActions } from '@react-navigation/native';
 import { Text } from '../../shared/text';
 import { Button } from '../../shared/button';
-import { Storage } from '../../utils/storage';
 import { useUserStore } from '../../stores';
 
 const styles = StyleSheet.create({

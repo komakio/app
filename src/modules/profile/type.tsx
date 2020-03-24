@@ -39,7 +39,7 @@ export const ProfileType = memo(() => {
         What is you status ?
       </Text>
       <View style={styles.buttonContainer}>
-        <Button theme="green" size="big" onPress={changeStatus('helper')}>
+        <Button theme="blue" size="big" onPress={changeStatus('helper')}>
           Healthy
         </Button>
       </View>

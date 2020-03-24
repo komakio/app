@@ -3,8 +3,6 @@ import {
   StyleSheet,
   NativeSyntheticEvent,
   NativeTouchEvent,
-  StyleProp,
-  ViewStyle,
   Platform,
 } from 'react-native';
 import { Text } from '../text';
@@ -13,6 +11,7 @@ import {
   TouchableNativeFeedback,
 } from 'react-native-gesture-handler';
 import { colors } from '../variables/colors';
+import { rgbaToHex } from '../../utils/colors';
 
 const styles = StyleSheet.create({
   commonButton: {
@@ -20,12 +19,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    flexShrink: 1,
   },
 
   disabledButton: {
-    backgroundColor: colors.gray,
-    borderColor: colors.gray,
+    backgroundColor: rgbaToHex(colors.green100, 0.5),
   },
 
   smallButton: {
@@ -39,23 +36,18 @@ const styles = StyleSheet.create({
   },
 
   blueButton: {
-    backgroundColor: colors.blue,
-    borderColor: colors.blue,
+    backgroundColor: colors.blue100,
+    borderColor: colors.blue100,
   },
 
   greenButton: {
-    backgroundColor: colors.green,
-    borderColor: colors.green,
+    backgroundColor: colors.green100,
+    borderColor: colors.green100,
   },
 
   redButton: {
-    backgroundColor: colors.red,
-    borderColor: colors.red,
-  },
-
-  grayButton: {
-    backgroundColor: colors.gray,
-    borderColor: colors.gray,
+    backgroundColor: colors.red400,
+    borderColor: colors.red400,
   },
 
   commonText: {
@@ -76,14 +68,19 @@ const styles = StyleSheet.create({
 
 interface ButtonProps {
   onPress: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
-  style?: StyleProp<ViewStyle>;
   size?: 'small' | 'big';
   theme?: 'blue' | 'green' | 'red' | 'gray';
   disabled?: boolean;
 }
 
 export const Button: FC<ButtonProps> = memo(
-  ({ onPress, theme = 'blue', children, size = 'small', disabled = false }) => {
+  ({
+    onPress,
+    theme = 'green',
+    children,
+    size = 'small',
+    disabled = false,
+  }) => {
     const buttonStyles = [
       styles.commonButton,
       size === 'small' && styles.smallButton,
@@ -91,15 +88,15 @@ export const Button: FC<ButtonProps> = memo(
       theme === 'blue' && styles.blueButton,
       theme === 'red' && styles.redButton,
       theme === 'green' && styles.greenButton,
-      theme === 'gray' && styles.grayButton,
+      // theme === 'gray' && styles.grayButton,
       disabled && styles.disabledButton,
     ];
 
     const textStyle = [
       [
         styles.commonText,
-        theme === 'gray' && styles.blackText,
-        disabled && styles.disabledText,
+        // theme === 'gray' && styles.blackText,
+        // disabled && styles.disabledText,
       ],
     ];
     if (Platform.OS === 'android') {

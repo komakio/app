@@ -9,6 +9,8 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '../../shared/button';
 import { ApprovedIcon } from '../../shared/approved-icon';
 import { ScrollView } from 'react-native-gesture-handler';
+import { CheckBoxButton } from '../../shared/button/checkbox-button';
+import { BottomNavbar } from '../nav-bar/nav-bar';
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -17,6 +19,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'flex-start',
+    flex: 1,
   },
   title: {
     fontSize: 24,
@@ -52,64 +55,61 @@ export const InfosMain = observer(() => {
   };
 
   return (
-    <ScrollView
-      style={styles.scrollView}
-      contentContainerStyle={styles.container}
-    >
-      <Text bold={true} style={styles.title}>
-        Thank you for helping your local community.
-      </Text>
+    <View style={{ flex: 1 }}>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Text bold={true} style={styles.title}>
+          Thank you for helping your local community.
+        </Text>
 
-      <Text style={styles.description}>
-        We just need a few things to set you up.
-      </Text>
+        <Text style={styles.description}>
+          We just need a few things to set you up.
+        </Text>
 
-      <View style={styles.buttonContainer}>
-        <Button
-          theme="gray"
-          size="big"
-          onPress={() => navigation.navigate('profile-infos-name')}
-        >
-          {profileFlowStore.firstName && profileFlowStore.lastName && (
-            <ApprovedIcon />
-          )}
-          Your name
-        </Button>
-      </View>
-
-      <View style={styles.buttonContainer}>
-        <Button theme="gray" size="big" onPress={getGeolocation}>
-          {profileFlowStore.coords && <ApprovedIcon />} Enable geolocation
-        </Button>
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button
-          theme="gray"
-          size="big"
-          onPress={() => navigation.navigate('profile-infos-phone')}
-        >
-          {profileFlowStore.phone && profileFlowStore.dialCode && (
-            <ApprovedIcon />
-          )}
-          Phone
-        </Button>
-      </View>
-
-      {profileFlowStore.role === 'needer' && (
         <View style={styles.buttonContainer}>
-          <Button
-            size="big"
-            theme="gray"
-            onPress={() => navigation.navigate('profile-infos-address')}
+          <CheckBoxButton
+            onPress={() => navigation.navigate('profile-infos-name')}
+            checked={
+              !!(profileFlowStore.firstName && profileFlowStore.lastName)
+            }
           >
-            {profileFlowStore.address && <ApprovedIcon />} Address
-          </Button>
+            Your name
+          </CheckBoxButton>
         </View>
-      )}
 
-      {profileFlowStore.isValid() && (
-        <Button onPress={() => navigation.navigate('signup')}>GO</Button>
-      )}
-    </ScrollView>
+        <View style={styles.buttonContainer}>
+          <CheckBoxButton
+            onPress={getGeolocation}
+            checked={!!profileFlowStore.coords}
+          >
+            Enable geolocation
+          </CheckBoxButton>
+        </View>
+
+        <View style={styles.buttonContainer}>
+          <CheckBoxButton
+            onPress={() => navigation.navigate('profile-infos-phone')}
+            checked={!!(profileFlowStore.phone && profileFlowStore.dialCode)}
+          >
+            Phone
+          </CheckBoxButton>
+        </View>
+
+        {profileFlowStore.role === 'needer' && (
+          <View style={styles.buttonContainer}>
+            <Button
+              size="big"
+              onPress={() => navigation.navigate('profile-infos-address')}
+            >
+              {profileFlowStore.address && <ApprovedIcon />} Address
+            </Button>
+          </View>
+        )}
+
+        {profileFlowStore.isValid() && (
+          <Button onPress={() => navigation.navigate('signup')}>GO</Button>
+        )}
+      </ScrollView>
+      <BottomNavbar onBack={navigation.goBack} />
+    </View>
   );
 });
