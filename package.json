@@ -11,8 +11,10 @@
     "postinstall": "cd ios && pod install"
   },
   "dependencies": {
+    "@invertase/react-native-apple-authentication": "0.1.1",
     "@react-native-community/async-storage": "^1.8.1",
     "@react-native-community/geolocation": "^2.0.2",
+    "@react-native-community/google-signin": "^4.0.0",
     "@react-native-community/masked-view": "^0.1.7",
     "@react-native-community/push-notification-ios": "^1.1.0",
     "@react-native-firebase/app": "6.3.4",

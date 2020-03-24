@@ -3,17 +3,12 @@ import {
   StyleSheet,
   NativeSyntheticEvent,
   NativeTouchEvent,
-  Platform,
   ViewStyle,
   StyleProp,
 } from 'react-native';
-import { Text } from '../text';
-import {
-  TouchableOpacity,
-  TouchableNativeFeedback,
-} from 'react-native-gesture-handler';
 import { colors } from '../variables/colors';
 import { rgbaToHex } from '../../utils/colors';
+import { Touchable } from './touchable';
 
 const styles = StyleSheet.create({
   commonButton: {
@@ -97,34 +92,14 @@ export const Button: FC<ButtonProps> = memo(
       disabled && styles.disabledButton,
     ];
 
-    const textStyle = [
-      [
-        styles.commonText,
-        // theme === 'gray' && styles.blackText,
-        // disabled && styles.disabledText,
-      ],
-    ];
-    if (Platform.OS === 'android') {
-      return (
-        <TouchableNativeFeedback
-          onPress={onPress}
-          style={[buttonStyles, style]}
-          disabled={disabled}
-          background={TouchableNativeFeedback.Ripple('#EEE')}
-        >
-          <Text style={textStyle}>{children}</Text>
-        </TouchableNativeFeedback>
-      );
-    }
-
     return (
-      <TouchableOpacity
+      <Touchable
         onPress={onPress}
-        style={[buttonStyles, style]}
-        disabled={disabled}
+        textStyle={styles.commonText}
+        containerStyle={[buttonStyles, style]}
       >
-        <Text style={textStyle}>{children}</Text>
-      </TouchableOpacity>
+        {children}
+      </Touchable>
     );
   }
 );

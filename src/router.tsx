@@ -23,8 +23,8 @@ export const Router = memo(() => {
     >
       <Stack.Screen name="intro" component={Intro} />
       <Stack.Screen name="profile-type" component={ProfileType} />
-      <Stack.Screen name="profile-infos" component={InfosRouter} />
       <Stack.Screen name="signup" component={Signup} />
+      <Stack.Screen name="profile-infos" component={InfosRouter} />
       <Stack.Screen name="authenticated" component={Authenticated} />
     </Stack.Navigator>
   );
