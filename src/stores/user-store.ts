@@ -1,18 +1,15 @@
 import { RootStore } from './root-store';
 import { UsersApi } from '../api/user';
 import { Storage } from '../utils/storage';
-
-import appleAuth, {
-  AppleButton,
-  AppleAuthRequestOperation,
-  AppleAuthRequestScope,
-  AppleAuthCredentialState,
-} from '@invertase/react-native-apple-authentication';
+import { observable } from 'mobx';
 
 export class UserStore {
   public rootStore: RootStore;
 
   public accessToken: { token: string; expiration: number };
+
+  @observable
+  public user: string;
 
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
@@ -35,6 +32,7 @@ export class UserStore {
     if (type === 'google') {
       await this.rootStore.socialLoginStore.googleLogin();
     }
+    this.user = 'Success';
   }
 
   public async logout() {

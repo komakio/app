@@ -32,7 +32,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>18</string>
+	<string>19</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -51,6 +51,8 @@
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Need location to match users so that they can help each other</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Need location to match users so that they can help each other</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Need location to match users so that they can help each other</string>
 	<key>UIAppFonts</key>
 	<array>

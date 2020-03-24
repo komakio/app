@@ -33,7 +33,7 @@ export const ProfileType = memo(() => {
 
   const changeStatus = (role: ProfileFlowStore['role']) => () => {
     profileFlowStore.role = role;
-    navigation.navigate('profile-infos');
+    navigation.navigate('signup');
   };
 
   return (

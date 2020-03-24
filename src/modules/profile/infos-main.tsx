@@ -50,7 +50,7 @@ export const InfosMain = observer(() => {
     }
   };
 
-  const goToSignup = () => navigation.navigate('signup');
+  const goToAuthenticated = () => navigation.navigate('authenticated');
 
   return (
     <View style={{ flex: 1 }}>
@@ -116,7 +116,7 @@ export const InfosMain = observer(() => {
       </ScrollView>
       <BottomNavbar
         onBack={navigation.goBack}
-        onNext={profileFlowStore.isValid() && goToSignup}
+        onNext={profileFlowStore.isValid() && goToAuthenticated}
       />
     </View>
   );
