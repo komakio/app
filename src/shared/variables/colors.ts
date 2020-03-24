@@ -18,5 +18,5 @@ export const colors = {
   grey200: '#F2F2F2',
   grey300: '#CCCCCC',
   grey400: '#343434',
-  grey500: '##1A1A1A',
+  grey500: '#1A1A1A',
 };

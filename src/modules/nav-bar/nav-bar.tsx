@@ -6,6 +6,7 @@ import {
   View,
 } from 'react-native';
 import { NavButton } from './button-navbar';
+import { colors } from '../../shared/variables/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,20 +14,21 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: 48,
+    height: 60,
+    backgroundColor: colors.grey100,
   },
 
-  back: {
-    flexDirection: 'row',
-    width: 280,
-    flex: 3,
-  },
+  // back: {
+  //   flexDirection: 'row',
+  //   width: 280,
+  //   flex: 3,
+  // },
 
-  next: {
-    flexDirection: 'row-reverse',
-    width: 150,
-    flex: 1,
-  },
+  // next: {
+  //   flexDirection: 'row-reverse',
+  //   width: 150,
+  //   flex: 1,
+  // },
 });
 
 interface BottomNavbarProps {
@@ -39,19 +41,14 @@ export const BottomNavbar: FC<BottomNavbarProps> = memo(
     return (
       <View style={styles.container}>
         {onBack && (
-          <NavButton
-            onPress={onBack}
-            iconName="arrow-left"
-            text="Back"
-            style={onNext ? styles.back : [styles.back, { width: 500 }]}
-          />
+          <NavButton onPress={onBack} iconName="arrow-left" text="Back" />
         )}
         {onNext && (
           <NavButton
             onPress={onNext}
             iconName="arrow-right"
             text="Next"
-            style={styles.next}
+            isNext={true}
           />
         )}
       </View>

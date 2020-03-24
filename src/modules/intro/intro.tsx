@@ -11,16 +11,15 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-end',
-    paddingHorizontal: 50,
+    paddingHorizontal: 20,
   },
   title: {
-    fontSize: 24,
+    fontSize: 28,
     textAlign: 'center',
-    paddingBottom: 22,
   },
   buttonContainer: {
-    marginTop: 50,
-    marginBottom: 100,
+    marginTop: 40,
+    marginBottom: 64,
   },
 });
 
@@ -43,8 +42,8 @@ export const Intro = memo(() => {
         Thank you for making an impact
       </Text>
       <View style={styles.buttonContainer}>
-        <Button onPress={() => navigation.navigate('profile-type')}>
-          Get started AA
+        <Button size="big" onPress={() => navigation.navigate('profile-type')}>
+          Get started
         </Button>
       </View>
     </View>

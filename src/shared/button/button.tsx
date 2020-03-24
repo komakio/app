@@ -4,6 +4,8 @@ import {
   NativeSyntheticEvent,
   NativeTouchEvent,
   Platform,
+  ViewStyle,
+  StyleProp,
 } from 'react-native';
 import { Text } from '../text';
 import {
@@ -16,7 +18,7 @@ import { rgbaToHex } from '../../utils/colors';
 const styles = StyleSheet.create({
   commonButton: {
     display: 'flex',
-    borderRadius: 20,
+    borderRadius: 30,
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
@@ -32,7 +34,8 @@ const styles = StyleSheet.create({
 
   bigButton: {
     width: 246,
-    padding: 20,
+    padding: 16,
+    borderRadius: 40,
   },
 
   blueButton: {
@@ -53,7 +56,7 @@ const styles = StyleSheet.create({
   commonText: {
     color: 'white',
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
   },
 
@@ -71,6 +74,7 @@ interface ButtonProps {
   size?: 'small' | 'big';
   theme?: 'blue' | 'green' | 'red' | 'gray';
   disabled?: boolean;
+  style?: StyleProp<ViewStyle>;
 }
 
 export const Button: FC<ButtonProps> = memo(
@@ -80,6 +84,7 @@ export const Button: FC<ButtonProps> = memo(
     children,
     size = 'small',
     disabled = false,
+    style,
   }) => {
     const buttonStyles = [
       styles.commonButton,
@@ -103,7 +108,7 @@ export const Button: FC<ButtonProps> = memo(
       return (
         <TouchableNativeFeedback
           onPress={onPress}
-          style={buttonStyles}
+          style={[buttonStyles, style]}
           disabled={disabled}
           background={TouchableNativeFeedback.Ripple('#EEE')}
         >
@@ -115,7 +120,7 @@ export const Button: FC<ButtonProps> = memo(
     return (
       <TouchableOpacity
         onPress={onPress}
-        style={buttonStyles}
+        style={[buttonStyles, style]}
         disabled={disabled}
       >
         <Text style={textStyle}>{children}</Text>

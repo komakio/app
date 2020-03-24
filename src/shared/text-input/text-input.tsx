@@ -20,23 +20,17 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   input: {
-    borderWidth: 1 / PixelRatio.get(),
+    borderWidth: 4 / PixelRatio.get(),
     fontFamily: 'Sen',
     width: '100%',
     backgroundColor: 'transparent',
-    borderColor: colors.blue,
-    color: colors.blue,
-    borderEndWidth: 3,
-    borderRadius: 20,
+    borderColor: colors.grey500,
+    color: colors.grey500,
+    borderRadius: 10,
     padding: 18,
     fontWeight: 'bold',
     fontSize: 18,
-    borderTopWidth: 4,
-    borderLeftWidth: 4,
-    borderRightWidth: 4,
-    borderBottomWidth: 4,
   },
-  // text: { fontFamily: 'Sen' },
 });
 
 interface TextInputProps extends RNTextInputProps {
@@ -50,7 +44,7 @@ export const TextInput: FC<TextInputProps> = memo(props => (
     </Text>
     <RNTextInput
       {...props}
-      placeholderTextColor={colors.lightBlue}
+      placeholderTextColor={colors.grey300}
       style={[styles.input, props.style]}
     />
   </View>
