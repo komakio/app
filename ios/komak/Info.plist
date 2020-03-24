@@ -20,6 +20,17 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.153461499435-0kruiebmi9ikjpg4fv531eli76oe1kgr</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>18</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -37,8 +48,10 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Need location to match users so that they can help each other</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Need location to match users so that they can help each other against corona virus</string>
+	<string>Need location to match users so that they can help each other</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>
