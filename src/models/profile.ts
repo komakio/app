@@ -1,6 +1,6 @@
 interface Location {
   type: 'Point';
-  coordinates?: [number, number];
+  coordinates: [number, number];
 }
 export class Address {
   raw: string;

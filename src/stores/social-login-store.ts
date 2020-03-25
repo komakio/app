@@ -20,8 +20,6 @@ export class SocialLoginStore {
 
     GoogleSignin.configure({
       forceCodeForRefreshToken: true,
-      // iosClientId:
-      //   '153461499435-0kruiebmi9ikjpg4fv531eli76oe1kgr.apps.googleusercontent.com',
     });
   }
 
@@ -31,10 +29,8 @@ export class SocialLoginStore {
       const userInfo = await GoogleSignin.signIn();
       const firstName = userInfo.user.givenName;
       const lastName = userInfo.user.familyName;
-      // const email = userInfo.email;
-      console.log(userInfo);
+
       const data = await UsersApi.loginGoogle(userInfo.idToken);
-      console.log(data);
       this.rootStore.profileFlowStore.firstName = firstName;
       this.rootStore.profileFlowStore.lastName = lastName;
 
