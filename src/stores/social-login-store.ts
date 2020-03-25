@@ -63,18 +63,13 @@ export class SocialLoginStore {
       ],
     });
 
-    console.log(appleAuthRequestResponse);
+    const firstName = appleAuthRequestResponse.fullName.givenName;
+    const lastName = appleAuthRequestResponse.fullName.familyName;
+    // const email = appleAuthRequestResponse.email;
+    await UsersApi.loginApple(appleAuthRequestResponse.identityToken);
 
-    // get current authentication state for user
-    const credentialState = await appleAuth.getCredentialStateForUser(
-      appleAuthRequestResponse.user
-    );
-
-    // use credentialState response to ensure the user is authenticated
-    if (credentialState === AppleAuthCredentialState.AUTHORIZED) {
-      console.log(credentialState);
-      // user is authenticated
-    }
+    this.rootStore.profileFlowStore.firstName = firstName;
+    this.rootStore.profileFlowStore.lastName = lastName;
 
     return true;
   }

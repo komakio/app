@@ -20,4 +20,10 @@ export class UsersApi {
     });
     return res.data;
   }
+  public static async loginApple(authorizationCode: string): Promise<{}> {
+    const res = await axiosInstance.post('/v1/users/login/apple', {
+      authorizationCode,
+    });
+    return res.data;
+  }
 }
