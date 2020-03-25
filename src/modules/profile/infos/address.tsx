@@ -44,6 +44,7 @@ export const ProfileInfosAddress = observer(() => {
         onChangeText={address => (profileFlowStore.address = address)}
         autoCorrect={false}
         multiline={true}
+        style={{ height: 100 }}
       />
 
       <View style={styles.buttonContainer}>
