@@ -54,7 +54,13 @@ export const InfosMain = observer(() => {
     }
   };
 
-  const goToAuthenticated = () => navigation.navigate('consents');
+  const goToNext = () => {
+    if (profileFlowStore.role === 'helper') {
+      navigation.navigate('consents');
+      return;
+    }
+    navigation.navigate('authenticated');
+  };
 
   return (
     <View style={{ flex: 1 }}>
@@ -135,7 +141,7 @@ export const InfosMain = observer(() => {
       </ScrollView>
       <BottomNavbar
         onBack={navigation.goBack}
-        onNext={profileFlowStore.isValid() && goToAuthenticated}
+        onNext={profileFlowStore.isValid() && goToNext}
       />
     </View>
   );
