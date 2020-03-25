@@ -1,5 +1,7 @@
 import { getUniqueId } from 'react-native-device-info';
 import { axiosInstance } from './base';
+import { LoginResult } from '../models/user';
+import { Profile } from '../models/profile';
 
 interface User {
   username: string;
@@ -8,21 +10,34 @@ interface User {
 }
 
 export class UsersApi {
-  public static async loginRegister(
-    password: string
-  ): Promise<{
-    user: User;
-    accessToken: { accessToken: string; expiration: number };
-  }> {
-    const res = await axiosInstance.post('/v1/users/login', {
-      username: getUniqueId(),
-      password,
+  public static async getProfiles(accessToken: string): Promise<any> {
+    const res = await axiosInstance.get('/v1/profiles', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
     });
     return res.data;
   }
-  public static async loginApple(authorizationCode: string): Promise<{}> {
+
+  public static async loginApple(identityToken: string): Promise<LoginResult> {
     const res = await axiosInstance.post('/v1/users/login/apple', {
-      authorizationCode,
+      identityToken,
+    });
+    return res.data;
+  }
+
+  public static async loginGoogle(identityToken: string): Promise<LoginResult> {
+    const res = await axiosInstance.post('/v1/users/login/google', {
+      identityToken,
+    });
+    return res.data;
+  }
+
+  public static async createProfile(accessToken: string, profile: Profile) {
+    const res = await axiosInstance.post('/v1/profiles', profile, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
     });
     return res.data;
   }

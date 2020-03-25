@@ -27,12 +27,12 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.153461499435-0kruiebmi9ikjpg4fv531eli76oe1kgr</string>
+				<string>com.googleusercontent.apps.50726922019-rm0ehq9702sgre48e6c6anou4sk6i4jg</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>19</string>
+	<string>20</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -48,11 +48,11 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This allows us to match you up with the closest users to your location.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>This allows us to match you up with the closest users to your location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This allows us to match you up with the closest users to your location.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This allows us to match you up with the closest users to your location.</string>
 	<key>UIAppFonts</key>
 	<array>

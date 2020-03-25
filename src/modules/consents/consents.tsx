@@ -5,6 +5,7 @@ import { Text } from '../../shared/text';
 import { ScrollView } from 'react-native-gesture-handler';
 import { CheckBoxButton } from '../../shared/button/checkbox-button';
 import { BottomNavbar } from '../nav-bar/nav-bar';
+import { useProfileFlowStore } from '../../stores';
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -33,6 +34,7 @@ const styles = StyleSheet.create({
 
 export const Consents = memo(() => {
   const navigation = useNavigation();
+  const profileFlowStore = useProfileFlowStore();
 
   const [checkboxes, setCheckboxes] = useState([
     {
@@ -57,7 +59,8 @@ export const Consents = memo(() => {
   ]);
 
   const allConsents = checkboxes.every(c => c.enabled);
-  const goToInfographic = () => {
+  const goToNext = async () => {
+    await profileFlowStore.saveProfile();
     navigation.dispatch(
       CommonActions.reset({
         index: 1,
@@ -89,7 +92,7 @@ export const Consents = memo(() => {
       </ScrollView>
       <BottomNavbar
         onBack={navigation.goBack}
-        onNext={allConsents && goToInfographic}
+        onNext={allConsents && goToNext}
       />
     </View>
   );

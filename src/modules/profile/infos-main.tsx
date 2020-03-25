@@ -6,7 +6,7 @@ import { useProfileFlowStore } from '../../stores';
 import { Geolocation } from '../../utils/geolocation';
 import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
-import { Button, Touchable } from '../../shared/button';
+import { Touchable } from '../../shared/button';
 import { ScrollView } from 'react-native-gesture-handler';
 import { CheckBoxButton } from '../../shared/button/checkbox-button';
 import { BottomNavbar } from '../nav-bar/nav-bar';
@@ -54,12 +54,16 @@ export const InfosMain = observer(() => {
     }
   };
 
-  const goToNext = () => {
+  const goToNext = async () => {
     if (profileFlowStore.role === 'helper') {
       navigation.navigate('consents');
       return;
     }
-    navigation.navigate('authenticated');
+
+    const res = await profileFlowStore.saveProfile();
+    if (res) {
+      navigation.navigate('authenticated');
+    }
   };
 
   return (
@@ -140,7 +144,7 @@ export const InfosMain = observer(() => {
         </Touchable>
       </ScrollView>
       <BottomNavbar
-        onBack={navigation.goBack}
+        onBack={navigation.canGoBack() && navigation.goBack}
         onNext={profileFlowStore.isValid() && goToNext}
       />
     </View>
