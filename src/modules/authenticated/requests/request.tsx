@@ -23,11 +23,6 @@ export const Request = observer(() => {
   const { profile } = useUserStore();
   const requestsStore = useRequestsStore();
 
-  const requestHelp = async () => {
-    await requestsStore.createRequest();
-    console.log('yo');
-  };
-
   return (
     <View>
       <Touchable
