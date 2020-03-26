@@ -32,7 +32,6 @@ export class ProfileFlowStore {
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
   }
-
   public async saveProfile() {
     try {
       const res = await UsersApi.createProfile(
@@ -54,9 +53,11 @@ export class ProfileFlowStore {
           },
         }
       );
+      console.log(res);
+      return res;
     } catch (e) {
       console.log(e.response);
-      return true;
+      return false;
     }
   }
 
@@ -75,5 +76,16 @@ export class ProfileFlowStore {
     }
 
     return true;
+  }
+
+  public reset() {
+    this.role = null;
+    this.firstName = '';
+    this.lastName = '';
+    this.phone = '';
+    this.dialCode = '-';
+    this.address = '';
+    this.terms = false;
+    this.coords = null;
   }
 }

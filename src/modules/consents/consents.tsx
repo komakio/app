@@ -1,5 +1,5 @@
 import React, { useState, memo } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Alert } from 'react-native';
 import { useNavigation, CommonActions } from '@react-navigation/native';
 import { Text } from '../../shared/text';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -12,9 +12,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   container: {
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    flex: 1,
     paddingHorizontal: 16,
   },
   title: {
@@ -60,7 +57,11 @@ export const Consents = memo(() => {
 
   const allConsents = checkboxes.every(c => c.enabled);
   const goToNext = async () => {
-    await profileFlowStore.saveProfile();
+    const res = await profileFlowStore.saveProfile();
+    if (!res) {
+      Alert.alert('Error saving profile');
+      return;
+    }
     navigation.dispatch(
       CommonActions.reset({
         index: 1,

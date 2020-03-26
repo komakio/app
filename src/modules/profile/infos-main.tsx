@@ -1,25 +1,22 @@
 import React from 'react';
 import { StyleSheet, View, Alert, Linking } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, CommonActions } from '@react-navigation/native';
 import { Text } from '../../shared/text';
 import { useProfileFlowStore } from '../../stores';
 import { Geolocation } from '../../utils/geolocation';
 import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
-import { Touchable } from '../../shared/button';
 import { ScrollView } from 'react-native-gesture-handler';
 import { CheckBoxButton } from '../../shared/button/checkbox-button';
 import { BottomNavbar } from '../nav-bar/nav-bar';
 import { colors } from '../../shared/variables/colors';
+import { Touchable } from '../../shared/button';
 
 const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
   },
   container: {
-    alignItems: 'flex-end',
-    justifyContent: 'flex-start',
-    flex: 1,
     paddingHorizontal: 16,
   },
   title: {
@@ -61,9 +58,16 @@ export const InfosMain = observer(() => {
     }
 
     const res = await profileFlowStore.saveProfile();
-    if (res) {
-      navigation.navigate('authenticated');
+    if (!res) {
+      Alert.alert('Error saving profile');
+      return;
     }
+    navigation.dispatch(
+      CommonActions.reset({
+        index: 1,
+        routes: [{ name: 'authenticated' }],
+      })
+    );
   };
 
   return (

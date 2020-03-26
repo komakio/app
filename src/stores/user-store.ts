@@ -50,7 +50,10 @@ export class UserStore {
 
   public async logout() {
     this.accessToken = null;
+    this.user = null;
+    this.profiles = [];
     await Storage.remove('accessToken');
+    this.rootStore.profileFlowStore.reset();
   }
 
   public isLoggedIn() {

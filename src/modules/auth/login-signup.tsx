@@ -1,7 +1,7 @@
 import React, { memo, useState, useEffect } from 'react';
 
 import { StyleSheet, View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, CommonActions } from '@react-navigation/native';
 import { AppleButton } from '@invertase/react-native-apple-authentication';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -53,9 +53,20 @@ export const LoginSignup = memo(() => {
   const userStore = useUserStore();
 
   const socialSignup = (socialMedia: 'google' | 'apple') => async () => {
-    if (await userStore.socialSignup(socialMedia)) {
-      navigation.navigate('profile-type');
+    const signupSuccess = await userStore.socialSignup(socialMedia);
+    if (!signupSuccess) {
+      return;
     }
+    if (userStore.profiles.length) {
+      navigation.dispatch(
+        CommonActions.reset({
+          index: 1,
+          routes: [{ name: 'authenticated' }],
+        })
+      );
+      return;
+    }
+    navigation.navigate('profile-type');
   };
 
   return (
