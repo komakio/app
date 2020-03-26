@@ -32,17 +32,16 @@ export const RequestsList = observer(() => {
     await requestsStore.createRequest();
   };
 
-
   const hasRequests = !!requestsStore.requests?.length;
 
   return (
-    <TabContainer title="Requests">
+    <TabContainer title="Requests" flex={!hasRequests}>
       
       <View style={{flex: 1,  width: '100%'}}>
         {!hasRequests && <EmptyBox title="The more healthy helpers the better. Add your friends and help out." />}
         {hasRequests && requestsStore.requests?.map(request => (<RequestListItem key={request._id} request={request} />))}
       </View>
-
+    
       {profile?.role === 'helper' && (
         <ShareButton style={styles.button} url="https://komak.io" />
       )}

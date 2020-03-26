@@ -53,6 +53,7 @@ export class ProfileFlowStore {
           },
         }
       );
+      this.rootStore.userStore.profiles.push(res);
       return res;
     } catch (e) {
       console.log(e.response);

@@ -1,6 +1,6 @@
 import { RootStore } from './root-store';
 import { Storage } from '../utils/storage';
-import { observable } from 'mobx';
+import { observable, computed } from 'mobx';
 import { User, LoginResult } from '../models/user';
 import { Profile } from '../models/profile';
 import { ProfilesApi } from '../api/profile';
@@ -13,14 +13,15 @@ export class UserStore {
   @observable
   public profiles: Profile[];
 
+  @computed
+  public get profile() {
+    return this.profiles?.length && this.profiles[0];
+  }
+
   private promises: any[] = [];
 
   constructor(private rootStore: RootStore) {
     this.init();
-  }
-
-  public get profile() {
-    return this.profiles?.length && this.profiles[0];
   }
 
   public async socialSignup(type: 'google' | 'apple') {
