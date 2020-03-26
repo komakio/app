@@ -1,4 +1,5 @@
 import { axiosInstance } from './base';
+import { Profile } from '../models/profile';
 
 export class RequestsApi {
   public static async createRequest(accessToken: string, profileId: string) {
@@ -70,6 +71,6 @@ export class RequestsApi {
         },
       }
     );
-    return res.data;
+    return res.data.find((profile: Profile) => profile._id === profileId);
   }
 }
