@@ -43,6 +43,11 @@ const styles = StyleSheet.create({
     borderColor: colors.green100,
   },
 
+  greyButton: {
+    backgroundColor: colors.grey300,
+    borderColor: colors.grey300,
+  },
+
   redButton: {
     backgroundColor: colors.red400,
     borderColor: colors.red400,
@@ -67,7 +72,7 @@ const styles = StyleSheet.create({
 interface ButtonProps {
   onPress: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
   size?: 'small' | 'big';
-  theme?: 'blue' | 'green' | 'red' | 'gray';
+  theme?: 'blue' | 'green' | 'red' | 'grey';
   disabled?: boolean;
   style?: StyleProp<ViewStyle>;
 }
@@ -88,7 +93,7 @@ export const Button: FC<ButtonProps> = memo(
       theme === 'blue' && styles.blueButton,
       theme === 'red' && styles.redButton,
       theme === 'green' && styles.greenButton,
-      // theme === 'gray' && styles.grayButton,
+      theme === 'grey' && styles.greyButton,
       disabled && styles.disabledButton,
     ];
 

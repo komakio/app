@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: statusBarHeight + headerHeight,
-    backgroundColor: colors.grey200,
+    backgroundColor: 'white',
   },
   animatedHeaderContainer: {
     position: 'absolute',

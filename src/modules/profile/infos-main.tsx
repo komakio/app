@@ -13,7 +13,7 @@ import { colors } from '../../shared/variables/colors';
 import { Touchable } from '../../shared/button';
 
 const styles = StyleSheet.create({
-  scrollView: {
+  parentContainer: {
     flex: 1,
   },
   container: {
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
   },
   termsServiceText: {
     color: colors.green300,
+    textAlign: 'right',
   },
 });
 
@@ -71,7 +72,7 @@ export const InfosMain = observer(() => {
   };
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.parentContainer}>
       <ScrollView contentContainerStyle={styles.container}>
         {profileFlowStore.role === 'helper' && (
           <View>
@@ -144,7 +145,7 @@ export const InfosMain = observer(() => {
           onPress={() => Linking.openURL('https://komak.io/terms-of-service/')}
           textStyle={styles.termsServiceText}
         >
-          <Text>Read terms of service</Text>
+          Read terms of service
         </Touchable>
       </ScrollView>
       <BottomNavbar

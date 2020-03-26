@@ -14,3 +14,8 @@ export const useNotificationsStore = () => {
   const rootStore = useRootStore();
   return rootStore.notificationsStore;
 };
+
+export const useRequestsStore = () => {
+  const rootStore = useRootStore();
+  return rootStore.requestsStore;
+};

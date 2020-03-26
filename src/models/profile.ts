@@ -14,6 +14,7 @@ interface Phone {
 }
 
 export interface Profile {
+  _id: string;
   self: boolean;
   firstName: string;
   lastName: string;

@@ -6,7 +6,6 @@ import {
   View,
 } from 'react-native';
 import { NavButton } from './button-navbar';
-import { colors } from '../../shared/variables/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -15,7 +14,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     height: 60,
-    backgroundColor: colors.grey100,
   },
   transparent: {
     backgroundColor: 'transparent',

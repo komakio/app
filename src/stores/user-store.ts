@@ -4,6 +4,7 @@ import { Storage } from '../utils/storage';
 import { observable } from 'mobx';
 import { User, LoginResult } from '../models/user';
 import { Profile } from '../models/profile';
+import { ProfilesApi } from '../api/profile';
 
 export class UserStore {
   public rootStore: RootStore;
@@ -21,6 +22,10 @@ export class UserStore {
     this.rootStore = rootStore;
 
     this.init();
+  }
+
+  public get profile() {
+    return this.profiles?.[0];
   }
 
   public async socialSignup(type: 'google' | 'apple') {
@@ -66,7 +71,7 @@ export class UserStore {
       return;
     }
 
-    const profiles = await UsersApi.getProfiles(this.accessToken.token);
+    const profiles = await ProfilesApi.getProfiles(this.accessToken.token);
     this.profiles = profiles;
     this.promises.forEach(resolve => resolve());
     this.promises = [];
