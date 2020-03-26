@@ -1,8 +1,13 @@
 import { RootStore } from './root-store';
 import { RequestsApi } from '../api/request';
-import { autorun } from 'mobx';
+import { Request } from '../models/request'
+import { autorun, observable } from 'mobx';
 
 export class RequestsStore {
+
+  @observable
+  public requests: Request[];
+
   private userStore = this.rootStore.userStore;
 
   constructor(private rootStore: RootStore) {
@@ -11,6 +16,10 @@ export class RequestsStore {
         this.getRequests();
       }
     })
+
+    this.rootStore.appStateStore.onResume(() => {
+      this.getRequests();
+    });
   }
 
   public async getRequests() {
@@ -20,7 +29,7 @@ export class RequestsStore {
     }
     
     const requests = await RequestsApi.getAllRequests(this.userStore.accessToken.token, this.userStore.profile._id);
-    console.log(requests)
+    this.requests = requests;
   }
 
   public async createRequest(): Promise<void> {
@@ -31,5 +40,6 @@ export class RequestsStore {
       this.userStore.accessToken.token,
       this.userStore.profile._id
     );
+    this.getRequests();
   }
 }

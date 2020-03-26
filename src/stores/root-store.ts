@@ -5,8 +5,10 @@ import { NotificationsStore } from './notifications-store';
 import { CodePushStore } from './code-push-store';
 import { SocialLoginStore } from './social-login-store';
 import { RequestsStore } from './requests-store';
+import { AppStateStore } from './app-state-store';
 
 export class RootStore {
+  public appStateStore = new AppStateStore(this);
   public userStore = new UserStore(this);
   public profileFlowStore = new ProfileFlowStore(this);
   public notificationsStore = new NotificationsStore(this);

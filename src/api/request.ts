@@ -15,14 +15,11 @@ export class RequestsApi {
   }
 
   public static async getAllRequests(accessToken: string, profileId: string) {
-    const res = await axiosInstance.get(
-      `/v1/requests/profile/${profileId}/requests`,
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      }
-    );
+    const res = await axiosInstance.get(`/v1/profiles/${profileId}/requests`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
     return res.data;
   }
 }

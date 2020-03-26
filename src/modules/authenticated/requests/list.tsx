@@ -8,7 +8,7 @@ import { EmptyBox } from '../common/empty-box';
 import { ShareButton } from '../../../shared/button/share-button';
 import { useUserStore, useRequestsStore } from '../../../stores';
 import { observer } from 'mobx-react-lite';
-import {Request} from './request'
+import {Request, RequestListItem} from './request-list-item'
 
 const styles = StyleSheet.create({
   button: {
@@ -16,28 +16,30 @@ const styles = StyleSheet.create({
   },
 });
 
-export const AuthenticatedRequests = observer(() => {
+export const RequestsList = observer(() => {
   const navigation = useNavigation();
   const { profile } = useUserStore();
   const requestsStore = useRequestsStore();
 
   const requestHelp = async () => {
     await requestsStore.createRequest();
-    console.log('yo')
+
   };
 
+  const hasRequests = !!requestsStore.requests?.length;
+
   return (
-    <TabContainer title="Requests" flex>
+    <TabContainer title="Requests">
       
       <View style={{flex: 1,  width: '100%'}}>
-        {/* <EmptyBox title="The more healthy helpers the better. Add your friends and help out." /> */}
-        <Request />
+        {!hasRequests && <EmptyBox title="The more healthy helpers the better. Add your friends and help out." />}
+        {hasRequests && requestsStore.requests?.map(request => (<RequestListItem request={request} />))}
       </View>
 
       {profile?.role === 'helper' && (
         <ShareButton style={styles.button} url="https://komak.io" />
       )}
-      {profile?.role === 'needer' && (
+      {profile?.role === 'needer' && !hasRequests && (
         <Button size="big" style={styles.button} onPress={requestHelp}>
           Request help
         </Button>
