@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
   termsServiceText: {
     color: colors.green300,
     textAlign: 'right',
+    marginBottom: 20,
   },
 });
 

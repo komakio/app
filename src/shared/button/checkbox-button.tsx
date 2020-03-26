@@ -3,15 +3,13 @@ import {
   StyleSheet,
   NativeSyntheticEvent,
   NativeTouchEvent,
-  Platform,
   View,
-  TouchableOpacity,
-  TouchableNativeFeedback,
 } from 'react-native';
 import { Text } from '../text';
 import { colors } from '../variables/colors';
 import { ApprovedIcon } from '../approved-icon';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Touchable } from './touchable';
 
 const styles = StyleSheet.create({
   container: {
@@ -41,29 +39,8 @@ interface CheckboxButtonProps {
 
 export const CheckBoxButton: FC<CheckboxButtonProps> = memo(
   ({ onPress, children, checked }) => {
-    if (Platform.OS === 'android') {
-      return (
-        <TouchableNativeFeedback
-          onPress={onPress}
-          background={TouchableNativeFeedback.Ripple('#EEE')}
-        >
-          <View style={styles.container}>
-            <View style={styles.iconContainer}>
-              {checked && <ApprovedIcon />}
-              {!checked && (
-                <Icon name="checkbox-blank-circle-outline" size={24} />
-              )}
-            </View>
-            <Text style={styles.textStyle} bold={true}>
-              {children}
-            </Text>
-          </View>
-        </TouchableNativeFeedback>
-      );
-    }
-
     return (
-      <TouchableOpacity onPress={onPress} style={styles.container}>
+      <Touchable onPress={onPress} containerStyle={styles.container}>
         <View style={styles.iconContainer}>
           {checked && <ApprovedIcon />}
           {!checked && <Icon name="checkbox-blank-circle-outline" size={24} />}
@@ -71,7 +48,7 @@ export const CheckBoxButton: FC<CheckboxButtonProps> = memo(
         <Text style={styles.textStyle} bold={true}>
           {children}
         </Text>
-      </TouchableOpacity>
+      </Touchable>
     );
   }
 );
