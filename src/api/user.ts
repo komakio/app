@@ -1,5 +1,6 @@
 import { axiosInstance } from './base';
 import { LoginResult } from '../models/user';
+import { getUniqueId } from 'react-native-device-info';
 
 export class UsersApi {
   public static async loginApple(identityToken: string): Promise<LoginResult> {
@@ -13,6 +14,25 @@ export class UsersApi {
     const res = await axiosInstance.post('/v1/users/login/google', {
       identityToken,
     });
+    return res.data;
+  }
+
+  public static async patchRegistrationToken(
+    accessToken: string,
+    registrationToken: string
+  ): Promise<LoginResult> {
+    const res = await axiosInstance.patch(
+      '/v1/users/registration-token',
+      {
+        uuid: getUniqueId(),
+        registrationToken,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
     return res.data;
   }
 }
