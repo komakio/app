@@ -23,6 +23,10 @@ export class UserStore {
     this.init();
   }
 
+  public get profile() {
+    return this.profiles?.[0];
+  }
+
   public async socialSignup(type: 'google' | 'apple') {
     let data;
     if (type === 'apple') {

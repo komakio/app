@@ -6,32 +6,39 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { AuthenticatedRequests } from './requests';
 import { AuthenticatedSponsors } from './sponsors';
 import { AuthenticatedSettings } from './settings';
-import { Platform } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { IconWithBadge } from './icon-with-badge';
 import { useNotificationsStore } from '../../stores';
+import { colors } from '../../shared/variables/colors';
 
 const Tab = createBottomTabNavigator();
 const AndroidTab = createMaterialBottomTabNavigator();
 
-const ACTIVE_TAB_COLOR = 'tomato';
-const INACTIVE_TAB_COLOR = 'grey';
+const ACTIVE_TAB_COLOR = colors.green100;
+const INACTIVE_TAB_COLOR = 'black';
+
+const styles = StyleSheet.create({
+  bar: {
+    backgroundColor: colors.grey200,
+  },
+  text: { fontSize: 14, fontFamily: 'Sen' },
+});
 
 const screens = [
-  {
-    name: 'authenticated-requests',
-    component: AuthenticatedRequests,
-    title: 'Requests',
-    icon: 'clipboard-text-outline',
-    iconActive: 'clipboard-text',
-    withBadge: true,
-  },
-
   {
     name: 'authenticated-sponsors',
     component: AuthenticatedSponsors,
     title: 'Sponsors',
     icon: 'charity',
     iconActive: 'charity',
+  },
+  {
+    name: 'authenticated-requests',
+    component: AuthenticatedRequests,
+    title: 'Requests',
+    icon: 'bullseye',
+    iconActive: 'bullseye',
+    withBadge: true,
   },
   {
     name: 'authenticated-settings',
@@ -45,7 +52,7 @@ const screens = [
 export const Authenticated = memo(() => {
   //   const navigation = useNavigation();
   const notificationsStore = useNotificationsStore();
-  const activeRequests = 3;
+  const activeRequests = 0;
 
   useEffect(() => {
     notificationsStore.registerForNotifications();
@@ -56,7 +63,8 @@ export const Authenticated = memo(() => {
       <AndroidTab.Navigator
         activeColor={ACTIVE_TAB_COLOR}
         inactiveColor={INACTIVE_TAB_COLOR}
-        barStyle={{ backgroundColor: 'white' }}
+        barStyle={styles.bar}
+        initialRouteName="authenticated-requests"
       >
         {screens.map(screen => (
           <Tab.Screen
@@ -90,7 +98,9 @@ export const Authenticated = memo(() => {
 
           return (
             <IconWithBadge
-              badgeCount={route.name === 'authenticated-requests' ? 3 : 0}
+              badgeCount={
+                route.name === 'authenticated-requests' ? activeRequests : 0
+              }
               name={focused ? screen.iconActive : screen.icon}
               size={size}
               color={color}
@@ -98,9 +108,12 @@ export const Authenticated = memo(() => {
           );
         },
       })}
+      initialRouteName="authenticated-requests"
       tabBarOptions={{
         activeTintColor: ACTIVE_TAB_COLOR,
         inactiveTintColor: INACTIVE_TAB_COLOR,
+        style: styles.bar,
+        labelStyle: styles.text,
       }}
     >
       {screens.map(screen => (

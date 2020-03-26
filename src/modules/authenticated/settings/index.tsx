@@ -5,37 +5,19 @@ import { useNavigation, CommonActions } from '@react-navigation/native';
 import { Text } from '../../../shared/text';
 import { Button } from '../../../shared/button';
 import { useUserStore } from '../../../stores';
+import { TabContainer } from '../common/tab-container';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 50,
-  },
-  title: {
-    fontSize: 24,
-    textAlign: 'center',
-    marginBottom: 100,
-  },
-  button: {
-    marginTop: 50,
-    marginBottom: 100,
-  },
-});
+const styles = StyleSheet.create({});
 
 export const AuthenticatedSettings = memo(() => {
   const navigation = useNavigation();
   const userStore = useUserStore();
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title} bold={true}>
-        Settings
-      </Text>
-
+    <TabContainer title="Settings" flex>
       <Button
-        theme="gray"
+        theme="grey"
+        style={{ marginTop: 80 }}
         onPress={async () => {
           await userStore.logout();
           navigation.dispatch(
@@ -44,11 +26,10 @@ export const AuthenticatedSettings = memo(() => {
               routes: [{ name: 'intro' }],
             })
           );
-          // navigation.navigate('profile-type');
         }}
       >
         Logout
       </Button>
-    </View>
+    </TabContainer>
   );
 });

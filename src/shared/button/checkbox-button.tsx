@@ -15,13 +15,13 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.grey100,
+    backgroundColor: colors.grey200,
     borderRadius: 8,
     flexDirection: 'row',
     fontSize: 20,
     alignItems: 'center',
     paddingHorizontal: 12,
-    paddingVertical: 10,
+    paddingVertical: 15,
   },
 
   textStyle: {

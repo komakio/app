@@ -4,13 +4,10 @@ import {
   NativeSyntheticEvent,
   NativeTouchEvent,
   Platform,
-  View,
-} from 'react-native';
-import { Text } from '../../shared/text';
-import {
   TouchableOpacity,
   TouchableNativeFeedback,
-} from 'react-native-gesture-handler';
+} from 'react-native';
+import { Text } from '../../shared/text';
 import { colors } from '../../shared/variables/colors';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 

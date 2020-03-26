@@ -41,4 +41,17 @@ export class UsersApi {
     });
     return res.data;
   }
+
+  public static async createRequest(accessToken: string, profileId: string) {
+    const res = await axiosInstance.post(
+      '/v1/requests',
+      { profileId },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    return res.data;
+  }
 }
