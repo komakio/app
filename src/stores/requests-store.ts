@@ -2,6 +2,7 @@ import { RootStore } from './root-store';
 import { RequestsApi } from '../api/request';
 import { Request } from '../models/request'
 import { autorun, observable } from 'mobx';
+import { ProfilesApi } from '../api/profile';
 
 export class RequestsStore {
 
@@ -29,6 +30,7 @@ export class RequestsStore {
     }
     
     const requests = await RequestsApi.getAllRequests(this.userStore.accessToken.token, this.userStore.profile._id);
+    console.log(requests.length)
     this.requests = requests;
   }
 
@@ -41,5 +43,31 @@ export class RequestsStore {
       this.userStore.profile._id
     );
     this.getRequests();
+  }
+
+  public async acceptRequest(requestId: string): Promise<void> {
+    await RequestsApi.acceptRequest(
+      this.userStore.accessToken.token,
+      requestId,
+      this.userStore.profile._id
+    );
+    this.getRequests();
+  }
+
+  public async cancelRequest(requestId: string): Promise<void> {
+    await RequestsApi.cancelRequest(
+      this.userStore.accessToken.token,
+      requestId,
+      this.userStore.profile._id
+    );
+    this.getRequests();
+  }
+
+  public async getProfileFromRequest(requestId: string, profileId: string): Promise<void> {
+    return RequestsApi.getProfileFromRequest(
+      this.userStore.accessToken.token,
+      requestId,
+      profileId
+    );
   }
 }

@@ -6,13 +6,15 @@ import { Intro } from './modules/intro/intro';
 import { LoginSignup } from './modules/auth/login-signup';
 import { Authenticated } from './modules/authenticated/authenticated';
 import { Consents } from './modules/consents/consents';
-import { RequestView } from './modules/authenticated/request';
+import { PendingRequestView } from './modules/authenticated/request/pending';
 import { Theme } from './shared/variables/theme';
 import { colors } from './shared/variables/colors';
 import { ProfileInfosName } from './modules/profile/infos/name';
 import { ProfileInfosPhone } from './modules/profile/infos/phone';
 import { ProfileInfosAddress } from './modules/profile/infos/address';
 import { InfosMain } from './modules/profile/infos-main';
+import { AcceptedRequestView } from './modules/authenticated/request/accepted';
+import { CanceledRequestView } from './modules/authenticated/request/canceled';
 
 const Stack = createStackNavigator();
 const RootStack = createStackNavigator();
@@ -77,8 +79,18 @@ export const Router = memo(() => {
         options={modalOptions}
       />
       <Stack.Screen
-        name="requests-request-view"
-        component={RequestView}
+        name="requests-request-pending"
+        component={PendingRequestView}
+        options={modalOptions}
+      />
+      <Stack.Screen
+        name="requests-request-accepted"
+        component={AcceptedRequestView}
+        options={modalOptions}
+      />
+      <Stack.Screen
+        name="requests-request-canceled"
+        component={CanceledRequestView}
         options={modalOptions}
       />
     </RootStack.Navigator>
