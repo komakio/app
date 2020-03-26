@@ -10,6 +10,7 @@ import {
   TouchableNativeFeedback,
 } from 'react-native';
 import { Text } from '../text';
+import { View } from 'react-native-animatable';
 
 interface ButtonProps {
   onPress: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
@@ -25,11 +26,12 @@ export const Touchable: FC<ButtonProps> = memo(
       return (
         <TouchableNativeFeedback
           onPress={onPress}
-          style={containerStyle}
           disabled={disabled}
           background={TouchableNativeFeedback.Ripple(rippleColor || '#EEE')}
         >
-          <Text style={textStyle}>{children}</Text>
+          <View style={containerStyle}>
+            <Text style={textStyle}>{children}</Text>
+          </View>
         </TouchableNativeFeedback>
       );
     }

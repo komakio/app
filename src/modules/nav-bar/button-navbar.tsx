@@ -10,6 +10,7 @@ import {
 import { Text } from '../../shared/text';
 import { colors } from '../../shared/variables/colors';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { View } from 'react-native-animatable';
 
 const styles = StyleSheet.create({
   container: {
@@ -77,10 +78,11 @@ export const NavButton: FC<NavButtonProps> = memo(
       return (
         <TouchableNativeFeedback
           onPress={onPress}
-          style={[styles.container, isNext && styles.containerNext]}
           background={TouchableNativeFeedback.Ripple('#EEE')}
         >
-          {content}
+          <View style={[styles.container, isNext && styles.containerNext]}>
+            {content}
+          </View>
         </TouchableNativeFeedback>
       );
     }

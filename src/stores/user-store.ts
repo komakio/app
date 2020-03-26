@@ -1,5 +1,4 @@
 import { RootStore } from './root-store';
-import { UsersApi } from '../api/user';
 import { Storage } from '../utils/storage';
 import { observable } from 'mobx';
 import { User, LoginResult } from '../models/user';
@@ -38,15 +37,19 @@ export class UserStore {
     }
     if (type === 'google') {
       data = await this.rootStore.socialLoginStore.googleLogin();
+      console.log(!!data);
       if (!data) {
         return false;
       }
     }
+    console.log('yo')
     this.user = data.user;
+    console.log('yo1')
     await Storage.setJson('accessToken', {
       token: data.accessToken.token,
       expiration: data.accessToken.expiration,
     });
+    console.log('yo2')
 
     await this.init();
 

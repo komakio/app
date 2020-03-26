@@ -11,6 +11,7 @@ import appleAuth, {
 } from '@invertase/react-native-apple-authentication';
 import { Alert } from 'react-native';
 import { LoginResult } from '../models/user';
+import { AxiosError } from 'axios';
 
 export class SocialLoginStore {
   public rootStore: RootStore;
@@ -20,6 +21,8 @@ export class SocialLoginStore {
 
     GoogleSignin.configure({
       forceCodeForRefreshToken: true,
+      webClientId:
+        '50726922019-2n2928603iapbq7kslc4leo7ikgs5l7b.apps.googleusercontent.com', // TODO - should be an env variabled
     });
   }
 
@@ -36,6 +39,9 @@ export class SocialLoginStore {
 
       return data;
     } catch (error) {
+      console.log('bbb')
+      console.log(error);
+      console.log((error as AxiosError)?.response.data)
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         return null;
       } else if (error.code === statusCodes.IN_PROGRESS) {
