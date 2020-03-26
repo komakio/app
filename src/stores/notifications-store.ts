@@ -1,26 +1,27 @@
 import { RootStore } from './root-store';
 import { Messaging } from '../utils/messaging';
+import { UsersApi } from '../api/user';
 
 export class NotificationsStore {
-  public rootStore: RootStore;
+  private registrationToken: string;
 
-  constructor(rootStore: RootStore) {
-    this.rootStore = rootStore;
+  constructor(private rootStore: RootStore) {
 
-    this.init();
   }
 
   public async registerForNotifications() {
     await Messaging.requestPermission();
 
+    await Messaging.registerForRemoteNotifications();
+    Messaging.onMessage();
     Messaging.onToken(registrationToken => {
-      console.log(registrationToken);
+      this.registrationToken = registrationToken;
+      this.synchronizeToken();
     });
   }
 
-  private async init() {
-    await Messaging.registerForRemoteNotifications();
-
-    Messaging.onMessage();
+  public async synchronizeToken() {
+    await UsersApi.patchRegistrationToken(this.rootStore.userStore?.accessToken?.token, this.registrationToken);
   }
+
 }

@@ -43,6 +43,7 @@ export class UserStore {
       expiration: data.accessToken.expiration,
     });
 
+    this.rootStore.notificationsStore.synchronizeToken();
     await this.init();
 
     return true;
