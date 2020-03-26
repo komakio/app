@@ -82,7 +82,8 @@ export const Authenticated = memo(() => {
               ),
               // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
               // @ts-ignore
-              tabBarBadge: screen.withBadge ? activeRequests : null,
+              tabBarBadge:
+                screen.withBadge && activeRequests ? activeRequests : null,
             }}
           />
         ))}

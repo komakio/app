@@ -36,12 +36,14 @@ const styles = StyleSheet.create({
     backgroundColor: colors.red400,
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'row',
   },
   googleText: {
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
     fontVariant: ['lining-nums'],
+    marginLeft: 5,
   },
   appleButton: {
     width: 250,
@@ -80,9 +82,9 @@ export const LoginSignup = memo(() => {
         <Touchable
           onPress={socialSignup('google')}
           containerStyle={styles.googleButton}
-          textStyle={styles.googleText}
         >
-          <Icon name="google" size={20} color="white" /> Sign in with Google
+          <Icon name="google" size={20} color="white" />
+          <Text style={styles.googleText}>Sign in with Google</Text>
         </Touchable>
         {appleAuth.isSupported && (
           <AppleButton

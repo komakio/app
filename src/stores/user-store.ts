@@ -6,8 +6,6 @@ import { Profile } from '../models/profile';
 import { ProfilesApi } from '../api/profile';
 
 export class UserStore {
-  public rootStore: RootStore;
-
   public accessToken: LoginResult['accessToken'];
 
   @observable
@@ -17,9 +15,7 @@ export class UserStore {
 
   private promises: any[] = [];
 
-  constructor(rootStore: RootStore) {
-    this.rootStore = rootStore;
-
+  constructor(private rootStore: RootStore) {
     this.init();
   }
 
