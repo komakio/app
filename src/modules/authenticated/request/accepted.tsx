@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, KeyboardAvoidingView, Linking } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, Linking, ScrollView } from 'react-native';
 
 import { observer } from 'mobx-react-lite';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
@@ -30,12 +30,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 30,
   },
-  buttonsContainer: {
-    flexDirection: 'row',
-  },
   telButton: {
-    marginRight: 10,
+    marginBottom: 10,
   },
+  smsButton: {
+    marginBottom: 20,
+  }
 });
 
 export const AcceptedRequestView = observer(() => {
@@ -77,32 +77,35 @@ export const AcceptedRequestView = observer(() => {
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
       <ModalArrowClose />
 
-      <Text style={styles.title}>{title}</Text>
+      <ScrollView>
 
-      <Text style={styles.fieldTitle}>Name</Text>
-      <Text style={styles.fieldValue}>
-        {otherPersonProfile.firstName} {otherPersonProfile.lastName}
-      </Text>
+        <Text style={styles.title}>{title}</Text>
 
-      <Text style={styles.fieldTitle}>Address</Text>
-      <Text style={styles.fieldValue}>{otherPersonProfile.address?.raw}</Text>
+        <Text style={styles.fieldTitle}>Name</Text>
+        <Text style={styles.fieldValue}>
+          {otherPersonProfile.firstName} {otherPersonProfile.lastName}
+        </Text>
 
-      <Text style={styles.fieldTitle}>Phone number</Text>
-      <Text style={styles.fieldValue}>{otherPersonProfile.phone.number}</Text>
+        <Text style={styles.fieldTitle}>Address</Text>
+        <Text style={styles.fieldValue}>{otherPersonProfile.address?.raw}</Text>
 
-      <View style={styles.buttonsContainer}>
-        <Button
-          style={styles.telButton}
-          onPress={() => Linking.openURL(`tel:${otherPersonProfile.phone.number}`)}
-        >
-          Call
-        </Button>
-        <Button
-          onPress={() => Linking.openURL(`sms:tel:${otherPersonProfile.phone.number}`)}
-        >
-          SMS
-        </Button>
-      </View>
+        <Text style={styles.fieldTitle}>Phone number</Text>
+        <Text style={styles.fieldValue}>{otherPersonProfile.phone.number}</Text>
+
+          <Button
+            style={styles.telButton}
+            onPress={() => Linking.openURL(`tel:${otherPersonProfile.phone.number}`)}
+          >
+            Call
+          </Button>
+          <Button
+          style={styles.smsButton}
+            onPress={() => Linking.openURL(`sms:tel:${otherPersonProfile.phone.number}`)}
+          >
+            SMS
+          </Button>
+      </ScrollView>
+
     </KeyboardAvoidingView>
   );
 });
