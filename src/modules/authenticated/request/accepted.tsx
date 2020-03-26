@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, KeyboardAvoidingView, Linking } from 'react-native';
 
 import { observer } from 'mobx-react-lite';
@@ -8,6 +8,7 @@ import { useUserStore, useRequestsStore } from '../../../stores';
 import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
 import { Button } from '../../../shared/button';
 import { Request } from '../../../models/request';
+import { Profile } from '../../../models/profile';
 
 const styles = StyleSheet.create({
   container: {
@@ -44,6 +45,7 @@ export const AcceptedRequestView = observer(() => {
   >();
   const { profile } = useUserStore();
   const requestsStore = useRequestsStore();
+  const [otherPersonProfile, setOtherPersonProfile] = useState<Profile>();
 
   useEffect(() => {
     const get = async () => {
@@ -53,7 +55,7 @@ export const AcceptedRequestView = observer(() => {
           ? request.acceptorProfileId
           : request.requesterProfileId
       );
-      console.log(data);
+      setOtherPersonProfile(data);
     };
     get();
   }, [request, profile, requestsStore]);
@@ -67,6 +69,10 @@ export const AcceptedRequestView = observer(() => {
       ? 'Help will be provided by a local in your community'
       : 'Help is needed by a local in your community.';
 
+  if (!otherPersonProfile) {
+    return;
+  }
+
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
       <ModalArrowClose />
@@ -74,22 +80,28 @@ export const AcceptedRequestView = observer(() => {
       <Text style={styles.title}>{title}</Text>
 
       <Text style={styles.fieldTitle}>Name</Text>
-      <Text style={styles.fieldValue}>Theo Mathieu</Text>
+      <Text style={styles.fieldValue}>
+        {otherPersonProfile.firstName} {otherPersonProfile.lastName}
+      </Text>
 
       <Text style={styles.fieldTitle}>Address</Text>
-      <Text style={styles.fieldValue}>Ved andebakken 10</Text>
+      <Text style={styles.fieldValue}>{otherPersonProfile.address?.raw}</Text>
 
       <Text style={styles.fieldTitle}>Phone number</Text>
-      <Text style={styles.fieldValue}>50347224</Text>
+      <Text style={styles.fieldValue}>{otherPersonProfile.phone.number}</Text>
 
       <View style={styles.buttonsContainer}>
         <Button
           style={styles.telButton}
-          onPress={() => Linking.openURL('tel:+50397224')}
+          onPress={() => Linking.openURL(`tel:${otherPersonProfile.phone.number}`)}
         >
           Call
         </Button>
-        <Button onPress={() => Linking.openURL('sms:+50397224')}>SMS</Button>
+        <Button
+          onPress={() => Linking.openURL(`sms:tel:${otherPersonProfile.phone.number}`)}
+        >
+          SMS
+        </Button>
       </View>
     </KeyboardAvoidingView>
   );

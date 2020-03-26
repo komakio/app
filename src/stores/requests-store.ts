@@ -3,6 +3,7 @@ import { RequestsApi } from '../api/request';
 import { Request } from '../models/request'
 import { autorun, observable } from 'mobx';
 import { ProfilesApi } from '../api/profile';
+import { Profile } from '../models/profile';
 
 export class RequestsStore {
 
@@ -63,7 +64,7 @@ export class RequestsStore {
     this.getRequests();
   }
 
-  public async getProfileFromRequest(requestId: string, profileId: string): Promise<void> {
+  public async getProfileFromRequest(requestId: string, profileId: string): Promise<Profile> {
     return RequestsApi.getProfileFromRequest(
       this.userStore.accessToken.token,
       requestId,
