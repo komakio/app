@@ -21,7 +21,6 @@ export interface Profile {
   address: Address;
   role: 'helper' | 'needer';
   phone: Phone;
-  dialCode: number;
 }
 
 export interface PatchProfile {
