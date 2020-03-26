@@ -6,7 +6,7 @@ import { Button } from '../../../shared/button';
 import { useNavigation } from '@react-navigation/native';
 import { EmptyBox } from '../common/empty-box';
 import { ShareButton } from '../../../shared/button/share-button';
-import { useUserStore } from '../../../stores';
+import { useUserStore, useRequestsStore } from '../../../stores';
 import { observer } from 'mobx-react-lite';
 
 const styles = StyleSheet.create({
@@ -18,8 +18,12 @@ const styles = StyleSheet.create({
 export const AuthenticatedRequests = observer(() => {
   const navigation = useNavigation();
   const { profile } = useUserStore();
+  const requestsStore = useRequestsStore();
 
-  const requestHelp = () => {};
+  const requestHelp = async () => {
+    await requestsStore.createRequest();
+    console.log('yo')
+  };
 
   return (
     <TabContainer title="Requests" flex>

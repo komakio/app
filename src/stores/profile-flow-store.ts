@@ -1,6 +1,6 @@
 import { observable } from 'mobx';
 import { RootStore } from './root-store';
-import { UsersApi } from '../api/user';
+import { ProfilesApi } from '../api/profile';
 
 export class ProfileFlowStore {
   public rootStore: RootStore;
@@ -34,7 +34,7 @@ export class ProfileFlowStore {
   }
   public async saveProfile() {
     try {
-      const res = await UsersApi.createProfile(
+      const res = await ProfilesApi.createProfile(
         this.rootStore.userStore.accessToken.token,
         {
           firstName: this.firstName,
