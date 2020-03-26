@@ -1,5 +1,6 @@
 import { observable } from 'mobx';
 import { RootStore } from './root-store';
+import { UsersApi } from '../api/user';
 
 export class ProfileFlowStore {
   public rootStore: RootStore;
@@ -31,6 +32,34 @@ export class ProfileFlowStore {
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
   }
+  public async saveProfile() {
+    try {
+      const res = await UsersApi.createProfile(
+        this.rootStore.userStore.accessToken.token,
+        {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          role: this.role,
+          self: true,
+          phone: {
+            number: this.phone,
+          },
+          address: {
+            raw: this.address,
+            location: {
+              type: 'Point',
+              coordinates: this.coords,
+            },
+          },
+        }
+      );
+      console.log(res);
+      return res;
+    } catch (e) {
+      console.log(e.response);
+      return false;
+    }
+  }
 
   public isValid() {
     if (
@@ -47,5 +76,16 @@ export class ProfileFlowStore {
     }
 
     return true;
+  }
+
+  public reset() {
+    this.role = null;
+    this.firstName = '';
+    this.lastName = '';
+    this.phone = '';
+    this.dialCode = '-';
+    this.address = '';
+    this.terms = false;
+    this.coords = null;
   }
 }

@@ -1,7 +1,7 @@
 import React, { memo, useState, useEffect } from 'react';
 
 import { StyleSheet, View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, CommonActions } from '@react-navigation/native';
 import { AppleButton } from '@invertase/react-native-apple-authentication';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -9,7 +9,6 @@ import { Text } from '../../shared/text';
 import { useUserStore } from '../../stores';
 import { Touchable } from '../../shared/button';
 import { colors } from '../../shared/variables/colors';
-import { observer } from 'mobx-react-lite';
 import { BottomNavbar } from '../nav-bar';
 
 const styles = StyleSheet.create({
@@ -49,14 +48,25 @@ const styles = StyleSheet.create({
   },
 });
 
-export const Signup = memo(() => {
+export const LoginSignup = memo(() => {
   const navigation = useNavigation();
   const userStore = useUserStore();
 
   const socialSignup = (socialMedia: 'google' | 'apple') => async () => {
-    if (await userStore.socialSignup(socialMedia)) {
-      navigation.navigate('profile-infos');
+    const signupSuccess = await userStore.socialSignup(socialMedia);
+    if (!signupSuccess) {
+      return;
     }
+    if (userStore.profiles.length) {
+      navigation.dispatch(
+        CommonActions.reset({
+          index: 1,
+          routes: [{ name: 'authenticated' }],
+        })
+      );
+      return;
+    }
+    navigation.navigate('profile-type');
   };
 
   return (

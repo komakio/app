@@ -1,19 +1,17 @@
 import React, { useState, memo } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Alert } from 'react-native';
 import { useNavigation, CommonActions } from '@react-navigation/native';
 import { Text } from '../../shared/text';
 import { ScrollView } from 'react-native-gesture-handler';
 import { CheckBoxButton } from '../../shared/button/checkbox-button';
 import { BottomNavbar } from '../nav-bar/nav-bar';
+import { useProfileFlowStore } from '../../stores';
 
 const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
   },
   container: {
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    flex: 1,
     paddingHorizontal: 16,
   },
   title: {
@@ -33,6 +31,7 @@ const styles = StyleSheet.create({
 
 export const Consents = memo(() => {
   const navigation = useNavigation();
+  const profileFlowStore = useProfileFlowStore();
 
   const [checkboxes, setCheckboxes] = useState([
     {
@@ -57,7 +56,12 @@ export const Consents = memo(() => {
   ]);
 
   const allConsents = checkboxes.every(c => c.enabled);
-  const goToInfographic = () => {
+  const goToNext = async () => {
+    const res = await profileFlowStore.saveProfile();
+    if (!res) {
+      Alert.alert('Error saving profile');
+      return;
+    }
     navigation.dispatch(
       CommonActions.reset({
         index: 1,
@@ -89,7 +93,7 @@ export const Consents = memo(() => {
       </ScrollView>
       <BottomNavbar
         onBack={navigation.goBack}
-        onNext={allConsents && goToInfographic}
+        onNext={allConsents && goToNext}
       />
     </View>
   );

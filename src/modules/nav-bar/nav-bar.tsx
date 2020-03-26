@@ -17,18 +17,9 @@ const styles = StyleSheet.create({
     height: 60,
     backgroundColor: colors.grey100,
   },
-
-  // back: {
-  //   flexDirection: 'row',
-  //   width: 280,
-  //   flex: 3,
-  // },
-
-  // next: {
-  //   flexDirection: 'row-reverse',
-  //   width: 150,
-  //   flex: 1,
-  // },
+  transparent: {
+    backgroundColor: 'transparent',
+  },
 });
 
 interface BottomNavbarProps {
@@ -39,7 +30,9 @@ interface BottomNavbarProps {
 export const BottomNavbar: FC<BottomNavbarProps> = memo(
   ({ onBack, onNext }) => {
     return (
-      <View style={styles.container}>
+      <View
+        style={[styles.container, !onBack && !onNext && styles.transparent]}
+      >
         {onBack && (
           <NavButton onPress={onBack} iconName="arrow-left" text="Back" />
         )}

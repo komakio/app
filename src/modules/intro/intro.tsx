@@ -29,8 +29,11 @@ export const Intro = memo(() => {
 
   useEffect(() => {
     const isLoggedIn = async () => {
-      if (userStore.isLoggedIn()) {
+      await userStore.waitReady();
+      if (userStore.profiles.length) {
         navigation.dispatch(StackActions.replace('authenticated'));
+      } else if (userStore.isLoggedIn()) {
+        navigation.navigate('profile-type');
       }
     };
     isLoggedIn();
@@ -42,7 +45,7 @@ export const Intro = memo(() => {
         Thank you for making an impact
       </Text>
       <View style={styles.buttonContainer}>
-        <Button size="big" onPress={() => navigation.navigate('profile-type')}>
+        <Button size="big" onPress={() => navigation.navigate('login-signup')}>
           Get started
         </Button>
       </View>
