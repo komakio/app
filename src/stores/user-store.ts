@@ -1,5 +1,4 @@
 import { RootStore } from './root-store';
-import { UsersApi } from '../api/user';
 import { Storage } from '../utils/storage';
 import { observable } from 'mobx';
 import { User, LoginResult } from '../models/user';

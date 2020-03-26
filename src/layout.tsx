@@ -48,7 +48,7 @@ export const Layout = memo(({ children }) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="grey" barStyle="dark-content" />
+      <StatusBar backgroundColor={colors.grey200} barStyle="dark-content" />
       <View style={styles.animatedHeaderContainer}>
         <View
           style={[

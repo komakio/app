@@ -45,18 +45,19 @@ export const CheckBoxButton: FC<CheckboxButtonProps> = memo(
       return (
         <TouchableNativeFeedback
           onPress={onPress}
-          style={styles.container}
           background={TouchableNativeFeedback.Ripple('#EEE')}
         >
-          <View style={styles.iconContainer}>
-            {checked && <ApprovedIcon />}
-            {!checked && (
-              <Icon name="checkbox-blank-circle-outline" size={24} />
-            )}
+          <View style={styles.container}>
+            <View style={styles.iconContainer}>
+              {checked && <ApprovedIcon />}
+              {!checked && (
+                <Icon name="checkbox-blank-circle-outline" size={24} />
+              )}
+            </View>
+            <Text style={styles.textStyle} bold={true}>
+              {children}
+            </Text>
           </View>
-          <Text style={styles.textStyle} bold={true}>
-            {children}
-          </Text>
         </TouchableNativeFeedback>
       );
     }

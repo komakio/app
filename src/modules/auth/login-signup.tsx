@@ -1,8 +1,10 @@
-import React, { memo, useState, useEffect } from 'react';
+import React, { memo } from 'react';
 
 import { StyleSheet, View } from 'react-native';
 import { useNavigation, CommonActions } from '@react-navigation/native';
-import { AppleButton } from '@invertase/react-native-apple-authentication';
+import appleAuth, {
+  AppleButton,
+} from '@invertase/react-native-apple-authentication';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Text } from '../../shared/text';
@@ -82,12 +84,14 @@ export const LoginSignup = memo(() => {
         >
           <Icon name="google" size={20} color="white" /> Sign in with Google
         </Touchable>
-        <AppleButton
-          style={styles.appleButton}
-          buttonStyle={AppleButton.Style.BLACK}
-          buttonType={AppleButton.Type.SIGN_IN}
-          onPress={socialSignup('apple')}
-        />
+        {appleAuth.isSupported && (
+          <AppleButton
+            style={styles.appleButton}
+            buttonStyle={AppleButton.Style.BLACK}
+            buttonType={AppleButton.Type.SIGN_IN}
+            onPress={socialSignup('apple')}
+          />
+        )}
       </View>
       <BottomNavbar onBack={navigation.goBack} />
     </View>
