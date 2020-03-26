@@ -40,7 +40,7 @@ export const RequestListItem: FC<RequestListItemProps> = observer(
     const text =
       profile.role === 'needer'
         ? 'You have requested some help'
-        : `${request.firstName} has requested some help`;
+        : `${request.requesterProfileId} has requested some help`;
 
     return (
       <View>

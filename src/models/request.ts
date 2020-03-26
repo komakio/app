@@ -1,7 +1,8 @@
 export interface Request {
   _id: string;
   status: 'pending';
-  firstName: string;
+  requesterShortName: string;
+  acceptorShortName: string;
   requesterProfileId: string;
   acceptorProfileId: string;
   type: 'misc';

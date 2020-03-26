@@ -46,7 +46,7 @@ export const RequestView = observer(() => {
   const title =
     profile.role === 'needer'
       ? 'You have requested some help'
-      : `${request.firstName} has requested some help`;
+      : `${request.requesterProfileId} has requested some help`;
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
