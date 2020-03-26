@@ -43,7 +43,7 @@ const screens = [
   {
     name: 'authenticated-settings',
     component: AuthenticatedSettings,
-    title: 'Settings',
+    title: 'Profile',
     icon: 'account-circle-outline',
     iconActive: 'account-circle',
   },

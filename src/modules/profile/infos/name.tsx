@@ -7,8 +7,11 @@ import { Text } from '../../../shared/text';
 import { TextInput } from '../../../shared/text-input';
 import { useProfileFlowStore } from '../../../stores';
 import { Button } from '../../../shared/button';
+<<<<<<< HEAD
 import { colors } from '../../../shared/variables/colors';
 import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
+=======
+>>>>>>> fix: wip
 
 const styles = StyleSheet.create({
   container: {
@@ -46,7 +49,6 @@ export const ProfileInfosName = observer(() => {
         onChangeText={firstName => (profileFlowStore.firstName = firstName)}
         autoCorrect={false}
         placeholder="John"
-        // placeholderTextColor={colors.blue}
       />
 
       <TextInput
@@ -55,7 +57,6 @@ export const ProfileInfosName = observer(() => {
         onChangeText={lastName => (profileFlowStore.lastName = lastName)}
         autoCorrect={false}
         placeholder="Doe"
-        // placeholderTextColor={colors.blue}
       />
 
       <View style={styles.buttonContainer}>
