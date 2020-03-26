@@ -1,16 +1,13 @@
-import React, { memo, FC, useMemo } from 'react';
+import React, { memo, FC } from 'react';
 import {
   StyleSheet,
   NativeSyntheticEvent,
   NativeTouchEvent,
-  Platform,
-  TouchableOpacity,
-  TouchableNativeFeedback,
 } from 'react-native';
 import { Text } from '../../shared/text';
 import { colors } from '../../shared/variables/colors';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { View } from 'react-native-animatable';
+import { Touchable } from '../../shared/button';
 
 const styles = StyleSheet.create({
   container: {
@@ -55,45 +52,26 @@ interface NavButtonProps {
 
 export const NavButton: FC<NavButtonProps> = memo(
   ({ onPress, iconName, text, isNext }) => {
-    const content = useMemo(() => {
-      return [
+    return (
+      <Touchable
+        onPress={onPress}
+        containerStyle={[styles.container, isNext && styles.containerNext]}
+      >
         <Icon
           key="icon"
           style={[styles.icon, isNext && styles.iconReversed]}
           name={iconName}
           size={24}
           color={isNext ? colors.grey100 : colors.green100}
-        />,
+        />
         <Text
           key="text"
           style={[styles.textStyle, isNext && styles.textStyleNext]}
           bold={true}
         >
           {text}
-        </Text>,
-      ];
-    }, [iconName, text, isNext]);
-
-    if (Platform.OS === 'android') {
-      return (
-        <TouchableNativeFeedback
-          onPress={onPress}
-          background={TouchableNativeFeedback.Ripple('#EEE')}
-        >
-          <View style={[styles.container, isNext && styles.containerNext]}>
-            {content}
-          </View>
-        </TouchableNativeFeedback>
-      );
-    }
-
-    return (
-      <TouchableOpacity
-        onPress={onPress}
-        style={[styles.container, isNext && styles.containerNext]}
-      >
-        {content}
-      </TouchableOpacity>
+        </Text>
+      </Touchable>
     );
   }
 );

@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 
 import { StyleSheet, View, Linking } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import { Text } from '../../../shared/text';
 import { Button } from '../../../shared/button';
 import { Image } from 'react-native-animatable';
@@ -46,7 +45,7 @@ export const AuthenticatedSponsors = memo(() => {
         <Button
           size="big"
           theme="green"
-          onPress={() => Linking.openURL('https://komak.io')}
+          onPress={() => Linking.openURL('https://komak.io/contact/')}
         >
           Help out
         </Button>
