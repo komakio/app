@@ -22,4 +22,54 @@ export class RequestsApi {
     });
     return res.data;
   }
+
+  public static async acceptRequest(
+    accessToken: string,
+    requestId: string,
+    profileId: string
+  ) {
+    const res = await axiosInstance.post(
+      `/v1/requests/${requestId}/accept`,
+      { profileId },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    return res.data;
+  }
+
+  public static async cancelRequest(
+    accessToken: string,
+    requestId: string,
+    profileId: string
+  ) {
+    const res = await axiosInstance.post(
+      `/v1/requests/${requestId}/cancel`,
+      { profileId },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    return res.data;
+  }
+
+  public static async getProfileFromRequest(
+    accessToken: string,
+    requestId: string,
+    profileId: string
+  ) {
+    const res = await axiosInstance.get(
+      `/v1/requests/${requestId}/profiles/${profileId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    return res.data;
+  }
 }
