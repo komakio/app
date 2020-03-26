@@ -74,7 +74,8 @@ export const Consents = memo(() => {
     <View style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container}>
         <Text bold={true} style={styles.title}>
-          I consent to the following questions:
+          I agree with the following statements at this moment and for any
+          future use of the app
         </Text>
 
         {checkboxes.map(checkbox => (

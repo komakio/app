@@ -8,6 +8,7 @@ import {
   TextStyle,
   TouchableOpacity,
   TouchableNativeFeedback,
+  View,
 } from 'react-native';
 import { Text } from '../text';
 import { View } from 'react-native-animatable';
@@ -30,7 +31,10 @@ export const Touchable: FC<ButtonProps> = memo(
           background={TouchableNativeFeedback.Ripple(rippleColor || '#EEE')}
         >
           <View style={containerStyle}>
-            <Text style={textStyle}>{children}</Text>
+            {typeof children === 'string' && (
+              <Text style={textStyle}>{children}</Text>
+            )}
+            {typeof children !== 'string' && children}
           </View>
         </TouchableNativeFeedback>
       );
@@ -42,7 +46,10 @@ export const Touchable: FC<ButtonProps> = memo(
         style={containerStyle}
         disabled={disabled}
       >
-        <Text style={textStyle}>{children}</Text>
+        {typeof children === 'string' && (
+          <Text style={textStyle}>{children}</Text>
+        )}
+        {typeof children !== 'string' && children}
       </TouchableOpacity>
     );
   }
