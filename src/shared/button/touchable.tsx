@@ -11,7 +11,6 @@ import {
   View,
 } from 'react-native';
 import { Text } from '../text';
-import { View } from 'react-native-animatable';
 
 interface ButtonProps {
   onPress: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
