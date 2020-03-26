@@ -21,4 +21,14 @@ export interface Profile {
   address: Address;
   role: 'helper' | 'needer';
   phone: Phone;
+  dialCode: number;
+}
+
+export interface PatchProfile {
+  self?: boolean;
+  firstName?: string;
+  lastName?: string;
+  address?: Address;
+  disabled?: boolean;
+  phone?: Phone;
 }

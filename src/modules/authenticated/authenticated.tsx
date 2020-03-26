@@ -10,6 +10,7 @@ import { IconWithBadge } from './icon-with-badge';
 import { useNotificationsStore } from '../../stores';
 import { colors } from '../../shared/variables/colors';
 import { RequestsList } from './requests/list';
+import { settingProfileInfo } from './settings/setting-info';
 
 const Tab = createBottomTabNavigator();
 const AndroidTab = createMaterialBottomTabNavigator();
@@ -42,8 +43,8 @@ const screens = [
   },
   {
     name: 'authenticated-settings',
-    component: AuthenticatedSettings,
-    title: 'Settings',
+    component: settingProfileInfo,
+    title: 'Profile',
     icon: 'account-circle-outline',
     iconActive: 'account-circle',
   },

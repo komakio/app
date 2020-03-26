@@ -5,7 +5,7 @@ import { observer } from 'mobx-react-lite';
 import { useNavigation } from '@react-navigation/native';
 import { Text } from '../../../shared/text';
 import { TextInput } from '../../../shared/text-input';
-import { useProfileFlowStore } from '../../../stores';
+import { useProfileFlowStore, useUserStore } from '../../../stores';
 import { Button } from '../../../shared/button';
 import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
 
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
 export const ProfileInfosName = observer(() => {
   const navigation = useNavigation();
   const profileFlowStore = useProfileFlowStore();
+  const userStore = useUserStore();
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
@@ -58,7 +59,20 @@ export const ProfileInfosName = observer(() => {
       />
 
       <View style={styles.buttonContainer}>
-        <Button onPress={navigation.goBack}>Done</Button>
+        <Button
+          onPress={async () => {
+            if (userStore.profile._id) {
+              await userStore.patchProfile(userStore.profile._id, {
+                firstName: profileFlowStore.firstName,
+                lastName: profileFlowStore.lastName,
+              });
+            }
+
+            navigation.goBack();
+          }}
+        >
+          Done
+        </Button>
       </View>
     </KeyboardAvoidingView>
   );
