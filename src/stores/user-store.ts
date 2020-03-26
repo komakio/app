@@ -20,7 +20,7 @@ export class UserStore {
   }
 
   public get profile() {
-    return this.profiles?.[0];
+    return this.profiles?.length && this.profiles[0];
   }
 
   public async socialSignup(type: 'google' | 'apple') {
