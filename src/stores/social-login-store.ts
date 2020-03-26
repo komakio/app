@@ -39,7 +39,6 @@ export class SocialLoginStore {
 
       return data;
     } catch (error) {
-      console.log('bbb')
       console.log(error);
       console.log((error as AxiosError)?.response.data)
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
