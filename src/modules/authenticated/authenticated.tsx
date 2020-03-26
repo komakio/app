@@ -3,13 +3,13 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { AuthenticatedRequests } from './requests';
 import { AuthenticatedSponsors } from './sponsors';
 import { AuthenticatedSettings } from './settings';
 import { Platform, StyleSheet } from 'react-native';
 import { IconWithBadge } from './icon-with-badge';
 import { useNotificationsStore } from '../../stores';
 import { colors } from '../../shared/variables/colors';
+import { RequestsList } from './requests/list';
 
 const Tab = createBottomTabNavigator();
 const AndroidTab = createMaterialBottomTabNavigator();
@@ -34,7 +34,7 @@ const screens = [
   },
   {
     name: 'authenticated-requests',
-    component: AuthenticatedRequests,
+    component: RequestsList,
     title: 'Requests',
     icon: 'bullseye',
     iconActive: 'bullseye',

@@ -6,8 +6,8 @@ import { useNavigation } from '@react-navigation/native';
 import { Text } from '../../../shared/text';
 import { TextInput } from '../../../shared/text-input';
 import { useProfileFlowStore } from '../../../stores';
-import { ModalArrowClose } from './modal-arrow-close';
 import { Button } from '../../../shared/button';
+import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
 
 const styles = StyleSheet.create({
   container: {
