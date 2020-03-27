@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   TouchableNativeFeedback,
   View,
+  AccessibilityRole,
 } from 'react-native';
 import { Text } from '../text';
 
@@ -18,16 +19,26 @@ interface ButtonProps {
   textStyle?: StyleProp<TextStyle>;
   disabled?: boolean;
   rippleColor?: string;
+  accessibilityRole: AccessibilityRole;
 }
 
 export const Touchable: FC<ButtonProps> = memo(
-  ({ onPress, children, containerStyle, textStyle, disabled, rippleColor }) => {
+  ({
+    onPress,
+    children,
+    containerStyle,
+    textStyle,
+    disabled,
+    rippleColor,
+    accessibilityRole,
+  }) => {
     if (Platform.OS === 'android') {
       return (
         <TouchableNativeFeedback
           onPress={onPress}
           disabled={disabled}
           background={TouchableNativeFeedback.Ripple(rippleColor || '#EEE')}
+          accessibilityRole={accessibilityRole}
         >
           <View style={containerStyle}>
             {typeof children === 'string' && (
@@ -44,6 +55,7 @@ export const Touchable: FC<ButtonProps> = memo(
         onPress={onPress}
         style={containerStyle}
         disabled={disabled}
+        accessibilityRole={accessibilityRole}
       >
         {typeof children === 'string' && (
           <Text style={textStyle}>{children}</Text>

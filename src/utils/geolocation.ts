@@ -1,9 +1,10 @@
-import { GeolocationResponse } from '@react-native-community/geolocation';
-import RNGeolocation from '@react-native-community/geolocation';
+import RNGeolocation, {
+  GeolocationResponse,
+} from '@react-native-community/geolocation';
 
 export class Geolocation {
   public static get(): Promise<GeolocationResponse> {
-    return new Promise(async (resolve, reject) => {
+    return new Promise((resolve, reject) => {
       RNGeolocation.getCurrentPosition(
         (info) => resolve(info),
         (error) => {

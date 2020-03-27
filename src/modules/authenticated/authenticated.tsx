@@ -95,7 +95,7 @@ export const Authenticated = memo(() => {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
-          const screen = screens.find((screen) => screen.name === route.name);
+          const screen = screens.find((s) => s.name === route.name);
 
           return (
             <IconWithBadge

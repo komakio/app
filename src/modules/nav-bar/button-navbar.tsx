@@ -56,6 +56,7 @@ export const NavButton: FC<NavButtonProps> = memo(
       <Touchable
         onPress={onPress}
         containerStyle={[styles.container, isNext && styles.containerNext]}
+        accessibilityRole="button"
       >
         <Icon
           key="icon"

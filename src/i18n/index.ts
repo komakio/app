@@ -1,9 +1,9 @@
 import * as RNLocalize from 'react-native-localize';
-import i18n from 'i18next';
+import i18nLib from 'i18next';
 
 const languages = ['en', 'fr'];
 
-i18n.init({
+i18nLib.init({
   lng: RNLocalize.findBestAvailableLanguage(languages).languageTag,
 
   resources: {
@@ -17,4 +17,4 @@ i18n.init({
     escapeValue: false, // react already safes from xss
   },
 });
-export default i18n;
+export const i18n = i18nLib;

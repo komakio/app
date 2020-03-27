@@ -145,6 +145,7 @@ export const InfosMain = observer(() => {
         <Touchable
           onPress={() => Linking.openURL('https://komak.io/terms-of-service/')}
           textStyle={styles.termsServiceText}
+          accessibilityRole="link"
         >
           Read terms of service
         </Touchable>

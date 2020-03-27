@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { StyleSheet } from 'react-native';
-import { Touchable } from '../../../shared/button';
+import { Touchable, Button } from '../../../shared/button';
 import { useNavigation } from '@react-navigation/native';
 import { useUserStore } from '../../../stores';
 import { observer } from 'mobx-react-lite';
@@ -59,6 +59,7 @@ export const RequestListItem: FC<RequestListItemProps> = observer(
             navigation.navigate(`requests-request-${request.status}`, request)
           }
           containerStyle={styles.container}
+          accessibilityRole="button"
           // checked={false}
         >
           <Text bold={true} style={styles.title}>

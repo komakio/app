@@ -102,6 +102,7 @@ export const Button: FC<ButtonProps> = memo(
         onPress={onPress}
         textStyle={styles.commonText}
         containerStyle={[buttonStyles, style]}
+        accessibilityRole="button"
       >
         {children}
       </Touchable>

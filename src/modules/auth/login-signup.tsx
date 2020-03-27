@@ -82,6 +82,7 @@ export const LoginSignup = memo(() => {
         <Touchable
           onPress={socialSignup('google')}
           containerStyle={styles.googleButton}
+          accessibilityRole="button"
         >
           <Icon name="google" size={20} color="white" />
           <Text style={styles.googleText}>Sign in with Google</Text>

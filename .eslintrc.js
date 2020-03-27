@@ -8,6 +8,7 @@ module.exports = {
     'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
     'plugin:react/recommended',
     'plugin:prettier/recommended', // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+    'react-native-typescript'
   ],
   plugins: ['react-hooks'],
   rules: {
@@ -21,6 +22,16 @@ module.exports = {
     'react/no-unescaped-entities': 0,
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
+
+
+    'import-order-alphabetical/order': 0,
+    'import/no-cycle': 0,
+
+    "react-native/no-unused-styles": "error",
+    "react-native/no-single-element-style-arrays": "error",
+
+    "react-native-a11y/has-valid-accessibility-role": 0,
+
     // '@typescript-eslint/no-unused-vars': 'error',
     // '@typescript-eslint/ban-ts-ignore': 0,
     // 'prefer-const': [

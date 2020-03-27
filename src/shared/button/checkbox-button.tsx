@@ -40,7 +40,11 @@ interface CheckboxButtonProps {
 export const CheckBoxButton: FC<CheckboxButtonProps> = memo(
   ({ onPress, children, checked }) => {
     return (
-      <Touchable onPress={onPress} containerStyle={styles.container}>
+      <Touchable
+        onPress={onPress}
+        containerStyle={styles.container}
+        accessibilityRole="checkbox"
+      >
         <View style={styles.iconContainer}>
           {checked && <ApprovedIcon />}
           {!checked && <Icon name="checkbox-blank-circle-outline" size={24} />}

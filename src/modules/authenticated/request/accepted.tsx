@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 import { observer } from 'mobx-react-lite';
-import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
+import { useRoute, RouteProp } from '@react-navigation/native';
 import { Text } from '../../../shared/text';
 import { useUserStore, useRequestsStore } from '../../../stores';
 import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
