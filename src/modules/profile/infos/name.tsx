@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
 
 import { observer } from 'mobx-react-lite';
@@ -32,6 +32,11 @@ export const ProfileInfosName = observer(() => {
   const profileFlowStore = useProfileFlowStore();
   const userStore = useUserStore();
 
+  const [firstName, SetFirstName] = useState<string>(userStore?.profile?.firstName || '');
+  const [lastName, SetLastName] = useState<string>(
+    userStore?.profile?.lastName || ''
+  );
+
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
       <ModalArrowClose />
@@ -42,17 +47,16 @@ export const ProfileInfosName = observer(() => {
 
       <TextInput
         label="First Name"
-        value={profileFlowStore.firstName}
-        onChangeText={(firstName) => (profileFlowStore.firstName = firstName)}
+        value={firstName}
+        onChangeText={firstName => SetFirstName(firstName)}
         autoCorrect={false}
-        placeholder="John"
         // placeholderTextColor={colors.blue}
       />
 
       <TextInput
         label="Last Name"
-        value={profileFlowStore.lastName}
-        onChangeText={(lastName) => (profileFlowStore.lastName = lastName)}
+        value={lastName}
+        onChangeText={lastName => SetLastName(lastName)}
         autoCorrect={false}
         placeholder="Doe"
         // placeholderTextColor={colors.blue}
@@ -61,14 +65,17 @@ export const ProfileInfosName = observer(() => {
       <View style={styles.buttonContainer}>
         <Button
           onPress={async () => {
-            if (userStore.profile._id) {
+            if (userStore.profile._id) {              
               await userStore.patchProfile(userStore.profile._id, {
-                firstName: profileFlowStore.firstName,
-                lastName: profileFlowStore.lastName,
+                firstName,
+                lastName,
               });
+              navigation.goBack();
+            } else {
+              profileFlowStore.firstName = firstName;
+              profileFlowStore.lastName = lastName;
+              navigation.goBack();
             }
-
-            navigation.goBack();
           }}
         >
           Done

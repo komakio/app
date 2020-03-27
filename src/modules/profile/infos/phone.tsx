@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
 
 import { observer } from 'mobx-react-lite';
@@ -31,6 +31,9 @@ export const ProfileInfosPhone = observer(() => {
   const profileFlowStore = useProfileFlowStore();
   const userStore = useUserStore();
 
+  const [phone, SetPhone] = useState<string>(userStore?.profile?.phone.number || null);
+
+
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
       <ModalArrowClose />
@@ -41,8 +44,8 @@ export const ProfileInfosPhone = observer(() => {
 
       <TextInput
         label="Phone"
-        value={profileFlowStore.phone}
-        onChangeText={(phone) => (profileFlowStore.phone = phone)}
+        value={phone}
+        onChangeText={phone => SetPhone(phone)}
         keyboardType="number-pad"
       />
 
@@ -52,9 +55,12 @@ export const ProfileInfosPhone = observer(() => {
             if (userStore.profile._id) {
               await userStore.patchProfile(userStore.profile._id, {
                 phone: {
-                  number: profileFlowStore.phone,
+                  number: phone,
                 },
               });
+            } else {
+              profileFlowStore.phone = phone;
+              navigation.goBack();
             }
 
             navigation.goBack();

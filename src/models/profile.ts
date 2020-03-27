@@ -23,11 +23,12 @@ export interface Profile {
   phone: Phone;
 }
 
-export interface PatchProfile {
+export interface ProfilePatch {
   self?: boolean;
   firstName?: string;
   lastName?: string;
   address?: Address;
   disabled?: boolean;
   phone?: Phone;
+  role?: 'helper' | 'needer';
 }

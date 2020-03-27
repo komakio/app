@@ -30,9 +30,7 @@ export const authenticatedSettings = memo(() => {
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.buttonContainer}>
           <CheckBoxButton
-            onPress={() => 
-              navigation.navigate('profile-infos-name')
-            }
+            onPress={() => navigation.navigate('profile-infos-name')}
             checked={
               !!(profileFlowStore.firstName && profileFlowStore.lastName)
             }
@@ -44,27 +42,27 @@ export const authenticatedSettings = memo(() => {
         <View style={styles.buttonContainer}>
           <CheckBoxButton
             onPress={() => navigation.navigate('profile-infos-phone')}
-            checked={!!(profileFlowStore.phone)}
+            checked={!!profileFlowStore.phone}
           >
             Phone
           </CheckBoxButton>
         </View>
-    <Button
-      theme="grey"
-      style={{ marginTop: 80 }}
-      onPress={async () => {
-        await userStore.logout();
-        navigation.dispatch(
-          CommonActions.reset({
-            index: 0,
-            routes: [{ name: 'intro' }],
-          })
-        );
-      }}
-    >
-      Logout
-    </Button>
-    </ScrollView>
-  </TabContainer>
+        <Button
+          theme="grey"
+          style={{ marginTop: 80 }}
+          onPress={async () => {
+            await userStore.logout();
+            navigation.dispatch(
+              CommonActions.reset({
+                index: 0,
+                routes: [{ name: 'intro' }],
+              })
+            );
+          }}
+        >
+          Logout
+        </Button>
+      </ScrollView>
+    </TabContainer>
   );
 });
