@@ -32,13 +32,6 @@ platform :android do
   end
 
 
-  desc "Deploy a new version to the Google Play"
-  lane :build do
-    increment_version_code
-    gradle(task: "clean assembleRelease")
-  end
-
-
   lane :icons do
     android_appicon(
       appicon_image_file: '../ios/fastlane/metadata/app_icon.png',
@@ -51,6 +44,13 @@ platform :android do
       appicon_path: 'app/src/main/res/drawable',
       appicon_filename: 'ic_notification'
     )
+  end
+
+
+  desc "Deploy a new version to the Google Play"
+  lane :build do
+    increment_version_code
+    gradle(task: "clean assembleRelease")
   end
 
   desc "Deploy a new version to the Google Play"
