@@ -35,4 +35,13 @@ export class UsersApi {
     );
     return res.data;
   }
+
+  public static async getCurrent(accessToken: string): Promise<LoginResult> {
+    const res = await axiosInstance.get('/v1/users/current', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    return res.data;
+  }
 }

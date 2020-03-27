@@ -36,7 +36,6 @@ export class SocialLoginStore {
       const data = await UsersApi.loginGoogle(userInfo.idToken);
       this.rootStore.profileFlowStore.firstName = firstName;
       this.rootStore.profileFlowStore.lastName = lastName;
-
       return data;
     } catch (error) {
       console.log(error);
