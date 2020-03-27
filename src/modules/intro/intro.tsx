@@ -32,7 +32,7 @@ export const Intro = memo(() => {
       await userStore.waitReady();
       if (userStore.profiles.length) {
         navigation.dispatch(StackActions.replace('authenticated'));
-      } else if (userStore.isLoggedIn()) {
+      } else if (userStore.user) {
         navigation.navigate('profile-type');
       }
     };
