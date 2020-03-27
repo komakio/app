@@ -31,6 +31,11 @@ Submit a new Beta Build to Crashlytics Beta
 fastlane android build
 ```
 Deploy a new version to the Google Play
+### android icons
+```
+fastlane android icons
+```
+
 ### android alpha
 ```
 fastlane android alpha

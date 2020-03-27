@@ -38,6 +38,21 @@ platform :android do
     gradle(task: "clean assembleRelease")
   end
 
+
+  lane :icons do
+    android_appicon(
+      appicon_image_file: '../ios/fastlane/metadata/app_icon.png',
+      appicon_icon_types: [:launcher],
+      appicon_path: 'app/src/main/res/mipmap'
+    )
+    android_appicon(
+      appicon_image_file: '../ios/fastlane/metadata/app_icon.png',
+      appicon_icon_types: [:notification],
+      appicon_path: 'app/src/main/res/drawable',
+      appicon_filename: 'ic_notification'
+    )
+  end
+
   desc "Deploy a new version to the Google Play"
   lane :alpha do
     increment_version_code
