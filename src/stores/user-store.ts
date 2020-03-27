@@ -74,7 +74,7 @@ export class UserStore {
         UsersApi.getCurrent(this.accessToken.token),
         ProfilesApi.getProfiles(this.accessToken.token),
       ]);
-      this.user = result[0].user;
+      this.user = result[0];
       this.profiles = result[1];
     }
 

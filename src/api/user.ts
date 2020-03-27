@@ -1,5 +1,5 @@
 import { axiosInstance } from './base';
-import { LoginResult } from '../models/user';
+import { LoginResult, User } from '../models/user';
 import { getUniqueId } from 'react-native-device-info';
 
 export class UsersApi {
@@ -36,7 +36,7 @@ export class UsersApi {
     return res.data;
   }
 
-  public static async getCurrent(accessToken: string): Promise<LoginResult> {
+  public static async getCurrent(accessToken: string): Promise<User> {
     const res = await axiosInstance.get('/v1/users/current', {
       headers: {
         Authorization: `Bearer ${accessToken}`,
