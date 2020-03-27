@@ -86,8 +86,9 @@ export const AcceptedRequestView = observer(() => {
           {otherPersonProfile.firstName} {otherPersonProfile.lastName}
         </Text>
 
-        <Text style={styles.fieldTitle}>Address</Text>
-        <Text style={styles.fieldValue}>{otherPersonProfile.address?.raw}</Text>
+
+        {otherPersonProfile.address?.raw && <Text style={styles.fieldTitle}>Address</Text>}
+        {otherPersonProfile.address?.raw && <Text style={styles.fieldValue}>{otherPersonProfile.address?.raw}</Text>}
 
         <Text style={styles.fieldTitle}>Phone number</Text>
         <Text style={styles.fieldValue}>{otherPersonProfile.phone.number}</Text>
