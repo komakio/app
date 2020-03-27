@@ -8,7 +8,7 @@ export class Messaging {
     if (await DeviceInfo.isEmulator()) {
       return;
     }
-    await messaging().registerForRemoteNotifications();
+    await messaging().registerDeviceForRemoteMessages();
   }
 
   public static async requestPermission() {
@@ -51,6 +51,11 @@ export class Messaging {
     messaging().setBackgroundMessageHandler(async remoteMessage => {
       console.log('Message handled in the background!', remoteMessage);
       Alert.alert('BACKGROUND');
+    });
+
+    messaging().onNotificationOpenedApp(message => {
+      console.log('opened app');
+      console.log(message);
     });
   }
 }
