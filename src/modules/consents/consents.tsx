@@ -55,7 +55,7 @@ export const Consents = memo(() => {
     },
   ]);
 
-  const allConsents = checkboxes.every(c => c.enabled);
+  const allConsents = checkboxes.every((c) => c.enabled);
   const goToNext = async () => {
     const res = await profileFlowStore.saveProfile();
     if (!res) {
@@ -78,7 +78,7 @@ export const Consents = memo(() => {
           future use of the app
         </Text>
 
-        {checkboxes.map(checkbox => (
+        {checkboxes.map((checkbox) => (
           <View style={styles.buttonContainer} key={checkbox.description}>
             <CheckBoxButton
               onPress={() => {

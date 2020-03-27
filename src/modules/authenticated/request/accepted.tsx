@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, KeyboardAvoidingView, Linking, ScrollView } from 'react-native';
+import {
+  StyleSheet,
+  KeyboardAvoidingView,
+  Linking,
+  ScrollView,
+} from 'react-native';
 
 import { observer } from 'mobx-react-lite';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
@@ -35,11 +40,10 @@ const styles = StyleSheet.create({
   },
   smsButton: {
     marginBottom: 20,
-  }
+  },
 });
 
 export const AcceptedRequestView = observer(() => {
-  const navigation = useNavigation();
   const { params: request } = useRoute<
     RouteProp<{ request: Request }, 'request'>
   >();
@@ -78,7 +82,6 @@ export const AcceptedRequestView = observer(() => {
       <ModalArrowClose />
 
       <ScrollView>
-
         <Text style={styles.title}>{title}</Text>
 
         <Text style={styles.fieldTitle}>Name</Text>
@@ -86,27 +89,35 @@ export const AcceptedRequestView = observer(() => {
           {otherPersonProfile.firstName} {otherPersonProfile.lastName}
         </Text>
 
-
-        {otherPersonProfile.address?.raw && <Text style={styles.fieldTitle}>Address</Text>}
-        {otherPersonProfile.address?.raw && <Text style={styles.fieldValue}>{otherPersonProfile.address?.raw}</Text>}
+        {otherPersonProfile.address?.raw && (
+          <Text style={styles.fieldTitle}>Address</Text>
+        )}
+        {otherPersonProfile.address?.raw && (
+          <Text style={styles.fieldValue}>
+            {otherPersonProfile.address?.raw}
+          </Text>
+        )}
 
         <Text style={styles.fieldTitle}>Phone number</Text>
         <Text style={styles.fieldValue}>{otherPersonProfile.phone.number}</Text>
 
-          <Button
-            style={styles.telButton}
-            onPress={() => Linking.openURL(`tel:${otherPersonProfile.phone.number}`)}
-          >
-            Call
-          </Button>
-          <Button
+        <Button
+          style={styles.telButton}
+          onPress={() =>
+            Linking.openURL(`tel:${otherPersonProfile.phone.number}`)
+          }
+        >
+          Call
+        </Button>
+        <Button
           style={styles.smsButton}
-            onPress={() => Linking.openURL(`sms:tel:${otherPersonProfile.phone.number}`)}
-          >
-            SMS
-          </Button>
+          onPress={() =>
+            Linking.openURL(`sms:tel:${otherPersonProfile.phone.number}`)
+          }
+        >
+          SMS
+        </Button>
       </ScrollView>
-
     </KeyboardAvoidingView>
   );
 });

@@ -41,7 +41,7 @@ export const ProfileInfosAddress = observer(() => {
       <TextInput
         label="Address"
         value={profileFlowStore.address}
-        onChangeText={address => (profileFlowStore.address = address)}
+        onChangeText={(address) => (profileFlowStore.address = address)}
         autoCorrect={false}
         multiline={true}
         style={{ height: 100 }}

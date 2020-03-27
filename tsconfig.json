@@ -11,7 +11,8 @@
       "strict": true,
       "target": "esnext",
       "experimentalDecorators": true,
-      "strictNullChecks": false
+      "strictNullChecks": false,
+      "skipLibCheck": true
     },
     "exclude": [
       "node_modules",

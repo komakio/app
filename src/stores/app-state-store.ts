@@ -10,9 +10,9 @@ export class AppStateStore {
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
 
-    AppState.addEventListener('change', state => {
+    AppState.addEventListener('change', (state) => {
       if (state === 'active' && this.appState !== state) {
-        this.resumeCallbacks.forEach(cb => cb());
+        this.resumeCallbacks.forEach((cb) => cb());
       }
       this.appState = state;
     });

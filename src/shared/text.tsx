@@ -15,7 +15,7 @@ interface TextProps extends RNTextProps {
   bold?: boolean;
 }
 
-export const Text: FC<TextProps> = memo(props => (
+export const Text: FC<TextProps> = memo((props) => (
   <RNText
     {...props}
     style={[props.bold ? styles.textBold : styles.text, props.style]}
@@ -26,7 +26,7 @@ interface AnimatableTextProps
   extends TextProps,
     Animatable.AnimatableProperties<{ fontSize: number }> {}
 
-export const AnimatedText: FC<AnimatableTextProps> = memo(props => (
+export const AnimatedText: FC<AnimatableTextProps> = memo((props) => (
   <Animatable.Text
     {...props}
     style={[props.bold ? styles.textBold : styles.text, props.style]}

@@ -39,7 +39,7 @@ export class SocialLoginStore {
       return data;
     } catch (error) {
       console.log(error);
-      console.log((error as AxiosError)?.response.data)
+      console.log((error as AxiosError)?.response.data);
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         return null;
       } else if (error.code === statusCodes.IN_PROGRESS) {

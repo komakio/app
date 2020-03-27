@@ -1,13 +1,9 @@
 import React, { memo } from 'react';
 
-import { StyleSheet, View } from 'react-native';
 import { useNavigation, CommonActions } from '@react-navigation/native';
-import { Text } from '../../../shared/text';
 import { Button } from '../../../shared/button';
 import { useUserStore } from '../../../stores';
 import { TabContainer } from '../common/tab-container';
-
-const styles = StyleSheet.create({});
 
 export const AuthenticatedSettings = memo(() => {
   const navigation = useNavigation();

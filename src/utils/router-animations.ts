@@ -1,7 +1,6 @@
 import { Animated } from 'react-native';
 import { StackCardInterpolationProps } from '@react-navigation/stack';
 import { GestureDirection } from '@react-navigation/stack/lib/typescript/src/types';
-import { accessibilityProps } from 'react-native-paper/lib/typescript/src/components/MaterialCommunityIcon';
 
 const { multiply } = Animated;
 

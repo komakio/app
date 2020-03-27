@@ -66,7 +66,7 @@ export const Authenticated = memo(() => {
         barStyle={styles.bar}
         initialRouteName="authenticated-requests"
       >
-        {screens.map(screen => (
+        {screens.map((screen) => (
           <Tab.Screen
             key={screen.name}
             name={screen.name}
@@ -95,7 +95,7 @@ export const Authenticated = memo(() => {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
-          const screen = screens.find(screen => screen.name === route.name);
+          const screen = screens.find((screen) => screen.name === route.name);
 
           return (
             <IconWithBadge
@@ -117,7 +117,7 @@ export const Authenticated = memo(() => {
         labelStyle: styles.text,
       }}
     >
-      {screens.map(screen => (
+      {screens.map((screen) => (
         <Tab.Screen
           key={screen.name}
           name={screen.name}

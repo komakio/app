@@ -2,12 +2,10 @@ import React from 'react';
 import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
 
 import { observer } from 'mobx-react-lite';
-import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { Text } from '../../../shared/text';
-import { useUserStore, useRequestsStore } from '../../../stores';
 import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
 import { Button } from '../../../shared/button';
-import { Request } from '../../../models/request';
 
 const styles = StyleSheet.create({
   container: {

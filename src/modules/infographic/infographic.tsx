@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Text } from '../../shared/text';
 import { observer } from 'mobx-react-lite';
 import { ScrollView } from 'react-native-gesture-handler';
-import { CheckBoxButton } from '../../shared/button/checkbox-button';
 import { BottomNavbar } from '../nav-bar/nav-bar';
 
 const styles = StyleSheet.create({

@@ -37,7 +37,7 @@ interface TextInputProps extends RNTextInputProps {
   label: string;
 }
 
-export const TextInput: FC<TextInputProps> = memo(props => (
+export const TextInput: FC<TextInputProps> = memo((props) => (
   <View style={styles.container}>
     <Text bold={true} style={styles.label}>
       {props.label}

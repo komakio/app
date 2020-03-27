@@ -1,12 +1,10 @@
 import { RootStore } from './root-store';
 import { RequestsApi } from '../api/request';
-import { Request } from '../models/request'
+import { Request } from '../models/request';
 import { autorun, observable } from 'mobx';
-import { ProfilesApi } from '../api/profile';
 import { Profile } from '../models/profile';
 
 export class RequestsStore {
-
   @observable
   public requests: Request[];
 
@@ -17,7 +15,7 @@ export class RequestsStore {
       if (this.userStore.profile) {
         this.getRequests();
       }
-    })
+    });
 
     this.rootStore.appStateStore.onResume(() => {
       this.getRequests();
@@ -29,9 +27,12 @@ export class RequestsStore {
     if (!this.userStore.profile?._id) {
       return;
     }
-    
-    const requests = await RequestsApi.getAllRequests(this.userStore.accessToken.token, this.userStore.profile._id);
-    console.log(requests.length)
+
+    const requests = await RequestsApi.getAllRequests(
+      this.userStore.accessToken.token,
+      this.userStore.profile._id
+    );
+    console.log(requests.length);
     this.requests = requests;
   }
 
@@ -64,7 +65,10 @@ export class RequestsStore {
     this.getRequests();
   }
 
-  public async getProfileFromRequest(requestId: string, profileId: string): Promise<Profile> {
+  public async getProfileFromRequest(
+    requestId: string,
+    profileId: string
+  ): Promise<Profile> {
     return RequestsApi.getProfileFromRequest(
       this.userStore.accessToken.token,
       requestId,

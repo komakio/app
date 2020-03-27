@@ -5,8 +5,8 @@ export class Geolocation {
   public static get(): Promise<GeolocationResponse> {
     return new Promise(async (resolve, reject) => {
       RNGeolocation.getCurrentPosition(
-        info => resolve(info),
-        error => {
+        (info) => resolve(info),
+        (error) => {
           if (error.code === error.PERMISSION_DENIED) {
             return reject('GEOLOCATION_PERMISSION_DENIED');
           }

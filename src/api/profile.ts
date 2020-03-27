@@ -2,7 +2,7 @@ import { axiosInstance } from './base';
 import { Profile } from '../models/profile';
 
 export class ProfilesApi {
-  public static async getProfiles(accessToken: string): Promise<any> {
+  public static async getProfiles(accessToken: string): Promise<Profile[]> {
     const res = await axiosInstance.get('/v1/profiles', {
       headers: {
         Authorization: `Bearer ${accessToken}`,

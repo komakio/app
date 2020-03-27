@@ -70,12 +70,15 @@ export class UserStore {
     if (this.user) {
       this.profiles = await ProfilesApi.getProfiles(this.accessToken.token);
     } else {
-      const result = await Promise.all([UsersApi.getCurrent(this.accessToken.token), ProfilesApi.getProfiles(this.accessToken.token)]);
-      this.user = result[0]
-      this.profiles = result[1]
+      const result = await Promise.all([
+        UsersApi.getCurrent(this.accessToken.token),
+        ProfilesApi.getProfiles(this.accessToken.token),
+      ]);
+      this.user = result[0].user;
+      this.profiles = result[1];
     }
 
-    this.promises.forEach(resolve => resolve());
+    this.promises.forEach((resolve) => resolve());
     this.promises = [];
   }
 
@@ -83,6 +86,6 @@ export class UserStore {
     if (this.profiles) {
       return Promise.resolve();
     }
-    return new Promise(resolve => this.promises.push(resolve));
+    return new Promise((resolve) => this.promises.push(resolve));
   }
 }
