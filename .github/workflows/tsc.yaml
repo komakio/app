@@ -1,7 +1,16 @@
-steps:
-- uses: actions/checkout@v2
-- uses: actions/setup-node@v1
-  with:
-    node-version: '12.x'
-- run: npm install
-- run: npm run tsc
+name: Lint
+
+on: push
+
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: npm install
+    - run: npm run tsc
