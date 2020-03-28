@@ -5,6 +5,7 @@ import { useUserStore } from '../../../stores';
 import { TabContainer } from '../common/tab-container';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import { observer } from 'mobx-react-lite';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   container: {
@@ -23,16 +24,17 @@ export const AuthenticatedSettings = observer(() => {
   const navigation = useNavigation();
   const userStore = useUserStore();
   const { profile } = userStore;
+  const { t } = useTranslation();
 
   return (
-    <TabContainer title="Profile">
+    <TabContainer title={t('PROFILE_VIEW_TITLE')}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.buttonContainer}>
           <CheckBoxButton
             onPress={() => navigation.navigate('profile-type')}
             checked={!!profile?.role}
           >
-            Your Status
+            {t('PROFILE_VIEW_STATUS')}
           </CheckBoxButton>
         </View>
         <View style={styles.buttonContainer}>
@@ -40,7 +42,7 @@ export const AuthenticatedSettings = observer(() => {
             onPress={() => navigation.navigate('profile-infos-name')}
             checked={!!(profile?.firstName && profile?.lastName)}
           >
-            Your name
+            {t('PROFILE_VIEW_NAME')}
           </CheckBoxButton>
         </View>
 
@@ -49,7 +51,7 @@ export const AuthenticatedSettings = observer(() => {
             onPress={() => navigation.navigate('profile-infos-phone')}
             checked={!!profile?.phone?.number}
           >
-            Your Phone number
+            {t('PROFILE_VIEW_PHONE')}
           </CheckBoxButton>
         </View>
         {profile.role === 'needer' && (
@@ -58,7 +60,7 @@ export const AuthenticatedSettings = observer(() => {
               onPress={() => navigation.navigate('profile-infos-address')}
               checked={!!profile?.address?.raw}
             >
-              Your Address
+              {t('PROFILE_VIEW_ADDRESS')}
             </CheckBoxButton>
           </View>
         )}
@@ -76,7 +78,7 @@ export const AuthenticatedSettings = observer(() => {
             );
           }}
         >
-          Logout
+          {t('PROFILE_VIEW_LOGOUT')}
         </Button>
       </ScrollView>
     </TabContainer>

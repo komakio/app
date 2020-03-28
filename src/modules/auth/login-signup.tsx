@@ -12,6 +12,7 @@ import { useUserStore } from '../../stores';
 import { Touchable } from '../../shared/button';
 import { colors } from '../../shared/variables/colors';
 import { BottomNavbar } from '../nav-bar';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   parentContainer: {
@@ -55,6 +56,7 @@ const styles = StyleSheet.create({
 export const LoginSignup = memo(() => {
   const navigation = useNavigation();
   const userStore = useUserStore();
+  const { t } = useTranslation();
 
   const socialSignup = (socialMedia: 'google' | 'apple') => async () => {
     const signupSuccess = await userStore.socialSignup(socialMedia);
@@ -77,7 +79,7 @@ export const LoginSignup = memo(() => {
     <View style={styles.parentContainer}>
       <View style={styles.container}>
         <Text style={styles.title} bold={true}>
-          Please sign up with your favorite social login
+          {t('SIGNIN_TITLE')}
         </Text>
         <Touchable
           onPress={socialSignup('google')}
@@ -85,7 +87,7 @@ export const LoginSignup = memo(() => {
           accessibilityRole="button"
         >
           <Icon name="google" size={20} color="white" />
-          <Text style={styles.googleText}>Sign in with Google</Text>
+          <Text style={styles.googleText}>{t('SIGNIN_GOOGLE')}</Text>
         </Touchable>
         {appleAuth.isSupported && (
           <AppleButton

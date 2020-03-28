@@ -78,18 +78,16 @@ export const InfosMain = observer(() => {
         {profileFlowStore.role === 'helper' && (
           <View>
             <Text bold={true} style={styles.title}>
-              Thank you for helping your local community.
+              {t('PROFILE_SETUP_HELPER_TITLE')}
             </Text>
 
-            <Text style={styles.description}>
-              We just need a few things to set you up.
-            </Text>
+            <Text style={styles.description}>{t('PROFILE_SETUP_TITLE')}</Text>
           </View>
         )}
         {profileFlowStore.role === 'needer' && (
           <View>
             <Text bold={true} style={styles.title}>
-              We just need a few things to set you up.
+              {t('PROFILE_SETUP_TITLE')}
             </Text>
           </View>
         )}
@@ -101,7 +99,7 @@ export const InfosMain = observer(() => {
               !!(profileFlowStore.firstName && profileFlowStore.lastName)
             }
           >
-            Your name
+            {t('PROFILE_SETUP_NAME')}
           </CheckBoxButton>
         </View>
 
@@ -110,7 +108,7 @@ export const InfosMain = observer(() => {
             onPress={getGeolocation}
             checked={!!profileFlowStore.coords}
           >
-            Enable geolocation
+            {t('PROFILE_SETUP_GEOLOCATION')}
           </CheckBoxButton>
         </View>
 
@@ -119,7 +117,7 @@ export const InfosMain = observer(() => {
             onPress={() => navigation.navigate('profile-infos-phone')}
             checked={!!(profileFlowStore.phone && profileFlowStore.dialCode)}
           >
-            Phone
+            {t('PROFILE_SETUP_PHONE')}
           </CheckBoxButton>
         </View>
 
@@ -129,7 +127,7 @@ export const InfosMain = observer(() => {
               onPress={() => navigation.navigate('profile-infos-address')}
               checked={!!profileFlowStore.address}
             >
-              Address
+              {t('PROFILE_SETUP_ADDRESS')}
             </CheckBoxButton>
           </View>
         )}
@@ -139,7 +137,7 @@ export const InfosMain = observer(() => {
             onPress={() => (profileFlowStore.terms = !profileFlowStore.terms)}
             checked={profileFlowStore.terms}
           >
-            I have read and agree with the terms of service
+            {t('PROFILE_SETUP_TERMS_CONFIRM')}
           </CheckBoxButton>
         </View>
         <Touchable
@@ -147,7 +145,7 @@ export const InfosMain = observer(() => {
           textStyle={styles.termsServiceText}
           accessibilityRole="link"
         >
-          Read terms of service
+          {t('PROFILE_SETUP_TERMS_READ')}
         </Touchable>
       </ScrollView>
       <BottomNavbar

@@ -7,6 +7,7 @@ import { ProfileFlowStore } from '../../stores/profile-flow-store';
 import { useProfileFlowStore, useUserStore } from '../../stores';
 import { Button } from '../../shared/button';
 import { BottomNavbar } from '../nav-bar';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   parentContainer: {
@@ -35,6 +36,7 @@ export const ProfileType = memo(() => {
   const navigation = useNavigation();
   const profileFlowStore = useProfileFlowStore();
   const userStore = useUserStore();
+  const { t } = useTranslation();
 
   const { profile } = userStore;
 
@@ -54,11 +56,11 @@ export const ProfileType = memo(() => {
     <View style={styles.parentContainer}>
       <View style={styles.container}>
         <Text style={styles.title} bold={true}>
-          {profile?.role ? 'Change your Status' : 'What is your status'}
+          {profile?.role ? t('STATUS_TITLE_CHANGE') : t('STATUS_TITLE')}
         </Text>
         <View style={styles.buttonsContainer}>
           <Button theme="blue" size="big" onPress={changeStatus('helper')}>
-            Healthy
+            {t('STATUS_HEALTHY')}
           </Button>
           <Button
             style={styles.lastButton}
@@ -66,7 +68,7 @@ export const ProfileType = memo(() => {
             size="big"
             onPress={changeStatus('needer')}
           >
-            In need
+            {t('STATUS_IN_NEED')}
           </Button>
         </View>
       </View>

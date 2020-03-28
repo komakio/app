@@ -9,6 +9,7 @@ import { useProfileFlowStore, useUserStore } from '../../../stores';
 import { Button } from '../../../shared/button';
 import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
 import { Profile } from '../../../models/profile';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   container: {
@@ -32,6 +33,7 @@ export const ProfileInfosName = observer(() => {
   const navigation = useNavigation();
   const profileFlowStore = useProfileFlowStore();
   const userStore = useUserStore();
+  const { t } = useTranslation();
 
   const [firstName, setFirstName] = useState<Profile['firstName']>(
     userStore?.profile?.firstName || ''
@@ -58,11 +60,11 @@ export const ProfileInfosName = observer(() => {
       <ModalArrowClose />
 
       <View>
-        <Text style={styles.title}>Please enter your first and last name</Text>
+        <Text style={styles.title}>{t('PROFILE_NAME_TITLE')}</Text>
       </View>
 
       <TextInput
-        label="First Name"
+        label={t('PROFILE_NAME_LASTNAME')}
         value={firstName}
         onChangeText={(firstName) => setFirstName(firstName)}
         autoCorrect={false}
@@ -70,16 +72,15 @@ export const ProfileInfosName = observer(() => {
       />
 
       <TextInput
-        label="Last Name"
+        label={t('PROFILE_NAME_LASTNAME')}
         value={lastName}
         onChangeText={(lastName) => setLastName(lastName)}
         autoCorrect={false}
-        placeholder="Doe"
         // placeholderTextColor={colors.blue}
       />
 
       <View style={styles.buttonContainer}>
-        <Button onPress={onPress}>Done</Button>
+        <Button onPress={onPress}>{t('ACTIONS_DONE')}</Button>
       </View>
     </KeyboardAvoidingView>
   );
