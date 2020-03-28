@@ -9,6 +9,7 @@ import { useProfileFlowStore, useUserStore } from '../../../stores';
 import { Button } from '../../../shared/button';
 import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
 import { Profile } from '../../../models/profile';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   container: {
@@ -31,6 +32,7 @@ export const ProfileInfosAddress = observer(() => {
   const navigation = useNavigation();
   const profileFlowStore = useProfileFlowStore();
   const userStore = useUserStore();
+  const { t } = useTranslation();
 
   const { profile } = userStore;
   const [rawAddress, setRawAddress] = useState<Profile['address']['raw']>(
@@ -56,15 +58,11 @@ export const ProfileInfosAddress = observer(() => {
       <ModalArrowClose />
 
       <View>
-        <Text style={styles.title}>
-          {profile?.address?.raw
-            ? 'Change your address'
-            : 'Please enter your address'}
-        </Text>
+        <Text style={styles.title}>{t('PROFILE_ADDRESS_TITLE')}</Text>
       </View>
 
       <TextInput
-        label="Address"
+        label={t('PROFILE_ADDRESS_ADDRESS')}
         value={rawAddress}
         onChangeText={(rawAddress) => setRawAddress(rawAddress)}
         autoCorrect={false}
@@ -73,7 +71,7 @@ export const ProfileInfosAddress = observer(() => {
       />
 
       <View style={styles.buttonContainer}>
-        <Button onPress={onPress}>Done</Button>
+        <Button onPress={onPress}>{t('ACTIONS_DONE')}</Button>
       </View>
     </KeyboardAvoidingView>
   );

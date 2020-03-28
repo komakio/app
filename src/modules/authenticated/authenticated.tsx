@@ -10,6 +10,7 @@ import { useNotificationsStore } from '../../stores';
 import { colors } from '../../shared/variables/colors';
 import { RequestsList } from './requests/list';
 import { AuthenticatedSettings } from './settings';
+import { useTranslation } from 'react-i18next';
 
 const Tab = createBottomTabNavigator();
 const AndroidTab = createMaterialBottomTabNavigator();
@@ -28,14 +29,14 @@ const screens = [
   {
     name: 'authenticated-sponsors',
     component: AuthenticatedSponsors,
-    title: 'Sponsors',
+    title: 'TABS_SPONSORS',
     icon: 'charity',
     iconActive: 'charity',
   },
   {
     name: 'authenticated-requests',
     component: RequestsList,
-    title: 'Requests',
+    title: 'TABS_REQUESTS',
     icon: 'bullseye',
     iconActive: 'bullseye',
     withBadge: true,
@@ -43,7 +44,7 @@ const screens = [
   {
     name: 'authenticated-settings',
     component: AuthenticatedSettings,
-    title: 'Profile',
+    title: 'TABS_PROFILE',
     icon: 'account-circle-outline',
     iconActive: 'account-circle',
   },
@@ -51,6 +52,7 @@ const screens = [
 
 export const Authenticated = memo(() => {
   const notificationsStore = useNotificationsStore();
+  const { t } = useTranslation();
   const activeRequests = 0;
 
   useEffect(() => {
@@ -71,7 +73,7 @@ export const Authenticated = memo(() => {
             name={screen.name}
             component={screen.component}
             options={{
-              title: screen.title,
+              title: t(screen.title),
               tabBarIcon: ({ color, focused }) => (
                 <Icon
                   name={focused ? screen.iconActive : screen.icon}
@@ -121,7 +123,7 @@ export const Authenticated = memo(() => {
           key={screen.name}
           name={screen.name}
           component={screen.component}
-          options={{ title: screen.title }}
+          options={{ title: t(screen.title) }}
         />
       ))}
     </Tab.Navigator>

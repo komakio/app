@@ -1,6 +1,61 @@
 {
-
   "GEOLOCATION_PERMISSION_DENIED": "Our access has been denied. Have you approved the application to access your location ?",
   "GEOLOCATION_POSITION_UNAVAILABLE": "We couldn't get your position. Is your GPS activated ? ",
-  "GEOLOCATION_TIMEOUT": "A timeout occured"
+  "GEOLOCATION_TIMEOUT": "A timeout occured",
+
+  "ACTIONS_BACK": "_Back",
+  "ACTIONS_NEXT": "_Next",
+  "ACTIONS_DONE": "_Done",
+
+  "TABS_SPONSORS": "_Sponsors",
+  "TABS_REQUESTS": "_Requests",
+  "TABS_PROFILE": "_Profile",
+
+  "INTRO_TITLE": "_Thank you for making an impact",
+  "INTRO_GET_STARTED": "_Get started",
+
+  "SIGNIN_TITLE": "_Please sign up with your favorite social login",
+  "SIGNIN_GOOGLE": "_Sign in with Google",
+
+  "CONSENTS_TITLE": "_I agree with the following statements at this moment and for any future use of the app",
+  "CONSENTS_SYMPTOMS": "_I am not showing any symptoms of COVID-19 (coughing, fever, shortness of breath, etc.).",
+  "CONSENTS_TRAVEL": "_I have not travelled out of the country in the past 14 days.",
+  "CONSENTS_CONTACT": "_I have not come in contact with anyone suspected of being infected or sick in the past 14 days.",
+  "CONSENTS_SOCIAL": "_I have been practicing social distancing.",
+
+  "STATUS_TITLE_CHANGE": "_Change your status",
+  "STATUS_TITLE": "_What is your status",
+  "STATUS_HEALTHY": "_Healthy",
+  "STATUS_IN_NEED": "_In need",
+
+  "PROFILE_SETUP_TITLE": "_We just need a few things to set you up.",
+  "PROFILE_SETUP_HELPER_TITLE": "_Thank you for helping your local community.",
+  "PROFILE_SETUP_NAME": "_Your name",
+  "PROFILE_SETUP_GEOLOCATION": "_Enable geolocation",
+  "PROFILE_SETUP_PHONE": "_Phone",
+  "PROFILE_SETUP_ADDRESS": "_Address",
+  "PROFILE_SETUP_TERMS_CONFIRM": "_I have read and agree with the terms of service",
+  "PROFILE_SETUP_TERMS_READ": "_Read terms of service",
+
+  "PROFILE_VIEW_TITLE": "_Profile",
+  "PROFILE_VIEW_STATUS": "_Your status",
+  "PROFILE_VIEW_NAME": "_Your name",
+  "PROFILE_VIEW_PHONE": "_Your phone number",
+  "PROFILE_VIEW_ADDRESS": "_Your address",
+  "PROFILE_VIEW_LOGOUT": "_Logout",
+
+  "PROFILE_NAME_TITLE": "_Please enter your first and last name",
+  "PROFILE_NAME_FIRSTNAME": "_First Name",
+  "PROFILE_NAME_LASTNAME": "_Last Name",
+
+  "PROFILE_PHONE_TITLE": "_Please enter your phone number",
+  "PROFILE_PHONE_PHONE": "_Phone",
+
+  "PROFILE_ADDRESS_TITLE": "_Please enter your address",
+  "PROFILE_ADDRESS_ADDRESS": "_Address",
+
+  "SPONSORS_TITLE": "_Sponsors",
+  "SPONSORS_HOSTING": "_Hosting",
+  "SPONSORS_REACH_OUT": "_Reach out if your company can help.",
+  "SPONSORS_REACH_OUT_CTA": "_Help out"
 }

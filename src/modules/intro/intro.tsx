@@ -5,6 +5,7 @@ import { useNavigation, StackActions } from '@react-navigation/native';
 import { Text } from '../../shared/text';
 import { Button } from '../../shared/button';
 import { useUserStore } from '../../stores';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   container: {
@@ -26,6 +27,7 @@ const styles = StyleSheet.create({
 export const Intro = memo(() => {
   const navigation = useNavigation();
   const userStore = useUserStore();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const isLoggedIn = async () => {
@@ -42,11 +44,11 @@ export const Intro = memo(() => {
   return (
     <View style={styles.container}>
       <Text style={styles.title} bold={true}>
-        Thank you for making an impact
+        {t('INTRO_TITLE')}
       </Text>
       <View style={styles.buttonContainer}>
         <Button size="big" onPress={() => navigation.navigate('login-signup')}>
-          Get started
+          {t('INTRO_GET_STARTED')}
         </Button>
       </View>
     </View>

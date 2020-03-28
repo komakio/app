@@ -6,6 +6,7 @@ import { Button } from '../../../shared/button';
 import { Image } from 'react-native-animatable';
 import { TabContainer } from '../common/tab-container';
 import { colors } from '../../../shared/variables/colors';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   box: {
@@ -27,11 +28,12 @@ const styles = StyleSheet.create({
 
 export const AuthenticatedSponsors = memo(() => {
   //   const navigation = useNavigation();
+  const { t } = useTranslation();
 
   return (
-    <TabContainer title="Sponsors">
+    <TabContainer title={t('SPONSORS_TITLE')}>
       <View style={styles.box}>
-        <Text>Hosting</Text>
+        <Text>{t('SPONSORS_HOSTING')}</Text>
         <Image
           style={{ width: '80%', height: 100, resizeMode: 'contain' }}
           source={require('../../../images/sponsors/oceanio.png')}
@@ -39,15 +41,13 @@ export const AuthenticatedSponsors = memo(() => {
       </View>
 
       <View style={[styles.box, styles.boxCenter]}>
-        <Text style={styles.reachOutText}>
-          Reach out if your company can help.
-        </Text>
+        <Text style={styles.reachOutText}>{t('SPONSORS_REACH_OUT')}</Text>
         <Button
           size="big"
           theme="green"
           onPress={() => Linking.openURL('https://komak.io/contact/')}
         >
-          Help out
+          {t('SPONSORS_REACH_OUT_CTA')}
         </Button>
       </View>
     </TabContainer>

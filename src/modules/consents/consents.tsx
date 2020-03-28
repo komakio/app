@@ -6,6 +6,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { CheckboxFormElement } from '../../shared/button';
 import { BottomNavbar } from '../nav-bar/nav-bar';
 import { useProfileFlowStore } from '../../stores';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -32,26 +33,24 @@ const styles = StyleSheet.create({
 export const Consents = memo(() => {
   const navigation = useNavigation();
   const profileFlowStore = useProfileFlowStore();
+  const { t } = useTranslation();
 
   const [checkboxes, setCheckboxes] = useState([
     {
       enabled: false,
-      description:
-        'I am not showing any symptoms of COVID-19 (coughing, fever, shortness of breath, etc.).',
+      description: t('CONSENTS_SYMPTOMS'),
     },
     {
       enabled: false,
-      description:
-        'I have not travelled out of the country in the past 14 days.',
+      description: t('CONSENTS_TRAVEL'),
     },
     {
       enabled: false,
-      description:
-        'I have not come in contact with anyone suspected of being infected or sick in the past 14 days.',
+      description: t('CONSENTS_CONTACT'),
     },
     {
       enabled: false,
-      description: 'I have been practicing social distancing.',
+      description: t('CONSENTS_SOCIAL'),
     },
   ]);
 
@@ -74,8 +73,7 @@ export const Consents = memo(() => {
     <View style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container}>
         <Text bold={true} style={styles.title}>
-          I agree with the following statements at this moment and for any
-          future use of the app
+          {t('CONSENTS_TITLE')}
         </Text>
 
         {checkboxes.map((checkbox) => (

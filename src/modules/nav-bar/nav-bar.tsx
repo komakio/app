@@ -6,6 +6,7 @@ import {
   View,
 } from 'react-native';
 import { NavButton } from './button-navbar';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,18 +28,24 @@ interface BottomNavbarProps {
 
 export const BottomNavbar: FC<BottomNavbarProps> = memo(
   ({ onBack, onNext }) => {
+    const { t } = useTranslation();
+
     return (
       <View
         style={[styles.container, !onBack && !onNext && styles.transparent]}
       >
         {onBack && (
-          <NavButton onPress={onBack} iconName="arrow-left" text="Back" />
+          <NavButton
+            onPress={onBack}
+            iconName="arrow-left"
+            text={t('ACTIONS_BACK')}
+          />
         )}
         {onNext && (
           <NavButton
             onPress={onNext}
             iconName="arrow-right"
-            text="Next"
+            text={t('ACTIONS_NEXT')}
             isNext={true}
           />
         )}
