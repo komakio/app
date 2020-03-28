@@ -53,4 +53,13 @@ export class Environment {
     development:
       '50726922019-5cff1qhkilhft8jtaecj7gqeo980pghe.apps.googleusercontent.com',
   });
+
+  // public static androidGoogleClientId = Environment.getValue({
+  //   production:
+  //     '50726922019-2n2928603iapbq7kslc4leo7ikgs5l7b.apps.googleusercontent.com',
+  //   staging:
+  //     '50726922019-b6ql0i33agaodg5ddjnl1ldmcm61b9ab.apps.googleusercontent.com',
+  //   development:
+  //     '50726922019-3mba9hr53ob7dbj43s658gr92i5ndsf3.apps.googleusercontent.com',
+  // });
 }

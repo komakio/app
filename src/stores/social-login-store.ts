@@ -24,20 +24,23 @@ export class SocialLoginStore {
       forceCodeForRefreshToken: true,
       iosClientId: Environment.iosGoogleClientId,
       webClientId:
-        '50726922019-2n2928603iapbq7kslc4leo7ikgs5l7b.apps.googleusercontent.com', // TODO - should be an env variabled
+        '50726922019-2n2928603iapbq7kslc4leo7ikgs5l7b.apps.googleusercontent.com',
     });
   }
 
   public async googleLogin(): Promise<LoginResult> {
     try {
       //   await GoogleSignin.hasPlayServices();
+      console.log('Try to login');
       const userInfo = await GoogleSignin.signIn();
+      console.log(userInfo);
       const firstName = userInfo.user.givenName;
       const lastName = userInfo.user.familyName;
 
       const data = await UsersApi.loginGoogle(userInfo.idToken);
       this.rootStore.profileFlowStore.firstName = firstName;
       this.rootStore.profileFlowStore.lastName = lastName;
+      console.log(data);
       return data;
     } catch (error) {
       console.log(error);

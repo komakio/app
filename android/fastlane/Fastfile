@@ -48,15 +48,28 @@ platform :android do
 
 
   desc "Deploy a new version to the Google Play"
-  lane :build do
+  lane :buildStaging do
     increment_version_code
-    gradle(task: "clean assembleRelease")
+    gradle(task: "clean assembleStagingRelease")
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :buildProduction do
+    increment_version_code
+    gradle(task: "clean assembleProductionRelease")
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :staging do
+    increment_version_code
+    gradle(task: "clean bundleStagingRelease")
+    upload_to_play_store track:"alpha"
   end
 
   desc "Deploy a new version to the Google Play"
   lane :alpha do
     increment_version_code
-    gradle(task: "clean bundleRelease")
+    gradle(task: "clean bundleProductionRelease")
     upload_to_play_store track:"alpha"
   end
 end
