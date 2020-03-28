@@ -1,10 +1,11 @@
-import React, { memo } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigation, CommonActions } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { CheckBoxButton, Button } from '../../../shared/button';
 import { useProfileFlowStore, useUserStore } from '../../../stores';
 import { TabContainer } from '../common/tab-container';
 import { StyleSheet, View } from 'react-native';
+import { observer } from 'mobx-react-lite';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,26 +15,31 @@ const styles = StyleSheet.create({
     width: '100%',
     marginVertical: 10,
   },
+  logoutButton: {
+    marginTop: 80,
+  },
 });
 
-export const authenticatedSettings = memo(() => {
+export const AuthenticatedSettings = observer(() => {
   const navigation = useNavigation();
-  const profileFlowStore = useProfileFlowStore();
   const userStore = useUserStore();
-
-  profileFlowStore.firstName = userStore.profile?.firstName;
-  profileFlowStore.lastName = userStore.profile?.lastName;
-  profileFlowStore.phone = userStore.profile?.phone?.number;
+  const { profile } = userStore;
 
   return (
     <TabContainer title="Profile">
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.buttonContainer}>
           <CheckBoxButton
+            onPress={() => navigation.navigate('profile-type')}
+            checked={!!profile?.role}
+          >
+            Your Status
+          </CheckBoxButton>
+        </View>
+        <View style={styles.buttonContainer}>
+          <CheckBoxButton
             onPress={() => navigation.navigate('profile-infos-name')}
-            checked={
-              !!(profileFlowStore.firstName && profileFlowStore.lastName)
-            }
+            checked={!!(profile?.firstName && profile?.lastName)}
           >
             Your name
           </CheckBoxButton>
@@ -42,14 +48,25 @@ export const authenticatedSettings = memo(() => {
         <View style={styles.buttonContainer}>
           <CheckBoxButton
             onPress={() => navigation.navigate('profile-infos-phone')}
-            checked={!!profileFlowStore.phone}
+            checked={!!profile?.phone?.number}
           >
-            Phone
+            Your Phone number
           </CheckBoxButton>
         </View>
+        {profile.role === 'needer' && (
+          <View style={styles.buttonContainer}>
+            <CheckBoxButton
+              onPress={() => navigation.navigate('profile-infos-address')}
+              checked={!!profile?.address?.raw}
+            >
+              Your Address
+            </CheckBoxButton>
+          </View>
+        )}
+
         <Button
-          theme="grey"
-          style={{ marginTop: 80 }}
+          style={styles.logoutButton}
+          theme="red"
           onPress={async () => {
             await userStore.logout();
             navigation.dispatch(

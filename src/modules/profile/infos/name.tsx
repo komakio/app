@@ -8,6 +8,7 @@ import { TextInput } from '../../../shared/text-input';
 import { useProfileFlowStore, useUserStore } from '../../../stores';
 import { Button } from '../../../shared/button';
 import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
+import { Profile } from '../../../models/profile';
 
 const styles = StyleSheet.create({
   container: {
@@ -32,10 +33,25 @@ export const ProfileInfosName = observer(() => {
   const profileFlowStore = useProfileFlowStore();
   const userStore = useUserStore();
 
-  const [firstName, SetFirstName] = useState<string>(userStore?.profile?.firstName || '');
-  const [lastName, SetLastName] = useState<string>(
+  const [firstName, setFirstName] = useState<Profile['firstName']>(
+    userStore?.profile?.firstName || ''
+  );
+  const [lastName, setLastName] = useState<Profile['lastName']>(
     userStore?.profile?.lastName || ''
   );
+
+  const onPress = () => {
+    if (userStore.profile._id) {
+      userStore.patchProfile(userStore.profile._id, {
+        firstName,
+        lastName,
+      });
+    } else {
+      profileFlowStore.firstName = firstName;
+      profileFlowStore.lastName = lastName;
+    }
+    navigation.goBack();
+  };
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
@@ -48,7 +64,7 @@ export const ProfileInfosName = observer(() => {
       <TextInput
         label="First Name"
         value={firstName}
-        onChangeText={firstName => SetFirstName(firstName)}
+        onChangeText={(firstName) => setFirstName(firstName)}
         autoCorrect={false}
         // placeholderTextColor={colors.blue}
       />
@@ -56,30 +72,14 @@ export const ProfileInfosName = observer(() => {
       <TextInput
         label="Last Name"
         value={lastName}
-        onChangeText={lastName => SetLastName(lastName)}
+        onChangeText={(lastName) => setLastName(lastName)}
         autoCorrect={false}
         placeholder="Doe"
         // placeholderTextColor={colors.blue}
       />
 
       <View style={styles.buttonContainer}>
-        <Button
-          onPress={async () => {
-            if (userStore.profile._id) {              
-              await userStore.patchProfile(userStore.profile._id, {
-                firstName,
-                lastName,
-              });
-              navigation.goBack();
-            } else {
-              profileFlowStore.firstName = firstName;
-              profileFlowStore.lastName = lastName;
-              navigation.goBack();
-            }
-          }}
-        >
-          Done
-        </Button>
+        <Button onPress={onPress}>Done</Button>
       </View>
     </KeyboardAvoidingView>
   );

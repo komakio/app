@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
 
   disabledButton: {
-    backgroundColor: rgbaToHex(colors.green100, 0.5),
+    backgroundColor: rgbaToHex(colors.grey300, 0.5),
   },
 
   smallButton: {
@@ -103,6 +103,7 @@ export const Button: FC<ButtonProps> = memo(
         textStyle={styles.commonText}
         containerStyle={[buttonStyles, style]}
         accessibilityRole="button"
+        disabled={disabled}
       >
         {children}
       </Touchable>

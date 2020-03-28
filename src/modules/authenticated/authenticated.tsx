@@ -9,7 +9,7 @@ import { IconWithBadge } from './icon-with-badge';
 import { useNotificationsStore } from '../../stores';
 import { colors } from '../../shared/variables/colors';
 import { RequestsList } from './requests/list';
-import { authenticatedSettings } from './settings';
+import { AuthenticatedSettings } from './settings';
 
 const Tab = createBottomTabNavigator();
 const AndroidTab = createMaterialBottomTabNavigator();
@@ -42,7 +42,7 @@ const screens = [
   },
   {
     name: 'authenticated-settings',
-    component: authenticatedSettings,
+    component: AuthenticatedSettings,
     title: 'Profile',
     icon: 'account-circle-outline',
     iconActive: 'account-circle',
@@ -50,7 +50,6 @@ const screens = [
 ];
 
 export const Authenticated = memo(() => {
-  //   const navigation = useNavigation();
   const notificationsStore = useNotificationsStore();
   const activeRequests = 0;
 

@@ -31,8 +31,23 @@ export const ProfileInfosPhone = observer(() => {
   const profileFlowStore = useProfileFlowStore();
   const userStore = useUserStore();
 
-  const [phone, SetPhone] = useState<string>(userStore?.profile?.phone.number || null);
+  const [phone, setPhone] = useState<string>(
+    userStore?.profile?.phone?.number || null
+  );
 
+  const onPress = () => {
+    if (userStore.profile._id) {
+      userStore.patchProfile(userStore.profile._id, {
+        phone: {
+          number: phone,
+        },
+      });
+    } else {
+      profileFlowStore.phone = phone;
+    }
+
+    navigation.goBack();
+  };
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
@@ -45,29 +60,12 @@ export const ProfileInfosPhone = observer(() => {
       <TextInput
         label="Phone"
         value={phone}
-        onChangeText={phone => SetPhone(phone)}
+        onChangeText={(phone) => setPhone(phone)}
         keyboardType="number-pad"
       />
 
       <View style={styles.buttonContainer}>
-        <Button
-          onPress={async () => {
-            if (userStore.profile._id) {
-              await userStore.patchProfile(userStore.profile._id, {
-                phone: {
-                  number: phone,
-                },
-              });
-            } else {
-              profileFlowStore.phone = phone;
-              navigation.goBack();
-            }
-
-            navigation.goBack();
-          }}
-        >
-          Done
-        </Button>
+        <Button onPress={onPress}>Done</Button>
       </View>
     </KeyboardAvoidingView>
   );
