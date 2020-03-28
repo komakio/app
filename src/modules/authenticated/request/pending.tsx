@@ -40,7 +40,7 @@ export const PendingRequestView = observer(() => {
   const { t } = useTranslation();
 
   const title =
-    profile?.role === 'needer'
+    request.requesterProfileId === profile?._id
       ? t('REQUESTS_REQUEST_PENDING_DETAILS_HELPER')
       : t('REQUESTS_REQUEST_PENDING_DETAILS_NEEDER', {
           name: request.requesterShortName,

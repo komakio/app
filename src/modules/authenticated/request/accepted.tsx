@@ -57,9 +57,9 @@ export const AcceptedRequestView = observer(() => {
     const get = async () => {
       const data = await requestsStore.getProfileFromRequest(
         request._id,
-        profile?.role === 'needer'
-          ? request.acceptorProfileId
-          : request.requesterProfileId
+        request.acceptorProfileId === profile?._id
+          ? request.requesterProfileId
+          : request.acceptorProfileId
       );
       setOtherPersonProfile(data);
     };
@@ -71,9 +71,9 @@ export const AcceptedRequestView = observer(() => {
   //       ? 'You have requested some help'
   //       : `${request.requesterShortName} has requested some help`;
   const title =
-    profile?.role === 'needer'
-      ? 'REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER'
-      : 'REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER';
+    request.acceptorProfileId === profile?._id
+      ? 'REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER'
+      : 'REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER';
 
   if (!otherPersonProfile) {
     return;
@@ -91,24 +91,26 @@ export const AcceptedRequestView = observer(() => {
           {otherPersonProfile.firstName} {otherPersonProfile.lastName}
         </Text>
 
-        {otherPersonProfile.address?.raw && (
+        {otherPersonProfile.address?.raw ? (
           <Text style={styles.fieldTitle}>{t('REQUESTS_REQUEST_ADDRESS')}</Text>
-        )}
-        {otherPersonProfile.address?.raw && (
+        ) : null}
+        {otherPersonProfile.address?.raw ? (
           <Text style={styles.fieldValue}>
             {otherPersonProfile.address?.raw}
           </Text>
-        )}
+        ) : null}
 
         <Text style={styles.fieldTitle}>
           {t('REQUESTS_REQUEST_PHONE_NUMBER')}
         </Text>
-        <Text style={styles.fieldValue}>{otherPersonProfile.phone.number}</Text>
+        <Text style={styles.fieldValue}>
+          {otherPersonProfile.phone?.number}
+        </Text>
 
         <Button
           style={styles.telButton}
           onPress={() =>
-            Linking.openURL(`tel:${otherPersonProfile.phone.number}`)
+            Linking.openURL(`tel:${otherPersonProfile.phone?.number}`)
           }
         >
           {t('ACTIONS_CALL')}
@@ -116,7 +118,7 @@ export const AcceptedRequestView = observer(() => {
         <Button
           style={styles.smsButton}
           onPress={() =>
-            Linking.openURL(`sms:tel:${otherPersonProfile.phone.number}`)
+            Linking.openURL(`sms:tel:${otherPersonProfile.phone?.number}`)
           }
         >
           {t('ACTIONS_SMS')}

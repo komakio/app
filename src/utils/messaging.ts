@@ -39,6 +39,7 @@ export class Messaging {
   public static onMessage(cb?: () => void) {
     messaging().onMessage(async (remoteMessage) => {
       console.log('FCM Message Data:', remoteMessage.data);
+      // Alert.alert('INAPP');
       // Alert.alert('MESSAGE');
 
       //   // Update a users messages list using AsyncStorage
@@ -50,12 +51,13 @@ export class Messaging {
 
     messaging().setBackgroundMessageHandler(async (remoteMessage) => {
       console.log('Message handled in the background!', remoteMessage);
-      Alert.alert('BACKGROUND');
+      // Alert.alert('BACKGROUND');
     });
 
     messaging().onNotificationOpenedApp((message) => {
       console.log('opened app');
       console.log(message);
+      // Alert.alert('MESSOPENAPP');
     });
   }
 }

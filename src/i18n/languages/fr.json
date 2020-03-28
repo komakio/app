@@ -6,7 +6,7 @@
 
   "ACTIONS_NEXT": "Suivant",
   "ACTIONS_DONE": "Fini",
-  "ACTIONS_SHARE_APP": "Partager l'application",
+  "ACTIONS_SHARE_APP": "Partager",
 
   "TABS_SPONSORS": "Sponsors",
   "TABS_REQUESTS": "Requêtes",
@@ -43,7 +43,7 @@
   "PROFILE_SETUP_TERMS_READ": "Lire les conditions de service",
 
   "PROFILE_VIEW_TITLE": "Profil",
-  "PROFILE_VIEW_STATUS": "Votre status",
+  "PROFILE_VIEW_STATUS": "Votre statut",
   "PROFILE_VIEW_NAME": "Votre nom",
   "PROFILE_VIEW_PHONE": "Votre téléphone",
   "PROFILE_VIEW_ADDRESS": "Votre addresse",
