@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   googleButton: {
+    minWidth: 250,
     height: 60,
     margin: 10,
     borderRadius: 5,
