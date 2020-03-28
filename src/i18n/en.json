@@ -41,6 +41,7 @@
   "PROFILE_VIEW_STATUS": "_Your status",
   "PROFILE_VIEW_NAME": "_Your name",
   "PROFILE_VIEW_PHONE": "_Your phone number",
+  "PROFILE_VIEW_ADDRESS": "_Your address",
   "PROFILE_VIEW_LOGOUT": "_Logout",
 
   "PROFILE_NAME_TITLE": "_Please enter your first and last name",
