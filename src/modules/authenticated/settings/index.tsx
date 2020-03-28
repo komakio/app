@@ -8,9 +8,6 @@ import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 16,
-  },
   buttonContainer: {
     width: '100%',
     marginVertical: 10,
@@ -28,10 +25,10 @@ export const AuthenticatedSettings = observer(() => {
 
   return (
     <TabContainer title={t('PROFILE_VIEW_TITLE')}>
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView>
         <View style={styles.buttonContainer}>
           <CheckBoxButton
-            onPress={() => navigation.navigate('profile-type')}
+            onPress={() => navigation.navigate('setting-profile-status')}
             checked={!!profile?.role}
           >
             {t('PROFILE_VIEW_STATUS')}

@@ -15,6 +15,7 @@ import { ProfileInfosAddress } from './modules/profile/infos/address';
 import { InfosMain } from './modules/profile/infos-main';
 import { AcceptedRequestView } from './modules/authenticated/request/accepted';
 import { CanceledRequestView } from './modules/authenticated/request/canceled';
+import { SettingProfileStatus } from './modules/authenticated/settings/setting-profile-status';
 
 const Stack = createStackNavigator();
 const RootStack = createStackNavigator();
@@ -86,6 +87,11 @@ export const Router = memo(() => {
       <Stack.Screen
         name="requests-request-accepted"
         component={AcceptedRequestView}
+        options={modalOptions}
+      />
+      <Stack.Screen
+        name="setting-profile-status"
+        component={SettingProfileStatus}
         options={modalOptions}
       />
       <Stack.Screen
