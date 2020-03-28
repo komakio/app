@@ -32,7 +32,7 @@ export const ProfileInfosPhone = observer(() => {
   const userStore = useUserStore();
 
   const [phone, setPhone] = useState<string>(
-    userStore?.profile?.phone?.number || null
+    userStore?.profile?.phone?.number || ''
   );
 
   const onPress = () => {
