@@ -23,7 +23,7 @@ export class ProfilesApi {
   public static async patchProfile(
     accessToken: string,
     profileId: string,
-    profile: Profile
+    profile: Partial<Profile>
   ) {
     const res = await axiosInstance.put(`/v1/profiles/${profileId}`, profile, {
       headers: {

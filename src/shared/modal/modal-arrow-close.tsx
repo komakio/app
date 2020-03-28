@@ -14,13 +14,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
+    zIndex: 50,
   },
 });
 
 export const ModalArrowClose = memo(() => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity style={styles.container} onPress={navigation.goBack}>
+    <TouchableOpacity
+      accessibilityRole="imagebutton"
+      style={styles.container}
+      onPress={navigation.goBack}
+    >
       <Icon name="menu-down" size={50} color="#C7C7CC" />
     </TouchableOpacity>
   );
