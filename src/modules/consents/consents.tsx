@@ -3,7 +3,7 @@ import { StyleSheet, View, Alert } from 'react-native';
 import { useNavigation, CommonActions } from '@react-navigation/native';
 import { Text } from '../../shared/text';
 import { ScrollView } from 'react-native-gesture-handler';
-import { CheckBoxButton } from '../../shared/button/checkbox-button';
+import { CheckboxFormElement } from '../../shared/button';
 import { BottomNavbar } from '../nav-bar/nav-bar';
 import { useProfileFlowStore } from '../../stores';
 
@@ -80,7 +80,7 @@ export const Consents = memo(() => {
 
         {checkboxes.map((checkbox) => (
           <View style={styles.buttonContainer} key={checkbox.description}>
-            <CheckBoxButton
+            <CheckboxFormElement
               onPress={() => {
                 checkbox.enabled = !checkbox.enabled;
                 setCheckboxes([...checkboxes]);
@@ -88,7 +88,7 @@ export const Consents = memo(() => {
               checked={checkbox.enabled}
             >
               {checkbox.description}
-            </CheckBoxButton>
+            </CheckboxFormElement>
           </View>
         ))}
       </ScrollView>
