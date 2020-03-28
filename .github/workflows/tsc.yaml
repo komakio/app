@@ -1,10 +1,10 @@
-name: Typechecking
+name: Type checking
 
 on: push
 
 jobs:
   run-linters:
-    name: Run linters
+    name: npm run tsc
     runs-on: ubuntu-latest
 
     steps:
