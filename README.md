@@ -1,29 +1,122 @@
 # Welcome to Komak’s open-source repository 🙏
 
-## What is Komak?
+* [Introduction](#introduction)
+  * [What is Komak?](#what-is-komak)
+  * [Who is it for?](#who-is-it-for)
+  * [Features](#features)
+* [Contribute](#contribute)
+  * [Contribute as a developer](#contribute-as-a-developer)
+* [Vision and goals](#vision-and-goals)
+  * [Vision](#vision)
+  * [Goals](#goals)
+* [Team](#team)
+  * [Core members](#core-members)
+  * [Contributors](#contributors)
+  * [Sponsors](#sponsors)
+* [Contact](#contact)
 
-Komak is an app born out of necessity in the wake of the COVID-19 events. There are people in our community more susceptible or already exposed to the effects of the virus than others. The goal of Komak is to provide a digital platform for healthy volunteers to help out those most in need. 
+## Introduction
 
-Komak uses geolocation services to send requests for help with groceries, for example, to nearby volunteers that are willing to help out.
+Welcome to Komak, Nabo's open source project for developing a platform to help fight against the effects of the COVID-19 pandemic. 
 
-Komak is meant to be open-source, as we need all of the help we can get in this hopefully short-lived endeavor. 
+### What is Komak?
 
-### Safety
+<p><img width="280" src="https://user-images.githubusercontent.com/28791837/77825801-fd82ad00-710b-11ea-827a-19f3f8eb5f74.png"> <img width="280" src="https://user-images.githubusercontent.com/28791837/77825803-007d9d80-710c-11ea-9fdd-c4f90a803ebf.png"> <img width="280" src="https://user-images.githubusercontent.com/28791837/77825806-01163400-710c-11ea-92c9-3a2080363dc8.png"> </p>
 
-Our initiative is born as an attempt to help the current situation, and fight the frustration of not being able to help. We aim to help flatten the curve and protect the ones most at risk of contracting or spreading the virus. 
+Komak is an app born out of necessity in the wake of the COVID-19 events. The goal of Komak is to provide a digital platform for healthy volunteers to help out those most in need. 
 
-This a fluid situation, and our hope is that everyone, all over the world, takes the proper precautions that will turn these few months into a distant memory. Our service might change as the situation unfolds, but we hope it can provide some support in the fight against this virus.
+Komak uses geolocation services to match volunteers with people that are at risk in their area. Komak then enables communication between the two parties so that volunteers can help with groceries, pharmacy runs, etc.
 
-In the meantime, however, we have been in contact with medical professionals to give everyone involved the proper advice on staying safe and healthy. We are committed to supporting the use of our service in safe conditions.
+Komak is open-source, and we need all of the help we can get in this hopefully short-lived endeavor. 
 
-You can read our indications for volunteers and at-risk groups [here](https://komak.io/user-instructions/).
+### Who is it for?
 
-### How can I contribute?
+Komak is built with 3 groups of stakeholders in mind:
+
+1. People in need of isolation. 
+
+2. Healthy adults that want to help out. 
+
+3. Groups and organizations working towards the same goal. Komak can help them act more efficiently using our platform.
+
+### Features
+
+- Geolocation-based matching
+- Matching volunteers with those in need
+- Accept or reject help requests
+- Call or text the people you match with
+- (Planned) Select the area you want to help within 
+- (Planned) Create an "in need" account for someone else (your grandparents, for example)
+- (Planned) Identity verification
+- (Planned) Communicating special needs with requests
+- (Planned) Selecting availability time windows
+- (Planned) Submit requests via web form
+
+## Contribute
 
 We are a volunteer-led organization and community. Anyone everywhere can help our initiative in the following ways:
 
-- Become a volunteer by downloading the app 
-- Spreading the word, especially with the people most in need of volunteer services
-- Development; Time is of the essence - you can find out what you can help develop according to our plans on our github.
-- Other skills; We can use all the help we can get. Please send an email and any relevant work you’ve done to komak.contact@gmail.com. 
+- Become a volunteer by [downloading the app](https://komak.io/download/) 
+- Spreading the word, especially with the people most in need of volunteer services.
+- Development; time is of the essence - you can find out what you can help develop according to our plans on our github.
+- Other skills; we can use all the help we can get. Please send an email and any relevant work you’ve done to contact@komak.io. 
 - [Join our open Slack community](https://join.slack.com/t/komak/shared_invite/zt-cv316nyt-JW4Py2oCcxvUfesp7YCqIg). We have channels both for users of the app and people that want to contribute with feedback and ideas. We’re eager to hear and learn from you!
+
+### Contribute as a developer
+
+## Vision and goals
+
+We want to develop technology to aid the global response to COVID-19.
+
+### Vision
+
+Komak's vision is to help reduce the spread of COVID-19 by enabling healthy adults to help those most in need maintain physical isolation. 
+
+We envision Komak as a safe to use platform for every one of our users and hope for everyone to support us in this goal.
+
+### Goals
+
+We want to develop a platform that is:
+
+- **Easy to use**: Our platform should be intuitive and easy to access
+- **Open source**: We believe everyone should be able to contribute to our efforts in whatever way they can. We plan to leverage the open source community in delivering the best platform that we can, and as quickly as we can. Time is of the essence!
+- **Globally accessible**: The platform is being developed with a global scope. Geolocation-enabled services mean that any community, no matter where it is located, can tap into our platform.
+- **Free and non-profit**: Komak is born as a volunteer response to the current crisis. We will not charge for access to the platform, and we will not make a profit out of it. Any funding we might receive through donations or sponsorships will be used to cover the costs of running the platform, increasing awareness and supporting the safety of our users.
+- **Helping flatten the curve**: Experts are saying that COVID-19 will have to be managed for longer than we have previously thought. We hope that our efforts will help reduce the spread of the disease and by doing so contribute to reducing bottlenecks in our healthcare in the wake of the global pandemic.
+
+## Team
+
+Komak is a group effort, and we would like to thank all of the people and companies that are helping us build it.
+
+### Core members
+
+The core members of Komak are:
+
+- [Ali Fateminia (mfateminia)](https://github.com/mfateminia)
+- [Théo Mathieu (mokto)](https://github.com/mokto)
+- [Dragos Petria (DragosPetria)](https://github.com/DragosPetria)
+
+### Contributors
+
+We are very lucky to have attracted a number of contributors to help us out in building this:
+
+- Martin Sandholt, design
+- Wiktorija Marszalek, illustration
+- Steve Dempsey, implementation advisor
+- Ryan Waring, branding and UI design
+- Ehsan P. Rizi, medical consultant
+- Andrei Mindru, infographics
+- Aleksandrina Lazarova, infographics
+
+### Sponsors
+
+We are thankful to our sponsors for covering some of the costs of our initiative. If you'd like to sponsor our efforts, please get in touch at contact@komak.io
+
+- Ocean.io, hosting
+
+## Contact
+
+Please do not hesitate to get in contact with us if you wish to contribute, sponsor our efforts or just say hi! You can reach us by email at contact@komak.io
+
+
+
