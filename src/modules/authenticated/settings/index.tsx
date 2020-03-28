@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigation, CommonActions } from '@react-navigation/native';
-import { ScrollView } from 'react-native-gesture-handler';
 import { CheckBoxButton, Button } from '../../../shared/button';
-import { useProfileFlowStore, useUserStore } from '../../../stores';
+import { useUserStore } from '../../../stores';
 import { TabContainer } from '../common/tab-container';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import { observer } from 'mobx-react-lite';
 
 const styles = StyleSheet.create({

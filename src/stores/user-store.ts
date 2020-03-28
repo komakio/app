@@ -2,7 +2,7 @@ import { RootStore } from './root-store';
 import { Storage } from '../utils/storage';
 import { observable, computed } from 'mobx';
 import { User, LoginResult } from '../models/user';
-import { Profile, ProfilePatch } from '../models/profile';
+import { Profile } from '../models/profile';
 import { ProfilesApi } from '../api/profile';
 import { UsersApi } from '../api/user';
 
@@ -82,7 +82,7 @@ export class UserStore {
     this.promises = [];
   }
 
-  public async patchProfile(profileId: string, profilePatchData: ProfilePatch) {
+  public async patchProfile(profileId: string, profilePatchData: Partial<Profile>) {
     this.accessToken = await Storage.getJson('accessToken');
     if (!this.accessToken) {
       return;

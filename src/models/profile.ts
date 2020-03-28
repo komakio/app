@@ -22,13 +22,3 @@ export interface Profile {
   role: 'helper' | 'needer';
   phone: Phone;
 }
-
-export interface ProfilePatch {
-  self?: boolean;
-  firstName?: string;
-  lastName?: string;
-  address?: Address;
-  disabled?: boolean;
-  phone?: Phone;
-  role?: 'helper' | 'needer';
-}
