@@ -12,6 +12,7 @@ import appleAuth, {
 import { Alert } from 'react-native';
 import { LoginResult } from '../models/user';
 import { AxiosError } from 'axios';
+import { Environment } from '../environment';
 
 export class SocialLoginStore {
   public rootStore: RootStore;
@@ -21,6 +22,7 @@ export class SocialLoginStore {
 
     GoogleSignin.configure({
       forceCodeForRefreshToken: true,
+      iosClientId: Environment.iosGoogleClientId,
       webClientId:
         '50726922019-2n2928603iapbq7kslc4leo7ikgs5l7b.apps.googleusercontent.com', // TODO - should be an env variabled
     });

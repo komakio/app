@@ -12,6 +12,7 @@ export class NotificationsStore {
     await Messaging.registerForRemoteNotifications();
     Messaging.onMessage();
     Messaging.onToken((registrationToken) => {
+      console.log(registrationToken);
       this.registrationToken = registrationToken;
       this.synchronizeToken();
     });

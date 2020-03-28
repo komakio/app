@@ -1,22 +1,10 @@
 import { RootStore } from './root-store';
-import Config from 'react-native-config';
-import { Platform } from 'react-native';
 
 import codePush from 'react-native-code-push';
-import { Storage } from '../utils/storage';
+import { Environment } from '../environment';
 
 export class CodePushStore {
   public rootStore: RootStore;
-
-  public static stagingDeploymentKey =
-    Platform.OS === 'android'
-      ? Config.AndroidCodePushDeploymentKeyStaging
-      : Config.IOSCodePushDeploymentKeyStaging;
-
-  public static productionDeploymentKey =
-    Platform.OS === 'android'
-      ? Config.AndroidCodePushDeploymentKeyProduction
-      : Config.IOSCodePushDeploymentKeyProduction;
 
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
@@ -36,11 +24,12 @@ export class CodePushStore {
   }
 
   private async sync() {
-    const isBeta = await Storage.get('beta');
-    const deploymentKey = isBeta
-      ? CodePushStore.stagingDeploymentKey
-      : CodePushStore.productionDeploymentKey;
-
-    codePush.sync({ deploymentKey });
+    if (!Environment.codePushDeploymentKey) {
+      console.log('Should sync, but in dev mode.');
+      return;
+    }
+    codePush.sync({
+      deploymentKey: Environment.codePushDeploymentKey,
+    });
   }
 }

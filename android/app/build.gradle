@@ -137,6 +137,16 @@ android {
         versionName "1.0.0"
         multiDexEnabled true
     }
+    productFlavors { //add this object
+        staging {
+            applicationIdSuffix '.staging'
+            resValue "string", "build_config_package", "io.komap.app"
+        }
+        // sales {
+        //     applicationIdSuffix '.sales'
+        //     resValue "string", "build_config_package", "com.myapp"
+        // }
+    }
     splits {
         abi {
             reset()

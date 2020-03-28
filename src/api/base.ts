@@ -1,6 +1,4 @@
 import Axios from 'axios';
+import { Environment } from '../environment';
 
-// const baseUrl = 'http://192.168.0.122:3100';
-const baseUrl = 'https://api.komak.io';
-// const baseUrl = 'https://api-staging.komak.io';
-export const axiosInstance = Axios.create({ baseURL: baseUrl });
+export const axiosInstance = Axios.create({ baseURL: Environment.apiUrl });

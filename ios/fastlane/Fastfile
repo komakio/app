@@ -17,9 +17,14 @@ default_platform(:ios)
 
 platform :ios do
   desc "Push a new beta build to TestFlight"
-  lane :beta do
+  lane :staging do
     increment_build_number(xcodeproj: "komak.xcodeproj")
-    build_app(workspace: "komak.xcworkspace", scheme: "komak", configuration: "Release")
+    build_app(workspace: "komak.xcworkspace", scheme: "komak", configuration: "ReleaseStoreStaging")
+    upload_to_testflight
+  end
+  lane :production do
+    increment_build_number(xcodeproj: "komak.xcodeproj")
+    build_app(workspace: "komak.xcworkspace", scheme: "komak", configuration: "ReleaseStoreProduction")
     upload_to_testflight
   end
 

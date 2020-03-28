@@ -12,14 +12,14 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <CodePush/CodePush.h>
+#import "Komak-Swift.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  if ([FIRApp defaultApp] == nil) {
-    [FIRApp configure];
-  }
+  FirebaseSetup *firebaseSetup = [[FirebaseSetup alloc] init];
+  [firebaseSetup initProject];
   
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge

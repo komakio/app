@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>50726922019-5cff1qhkilhft8jtaecj7gqeo980pghe.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.50726922019-5cff1qhkilhft8jtaecj7gqeo980pghe</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>50726922019-gafr4cqdst07ls3f59u0m10ese792d7f.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDjBvWK6MS0kRrFWpA5KzZDvTSdlxeSFFY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>50726922019</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.komak.app.dev</string>
+	<key>PROJECT_ID</key>
+	<string>komak-1b26d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>komak-1b26d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:50726922019:ios:a0ce5469a3d4ba971f0e96</string>
+	<key>DATABASE_URL</key>
+	<string>https://komak-1b26d.firebaseio.com</string>
+</dict>
+</plist>
