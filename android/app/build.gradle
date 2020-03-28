@@ -137,15 +137,24 @@ android {
         versionName "1.0.0"
         multiDexEnabled true
     }
-    productFlavors { //add this object
-        staging {
-            applicationIdSuffix '.staging'
+    flavorDimensions "environment"
+    productFlavors {
+        production {
+            dimension "environment"
             resValue "string", "build_config_package", "io.komap.app"
         }
-        // sales {
-        //     applicationIdSuffix '.sales'
-        //     resValue "string", "build_config_package", "com.myapp"
-        // }
+        staging {
+            dimension "environment"
+            applicationIdSuffix '.staging'
+            versionNameSuffix "-staging"
+            resValue "string", "build_config_package", "io.komap.app"
+        }
+        dev {
+            dimension "environment"
+            applicationIdSuffix '.dev'
+            versionNameSuffix "-dev"
+            resValue "string", "build_config_package", "io.komap.app"
+        }
     }
     splits {
         abi {

@@ -20,12 +20,12 @@ platform :ios do
   lane :staging do
     increment_build_number(xcodeproj: "komak.xcodeproj")
     build_app(workspace: "komak.xcworkspace", scheme: "komak", configuration: "ReleaseStoreStaging")
-    upload_to_testflight
+    upload_to_testflight(app_identifier: "io.komak.app.staging")
   end
   lane :production do
     increment_build_number(xcodeproj: "komak.xcodeproj")
     build_app(workspace: "komak.xcworkspace", scheme: "komak", configuration: "ReleaseStoreProduction")
-    upload_to_testflight
+    upload_to_testflight(app_identifier: "io.komak.app")
   end
 
   lane :icons do

@@ -9,7 +9,10 @@ import Firebase
     
     let filePath = Bundle.main.path(forResource: googleFilePath, ofType: "plist")
     guard let fileopts = FirebaseOptions(contentsOfFile: filePath!)
-      else { assert(false, "Couldn't load config file") }
+      else {
+        print("Couldn't load config file")
+        return;
+    }
 
     FirebaseApp.configure(options: fileopts)
   }
