@@ -82,6 +82,16 @@ export class UserStore {
     this.promises = [];
   }
 
+  public async patchProfile(profileId: string, profilePatchData: Partial<Profile>) {
+    this.accessToken = await Storage.getJson('accessToken');
+    if (!this.accessToken) {
+      return;
+    }
+
+    await ProfilesApi.patchProfile(this.accessToken.token,profileId, profilePatchData);
+    this.profiles[0] = {...this.profile, ...profilePatchData};  
+  }
+
   public async waitReady() {
     if (this.profiles) {
       return Promise.resolve();

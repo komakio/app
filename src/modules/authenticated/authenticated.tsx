@@ -4,12 +4,12 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { AuthenticatedSponsors } from './sponsors';
-import { AuthenticatedSettings } from './settings';
 import { Platform, StyleSheet } from 'react-native';
 import { IconWithBadge } from './icon-with-badge';
 import { useNotificationsStore } from '../../stores';
 import { colors } from '../../shared/variables/colors';
 import { RequestsList } from './requests/list';
+import { AuthenticatedSettings } from './settings';
 
 const Tab = createBottomTabNavigator();
 const AndroidTab = createMaterialBottomTabNavigator();
@@ -43,14 +43,13 @@ const screens = [
   {
     name: 'authenticated-settings',
     component: AuthenticatedSettings,
-    title: 'Settings',
+    title: 'Profile',
     icon: 'account-circle-outline',
     iconActive: 'account-circle',
   },
 ];
 
 export const Authenticated = memo(() => {
-  //   const navigation = useNavigation();
   const notificationsStore = useNotificationsStore();
   const activeRequests = 0;
 

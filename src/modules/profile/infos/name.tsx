@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
 
 import { observer } from 'mobx-react-lite';
 import { useNavigation } from '@react-navigation/native';
 import { Text } from '../../../shared/text';
 import { TextInput } from '../../../shared/text-input';
-import { useProfileFlowStore } from '../../../stores';
+import { useProfileFlowStore, useUserStore } from '../../../stores';
 import { Button } from '../../../shared/button';
 import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
+import { Profile } from '../../../models/profile';
 
 const styles = StyleSheet.create({
   container: {
@@ -30,6 +31,27 @@ const styles = StyleSheet.create({
 export const ProfileInfosName = observer(() => {
   const navigation = useNavigation();
   const profileFlowStore = useProfileFlowStore();
+  const userStore = useUserStore();
+
+  const [firstName, setFirstName] = useState<Profile['firstName']>(
+    userStore?.profile?.firstName || ''
+  );
+  const [lastName, setLastName] = useState<Profile['lastName']>(
+    userStore?.profile?.lastName || ''
+  );
+
+  const onPress = () => {
+    if (userStore.profile._id) {
+      userStore.patchProfile(userStore.profile._id, {
+        firstName,
+        lastName,
+      });
+    } else {
+      profileFlowStore.firstName = firstName;
+      profileFlowStore.lastName = lastName;
+    }
+    navigation.goBack();
+  };
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
@@ -41,24 +63,23 @@ export const ProfileInfosName = observer(() => {
 
       <TextInput
         label="First Name"
-        value={profileFlowStore.firstName}
-        onChangeText={(firstName) => (profileFlowStore.firstName = firstName)}
+        value={firstName}
+        onChangeText={(firstName) => setFirstName(firstName)}
         autoCorrect={false}
-        placeholder="John"
         // placeholderTextColor={colors.blue}
       />
 
       <TextInput
         label="Last Name"
-        value={profileFlowStore.lastName}
-        onChangeText={(lastName) => (profileFlowStore.lastName = lastName)}
+        value={lastName}
+        onChangeText={(lastName) => setLastName(lastName)}
         autoCorrect={false}
         placeholder="Doe"
         // placeholderTextColor={colors.blue}
       />
 
       <View style={styles.buttonContainer}>
-        <Button onPress={navigation.goBack}>Done</Button>
+        <Button onPress={onPress}>Done</Button>
       </View>
     </KeyboardAvoidingView>
   );

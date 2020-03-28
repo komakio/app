@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
 
 import { observer } from 'mobx-react-lite';
 import { useNavigation } from '@react-navigation/native';
 import { Text } from '../../../shared/text';
 import { TextInput } from '../../../shared/text-input';
-import { useProfileFlowStore } from '../../../stores';
+import { useProfileFlowStore, useUserStore } from '../../../stores';
 import { Button } from '../../../shared/button';
 import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
 
@@ -29,6 +29,25 @@ const styles = StyleSheet.create({
 export const ProfileInfosPhone = observer(() => {
   const navigation = useNavigation();
   const profileFlowStore = useProfileFlowStore();
+  const userStore = useUserStore();
+
+  const [phone, setPhone] = useState<string>(
+    userStore?.profile?.phone?.number || ''
+  );
+
+  const onPress = () => {
+    if (userStore.profile._id) {
+      userStore.patchProfile(userStore.profile._id, {
+        phone: {
+          number: phone,
+        },
+      });
+    } else {
+      profileFlowStore.phone = phone;
+    }
+
+    navigation.goBack();
+  };
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
@@ -40,13 +59,13 @@ export const ProfileInfosPhone = observer(() => {
 
       <TextInput
         label="Phone"
-        value={profileFlowStore.phone}
-        onChangeText={(phone) => (profileFlowStore.phone = phone)}
+        value={phone}
+        onChangeText={(phone) => setPhone(phone)}
         keyboardType="number-pad"
       />
 
       <View style={styles.buttonContainer}>
-        <Button onPress={navigation.goBack}>Done</Button>
+        <Button onPress={onPress}>Done</Button>
       </View>
     </KeyboardAvoidingView>
   );

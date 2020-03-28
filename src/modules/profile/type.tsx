@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Text } from '../../shared/text';
 import { ProfileFlowStore } from '../../stores/profile-flow-store';
-import { useProfileFlowStore } from '../../stores';
+import { useProfileFlowStore, useUserStore } from '../../stores';
 import { Button } from '../../shared/button';
 import { BottomNavbar } from '../nav-bar';
 
@@ -34,8 +34,18 @@ const styles = StyleSheet.create({
 export const ProfileType = memo(() => {
   const navigation = useNavigation();
   const profileFlowStore = useProfileFlowStore();
+  const userStore = useUserStore();
+
+  const { profile } = userStore;
 
   const changeStatus = (role: ProfileFlowStore['role']) => () => {
+    if (profile?._id) {
+      userStore.patchProfile(profile._id, {
+        role,
+      });
+      navigation.goBack();
+      return;
+    }
     profileFlowStore.role = role;
     navigation.navigate('profile-infos');
   };
@@ -44,7 +54,7 @@ export const ProfileType = memo(() => {
     <View style={styles.parentContainer}>
       <View style={styles.container}>
         <Text style={styles.title} bold={true}>
-          What is your status ?
+          {profile?.role ? 'Change your Status' : 'What is your status'}
         </Text>
         <View style={styles.buttonsContainer}>
           <Button theme="blue" size="big" onPress={changeStatus('helper')}>
@@ -60,7 +70,9 @@ export const ProfileType = memo(() => {
           </Button>
         </View>
       </View>
-      <BottomNavbar onBack={navigation.canGoBack() && navigation.goBack} />
+      {!profile?.role && (
+        <BottomNavbar onBack={navigation.canGoBack() && navigation.goBack} />
+      )}
     </View>
   );
 });
