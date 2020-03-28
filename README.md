@@ -1,11 +1,12 @@
 # Welcome to Komak’s open-source repository 🙏
 
+<p><img width="280" src="https://user-images.githubusercontent.com/28791837/77825801-fd82ad00-710b-11ea-827a-19f3f8eb5f74.png"> <img width="280" src="https://user-images.githubusercontent.com/28791837/77825803-007d9d80-710c-11ea-9fdd-c4f90a803ebf.png"> <img width="280" src="https://user-images.githubusercontent.com/28791837/77825806-01163400-710c-11ea-92c9-3a2080363dc8.png"> </p>
+
 * [Introduction](#introduction)
   * [What is Komak?](#what-is-komak)
   * [Who is it for?](#who-is-it-for)
   * [Features](#features)
 * [Contribute](#contribute)
-  * [Contribute as a developer](#contribute-as-a-developer)
 * [Vision and goals](#vision-and-goals)
   * [Vision](#vision)
   * [Goals](#goals)
@@ -20,8 +21,6 @@
 Welcome to Komak, Nabo's open source project for developing a platform to help fight against the effects of the COVID-19 pandemic. 
 
 ### What is Komak?
-
-<p><img width="280" src="https://user-images.githubusercontent.com/28791837/77825801-fd82ad00-710b-11ea-827a-19f3f8eb5f74.png"> <img width="280" src="https://user-images.githubusercontent.com/28791837/77825803-007d9d80-710c-11ea-9fdd-c4f90a803ebf.png"> <img width="280" src="https://user-images.githubusercontent.com/28791837/77825806-01163400-710c-11ea-92c9-3a2080363dc8.png"> </p>
 
 Komak is an app born out of necessity in the wake of the COVID-19 events. The goal of Komak is to provide a digital platform for healthy volunteers to help out those most in need. 
 
@@ -54,15 +53,7 @@ Komak is built with 3 groups of stakeholders in mind:
 
 ## Contribute
 
-We are a volunteer-led organization and community. Anyone everywhere can help our initiative in the following ways:
 
-- Become a volunteer by [downloading the app](https://komak.io/download/) 
-- Spreading the word, especially with the people most in need of volunteer services.
-- Development; time is of the essence - you can find out what you can help develop according to our plans on our github.
-- Other skills; we can use all the help we can get. Please send an email and any relevant work you’ve done to contact@komak.io. 
-- [Join our open Slack community](https://join.slack.com/t/komak/shared_invite/zt-cv316nyt-JW4Py2oCcxvUfesp7YCqIg). We have channels both for users of the app and people that want to contribute with feedback and ideas. We’re eager to hear and learn from you!
-
-### Contribute as a developer
 
 ## Vision and goals
 
@@ -98,15 +89,7 @@ The core members of Komak are:
 
 ### Contributors
 
-We are very lucky to have attracted a number of contributors to help us out in building this:
-
-- Martin Sandholt, design
-- Wiktorija Marszalek, illustration
-- Steve Dempsey, implementation advisor
-- Ryan Waring, branding and UI design
-- Ehsan P. Rizi, medical consultant
-- Andrei Mindru, infographics
-- Aleksandrina Lazarova, infographics
+We are very lucky to have attracted a number of contributors to help us out in building this. You can find the up to date list of contributors [on our website](https://komak.io/who-we-are/).
 
 ### Sponsors
 
