@@ -8,6 +8,7 @@ import { useUserStore, useRequestsStore } from '../../../stores';
 import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
 import { Button } from '../../../shared/button';
 import { Request } from '../../../models/request';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   container: {
@@ -36,11 +37,14 @@ export const PendingRequestView = observer(() => {
   >();
   const { profile } = useUserStore();
   const requestsStore = useRequestsStore();
+  const { t } = useTranslation();
 
   const title =
-    profile.role === 'needer'
-      ? 'You have requested some help'
-      : `${request.requesterShortName} has requested some help`;
+    profile?.role === 'needer'
+      ? t('REQUESTS_REQUEST_PENDING_DETAILS_HELPER')
+      : t('REQUESTS_REQUEST_PENDING_DETAILS_NEEDER', {
+          name: request.requesterShortName,
+        });
 
   const acceptRequest = async () => {
     await requestsStore.acceptRequest(request._id);
@@ -60,27 +64,27 @@ export const PendingRequestView = observer(() => {
         <Text style={styles.title}>{title}</Text>
       </View>
 
-      {profile.role === 'needer' && (
+      {profile?.role === 'needer' && (
         <View>
           <View style={styles.buttonContainer}>
-            <Button onPress={navigation.goBack}>Ok</Button>
+            <Button onPress={navigation.goBack}>{t('ACTIONS_OK')}</Button>
           </View>
           <View style={styles.buttonContainer}>
             <Button onPress={cancelRequest} theme="red">
-              Cancel
+              {t('ACTIONS_CANCEL')}
             </Button>
           </View>
         </View>
       )}
 
-      {profile.role === 'helper' && (
+      {profile?.role === 'helper' && (
         <View>
           <View style={styles.buttonContainer}>
-            <Button onPress={acceptRequest}>Accept</Button>
+            <Button onPress={acceptRequest}>{t('ACTIONS_ACCEPT')}</Button>
           </View>
           <View style={styles.buttonContainer}>
             <Button onPress={navigation.goBack} theme="red">
-              Close
+              {t('ACTIONS_CLOSE')}
             </Button>
           </View>
         </View>

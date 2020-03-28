@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   googleButton: {
-    width: 250,
+    minWidth: 250,
     height: 60,
     margin: 10,
     borderRadius: 5,
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
+    paddingHorizontal: 10,
   },
   googleText: {
     color: 'white',

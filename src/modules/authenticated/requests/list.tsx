@@ -9,6 +9,7 @@ import { ShareButton } from '../../../shared/button/share-button';
 import { useUserStore, useRequestsStore } from '../../../stores';
 import { observer } from 'mobx-react-lite';
 import { RequestListItem } from './request-list-item';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   button: {
@@ -20,6 +21,7 @@ export const RequestsList = observer(() => {
   const navigation = useNavigation();
   const { profile } = useUserStore();
   const requestsStore = useRequestsStore();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
@@ -35,11 +37,9 @@ export const RequestsList = observer(() => {
   const hasRequests = !!requestsStore.requests?.length;
 
   return (
-    <TabContainer title="Requests" flex={!hasRequests}>
+    <TabContainer title={t('REQUESTS_TITLE')} flex={!hasRequests}>
       <View style={{ flex: 1, width: '100%' }}>
-        {!hasRequests && (
-          <EmptyBox title="The more healthy helpers the better. Add your friends and help out." />
-        )}
+        {!hasRequests && <EmptyBox title={t('REQUESTS_EMPTY_DISCLAIMER')} />}
         {hasRequests &&
           requestsStore.requests?.map((request) => (
             <RequestListItem key={request._id} request={request} />
@@ -53,7 +53,7 @@ export const RequestsList = observer(() => {
         requestsStore?.requests?.filter((r) => r.status === 'pending')
           .length === 0 && (
           <Button size="big" style={styles.button} onPress={requestHelp}>
-            Request help
+            {t('REQUESTS_REQUEST_HELP')}
           </Button>
         )}
     </TabContainer>

@@ -3,6 +3,7 @@ import Share from 'react-native-share';
 
 import { StyleProp, ViewStyle } from 'react-native';
 import { Button } from './button';
+import { useTranslation } from 'react-i18next';
 
 interface ShareButtonProps {
   url: string;
@@ -10,6 +11,7 @@ interface ShareButtonProps {
 }
 
 export const ShareButton: FC<ShareButtonProps> = memo(({ url, style }) => {
+  const { t } = useTranslation();
   const share = () => {
     Share.open({
       url,
@@ -18,7 +20,7 @@ export const ShareButton: FC<ShareButtonProps> = memo(({ url, style }) => {
 
   return (
     <Button style={style} size="big" onPress={share}>
-      Share this app
+      {t('ACTIONS_SHARE_APP')}
     </Button>
   );
 });

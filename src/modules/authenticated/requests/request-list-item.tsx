@@ -10,6 +10,7 @@ import { colors } from '../../../shared/variables/colors';
 import { Text } from '../../../shared/text';
 import { Request } from '../../../models/request';
 import { StringUtils } from '../../../utils/strings';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   container: {
@@ -36,20 +37,27 @@ export const RequestListItem: FC<RequestListItemProps> = observer(
   ({ request }) => {
     const navigation = useNavigation();
     const { profile } = useUserStore();
+    const { t } = useTranslation();
 
     let text = '';
 
     if (request.status === 'pending') {
       text =
-        profile.role === 'needer'
-          ? 'You have requested some help'
-          : `${request.requesterShortName} has requested some help`;
+        profile?.role === 'needer'
+          ? t('REQUESTS_REQUEST_PENDING_DETAILS_HELPER')
+          : t('REQUESTS_REQUEST_PENDING_DETAILS_NEEDER', {
+              name: request.requesterShortName,
+            });
     }
     if (request.status === 'accepted') {
       text =
-        profile.role === 'needer'
-          ? `${request.acceptorShortName} has agreed to help you.`
-          : `You agreed to help ${request.requesterShortName}`;
+        profile?.role === 'needer'
+          ? t('REQUESTS_REQUEST_ACCEPTED_DETAILS_NEEDER', {
+              name: request.acceptorShortName,
+            })
+          : t('REQUESTS_REQUEST_ACCEPTED_DETAILS_NEEDER', {
+              name: request.requesterShortName,
+            });
     }
 
     return (
@@ -63,7 +71,7 @@ export const RequestListItem: FC<RequestListItemProps> = observer(
           // checked={false}
         >
           <Text bold={true} style={styles.title}>
-            {StringUtils.capitalizeFirstLetter(request.status)} request
+            {t(`REQUESTS_REQUEST_${request.status.toUpperCase()}`)}
           </Text>
           <Text style={styles.subtitle}>{text}</Text>
         </Touchable>

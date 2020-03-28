@@ -14,6 +14,7 @@ import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
 import { Button } from '../../../shared/button';
 import { Request } from '../../../models/request';
 import { Profile } from '../../../models/profile';
+import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   container: {
@@ -50,12 +51,13 @@ export const AcceptedRequestView = observer(() => {
   const { profile } = useUserStore();
   const requestsStore = useRequestsStore();
   const [otherPersonProfile, setOtherPersonProfile] = useState<Profile>();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const get = async () => {
       const data = await requestsStore.getProfileFromRequest(
         request._id,
-        profile.role === 'needer'
+        profile?.role === 'needer'
           ? request.acceptorProfileId
           : request.requesterProfileId
       );
@@ -65,13 +67,13 @@ export const AcceptedRequestView = observer(() => {
   }, [request, profile, requestsStore]);
 
   //   const title =
-  //     profile.role === 'needer'
+  //     profile?.role === 'needer'
   //       ? 'You have requested some help'
   //       : `${request.requesterShortName} has requested some help`;
   const title =
-    profile.role === 'needer'
-      ? 'Help will be provided by a local in your community'
-      : 'Help is needed by a local in your community.';
+    profile?.role === 'needer'
+      ? 'REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER'
+      : 'REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER';
 
   if (!otherPersonProfile) {
     return;
@@ -82,15 +84,15 @@ export const AcceptedRequestView = observer(() => {
       <ModalArrowClose />
 
       <ScrollView>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title}>{t(title)}</Text>
 
-        <Text style={styles.fieldTitle}>Name</Text>
+        <Text style={styles.fieldTitle}>{t('REQUESTS_REQUEST_NAME')}</Text>
         <Text style={styles.fieldValue}>
           {otherPersonProfile.firstName} {otherPersonProfile.lastName}
         </Text>
 
         {otherPersonProfile.address?.raw && (
-          <Text style={styles.fieldTitle}>Address</Text>
+          <Text style={styles.fieldTitle}>{t('REQUESTS_REQUEST_ADDRESS')}</Text>
         )}
         {otherPersonProfile.address?.raw && (
           <Text style={styles.fieldValue}>
@@ -98,7 +100,9 @@ export const AcceptedRequestView = observer(() => {
           </Text>
         )}
 
-        <Text style={styles.fieldTitle}>Phone number</Text>
+        <Text style={styles.fieldTitle}>
+          {t('REQUESTS_REQUEST_PHONE_NUMBER')}
+        </Text>
         <Text style={styles.fieldValue}>{otherPersonProfile.phone.number}</Text>
 
         <Button
@@ -107,7 +111,7 @@ export const AcceptedRequestView = observer(() => {
             Linking.openURL(`tel:${otherPersonProfile.phone.number}`)
           }
         >
-          Call
+          {t('ACTIONS_CALL')}
         </Button>
         <Button
           style={styles.smsButton}
@@ -115,7 +119,7 @@ export const AcceptedRequestView = observer(() => {
             Linking.openURL(`sms:tel:${otherPersonProfile.phone.number}`)
           }
         >
-          SMS
+          {t('ACTIONS_SMS')}
         </Button>
       </ScrollView>
     </KeyboardAvoidingView>
