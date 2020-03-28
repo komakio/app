@@ -21,12 +21,10 @@ interface EmptyBoxProps {
   title: string;
 }
 
-export const EmptyBox: FC<EmptyBoxProps> = memo(() => {
+export const EmptyBox: FC<EmptyBoxProps> = memo(({ title }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>
-        The more healthy helpers the better. Add your friends and help out.{' '}
-      </Text>
+      <Text style={styles.text}>{title}</Text>
     </View>
   );
 });
