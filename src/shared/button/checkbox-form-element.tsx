@@ -36,12 +36,12 @@ const styles = StyleSheet.create({
   },
 });
 
-interface CustomCheckboxProps {
+interface CheckboxFormElementProps {
   onPress: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
   checked?: boolean;
 }
 
-export const CustomCheckbox: FC<CustomCheckboxProps> = memo(
+export const CheckboxFormElement: FC<CheckboxFormElementProps> = memo(
   ({ onPress, children, checked }) => {
     return (
       <Touchable
