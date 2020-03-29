@@ -10,7 +10,6 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { CheckBoxButton } from '../../shared/button/checkbox-button';
 import { BottomNavbar } from '../nav-bar/nav-bar';
 import { colors } from '../../shared/variables/colors';
-import { Touchable } from '../../shared/button';
 import { CheckboxLink } from '../../shared/checkbox-link';
 
 const styles = StyleSheet.create({

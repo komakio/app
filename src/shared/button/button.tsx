@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     flexDirection: 'row',
     justifyContent: 'space-around',
+    alignItems: 'center',
   },
 
   disabledButton: {
@@ -25,6 +26,12 @@ const styles = StyleSheet.create({
   smallButton: {
     width: 185,
     padding: 10,
+  },
+
+  smallerButton: {
+    width: 100,
+    height: 32,
+    fontSize: 14,
   },
 
   bigButton: {
@@ -59,6 +66,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
+  smallerText: {
+    fontSize: 14,
+  },
+
   disabledText: {
     color: 'gray',
   },
@@ -70,7 +81,7 @@ const styles = StyleSheet.create({
 
 interface ButtonProps {
   onPress: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
-  size?: 'small' | 'big';
+  size?: 'small' | 'big' | 'smaller';
   theme?: 'blue' | 'green' | 'red' | 'grey';
   disabled?: boolean;
   style?: StyleProp<ViewStyle>;
@@ -87,6 +98,7 @@ export const Button: FC<ButtonProps> = memo(
   }) => {
     const buttonStyles = [
       styles.commonButton,
+      size === 'smaller' && styles.smallerButton,
       size === 'small' && styles.smallButton,
       size === 'big' && styles.bigButton,
       theme === 'blue' && styles.blueButton,
@@ -99,7 +111,10 @@ export const Button: FC<ButtonProps> = memo(
     return (
       <Touchable
         onPress={onPress}
-        textStyle={styles.commonText}
+        textStyle={[
+          styles.commonText,
+          size === 'smaller' && styles.smallerText,
+        ]}
         containerStyle={[buttonStyles, style]}
         accessibilityRole="button"
         disabled={disabled}
