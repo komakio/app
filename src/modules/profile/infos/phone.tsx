@@ -38,7 +38,7 @@ export const ProfileInfosPhone = observer(() => {
   );
 
   const onPress = () => {
-    if (userStore.profile._id) {
+    if (userStore.profile?._id) {
       userStore.patchProfile(userStore.profile._id, {
         phone: {
           number: phone,

@@ -62,9 +62,8 @@
   "PROFILE_SETUP_GEOLOCATION": "Enable geolocation",
   "PROFILE_SETUP_PHONE": "Phone",
   "PROFILE_SETUP_ADDRESS": "Address",
-  "PROFILE_SETUP_TERMS_CONFIRM": "I have read and agree with the terms of service",
-  "PROFILE_SETUP_TERMS_READ": "Read terms of service",
-  "PROFILE_SETUP_PRIVACY_POLICY_CONFIRM": "I understand and consent to the collection and use of my personal information, including my Health Data, as described in the Privacy Policy",
+  "PROFILE_SETUP_TERMS_CONFIRM": "I have read and agree with the <0>terms of service</0>",
+  "PROFILE_SETUP_PRIVACY_POLICY_CONFIRM": "I understand and consent to the collection and use of my personal information, including my Health Data, as described in the <0>privacy policy</0>",
 
   "PROFILE_VIEW_TITLE": "Profile",
   "PROFILE_VIEW_STATUS": "Your status",

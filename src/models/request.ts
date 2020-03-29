@@ -7,6 +7,9 @@ export interface Request {
   acceptorProfileId: string;
   type: 'misc';
   createdAt: string;
-  profileIds: string[];
+  candidates: {
+    profileId: string;
+    distance: number;
+  }[];
   updatedAt: string;
 }
