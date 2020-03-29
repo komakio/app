@@ -24,7 +24,10 @@ export class ProfileFlowStore {
   public address = '';
 
   @observable
-  public terms = false;
+  public policyTerms = false;
+
+  @observable
+  public serviceTerms = false;
 
   @observable
   public coords: [number, number];
@@ -69,7 +72,8 @@ export class ProfileFlowStore {
       !this.phone ||
       !this.dialCode ||
       !this.coords ||
-      !this.terms ||
+      !this.serviceTerms ||
+      !this.policyTerms ||
       (this.role === 'needer' && !this.address)
     ) {
       return false;
@@ -85,7 +89,8 @@ export class ProfileFlowStore {
     this.phone = '';
     this.dialCode = '-';
     this.address = '';
-    this.terms = false;
+    this.serviceTerms = false;
+    this.policyTerms = false;
     this.coords = null;
   }
 }

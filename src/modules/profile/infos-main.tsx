@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Alert, Linking } from 'react-native';
 import { useNavigation, CommonActions } from '@react-navigation/native';
 import { Text } from '../../shared/text';
@@ -11,6 +11,7 @@ import { CheckBoxButton } from '../../shared/button/checkbox-button';
 import { BottomNavbar } from '../nav-bar/nav-bar';
 import { colors } from '../../shared/variables/colors';
 import { Touchable } from '../../shared/button';
+import { CheckboxLink } from '../../shared/checkbox-link';
 
 const styles = StyleSheet.create({
   parentContainer: {
@@ -37,12 +38,17 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     marginBottom: 20,
   },
+  termServiceLink: {
+    textDecorationLine: 'none',
+  },
 });
 
 export const InfosMain = observer(() => {
   const navigation = useNavigation();
   const profileFlowStore = useProfileFlowStore();
   const { t } = useTranslation();
+  const [serviceTerms, setServiceTerms] = useState<boolean>(false);
+  const [policyTerms, setPolicyTerms] = useState<boolean>(false);
 
   const getGeolocation = async () => {
     try {
@@ -70,6 +76,17 @@ export const InfosMain = observer(() => {
         routes: [{ name: 'authenticated' }],
       })
     );
+  };
+
+  const onServiceTerms = () => {
+    Linking.openURL('https://komak.io/terms-of-service/');
+    setServiceTerms(true);
+    profileFlowStore.serviceTerms = serviceTerms;
+  };
+
+  const onPolicyTerms = () => {
+    setPolicyTerms(!policyTerms);
+    profileFlowStore.policyTerms = policyTerms;
   };
 
   return (
@@ -133,20 +150,17 @@ export const InfosMain = observer(() => {
         )}
 
         <View style={styles.buttonContainer}>
-          <CheckBoxButton
-            onPress={() => (profileFlowStore.terms = !profileFlowStore.terms)}
-            checked={profileFlowStore.terms}
-          >
+          <CheckboxLink onPress={onServiceTerms} checked={serviceTerms}>
             {t('PROFILE_SETUP_TERMS_CONFIRM')}
-          </CheckBoxButton>
+          </CheckboxLink>
+          <CheckboxLink
+            onPress={onPolicyTerms}
+            checked={policyTerms}
+            linkStyle={styles.termServiceLink}
+          >
+            {t('PROFILE_SETUP_PRIVACY_POLICY_CONFIRM')}
+          </CheckboxLink>
         </View>
-        <Touchable
-          onPress={() => Linking.openURL('https://komak.io/terms-of-service/')}
-          textStyle={styles.termsServiceText}
-          accessibilityRole="link"
-        >
-          {t('PROFILE_SETUP_TERMS_READ')}
-        </Touchable>
       </ScrollView>
       <BottomNavbar
         onBack={navigation.canGoBack() && navigation.goBack}

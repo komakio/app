@@ -63,6 +63,7 @@
   "PROFILE_SETUP_ADDRESS": "Address",
   "PROFILE_SETUP_TERMS_CONFIRM": "I have read and agree with the terms of service",
   "PROFILE_SETUP_TERMS_READ": "Read terms of service",
+  "PROFILE_SETUP_PRIVACY_POLICY_CONFIRM": "I understand and consent to the collection and use of my personal information, including my Health Data, as described in the Privacy Policy",
 
   "PROFILE_VIEW_TITLE": "Profile",
   "PROFILE_VIEW_STATUS": "Your status",
