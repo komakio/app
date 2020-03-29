@@ -1,6 +1,6 @@
 {
-  "GEOLOCATION_PERMISSION_DENIED": "Our access has been denied. Have you approved the application to access your location?",
-  "GEOLOCATION_POSITION_UNAVAILABLE": "We couldn't get your position. Is your GPS activated?",
+  "GEOLOCATION_PERMISSION_DENIED": "Accesul nu ne este permis. Ați acordat aplicației acces pentru locație în setări?",
+  "GEOLOCATION_POSITION_UNAVAILABLE": "Nu v-am putut identifica poziția. Aveți GPS-ul activat?",
   "GEOLOCATION_TIMEOUT": "A apărut o problemă",
   "ACTIONS_BACK": "Înapoi",
   "ACTIONS_NEXT": "Înainte",
@@ -42,7 +42,7 @@
   "CONSENTS_CONTACT": "Nu am intrat în contact cu nicio persoana suspectă de a fi infectată sau bolnavă în ultimele 14 zile.",
   "CONSENTS_SOCIAL": "Am practicat izolarea socială.",
   "STATUS_TITLE_CHANGE": "Schimbă rolul",
-  "STATUS_TITLE": "What is your status?",
+  "STATUS_TITLE": "Ce statut aveți?",
   "STATUS_HEALTHY": "Sănătos",
   "STATUS_IN_NEED": "În izolare",
   "PROFILE_SETUP_TITLE": "Avem nevoie de câteva detalii.",
