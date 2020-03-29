@@ -1,7 +1,7 @@
 {
-  "GEOLOCATION_PERMISSION_DENIED": "Our access has been denied. Have you approved the application to access your location ?",
-  "GEOLOCATION_POSITION_UNAVAILABLE": "We couldn't get your position. Is your GPS activated ?",
-  "GEOLOCATION_TIMEOUT": "A timeout occured",
+  "GEOLOCATION_PERMISSION_DENIED": "我们的访问被拒绝。您是否批准了访问您所在位置的应用程序？",
+  "GEOLOCATION_POSITION_UNAVAILABLE": "我们无法获得您的位置。您的 GPS 是否已激活？",
+  "GEOLOCATION_TIMEOUT": "发生超时",
   "ACTIONS_BACK": "Back",
   "ACTIONS_NEXT": "Next",
   "ACTIONS_DONE": "Done",
@@ -52,6 +52,7 @@
   "PROFILE_SETUP_ADDRESS": "Address",
   "PROFILE_SETUP_TERMS_CONFIRM": "I have read and agree with the terms of service",
   "PROFILE_SETUP_TERMS_READ": "Read terms of service",
+  "PROFILE_SETUP_PRIVACY_POLICY_CONFIRM": "I understand and consent to the collection and use of my personal information, including my Health Data, as described in the Privacy Policy",
   "PROFILE_VIEW_TITLE": "Profile",
   "PROFILE_VIEW_STATUS": "Your status",
   "PROFILE_VIEW_NAME": "Your name",
