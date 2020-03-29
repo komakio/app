@@ -7,6 +7,7 @@
   * [Who is it for?](#who-is-it-for)
   * [Features](#features)
 * [Contribute](#contribute)
+* [Contribute as a Developer](#contribute-as-a-developer)
 * [Vision and goals](#vision-and-goals)
   * [Vision](#vision)
   * [Goals](#goals)
@@ -53,7 +54,19 @@ Komak is built with 3 groups of stakeholders in mind:
 
 ## Contribute
 
+- One the best way to help the project is to talk about it, in any way you can (blog, articles, twitter, etc...)
+- Found a bug ? Have an awesome idea ? You can create an issue on the [issue tracker](https://github.com/komakio/app/issues/new/choose)
+- Non-english speaker ? You can help us translating this app on [Crowding](https://crwd.in/komak)
+- We are a non-profit organization but you can help us pay the bills. Contact us at contact@komak.io.
 
+## Contribute as a developer
+
+### Architecture
+
+We have 2 main repositories : App & Backend.
+
+- The [backend](https://github.com/komakio/backend) is written in Node.js + Typescript + [Nest.js](https://nestjs.com/) and is using MongoDB (database) & RabbitMQ (message broker). You can find more information by accessing the [repository](https://github.com/komakio/backend).
+- The app is also written in Typescript, with the help of 
 
 ## Vision and goals
 
