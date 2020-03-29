@@ -1,16 +1,14 @@
 import React, { FC } from 'react';
 
 import { StyleSheet } from 'react-native';
-import { Touchable, Button } from '../../../shared/button';
-import { useNavigation } from '@react-navigation/native';
 import { useUserStore } from '../../../stores';
 import { observer } from 'mobx-react-lite';
 import { View } from 'react-native-animatable';
 import { colors } from '../../../shared/variables/colors';
 import { Text } from '../../../shared/text';
 import { Request } from '../../../models/request';
-import { StringUtils } from '../../../utils/strings';
 import { useTranslation } from 'react-i18next';
+import { PendingRequestView } from '../request/pending';
 
 const styles = StyleSheet.create({
   container: {
@@ -35,7 +33,6 @@ interface RequestListItemProps {
 
 export const RequestListItem: FC<RequestListItemProps> = observer(
   ({ request }) => {
-    const navigation = useNavigation();
     const { profile } = useUserStore();
     const { t } = useTranslation();
 
@@ -61,20 +58,12 @@ export const RequestListItem: FC<RequestListItemProps> = observer(
     }
 
     return (
-      <View>
-        <Touchable
-          onPress={() =>
-            navigation.navigate(`requests-request-${request.status}`, request)
-          }
-          containerStyle={styles.container}
-          accessibilityRole="button"
-          // checked={false}
-        >
-          <Text bold={true} style={styles.title}>
-            {t(`REQUESTS_REQUEST_${request.status.toUpperCase()}`)}
-          </Text>
-          <Text style={styles.subtitle}>{text}</Text>
-        </Touchable>
+      <View style={styles.container}>
+        <Text bold={true} style={styles.title}>
+          {t(`REQUESTS_REQUEST_${request.status.toUpperCase()}`)}
+        </Text>
+        <Text style={styles.subtitle}>{text}</Text>
+        <PendingRequestView request={request} />
       </View>
     );
   }

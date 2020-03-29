@@ -1,94 +1,73 @@
-import React from 'react';
-import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
-
-import { observer } from 'mobx-react-lite';
-import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
-import { Text } from '../../../shared/text';
+import React, { memo, FC } from 'react';
+import { StyleSheet, View, KeyboardAvoidingView, Alert } from 'react-native';
 import { useUserStore, useRequestsStore } from '../../../stores';
-import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
 import { Button } from '../../../shared/button';
 import { Request } from '../../../models/request';
 import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 30,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginBottom: 30,
-  },
   buttonContainer: {
-    alignSelf: 'center',
-    paddingHorizontal: 20,
     marginTop: 10,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
   },
 });
 
-export const PendingRequestView = observer(() => {
-  const navigation = useNavigation();
-  const { params: request } = useRoute<
-    RouteProp<{ request: Request }, 'request'>
-  >();
-  const { profile } = useUserStore();
-  const requestsStore = useRequestsStore();
-  const { t } = useTranslation();
+interface PendingRequestViewProps {
+  request: Request;
+}
 
-  const title =
-    request.requesterProfileId === profile?._id
-      ? t('REQUESTS_REQUEST_PENDING_DETAILS_HELPER')
-      : t('REQUESTS_REQUEST_PENDING_DETAILS_NEEDER', {
-          name: request.requesterShortName,
-        });
+export const PendingRequestView: FC<PendingRequestViewProps> = memo(
+  ({ request }) => {
+    const { profile } = useUserStore();
+    const requestsStore = useRequestsStore();
+    const { t } = useTranslation();
 
-  const acceptRequest = async () => {
-    await requestsStore.acceptRequest(request._id);
-    navigation.goBack();
-  };
+    const title =
+      request?.requesterProfileId === profile?._id
+        ? t('REQUESTS_REQUEST_PENDING_DETAILS_HELPER')
+        : t('REQUESTS_REQUEST_PENDING_DETAILS_NEEDER', {
+            name: request?.requesterShortName,
+          });
 
-  const cancelRequest = async () => {
-    await requestsStore.cancelRequest(request._id);
-    navigation.goBack();
-  };
+    const acceptRequest = async () => {
+      await requestsStore.acceptRequest(request._id);
+    };
 
-  return (
-    <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
-      <ModalArrowClose />
+    const cancelRequest = async () => {
+      Alert.alert(
+        'Cancelling the request',
+        'Your are about to cancel your request, are you sure?',
+        [
+          {
+            text: 'No',
+          },
+          {
+            text: 'Yes',
+            onPress: async () => await requestsStore.cancelRequest(request._id),
+          },
+        ],
+        { cancelable: true }
+      );
+    };
 
+    return (
       <View>
-        <Text style={styles.title}>{title}</Text>
-      </View>
-
-      {profile?.role === 'needer' && (
-        <View>
+        {profile?.role === 'needer' && request.status === 'pending' && (
           <View style={styles.buttonContainer}>
-            <Button onPress={navigation.goBack}>{t('ACTIONS_OK')}</Button>
-          </View>
-          <View style={styles.buttonContainer}>
-            <Button onPress={cancelRequest} theme="red">
+            <Button onPress={cancelRequest} theme="blue" size="smaller">
               {t('ACTIONS_CANCEL')}
             </Button>
           </View>
-        </View>
-      )}
-
-      {profile?.role === 'helper' && (
-        <View>
+        )}
+        {profile?.role === 'helper' && request.status === 'pending' && (
           <View style={styles.buttonContainer}>
-            <Button onPress={acceptRequest}>{t('ACTIONS_ACCEPT')}</Button>
-          </View>
-          <View style={styles.buttonContainer}>
-            <Button onPress={navigation.goBack} theme="red">
-              {t('ACTIONS_CLOSE')}
+            <Button size="smaller" onPress={acceptRequest}>
+              {t('ACTIONS_ACCEPT')}
             </Button>
           </View>
-        </View>
-      )}
-    </KeyboardAvoidingView>
-  );
-});
+        )}
+      </View>
+    );
+  }
+);
