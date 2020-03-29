@@ -1,5 +1,5 @@
 {
-  "GEOLOCATION_PERMISSION_DENIED": "Notre accès a été refusé. Avez-vous autorisé l'application à accéder à vos données gps ?",
+  "GEOLOCATION_PERMISSION_DENIED": "Notre accès a été refusé. Avez-vous autorisé l'application à accéder à vos données GPS ?",
   "GEOLOCATION_POSITION_UNAVAILABLE": "Nous n'avons pu vous localiser. Est-ce que votre GPS est activé ?",
   "GEOLOCATION_TIMEOUT": "La requête a échoué",
   "ACTIONS_BACK": "Retour",
@@ -52,6 +52,7 @@
   "PROFILE_SETUP_ADDRESS": "Adresse",
   "PROFILE_SETUP_TERMS_CONFIRM": "J'ai lu et j'accepte les conditions de service",
   "PROFILE_SETUP_TERMS_READ": "Lire les conditions de service",
+  "PROFILE_SETUP_PRIVACY_POLICY_CONFIRM": "I understand and consent to the collection and use of my personal information, including my Health Data, as described in the Privacy Policy",
   "PROFILE_VIEW_TITLE": "Profil",
   "PROFILE_VIEW_STATUS": "Votre status",
   "PROFILE_VIEW_NAME": "Votre nom",
