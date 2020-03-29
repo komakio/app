@@ -1,5 +1,5 @@
 {
-  "GEOLOCATION_PERMISSION_DENIED": "Our access has been denied. Have you approved the application to access your location?",
+  "GEOLOCATION_PERMISSION_DENIED": "Notre accès a été refusé. Avez-vous autorisé l'application à accéder à vos données GPS ?",
   "GEOLOCATION_POSITION_UNAVAILABLE": "Nous n'avons pu vous localiser. Est-ce que votre GPS est activé ?",
   "GEOLOCATION_TIMEOUT": "La requête a échoué",
   "ACTIONS_BACK": "Retour",
