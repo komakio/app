@@ -1,6 +1,5 @@
 import * as RNLocalize from 'react-native-localize';
 import i18nLib from 'i18next';
-import { Alert } from 'react-native';
 
 const languages = ['en', 'fr'];
 
@@ -9,8 +8,8 @@ i18nLib.init({
   fallbackLng: 'en',
 
   resources: {
-    en: { translation: require('./en.json') },
-    fr: { translation: require('./fr.json') },
+    en: { translation: require('./languages/en.json') },
+    fr: { translation: require('./languages/fr.json') },
   },
 
   keySeparator: false, // we do not use keys in form messages.welcome
