@@ -1,6 +1,6 @@
 {
-  "GEOLOCATION_PERMISSION_DENIED": "Our access has been denied. Have you approved the application to access your location ?",
-  "GEOLOCATION_POSITION_UNAVAILABLE": "Мы не смогли определить ваше местоположение. Убедитесь, что вы активировали GPS.",
+  "GEOLOCATION_PERMISSION_DENIED": "Our access has been denied. Have you approved the application to access your location?",
+  "GEOLOCATION_POSITION_UNAVAILABLE": "We couldn't get your position. Is your GPS activated?",
   "GEOLOCATION_TIMEOUT": "A timeout occured",
   "ACTIONS_BACK": "Back",
   "ACTIONS_NEXT": "Next",
@@ -42,7 +42,7 @@
   "CONSENTS_CONTACT": "I have not come in contact with anyone suspected of being infected or sick in the past 14 days.",
   "CONSENTS_SOCIAL": "I have been practicing social distancing.",
   "STATUS_TITLE_CHANGE": "Change your status",
-  "STATUS_TITLE": "What is your status",
+  "STATUS_TITLE": "What is your status?",
   "STATUS_HEALTHY": "Healthy",
   "STATUS_IN_NEED": "In need",
   "PROFILE_SETUP_TITLE": "We just need a few things to set you up.",
