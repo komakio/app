@@ -78,7 +78,21 @@ platform :android do
       file: "app/build/outputs/apk/staging/release/app-staging-release.apk",
       notify_testers: true # Set to false if you don't want to notify testers of your new release (default: `false`)
     )
-    
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :production do
+    increment_version_code
+    gradle(task: "clean assembleProductionRelease")
+
+    appcenter_upload(
+      # api_token: "<appcenter token>",
+      owner_name: "Komak",
+      owner_type: "organization", # Default is user - set to organization for appcenter organizations
+      app_name: "komak",
+      file: "app/build/outputs/apk/staging/release/app-πroduction-release.apk",
+      notify_testers: true # Set to false if you don't want to notify testers of your new release (default: `false`)
+    )
   end
 
   desc "Deploy a new version to the Google Play"
