@@ -1,7 +1,7 @@
 {
-  "GEOLOCATION_PERMISSION_DENIED": "Our access has been denied. Have you approved the application to access your location?",
-  "GEOLOCATION_POSITION_UNAVAILABLE": "We couldn't get your position. Is your GPS activated?",
-  "GEOLOCATION_TIMEOUT": "A timeout occured",
+  "GEOLOCATION_PERMISSION_DENIED": "Доступ был отклонен. Убедитесь, что вы предоставили приложению доступ к геолокации.",
+  "GEOLOCATION_POSITION_UNAVAILABLE": "Мы не смогли определить ваше местоположение. Убедитесь, что вы активировали GPS.",
+  "GEOLOCATION_TIMEOUT": "Превышен лимит ожидания",
   "ACTIONS_BACK": "Back",
   "ACTIONS_NEXT": "Next",
   "ACTIONS_DONE": "Done",
