@@ -19,7 +19,8 @@
   "TABS_PROFILE": "Profile",
 
   "REQUESTS_TITLE": "Requests",
-  "REQUESTS_EMPTY_DISCLAIMER": "The more healthy helpers the better. Add your friends and help out.",
+  "REQUESTS_EMPTY_DISCLAIMER_NEEDER": "Helper is clother than you think.",
+  "REQUESTS_EMPTY_DISCLAIMER_HELPER": "Spread the word! We need our app to reach as many people in need as it can.",
   "REQUESTS_REQUEST_HELP": "Request help",
 
   "REQUESTS_REQUEST_PENDING": "Pending request",
@@ -32,8 +33,8 @@
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} has agreed to help you.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "The request has been canceled",
 
-  "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "Help will be provided by a local in your community",
-  "REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER": "Help is needed by a local in your community.",
+  "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "Someone nearby has agreed to help you",
+  "REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER": "Someone nearby is in need of your help",
   "REQUESTS_REQUEST_NAME": "Name",
   "REQUESTS_REQUEST_ADDRESS": "Address",
   "REQUESTS_REQUEST_PHONE_NUMBER": "Phone number",

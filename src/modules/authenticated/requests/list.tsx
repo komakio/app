@@ -39,7 +39,15 @@ export const RequestsList = observer(() => {
   return (
     <TabContainer title={t('REQUESTS_TITLE')} flex={!hasRequests}>
       <View style={{ flex: 1, width: '100%' }}>
-        {!hasRequests && <EmptyBox title={t('REQUESTS_EMPTY_DISCLAIMER')} />}
+        {!hasRequests && (
+          <EmptyBox
+            title={
+              profile.role === 'needer'
+                ? t('REQUESTS_EMPTY_DISCLAIMER_NEEDER')
+                : t('REQUESTS_EMPTY_DISCLAIMER_HELPER')
+            }
+          />
+        )}
         {hasRequests &&
           requestsStore.requests?.map((request) => (
             <RequestListItem key={request._id} request={request} />
