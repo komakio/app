@@ -6,13 +6,13 @@ type EnvironmentType = 'development' | 'staging' | 'production';
 
 const codePushStagingDeploymentKey =
   Platform.OS === 'android'
-    ? Config.AndroidCodePushDeploymentKeyStaging
-    : Config.IOSCodePushDeploymentKeyStaging;
+    ? '5Y3U4MWdzy--Nd1i5umViwUdS32ZJCM_uEZNl'
+    : '5TWgub28x8nlu7AY4v5SbuA1TILOwIPxKWvN9';
 
 const codePushProductionDeploymentKey =
   Platform.OS === 'android'
-    ? Config.AndroidCodePushDeploymentKeyProduction
-    : Config.IOSCodePushDeploymentKeyProduction;
+    ? 'N_nJNCoRLvaD0gmRs50JJ3paAWYrsaEzTDEC1'
+    : 'XU8swVJBxfuXPleTwVlul4lhUhhmowvrAQFAW';
 
 export class Environment {
   public static bundleId = DeviceInfo.getBundleId();

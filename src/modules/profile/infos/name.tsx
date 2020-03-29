@@ -64,7 +64,7 @@ export const ProfileInfosName = observer(() => {
       </View>
 
       <TextInput
-        label={t('PROFILE_NAME_LASTNAME')}
+        label={t('PROFILE_NAME_FIRSTNAME')}
         value={firstName}
         onChangeText={(firstName) => setFirstName(firstName)}
         autoCorrect={false}
