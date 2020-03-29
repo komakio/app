@@ -47,8 +47,6 @@ export const InfosMain = observer(() => {
   const navigation = useNavigation();
   const profileFlowStore = useProfileFlowStore();
   const { t } = useTranslation();
-  const [serviceTerms, setServiceTerms] = useState<boolean>(false);
-  const [policyTerms, setPolicyTerms] = useState<boolean>(false);
 
   const getGeolocation = async () => {
     try {
@@ -80,13 +78,11 @@ export const InfosMain = observer(() => {
 
   const onServiceTerms = () => {
     Linking.openURL('https://komak.io/terms-of-service/');
-    setServiceTerms(true);
-    profileFlowStore.serviceTerms = serviceTerms;
+    profileFlowStore.serviceTerms = !profileFlowStore.serviceTerms;
   };
 
   const onPolicyTerms = () => {
-    setPolicyTerms(!policyTerms);
-    profileFlowStore.policyTerms = policyTerms;
+    profileFlowStore.policyTerms = !profileFlowStore.policyTerms;
   };
 
   return (
@@ -150,12 +146,15 @@ export const InfosMain = observer(() => {
         )}
 
         <View style={styles.buttonContainer}>
-          <CheckboxLink onPress={onServiceTerms} checked={serviceTerms}>
+          <CheckboxLink
+            onPress={onServiceTerms}
+            checked={profileFlowStore.serviceTerms}
+          >
             {t('PROFILE_SETUP_TERMS_CONFIRM')}
           </CheckboxLink>
           <CheckboxLink
             onPress={onPolicyTerms}
-            checked={policyTerms}
+            checked={profileFlowStore.policyTerms}
             linkStyle={styles.termServiceLink}
           >
             {t('PROFILE_SETUP_PRIVACY_POLICY_CONFIRM')}

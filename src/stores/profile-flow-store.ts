@@ -65,6 +65,17 @@ export class ProfileFlowStore {
   }
 
   public isValid() {
+    console.log(
+      !this.role,
+      !this.firstName,
+      !this.lastName,
+      !this.phone,
+      !this.dialCode,
+      !this.coords,
+      !this.serviceTerms,
+      !this.policyTerms,
+      this.role === 'needer' && !this.address
+    );
     if (
       !this.role ||
       !this.firstName ||
