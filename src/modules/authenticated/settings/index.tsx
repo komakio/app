@@ -13,7 +13,8 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   logoutButton: {
-    marginTop: 80,
+    marginTop: 40,
+    marginBottom: 20,
   },
 });
 

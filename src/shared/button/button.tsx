@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
 
   smallButton: {
-    width: 165,
+    width: 185,
     padding: 10,
   },
 
@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
 
   commonText: {
     color: 'white',
-    textAlign: 'center',
     fontSize: 24,
     fontWeight: 'bold',
   },

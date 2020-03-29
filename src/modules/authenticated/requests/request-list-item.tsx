@@ -43,7 +43,7 @@ export const RequestListItem: FC<RequestListItemProps> = observer(
 
     if (request.status === 'pending') {
       text =
-        profile?.role === 'needer'
+        request.requesterProfileId === profile?._id
           ? t('REQUESTS_REQUEST_PENDING_DETAILS_HELPER')
           : t('REQUESTS_REQUEST_PENDING_DETAILS_NEEDER', {
               name: request.requesterShortName,
@@ -51,8 +51,8 @@ export const RequestListItem: FC<RequestListItemProps> = observer(
     }
     if (request.status === 'accepted') {
       text =
-        profile?.role === 'needer'
-          ? t('REQUESTS_REQUEST_ACCEPTED_DETAILS_NEEDER', {
+        request.requesterProfileId === profile?._id
+          ? t('REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER', {
               name: request.acceptorShortName,
             })
           : t('REQUESTS_REQUEST_ACCEPTED_DETAILS_NEEDER', {
