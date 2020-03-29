@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Alert, Linking } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Alert,
+  Linking,
+  GestureResponderEvent,
+} from 'react-native';
 import { useNavigation, CommonActions } from '@react-navigation/native';
 import { Text } from '../../shared/text';
 import { useProfileFlowStore } from '../../stores';
 import { Geolocation } from '../../utils/geolocation';
 import { observer } from 'mobx-react-lite';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { ScrollView } from 'react-native-gesture-handler';
 import { CheckBoxButton } from '../../shared/button/checkbox-button';
 import { BottomNavbar } from '../nav-bar/nav-bar';
@@ -38,8 +44,8 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     marginBottom: 20,
   },
-  termServiceLink: {
-    textDecorationLine: 'none',
+  textLink: {
+    textDecorationLine: 'underline',
   },
 });
 
@@ -58,31 +64,48 @@ export const InfosMain = observer(() => {
   };
 
   const goToNext = async () => {
-    if (profileFlowStore.role === 'helper') {
-      navigation.navigate('consents');
-      return;
-    }
+    Alert.alert(
+      `I confirm that I've read and agree to the terms of services and the privacy policy.`,
+      '',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Confirm',
+          onPress: async () => {
+            if (profileFlowStore.role === 'helper') {
+              navigation.navigate('consents');
+              return;
+            }
 
-    const res = await profileFlowStore.saveProfile();
-    if (!res) {
-      Alert.alert('Error saving profile');
-      return;
-    }
-    navigation.dispatch(
-      CommonActions.reset({
-        index: 1,
-        routes: [{ name: 'authenticated' }],
-      })
+            const res = await profileFlowStore.saveProfile();
+            if (!res) {
+              Alert.alert('Error saving profile');
+              return;
+            }
+            navigation.dispatch(
+              CommonActions.reset({
+                index: 1,
+                routes: [{ name: 'authenticated' }],
+              })
+            );
+          },
+        },
+      ]
     );
+    return;
   };
 
   const onServiceTerms = () => {
-    Linking.openURL('https://komak.io/terms-of-service/');
     profileFlowStore.serviceTerms = !profileFlowStore.serviceTerms;
   };
 
   const onPolicyTerms = () => {
     profileFlowStore.policyTerms = !profileFlowStore.policyTerms;
+  };
+
+  const onClickLink = (link: string) => (event: GestureResponderEvent) => {
+    event.stopPropagation();
+    Linking.openURL(link);
   };
 
   return (
@@ -150,14 +173,31 @@ export const InfosMain = observer(() => {
             onPress={onServiceTerms}
             checked={profileFlowStore.serviceTerms}
           >
-            {t('PROFILE_SETUP_TERMS_CONFIRM')}
+            <Trans
+              i18nKey="PROFILE_SETUP_TERMS_CONFIRM"
+              components={[
+                <Text
+                  onPress={onClickLink('https://komak.io/terms-of-service/')}
+                  key="textComponent"
+                  style={styles.textLink}
+                ></Text>,
+              ]}
+            />
           </CheckboxLink>
           <CheckboxLink
             onPress={onPolicyTerms}
             checked={profileFlowStore.policyTerms}
-            linkStyle={styles.termServiceLink}
           >
-            {t('PROFILE_SETUP_PRIVACY_POLICY_CONFIRM')}
+            <Trans
+              i18nKey="PROFILE_SETUP_PRIVACY_POLICY_CONFIRM"
+              components={[
+                <Text
+                  onPress={onClickLink('https://komak.io/privacy/')}
+                  key="textComponent"
+                  style={styles.textLink}
+                ></Text>,
+              ]}
+            />
           </CheckboxLink>
         </View>
       </ScrollView>

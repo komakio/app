@@ -32,7 +32,6 @@ export class RequestsStore {
       this.userStore.accessToken.token,
       this.userStore.profile._id
     );
-    console.log(requests.length);
     this.requests = requests;
   }
 

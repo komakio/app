@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
 
   textStyle: {
     flex: 6,
-    fontSize: 18,
-    marginLeft: 8,
+    fontSize: 20,
+    marginLeft: 16,
   },
 
   checkBox: {
@@ -56,9 +56,7 @@ export const CheckboxFormElement: FC<CheckboxFormElementProps> = memo(
             color={checked ? colors.grey400 : colors.grey300}
           />
         </View>
-        <Text style={styles.textStyle} bold={true}>
-          {children}
-        </Text>
+        <Text style={styles.textStyle}>{children}</Text>
       </Touchable>
     );
   }

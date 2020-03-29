@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
   },
 
   checkBox: {
-    width: 48,
-    height: 48,
+    width: 32,
+    height: 32,
     borderStyle: 'solid',
     borderColor: colors.grey500,
     borderWidth: 2,
@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    textDecorationLine: 'underline',
     fontSize: 16,
     marginLeft: 8,
     flexWrap: 'wrap',

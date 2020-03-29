@@ -41,6 +41,11 @@ Deploy a new version to the Google Play
 fastlane android staging
 ```
 Deploy a new version to the Google Play
+### android production
+```
+fastlane android production
+```
+Deploy a new version to the Google Play
 ### android alpha
 ```
 fastlane android alpha
