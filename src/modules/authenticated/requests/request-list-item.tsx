@@ -33,7 +33,6 @@ interface RequestListItemProps {
 
 export const RequestListItem: FC<RequestListItemProps> = observer(
   ({ request }) => {
-    // const navigation = useNavigation();
     const { profile } = useUserStore();
     const { t } = useTranslation();
 

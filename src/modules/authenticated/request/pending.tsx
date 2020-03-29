@@ -13,11 +13,11 @@ const styles = StyleSheet.create({
   },
 });
 
-interface RequestListItemProps {
+interface PendingRequestViewProps {
   request: Request;
 }
 
-export const PendingRequestView: FC<RequestListItemProps> = memo(
+export const PendingRequestView: FC<PendingRequestViewProps> = memo(
   ({ request }) => {
     const { profile } = useUserStore();
     const requestsStore = useRequestsStore();
