@@ -1,8 +1,4 @@
 commit_message: '[skip ci]'
 files:
   - source: /src/i18n/en.json
-    translation: /src/i18n/languages/%two_letters_code%.json
-    languages_mapping:
-          two_letters_code:
-            'en-GB' : 'en-GB'
-            'pt-BR' : 'pt-BR'
+    translation: /src/i18n/languages/%locale_with_underscore%.json
