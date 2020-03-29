@@ -158,7 +158,7 @@ export const InfosMain = observer(() => {
             checked={policyTerms}
             linkStyle={styles.termServiceLink}
           >
-            {t('PROFILE_SETUP_POlICY_READ')}
+            {t('PROFILE_SETUP_PRIVACY_POLICY_CONFIRM')}
           </CheckboxLink>
         </View>
       </ScrollView>
