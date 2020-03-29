@@ -1,11 +1,11 @@
 {
-  "GEOLOCATION_PERMISSION_DENIED": "Notre accès a été refusé. Avez-vous autorisé l'application à accéder à vos données GPS ?",
+  "GEOLOCATION_PERMISSION_DENIED": "Notre accès a été refusé. Avez-vous autorisé l'application à accéder à vos données gps ?",
   "GEOLOCATION_POSITION_UNAVAILABLE": "Nous n'avons pu vous localiser. Est-ce que votre GPS est activé ?",
   "GEOLOCATION_TIMEOUT": "La requête a échoué",
   "ACTIONS_BACK": "Retour",
   "ACTIONS_NEXT": "Suivant",
   "ACTIONS_DONE": "Fini",
-  "ACTIONS_SHARE_APP": "Partager l'application",
+  "ACTIONS_SHARE_APP": "Partager",
   "ACTIONS_ACCEPT": "Accepter",
   "ACTIONS_CLOSE": "Fermer",
   "ACTIONS_CANCEL": "Annuler",
