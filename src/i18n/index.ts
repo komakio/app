@@ -8,7 +8,7 @@ i18nLib.init({
   fallbackLng: 'en',
 
   resources: {
-    en: { translation: require('./languages/en.json') },
+    en: { translation: require('./en.json') },
     fr: { translation: require('./languages/fr.json') },
   },
 
