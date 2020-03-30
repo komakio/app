@@ -25,6 +25,8 @@
   "REQUESTS_REQUEST_PENDING_DETAILS_NEEDER": "{{name}} pediu ajuda",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_NEEDER": "Aceitaste ajudar {{name}}",
   "REQUESTS_REQUEST_PENDING_DETAILS_HELPER": "Pediste ajuda",
+  "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_TITLE": "Cancelling the request",
+  "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "You are about to cancel your request, are you sure?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} aceitou ajudar-te.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "O pedido foi cancelado",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "Ajuda será providenciada por um local da tua comunidade",

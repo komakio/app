@@ -25,6 +25,8 @@
   "REQUESTS_REQUEST_PENDING_DETAILS_NEEDER": "{{name}} are nevoie de ajutorul tău",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_NEEDER": "Ai acceptat să ajuți pe {{name}}",
   "REQUESTS_REQUEST_PENDING_DETAILS_HELPER": "Ai trimis o cerere de ajutor",
+  "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_TITLE": "Cancelling the request",
+  "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "You are about to cancel your request, are you sure?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} a fost de acord să vă ajute.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "Cererea a fost anulată",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "Ți-a fost acceptată cererea de ajutor",
