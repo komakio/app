@@ -1,6 +1,6 @@
 export interface Request {
   _id: string;
-  status: 'pending' | 'accepted';
+  status: 'pending' | 'accepted' | 'canceled';
   requesterShortName: string;
   acceptorShortName: string;
   requesterProfileId: string;
