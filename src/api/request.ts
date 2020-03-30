@@ -41,6 +41,23 @@ export class RequestsApi {
     return res.data;
   }
 
+  public static async refuseRequest(
+    accessToken: string,
+    requestId: string,
+    profileId: string
+  ) {
+    const res = await axiosInstance.post(
+      `/v1/requests/${requestId}/refuse`,
+      { profileId },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    return res.data;
+  }
+
   public static async cancelRequest(
     accessToken: string,
     requestId: string,

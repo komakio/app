@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 10,
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
   },
 });
 
@@ -25,6 +25,23 @@ export const RequestActions: FC<PendingRequestViewProps> = memo(
 
     const acceptRequest = async () => {
       await requestsStore.acceptRequest(request._id);
+    };
+
+    const refuseRequest = async () => {
+      Alert.alert(
+        t('REQUESTS_REQUEST_PENDING_REFUSE_CONFIRM_TITLE'),
+        t('REQUESTS_REQUEST_PENDING_REFUSE_CONFIRM_SUBTITLE'),
+        [
+          {
+            text: 'No',
+          },
+          {
+            text: 'Yes',
+            onPress: async () => await requestsStore.refuseRequest(request._id),
+          },
+        ],
+        { cancelable: true }
+      );
     };
 
     const cancelRequest = async () => {
@@ -59,6 +76,9 @@ export const RequestActions: FC<PendingRequestViewProps> = memo(
             <View style={styles.buttonContainer}>
               <Button size="smaller" onPress={acceptRequest}>
                 {t('ACTIONS_ACCEPT')}
+              </Button>
+              <Button size="smaller" theme="red" onPress={refuseRequest}>
+                {t('ACTIONS_REFUSE')}
               </Button>
             </View>
           )}

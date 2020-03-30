@@ -8,6 +8,7 @@
   "ACTIONS_DONE": "Done",
   "ACTIONS_SHARE_APP": "Share this app",
   "ACTIONS_ACCEPT": "Accept",
+  "ACTIONS_REFUSE": "Refuse",
   "ACTIONS_CLOSE": "Close",
   "ACTIONS_CANCEL": "Cancel",
   "ACTIONS_OK": "OK",
@@ -31,9 +32,11 @@
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_NEEDER": "You agreed to help {{name}}",
   "REQUESTS_REQUEST_PENDING_DETAILS_HELPER": "You have requested some help",
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_TITLE": "Cancelling the request",
+  "REQUESTS_REQUEST_PENDING_REFUSE_CONFIRM_TITLE":  "Refusing the request",
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "You are about to cancel your request, are you sure?",
+  "REQUESTS_REQUEST_PENDING_REFUSE_CONFIRM_SUBTITLE": "You are about to refuse the request, are you sure?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} has agreed to help you.",
-  "REQUESTS_REQUEST_CANCELED_DETAILS": "The request has been canceled",
+  "REQUESTS_REQUEST_CANCELED_DETAILS": "The request has been cancelled",
 
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "Someone nearby has agreed to help you",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER": "Someone nearby is in need of your help",
@@ -44,14 +47,14 @@
   "INTRO_TITLE": "Thank you for making an impact",
   "INTRO_GET_STARTED": "Get started",
 
-  "SIGNIN_TITLE": "Please sign up with your favorite social login",
+  "SIGNIN_TITLE": "Please sign up with your favourite social login",
   "SIGNIN_GOOGLE": "Sign in with Google",
 
   "CONSENTS_TITLE": "I agree with the following statements at this moment and for any future use of the app",
   "CONSENTS_SYMPTOMS": "I am not showing any symptoms of COVID-19 (coughing, fever, shortness of breath, etc.).",
   "CONSENTS_TRAVEL": "I have not travelled out of the country in the past 14 days.",
   "CONSENTS_CONTACT": "I have not come in contact with anyone suspected of being infected or sick in the past 14 days.",
-  "CONSENTS_SOCIAL": "I have been practicing social distancing.",
+  "CONSENTS_SOCIAL": "I have been practising social distancing.",
 
   "STATUS_TITLE_CHANGE": "Change your status",
   "STATUS_TITLE": "What is your status?",

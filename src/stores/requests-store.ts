@@ -55,6 +55,15 @@ export class RequestsStore {
     this.getRequests();
   }
 
+  public async refuseRequest(requestId: string): Promise<void> {
+    await RequestsApi.refuseRequest(
+      this.userStore.accessToken.token,
+      requestId,
+      this.userStore.profile._id
+    );
+    this.getRequests();
+  }
+
   public async cancelRequest(requestId: string): Promise<void> {
     await RequestsApi.cancelRequest(
       this.userStore.accessToken.token,
