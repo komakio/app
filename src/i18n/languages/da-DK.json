@@ -1,6 +1,6 @@
 {
-  "GEOLOCATION_PERMISSION_DENIED": "Our access has been denied. Have you approved the application to access your location?",
-  "GEOLOCATION_POSITION_UNAVAILABLE": "We couldn't get your position. Is your GPS activated?",
+  "GEOLOCATION_PERMISSION_DENIED": "Vi kan ikke få adgang. Har du godkendt adgang til din lokation?",
+  "GEOLOCATION_POSITION_UNAVAILABLE": "Vi kunne ikke finde din position. Er din GPS aktiverede?",
   "GEOLOCATION_TIMEOUT": "A timeout occured",
   "ACTIONS_BACK": "Back",
   "ACTIONS_NEXT": "Next",
