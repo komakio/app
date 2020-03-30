@@ -8,6 +8,7 @@
   "ACTIONS_DONE": "Done",
   "ACTIONS_SHARE_APP": "Share this app",
   "ACTIONS_ACCEPT": "Accept",
+  "ACTIONS_REFUSE": "Refuse",
   "ACTIONS_CLOSE": "Close",
   "ACTIONS_CANCEL": "Cancel",
   "ACTIONS_OK": "OK",
@@ -32,7 +33,9 @@
   "REQUESTS_REQUEST_PENDING_DETAILS_HELPER": "You have requested some help",
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_TITLE": "Cancelling the request",
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "You are about to cancel your request, are you sure?",
+  "REQUESTS_REQUEST_PENDING_REFUSE_CONFIRM_SUBTITLE": "You are about to refuse the request, are you sure?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} has agreed to help you.",
+  "REQUESTS_REQUEST_PENDING_REFUSE_CONFIRM_TITLE":  "Refusing the request",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "The request has been canceled",
 
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "Someone nearby has agreed to help you",
