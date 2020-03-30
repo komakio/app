@@ -7,6 +7,7 @@ import { ProfilesApi } from '../api/profile';
 import { UsersApi } from '../api/user';
 
 export class UserStore {
+  @observable
   public accessToken: LoginResult['accessToken'];
 
   @observable
@@ -43,7 +44,6 @@ export class UserStore {
     this.accessToken = data.accessToken;
     await Storage.setJson('accessToken', this.accessToken);
 
-    this.rootStore.notificationsStore.synchronizeToken();
     await this.init();
 
     return true;
