@@ -25,6 +25,8 @@
   "REQUESTS_REQUEST_PENDING_DETAILS_NEEDER": "{{name}} har anmodet om hjælp",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_NEEDER": "Du accepterede at hjælpe {{name}}",
   "REQUESTS_REQUEST_PENDING_DETAILS_HELPER": "Du har anmodet om hjælp",
+  "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_TITLE": "Cancelling the request",
+  "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "You are about to cancel your request, are you sure?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} har acceptere at hjælpe dig.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "Anmodningen er blevet annulleret",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "En i nærheden har accepteret at hjælpe dig",
