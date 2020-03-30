@@ -17,18 +17,11 @@ interface PendingRequestViewProps {
   request: Request;
 }
 
-export const PendingRequestView: FC<PendingRequestViewProps> = memo(
+export const RequestActions: FC<PendingRequestViewProps> = memo(
   ({ request }) => {
     const { profile } = useUserStore();
     const requestsStore = useRequestsStore();
     const { t } = useTranslation();
-
-    const title =
-      request?.requesterProfileId === profile?._id
-        ? t('REQUESTS_REQUEST_PENDING_DETAILS_HELPER')
-        : t('REQUESTS_REQUEST_PENDING_DETAILS_NEEDER', {
-            name: request?.requesterShortName,
-          });
 
     const acceptRequest = async () => {
       await requestsStore.acceptRequest(request._id);
@@ -36,8 +29,8 @@ export const PendingRequestView: FC<PendingRequestViewProps> = memo(
 
     const cancelRequest = async () => {
       Alert.alert(
-        'Cancelling the request',
-        'Your are about to cancel your request, are you sure?',
+        t('REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_TITLE'),
+        t('REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE'),
         [
           {
             text: 'No',
@@ -53,20 +46,22 @@ export const PendingRequestView: FC<PendingRequestViewProps> = memo(
 
     return (
       <View>
-        {profile?.role === 'needer' && request.status === 'pending' && (
-          <View style={styles.buttonContainer}>
-            <Button onPress={cancelRequest} theme="blue" size="smaller">
-              {t('ACTIONS_CANCEL')}
-            </Button>
-          </View>
-        )}
-        {profile?.role === 'helper' && request.status === 'pending' && (
-          <View style={styles.buttonContainer}>
-            <Button size="smaller" onPress={acceptRequest}>
-              {t('ACTIONS_ACCEPT')}
-            </Button>
-          </View>
-        )}
+        {request.requesterProfileId === profile?._id &&
+          request.status === 'pending' && (
+            <View style={styles.buttonContainer}>
+              <Button onPress={cancelRequest} theme="blue" size="smaller">
+                {t('ACTIONS_CANCEL')}
+              </Button>
+            </View>
+          )}
+        {request.requesterProfileId !== profile?._id &&
+          request.status === 'pending' && (
+            <View style={styles.buttonContainer}>
+              <Button size="smaller" onPress={acceptRequest}>
+                {t('ACTIONS_ACCEPT')}
+              </Button>
+            </View>
+          )}
       </View>
     );
   }

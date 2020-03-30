@@ -30,6 +30,8 @@
   "REQUESTS_REQUEST_PENDING_DETAILS_NEEDER": "{{name}} has requested some help",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_NEEDER": "You agreed to help {{name}}",
   "REQUESTS_REQUEST_PENDING_DETAILS_HELPER": "You have requested some help",
+  "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_TITLE": "Cancelling the request",
+  "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "You are about to cancel your request, are you sure?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} has agreed to help you.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "The request has been canceled",
 
