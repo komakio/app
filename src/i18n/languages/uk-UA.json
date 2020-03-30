@@ -25,6 +25,8 @@
   "REQUESTS_REQUEST_PENDING_DETAILS_NEEDER": "{{name}} просить про допомогу",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_NEEDER": "Ви погодилися допомогти {{name}}",
   "REQUESTS_REQUEST_PENDING_DETAILS_HELPER": "Ви попросили про допомогу",
+  "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_TITLE": "Cancelling the request",
+  "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "You are about to cancel your request, are you sure?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} прийняв(ла) ваш запит.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "Запит був скасований",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "Хтось поблизу надасть вам допомогу",
