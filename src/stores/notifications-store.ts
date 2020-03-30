@@ -5,12 +5,12 @@ import { autorun, observable } from 'mobx';
 
 export class NotificationsStore {
   @observable
-  private registrationToken: string;
+  public registrationToken: string;
 
   constructor(private rootStore: RootStore) {
     autorun(() => {
       if (
-        this.rootStore.userStore?.accessToken?.token &&
+        this.rootStore.userStore.accessToken?.token &&
         this.registrationToken
       ) {
         this.synchronizeToken();
@@ -29,7 +29,7 @@ export class NotificationsStore {
 
   public async synchronizeToken() {
     await UsersApi.patchRegistrationToken(
-      this.rootStore.userStore?.accessToken?.token,
+      this.rootStore.userStore.accessToken?.token,
       this.registrationToken
     );
   }

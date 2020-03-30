@@ -17,6 +17,25 @@ export class UsersApi {
     return res.data;
   }
 
+  public static async deleteRegistrationToken(
+    accessToken: string,
+    registrationToken: string
+  ): Promise<LoginResult> {
+    const res = await axiosInstance.post(
+      '/v1/users/registration-token/unset',
+      {
+        uuid: getUniqueId(),
+        registrationToken,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    return res.data;
+  }
+
   public static async patchRegistrationToken(
     accessToken: string,
     registrationToken: string
