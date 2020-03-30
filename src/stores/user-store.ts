@@ -50,6 +50,10 @@ export class UserStore {
   }
 
   public async logout() {
+    UsersApi.deleteRegistrationToken(
+      this.accessToken?.token,
+      this.rootStore.notificationsStore.registrationToken
+    );
     this.accessToken = null;
     this.user = null;
     this.profiles = [];
