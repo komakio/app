@@ -4,12 +4,16 @@ import { useUserStore, useRequestsStore } from '../../../stores';
 import { Button } from '../../../shared/button';
 import { Request } from '../../../models/request';
 import { useTranslation } from 'react-i18next';
+import { useNavigation } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 10,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
+  },
+  buttonMargin: {
+    marginRight: 10,
   },
 });
 
@@ -22,6 +26,7 @@ export const RequestActions: FC<PendingRequestViewProps> = memo(
     const { profile } = useUserStore();
     const requestsStore = useRequestsStore();
     const { t } = useTranslation();
+    const navigation = useNavigation();
 
     const acceptRequest = async () => {
       await requestsStore.acceptRequest(request._id);
@@ -63,6 +68,18 @@ export const RequestActions: FC<PendingRequestViewProps> = memo(
 
     return (
       <View>
+        {request.status === 'accepted' && (
+          <View style={styles.buttonContainer}>
+            <Button
+              onPress={() =>
+                navigation.navigate('requests-request-accepted', request)
+              }
+              size="smaller"
+            >
+              {t('ACTIONS_OPEN')}
+            </Button>
+          </View>
+        )}
         {request.requesterProfileId === profile?._id &&
           request.status === 'pending' && (
             <View style={styles.buttonContainer}>
@@ -74,7 +91,11 @@ export const RequestActions: FC<PendingRequestViewProps> = memo(
         {request.requesterProfileId !== profile?._id &&
           request.status === 'pending' && (
             <View style={styles.buttonContainer}>
-              <Button size="smaller" onPress={acceptRequest}>
+              <Button
+                size="smaller"
+                onPress={acceptRequest}
+                style={styles.buttonMargin}
+              >
                 {t('ACTIONS_ACCEPT')}
               </Button>
               <Button size="smaller" theme="red" onPress={refuseRequest}>

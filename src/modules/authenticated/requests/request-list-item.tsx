@@ -37,7 +37,6 @@ export const RequestListItem: FC<RequestListItemProps> = observer(
   ({ request }) => {
     const { profile } = useUserStore();
     const { t } = useTranslation();
-    const navigation = useNavigation();
 
     let text = '';
 
@@ -61,23 +60,6 @@ export const RequestListItem: FC<RequestListItemProps> = observer(
     }
     if (request.status === 'canceled') {
       text = t('REQUESTS_REQUEST_CANCELED_DETAILS');
-    }
-
-    if (request.status === 'accepted') {
-      return (
-        <Touchable
-          onPress={() =>
-            navigation.navigate('requests-request-accepted', request)
-          }
-          accessibilityRole="button"
-          containerStyle={styles.container}
-        >
-          <Text bold={true} style={styles.title}>
-            {t(`REQUESTS_REQUEST_${request.status.toUpperCase()}`)}
-          </Text>
-          <Text style={styles.subtitle}>{text}</Text>
-        </Touchable>
-      );
     }
 
     return (

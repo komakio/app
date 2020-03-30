@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
   button: {
-    marginVertical: 40,
+    marginBottom: 30,
   },
 });
 
@@ -38,7 +38,7 @@ export const RequestsList = observer(() => {
 
   return (
     <TabContainer title={t('REQUESTS_TITLE')} flex={!hasRequests}>
-      <View style={{ flex: 1, width: '100%' }}>
+      <View style={{ flex: 1, width: '100%', paddingBottom: 30 }}>
         {!hasRequests && (
           <EmptyBox
             title={
@@ -54,9 +54,9 @@ export const RequestsList = observer(() => {
           ))}
       </View>
 
-      {profile?.role === 'helper' && (
+      {/* {profile?.role === 'helper' && (
         <ShareButton style={styles.button} url="https://komak.io" />
-      )}
+      )} */}
       {profile?.role === 'needer' &&
         requestsStore?.requests?.filter((r) => r.status === 'pending')
           .length === 0 && (

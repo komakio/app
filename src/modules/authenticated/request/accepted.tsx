@@ -72,8 +72,12 @@ export const AcceptedRequestView = observer(() => {
   //       : `${request.requesterShortName} has requested some help`;
   const title =
     request.acceptorProfileId === profile?._id
-      ? 'REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER'
-      : 'REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER';
+      ? t('REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER', {
+          name: request.requesterShortName,
+        })
+      : t('REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER', {
+          name: request.acceptorShortName,
+        });
 
   if (!otherPersonProfile) {
     return;
@@ -84,7 +88,7 @@ export const AcceptedRequestView = observer(() => {
       <ModalArrowClose />
 
       <ScrollView>
-        <Text style={styles.title}>{t(title)}</Text>
+        <Text style={styles.title}>{title}</Text>
 
         <Text style={styles.fieldTitle}>{t('REQUESTS_REQUEST_NAME')}</Text>
         <Text style={styles.fieldValue}>
