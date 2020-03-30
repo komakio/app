@@ -25,6 +25,8 @@
   "REQUESTS_REQUEST_PENDING_DETAILS_NEEDER": "{{name}} zažádal o pomoc",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_NEEDER": "Souhlasili jste s tím, že pomůžete {{name}}",
   "REQUESTS_REQUEST_PENDING_DETAILS_HELPER": "Požádali jste o pomoc",
+  "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_TITLE": "Cancelling the request",
+  "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "You are about to cancel your request, are you sure?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} souhlasil, že vám pomůže.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "Žádost byla zrušena",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "Někdo v okolí souhlasil, že vám pomůže",
