@@ -61,12 +61,49 @@ Komak is built with 3 groups of stakeholders in mind:
 
 ## Contribute as a developer
 
+
+### What to do ?
+
+First, thank you! If you want to help the development of this project, you can pick an issue that has been created by one of the main contributor. We recommend starting with an issue with the "Help wanted" or "Good first issue" label. Please, in the issue, let us know that you're working on it. Everybody hates double work ;)
+If you have an amazing idea, cool! But please create an issue first, so that we can discuss and validate it before you start working on it.
+
 ### Architecture
 
 We have 2 main repositories : App & Backend.
 
-- The [backend](https://github.com/komakio/backend) is written in Node.js + Typescript + [Nest.js](https://nestjs.com/) and is using MongoDB (database) & RabbitMQ (message broker). You can find more information by accessing the [repository](https://github.com/komakio/backend).
-- The app is also written in Typescript, with the help of 
+- The [backend](https://github.com/komakio/backend) is written in Node.js + Typescript + [Nest.js](https://nestjs.com/) and is using MongoDB (database) & RabbitMQ (message broker). You can find more information by accessing the [repository](https://github.com/komakio/backend). A swagger API doc [is available](https://api.komak.io/docs/).
+- The app is also written in Typescript, and uses the [React Native](https://reactnative.dev/) framework.
+
+### Install
+
+#### Dependencies install
+
+Clone the project and then run:
+```bash
+npm install
+```
+
+The project is trying to install cocoapod dependencies. If you don't have MacOS, don't worry ! It will just fail installing them, but the command will still succeed.
+
+#### Android
+
+Running Android is the most straightforward. Follow the [React Native Instructions](https://reactnative.dev/docs/environment-setup) - Click on this click, then choose *React Native CLI Quickstart*, your plaform and the target OS (Android). Be careful of reading all instructions carefully.
+
+Once you're done, you should be able to run the project on Android.
+
+```bash
+npm run android
+```
+
+#### iOS
+
+First, follow the [React Native Instructions](https://reactnative.dev/docs/environment-setup) - Click on this click, then choose *React Native CLI Quickstart*, your plaform and the target OS (iOS).
+
+TODO
+
+#### What's next
+
+Per default, you don't need to run the backend, you'll be connected to our staging environment. If you want to work on both in parallel, you can just start the backend by cloning it, installing dependencies and running `npm run start:dev`. See more instructions on the [repository page](https://github.com/komakio/backend). Then you can change the bacend url to your local IP, [here](https://github.com/komakio/app/blob/master/src/environment.ts#L38).
 
 ## Vision and goals
 
