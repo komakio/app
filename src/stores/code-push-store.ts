@@ -12,8 +12,24 @@ export class CodePushStore {
     this.init();
   }
 
+  public async initialCheck() {
+    const update = await codePush.checkForUpdate(
+      Environment.codePushDeploymentKey
+    );
+    if (update && update.isMandatory) {
+      const codePushPackage = await update.download();
+      codePushPackage.install(codePush.InstallMode.IMMEDIATE);
+      await codePush.restartApp(true);
+    } else if (update) {
+      update
+        .download()
+        .then((codePushPackage) =>
+          codePushPackage.install(codePush.InstallMode.ON_NEXT_SUSPEND)
+        );
+    }
+  }
+
   private async init() {
-    this.sync();
     setInterval(() => {
       this.sync();
     }, 10 * 60 * 1000);
@@ -30,6 +46,8 @@ export class CodePushStore {
     }
     codePush.sync({
       deploymentKey: Environment.codePushDeploymentKey,
+      installMode: codePush.InstallMode.ON_NEXT_SUSPEND,
+      mandatoryInstallMode: codePush.InstallMode.IMMEDIATE,
     });
   }
 }

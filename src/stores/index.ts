@@ -19,3 +19,8 @@ export const useRequestsStore = () => {
   const rootStore = useRootStore();
   return rootStore.requestsStore;
 };
+
+export const useCodepushStore = () => {
+  const rootStore = useRootStore();
+  return rootStore.codePushStore;
+};
