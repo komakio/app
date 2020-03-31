@@ -4,6 +4,8 @@ import { statusBarHeight } from './utils/status-bar';
 import { animate } from './utils/animate';
 import { AnimatedText } from './shared/text';
 import { colors } from './shared/variables/colors';
+import { useCodepushStore } from './stores';
+import { waitForSomeMs } from './utils/timeout';
 
 const headerHeight = 50;
 const styles = StyleSheet.create({
@@ -38,13 +40,17 @@ const styles = StyleSheet.create({
 
 export const Layout = memo(({ children }) => {
   const [ready, setReady] = useState<boolean>(false);
+  const codePushStore = useCodepushStore();
 
   useEffect(() => {
-    setTimeout(() => {
+    const init = async () => {
+      await Promise.all([codePushStore.initialCheck(), waitForSomeMs(1000)]);
       animate(500);
       setReady(true);
-    }, 1000);
-  }, []);
+    };
+
+    init();
+  }, [codePushStore]);
 
   return (
     <View style={styles.container}>
