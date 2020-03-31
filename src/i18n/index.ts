@@ -75,6 +75,7 @@ const resources = {
 const languages = Object.keys(resources);
 
 const language = RNLocalize.findBestAvailableLanguage(languages).languageTag;
+// NORWAY is nb with moment
 moment.locale(language === 'no' ? 'nb' : language);
 
 i18nLib.init({
