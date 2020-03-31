@@ -28,6 +28,7 @@
     "i18next": "^19.3.3",
     "mobx": "^4.15.4",
     "mobx-react-lite": "^1.5.2",
+    "moment": "^2.24.0",
     "react": "16.9.0",
     "react-i18next": "^11.3.4",
     "react-native": "0.61.5",

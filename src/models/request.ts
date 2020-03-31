@@ -5,6 +5,7 @@ export interface Request {
   acceptorShortName: string;
   requesterProfileId: string;
   acceptorProfileId: string;
+  acceptorDistance: number;
   type: 'misc';
   createdAt: string;
   candidates: {

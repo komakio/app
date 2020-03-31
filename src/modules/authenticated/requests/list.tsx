@@ -42,7 +42,7 @@ export const RequestsList = observer(() => {
         {!hasRequests && (
           <EmptyBox
             title={
-              profile.role === 'needer'
+              profile?.role === 'needer'
                 ? t('REQUESTS_EMPTY_DISCLAIMER_NEEDER')
                 : t('REQUESTS_EMPTY_DISCLAIMER_HELPER')
             }
