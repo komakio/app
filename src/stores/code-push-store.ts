@@ -18,8 +18,7 @@ export class CodePushStore {
     );
     if (update && update.isMandatory) {
       const codePushPackage = await update.download();
-      codePushPackage.install(codePush.InstallMode.IMMEDIATE);
-      await codePush.restartApp(true);
+      await codePushPackage.install(codePush.InstallMode.IMMEDIATE);
     } else if (update) {
       update
         .download()
