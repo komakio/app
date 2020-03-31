@@ -33,20 +33,7 @@ export const RequestActions: FC<PendingRequestViewProps> = memo(
     };
 
     const refuseRequest = async () => {
-      Alert.alert(
-        t('REQUESTS_REQUEST_PENDING_REFUSE_CONFIRM_TITLE'),
-        t('REQUESTS_REQUEST_PENDING_REFUSE_CONFIRM_SUBTITLE'),
-        [
-          {
-            text: 'No',
-          },
-          {
-            text: 'Yes',
-            onPress: async () => await requestsStore.refuseRequest(request._id),
-          },
-        ],
-        { cancelable: true }
-      );
+      requestsStore.refuseRequest(request._id);
     };
 
     const cancelRequest = async () => {
