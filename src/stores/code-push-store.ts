@@ -13,6 +13,10 @@ export class CodePushStore {
   }
 
   public async initialCheck() {
+    if (!Environment.codePushDeploymentKey) {
+      console.log('Should sync, but in dev mode.');
+      return;
+    }
     const update = await codePush.checkForUpdate(
       Environment.codePushDeploymentKey
     );

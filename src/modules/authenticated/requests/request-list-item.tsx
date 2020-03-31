@@ -9,8 +9,8 @@ import { Text } from '../../../shared/text';
 import { Request } from '../../../models/request';
 import { useTranslation } from 'react-i18next';
 import { RequestActions } from './request-actions';
-import { Touchable } from '../../../shared/button';
-import { useNavigation } from '@react-navigation/native';
+import moment from 'moment';
+import { beautifyDistance } from '../../../utils/distance';
 
 const styles = StyleSheet.create({
   container: {
@@ -26,6 +26,11 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 18,
+  },
+  infos: {
+    marginTop: 3,
+    color: colors.grey400,
+    fontSize: 16,
   },
 });
 
@@ -61,6 +66,11 @@ export const RequestListItem: FC<RequestListItemProps> = observer(
     if (request.status === 'canceled') {
       text = t('REQUESTS_REQUEST_CANCELED_DETAILS');
     }
+    const distance =
+      typeof request.acceptorDistance === 'number'
+        ? request.acceptorDistance
+        : request.candidates.find((c) => c.profileId === profile?._id)
+            ?.distance;
 
     return (
       <View style={styles.container}>
@@ -68,6 +78,16 @@ export const RequestListItem: FC<RequestListItemProps> = observer(
           {t(`REQUESTS_REQUEST_${request.status.toUpperCase()}`)}
         </Text>
         <Text style={styles.subtitle}>{text}</Text>
+
+        <Text style={styles.infos}>
+          {typeof distance === 'number'
+            ? `${beautifyDistance(distance)} away - `
+            : ''}
+          {moment(request.createdAt).fromNow()}
+        </Text>
+        {/* {request.status === 'accepted' && (
+          <Text style={styles.subtitle}>{request.}</Text>
+        )} */}
         <RequestActions request={request} />
       </View>
     );

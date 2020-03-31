@@ -1,6 +1,41 @@
 import * as RNLocalize from 'react-native-localize';
 import i18nLib from 'i18next';
 import { Alert } from 'react-native';
+import moment from 'moment';
+
+import 'moment/locale/af';
+import 'moment/locale/ar';
+import 'moment/locale/ca';
+import 'moment/locale/cs';
+import 'moment/locale/da';
+import 'moment/locale/de';
+import 'moment/locale/el';
+import 'moment/locale/es';
+import 'moment/locale/et';
+import 'moment/locale/fa';
+import 'moment/locale/fi';
+import 'moment/locale/fr';
+import 'moment/locale/he';
+import 'moment/locale/hi';
+import 'moment/locale/hu';
+import 'moment/locale/it';
+import 'moment/locale/ja';
+import 'moment/locale/ko';
+import 'moment/locale/ms';
+import 'moment/locale/nl';
+import 'moment/locale/pl';
+import 'moment/locale/pt';
+import 'moment/locale/ro';
+import 'moment/locale/ru';
+import 'moment/locale/sr';
+import 'moment/locale/sv';
+import 'moment/locale/tr';
+import 'moment/locale/uk';
+import 'moment/locale/vi';
+import 'moment/locale/zh-cn';
+import 'moment/locale/zh-tw';
+
+import 'moment/locale/nb';
 
 const resources = {
   en: { translation: require('./en.json') },
@@ -39,8 +74,12 @@ const resources = {
 };
 const languages = Object.keys(resources);
 
+const language = RNLocalize.findBestAvailableLanguage(languages).languageTag;
+// NORWAY is nb with moment
+moment.locale(language === 'no' ? 'nb' : language);
+
 i18nLib.init({
-  lng: RNLocalize.findBestAvailableLanguage(languages).languageTag,
+  lng: language,
   fallbackLng: 'en',
   resources: resources,
   keySeparator: false,
