@@ -69,7 +69,7 @@ export const RequestListItem: FC<RequestListItemProps> = observer(
     const distance =
       typeof request.acceptorDistance === 'number'
         ? request.acceptorDistance
-        : request.candidates.find((c) => c.profileId === profile?._id)
+        : request.candidates?.find((c) => c.profileId === profile?._id)
             ?.distance;
 
     return (

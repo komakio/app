@@ -88,6 +88,6 @@ export class RequestsApi {
         },
       }
     );
-    return res.data.find((profile: Profile) => profile._id === profileId);
+    return res.data?.find((profile: Profile) => profile._id === profileId);
   }
 }
