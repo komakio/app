@@ -1,0 +1,4 @@
+{
+    "BACKEND_NOTIFICATION_REQUEST_STARTED_V1": "{{name}} a besoin de votre aide.",
+    "BACKEND_NOTIFICATION_REQUEST_ACCEPT_V1": "{{name}} a accepté votre requête."
+}
