@@ -55,10 +55,20 @@ export const InfosMain = observer(() => {
 
   const getGeolocation = async () => {
     try {
-      const infos = await Geolocation.get();
+      const infos = await Geolocation.get(t);
       profileFlowStore.coords = [infos.coords.longitude, infos.coords.latitude];
     } catch (error) {
-      Alert.alert('Location', t(error));
+      Alert.alert(t('GEOLOCATION_ERROR_TITLE'), t(error), [
+        { text: t('ACTIONS_CANCEL'), style: 'cancel' },
+        {
+          text: t('GEOLOCATION_CHOOSE_MANUAL'),
+          onPress: () => {
+            navigation.navigate('profile-infos-address', {
+              latLongRequired: true,
+            });
+          },
+        },
+      ]);
     }
   };
 
