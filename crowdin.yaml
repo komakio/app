@@ -2,3 +2,5 @@ commit_message: '[skip ci]'
 files:
   - source: /src/i18n/en.json
     translation: /src/i18n/languages/%locale%.json
+  - source: /backend-i18n/en.json
+    translation: /backend-i18n/languages/%locale%.json
