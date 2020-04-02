@@ -1,8 +1,8 @@
 {
-  "GEOLOCATION_ERROR_TITLE": "Geolocation error",
-  "GEOLOCATION_PERMISSION_DENIED": "Our access has been denied. Have you approved the application to access your location?",
-  "GEOLOCATION_POSITION_UNAVAILABLE": "We couldn't get your position. Is your GPS activated?",
-  "GEOLOCATION_TIMEOUT": "A timeout occured",
+  "GEOLOCATION_ERROR_TITLE": "ralat geolokasi",
+  "GEOLOCATION_PERMISSION_DENIED": "Akses kami telah ditolak. Adakah anda telah lulus aplikasi untuk masuk lokasi?",
+  "GEOLOCATION_POSITION_UNAVAILABLE": "Kami tidak dapat lokasi anda. Adakah GPS kamu diatifkan?",
+  "GEOLOCATION_TIMEOUT": "Masa tergendala telah berlaku",
   "GEOLOCATION_DESCRIPTION": "We need your geolocation once to match you with people around you.",
   "GEOLOCATION_CHOOSE_MANUAL": "Type my address",
   "NO_RESULTS": "No results",
