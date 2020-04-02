@@ -1,5 +1,5 @@
-import React, { useState, memo } from 'react';
-import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
+import React, { memo } from 'react';
+import { StyleSheet, KeyboardAvoidingView } from 'react-native';
 import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
 import { ProfileType } from '../../profile/type';
 

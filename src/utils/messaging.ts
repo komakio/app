@@ -1,7 +1,7 @@
 import messaging from '@react-native-firebase/messaging';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 import DeviceInfo from 'react-native-device-info';
-import { Alert, Platform } from 'react-native';
+import { Platform } from 'react-native';
 
 export class Messaging {
   public static async registerForRemoteNotifications() {
