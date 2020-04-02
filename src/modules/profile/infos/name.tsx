@@ -36,10 +36,10 @@ export const ProfileInfosName = observer(() => {
   const { t } = useTranslation();
 
   const [firstName, setFirstName] = useState<Profile['firstName']>(
-    userStore?.profile?.firstName || ''
+    userStore?.profile?.firstName || profileFlowStore.firstName || ''
   );
   const [lastName, setLastName] = useState<Profile['lastName']>(
-    userStore?.profile?.lastName || ''
+    userStore?.profile?.lastName || profileFlowStore.lastName || ''
   );
 
   const onPress = () => {

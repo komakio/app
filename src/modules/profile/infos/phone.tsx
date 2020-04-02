@@ -34,7 +34,7 @@ export const ProfileInfosPhone = observer(() => {
   const { t } = useTranslation();
 
   const [phone, setPhone] = useState<string>(
-    userStore?.profile?.phone?.number || ''
+    userStore?.profile?.phone?.number || profileFlowStore.phone || ''
   );
 
   const onPress = () => {
