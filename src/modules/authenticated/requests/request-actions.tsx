@@ -1,5 +1,5 @@
 import React, { memo, FC } from 'react';
-import { StyleSheet, View, KeyboardAvoidingView, Alert } from 'react-native';
+import { StyleSheet, View, Alert } from 'react-native';
 import { useUserStore, useRequestsStore } from '../../../stores';
 import { Button } from '../../../shared/button';
 import { Request } from '../../../models/request';

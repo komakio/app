@@ -5,10 +5,6 @@ import {
   NativeTouchEvent,
   View,
   StyleProp,
-  ViewStyle,
-  ViewProps,
-  TextProps,
-  TextStyleIOS,
   TextStyle,
 } from 'react-native';
 import { Text } from '../text';

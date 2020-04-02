@@ -5,7 +5,6 @@ import {
   KeyboardAvoidingView,
   PixelRatio,
   ActivityIndicator,
-  Alert,
 } from 'react-native';
 
 import { observer } from 'mobx-react-lite';

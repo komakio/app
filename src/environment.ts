@@ -1,6 +1,5 @@
 import DeviceInfo from 'react-native-device-info';
-import Config from 'react-native-config';
-import { Platform, Alert } from 'react-native';
+import { Platform } from 'react-native';
 
 type EnvironmentType = 'development' | 'staging' | 'production';
 

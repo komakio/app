@@ -5,7 +5,6 @@ import { TabContainer } from '../common/tab-container';
 import { Button } from '../../../shared/button';
 import { useNavigation } from '@react-navigation/native';
 import { EmptyBox } from '../common/empty-box';
-import { ShareButton } from '../../../shared/button/share-button';
 import { useUserStore, useRequestsStore } from '../../../stores';
 import { observer } from 'mobx-react-lite';
 import { RequestListItem } from './request-list-item';
