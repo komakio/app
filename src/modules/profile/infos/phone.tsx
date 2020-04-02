@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
+    paddingHorizontal: 20,
     fontWeight: 'bold',
   },
   buttonContainer: {

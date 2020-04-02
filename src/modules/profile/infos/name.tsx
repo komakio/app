@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     paddingHorizontal: 20,
-    lineHeight: 40,
+    fontWeight: 'bold',
   },
   buttonContainer: {
     alignSelf: 'flex-start',

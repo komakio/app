@@ -24,6 +24,9 @@ export class ProfileFlowStore {
   public address = '';
 
   @observable
+  public addressExtra = '';
+
+  @observable
   public policyTerms = false;
 
   @observable
