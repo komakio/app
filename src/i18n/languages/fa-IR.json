@@ -26,7 +26,7 @@
   "REQUESTS_EMPTY_DISCLAIMER_NEEDER": "درخواست کمک خود را بفرستید تا داوطلبی برای کمک در نزدیکی شما پیدا کنیم. زمانی که داوطلبی درخواست شما را قبول کند به شما اطلاع خواهیم داد. ",
   "REQUESTS_EMPTY_DISCLAIMER_HELPER": "متشکریم از اینکه داوطلب کمک هستید. هرزمان کسی درخواست کمک کند شما را در جریان قرار می‌دهیم.",
   "REQUESTS_REQUEST_HELP": "درخواست کمک دارم",
-  "REQUESTS_REQUEST_PENDING": "درخواست در حال بررسی ",
+  "REQUESTS_REQUEST_PENDING": "درخواست در حال انتظار",
   "REQUESTS_REQUEST_ACCEPTED": "درخواست پذیرفته شده",
   "REQUESTS_REQUEST_CANCELED": "درخواست لغو شده.",
   "REQUESTS_REQUEST_PENDING_DETAILS_NEEDER": "{{name}} نیاز به کمک دارد",
