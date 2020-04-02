@@ -4,6 +4,8 @@ import {
   View,
   KeyboardAvoidingView,
   PixelRatio,
+  ActivityIndicator,
+  Alert,
 } from 'react-native';
 
 import { observer } from 'mobx-react-lite';
@@ -16,8 +18,7 @@ import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
 import { Profile } from '../../../models/profile';
 import { useTranslation } from 'react-i18next';
 import { LocationApi, GeolocationResult } from '../../../api/location';
-import { Theme } from '../../../shared/variables/theme';
-import { Router } from '../../../router';
+import { makeCancelable, CancelablePromise } from '../../../utils/promise';
 
 const styles = StyleSheet.create({
   container: {
@@ -67,7 +68,9 @@ export const ProfileInfosAddress = observer(() => {
   const userStore = useUserStore();
   const { t } = useTranslation();
   const timeout = useRef<number>();
+  const cancellablePromise = useRef<CancelablePromise<GeolocationResult[]>>();
   const [results, setResults] = useState<GeolocationResult[]>();
+  const [searchStatus, setSearchStatus] = useState<'loading' | 'no-results'>();
 
   const { profile } = userStore;
   const [rawAddress, setRawAddress] = useState<Profile['address']['raw']>(
@@ -98,14 +101,36 @@ export const ProfileInfosAddress = observer(() => {
   const onChangeAddress = async (rawAddressChanged: string) => {
     setRawAddress(rawAddressChanged);
     setResults(null);
+    setSearchStatus(null);
 
     clearTimeout(timeout.current);
     timeout.current = setTimeout(async () => {
-      const res = await LocationApi.autocomplete(
-        userStore.accessToken?.token,
-        rawAddressChanged
-      );
-      setResults(res);
+      setSearchStatus('loading');
+      if (cancellablePromise.current) {
+        cancellablePromise.current.cancel();
+      }
+      if (!rawAddressChanged) {
+        return;
+      }
+      try {
+        cancellablePromise.current = makeCancelable(
+          LocationApi.autocomplete(
+            userStore.accessToken?.token,
+            rawAddressChanged
+          )
+        );
+        const res = await cancellablePromise.current.promise;
+        setSearchStatus(null);
+        setResults(res);
+        if (res.length === 0) {
+          setSearchStatus('no-results');
+        }
+      } catch (e) {
+        setSearchStatus(null);
+        if (e.message !== 'OLD_PROMISE_CANCELLED') {
+          throw e;
+        }
+      }
     }, 500);
   };
 
@@ -140,6 +165,13 @@ export const ProfileInfosAddress = observer(() => {
           ))}
         </View>
       ) : null}
+
+      {searchStatus === 'loading' && (
+        <ActivityIndicator size="large" color="#000000" />
+      )}
+      {searchStatus === 'no-results' && (
+        <Text style={styles.resultText}>{t('NO_RESULTS')}</Text>
+      )}
 
       {(!params?.latLongRequired || profileFlowStore.coords) && (
         <View style={styles.buttonContainer}>
