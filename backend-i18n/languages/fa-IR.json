@@ -1,4 +1,4 @@
 {
-    "BACKEND_NOTIFICATION_REQUEST_STARTED_V1": "{{name}} نیاز یه کمک شما دارد.",
-    "BACKEND_NOTIFICATION_REQUEST_ACCEPT_V1": "{{name}} درخواست شما را قبول کرد"
+    "BACKEND_NOTIFICATION_REQUEST_STARTED_V1": "{{name}} نیاز به کمک شما دارد.",
+    "BACKEND_NOTIFICATION_REQUEST_ACCEPT_V1": "{{name}} درخواست شما را قبول کرد."
 }
