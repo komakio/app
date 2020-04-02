@@ -5,7 +5,8 @@
   "GEOLOCATION_TIMEOUT": "A timeout occured",
   "GEOLOCATION_DESCRIPTION": "We need your geolocation once to match you with people around you.",
   "GEOLOCATION_CHOOSE_MANUAL": "Type my address",
-
+  
+  "NO_RESULTS": "No results",
   "ACTIONS_BACK": "Back",
   "ACTIONS_NEXT": "Next",
   "ACTIONS_DONE": "Done",
