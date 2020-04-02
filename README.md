@@ -1,5 +1,10 @@
 # Welcome to Komak’s open-source repository 🙏
 
+[![slackin](https://slack.komak.io/badge.svg)](https://slack.komak.io)
+
+![Type checking](https://github.com/komakio/backend/workflows/Type%20checking/badge.svg)
+![Lint](https://github.com/komakio/backend/workflows/Lint/badge.svg)
+
 <p><img width="280" src="https://user-images.githubusercontent.com/28791837/77825801-fd82ad00-710b-11ea-827a-19f3f8eb5f74.png"> <img width="280" src="https://user-images.githubusercontent.com/28791837/77825803-007d9d80-710c-11ea-9fdd-c4f90a803ebf.png"> <img width="280" src="https://user-images.githubusercontent.com/28791837/77825806-01163400-710c-11ea-92c9-3a2080363dc8.png"> </p>
 
 * [Introduction](#introduction)
