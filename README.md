@@ -1,6 +1,8 @@
 # Welcome to Komak’s open-source repository 🙏
 
 [![slackin](https://slack.komak.io/badge.svg)](https://slack.komak.io)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/komakio/app.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/komakio/app/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/komakio/app.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/komakio/app/context:javascript)
 
 ![Type checking](https://github.com/komakio/backend/workflows/Type%20checking/badge.svg)
 ![Lint](https://github.com/komakio/backend/workflows/Lint/badge.svg)
