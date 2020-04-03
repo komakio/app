@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Komak</string>
+    <string name="facebook_app_id">522632985320828</string>
+    <string name="fb_login_protocol_scheme">fb522632985320828</string>
 </resources>

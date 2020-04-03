@@ -14,6 +14,7 @@
 #import <CodePush/CodePush.h>
 #import "Komak-Swift.h"
 #import "RNBootSplash.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @implementation AppDelegate
 
@@ -21,6 +22,7 @@
 {
   FirebaseSetup *firebaseSetup = [[FirebaseSetup alloc] init];
   [firebaseSetup initProject];
+  [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
   
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
