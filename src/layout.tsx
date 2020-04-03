@@ -50,11 +50,7 @@ export const Layout = memo(({ children }) => {
   const translateY = useRef(new Animated.Value(0));
 
   const startAnimation = async () => {
-    try {
-      RNBootSplash.hide();
-    } catch {
-      /* Do nothing - TODO remove that when production deployment */
-    }
+    RNBootSplash.hide();
 
     Animated.timing(translateY.current, {
       useNativeDriver,
