@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { StyleSheet, KeyboardAvoidingView } from 'react-native';
-import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
+import { ModalArrowClose } from '@shared/modal/modal-arrow-close';
 import { ProfileType } from '../../profile/type';
 
 const styles = StyleSheet.create({

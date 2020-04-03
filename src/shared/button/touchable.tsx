@@ -11,7 +11,7 @@ import {
   View,
   AccessibilityRole,
 } from 'react-native';
-import { Text } from '../text';
+import { Text } from '@shared/text';
 
 interface ButtonProps {
   onPress: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;

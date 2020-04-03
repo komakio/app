@@ -12,7 +12,37 @@
       "target": "esnext",
       "experimentalDecorators": true,
       "strictNullChecks": false,
-      "skipLibCheck": true
+      "skipLibCheck": true,
+      "baseUrl": "./src",
+      "paths": {
+        "@api/*": [
+          "./api/*"
+        ],
+        "@i18n/*": [
+          "./i18n/*"
+        ],
+        "@images/*": [
+          "./images/*"
+        ],
+        "@models/*": [
+          "./models/*"
+        ],
+        "@modules/*": [
+          "./modules/*"
+        ],
+        "@shared/*": [
+          "./shared/*"
+        ],
+        "@stores/*": [
+          "./stores/*"
+        ],
+        "@stores": [
+          "./stores/index"
+        ],
+        "@utils/*": [
+          "./utils/*"
+        ],
+      }
     },
     "exclude": [
       "node_modules",

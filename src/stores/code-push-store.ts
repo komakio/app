@@ -1,7 +1,7 @@
 import { RootStore } from './root-store';
 
 import codePush from 'react-native-code-push';
-import { Environment } from '../environment';
+import { Environment } from 'environment';
 
 export class CodePushStore {
   public rootStore: RootStore;

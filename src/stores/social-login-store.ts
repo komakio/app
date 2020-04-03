@@ -10,9 +10,9 @@ import appleAuth, {
   AppleAuthRequestScope,
 } from '@invertase/react-native-apple-authentication';
 import { Alert } from 'react-native';
-import { LoginResult } from '../models/user';
+import { LoginResult } from '@models/user';
 import { AxiosError } from 'axios';
-import { Environment } from '../environment';
+import { Environment } from 'environment';
 
 export class SocialLoginStore {
   public rootStore: RootStore;

@@ -8,12 +8,12 @@ import {
 
 import { observer } from 'mobx-react-lite';
 import { useRoute, RouteProp } from '@react-navigation/native';
-import { Text } from '../../../shared/text';
-import { useUserStore, useRequestsStore } from '../../../stores';
-import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
-import { Button } from '../../../shared/button';
-import { Request } from '../../../models/request';
-import { Profile } from '../../../models/profile';
+import { Text } from '@shared/text';
+import { useUserStore, useRequestsStore } from '@stores';
+import { ModalArrowClose } from '@shared/modal/modal-arrow-close';
+import { Button } from '@shared/button';
+import { Request } from '@models/request';
+import { Profile } from '@models/profile';
 import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({

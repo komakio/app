@@ -6,8 +6,8 @@ import {
   ViewStyle,
   StyleProp,
 } from 'react-native';
-import { colors } from '../variables/colors';
-import { rgbaToHex } from '../../utils/colors';
+import { colors } from '@shared/variables/colors';
+import { rgbaToHex } from '@utils/colors';
 import { Touchable } from './touchable';
 
 const styles = StyleSheet.create({

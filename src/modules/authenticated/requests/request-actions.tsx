@@ -1,8 +1,8 @@
 import React, { memo, FC } from 'react';
 import { StyleSheet, View, Alert } from 'react-native';
-import { useUserStore, useRequestsStore } from '../../../stores';
-import { Button } from '../../../shared/button';
-import { Request } from '../../../models/request';
+import { useUserStore, useRequestsStore } from '@stores';
+import { Button } from '@shared/button';
+import { Request } from '@models/request';
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native';
 

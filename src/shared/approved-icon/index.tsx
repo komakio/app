@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { colors } from '../variables/colors';
+import { colors } from '@shared/variables/colors';
 import { StyleProp, ViewStyle } from 'react-native';
 
 export const ApprovedIcon = memo(

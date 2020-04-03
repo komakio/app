@@ -1,6 +1,6 @@
 import { observable } from 'mobx';
 import { RootStore } from './root-store';
-import { ProfilesApi } from '../api/profile';
+import { ProfilesApi } from '@api/profile';
 
 export class ProfileFlowStore {
   public rootStore: RootStore;

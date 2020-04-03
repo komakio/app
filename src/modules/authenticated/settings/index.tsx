@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigation, CommonActions } from '@react-navigation/native';
-import { CheckBoxButton, Button } from '../../../shared/button';
-import { useUserStore } from '../../../stores';
+import { CheckBoxButton, Button } from '@shared/button';
+import { useUserStore } from '@stores';
 import { TabContainer } from '../common/tab-container';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import { observer } from 'mobx-react-lite';

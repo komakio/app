@@ -3,7 +3,7 @@ import { StyleSheet, View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react-lite';
 import { ScrollView } from 'react-native-gesture-handler';
-import { BottomNavbar } from '../nav-bar/nav-bar';
+import { BottomNavbar } from '@modules/nav-bar/nav-bar';
 
 const styles = StyleSheet.create({
   scrollView: {

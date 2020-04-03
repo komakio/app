@@ -1,16 +1,16 @@
 import React, { FC } from 'react';
 
 import { StyleSheet } from 'react-native';
-import { useUserStore } from '../../../stores';
+import { useUserStore } from '@stores';
 import { observer } from 'mobx-react-lite';
 import { View } from 'react-native-animatable';
-import { colors } from '../../../shared/variables/colors';
-import { Text } from '../../../shared/text';
-import { Request } from '../../../models/request';
+import { colors } from '@shared/variables/colors';
+import { Text } from '@shared/text';
+import { Request } from '@models/request';
 import { useTranslation } from 'react-i18next';
 import { RequestActions } from './request-actions';
 import moment from 'moment';
-import { beautifyDistance } from '../../../utils/distance';
+import { beautifyDistance } from '@utils/distance';
 
 const styles = StyleSheet.create({
   container: {

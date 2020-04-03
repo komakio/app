@@ -2,9 +2,9 @@ import React, { memo, useEffect } from 'react';
 
 import { StyleSheet, View } from 'react-native';
 import { useNavigation, StackActions } from '@react-navigation/native';
-import { Text } from '../../shared/text';
-import { Button } from '../../shared/button';
-import { useUserStore } from '../../stores';
+import { Text } from '@shared/text';
+import { Button } from '@shared/button';
+import { useUserStore } from '@stores';
 import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({

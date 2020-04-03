@@ -1,5 +1,5 @@
 import { axiosInstance } from './base';
-import { LoginResult, User } from '../models/user';
+import { LoginResult, User } from '@models/user';
 import { getUniqueId } from 'react-native-device-info';
 
 export class UsersApi {

@@ -1,7 +1,7 @@
 import React, { memo, FC } from 'react';
 
 import { StyleSheet, View } from 'react-native';
-import { Text } from '../../../shared/text';
+import { Text } from '@shared/text';
 import { ScrollView } from 'react-native-gesture-handler';
 
 const styles = StyleSheet.create({

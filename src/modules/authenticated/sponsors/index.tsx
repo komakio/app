@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 
 import { StyleSheet, View, Linking } from 'react-native';
-import { Text } from '../../../shared/text';
-import { Button } from '../../../shared/button';
+import { Text } from '@shared/text';
+import { Button } from '@shared/button';
 import { Image } from 'react-native-animatable';
 import { TabContainer } from '../common/tab-container';
-import { colors } from '../../../shared/variables/colors';
+import { colors } from '@shared/variables/colors';
 import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
@@ -36,7 +36,7 @@ export const AuthenticatedSponsors = memo(() => {
         <Text>{t('SPONSORS_HOSTING')}</Text>
         <Image
           style={{ width: '80%', height: 100, resizeMode: 'contain' }}
-          source={require('../../../images/sponsors/oceanio.png')}
+          source={require('@images/sponsors/oceanio.png')}
         />
       </View>
 

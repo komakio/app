@@ -1,10 +1,10 @@
 import { RootStore } from './root-store';
-import { Storage } from '../utils/storage';
+import { Storage } from '@utils/storage';
 import { observable, computed } from 'mobx';
-import { User, LoginResult } from '../models/user';
-import { Profile } from '../models/profile';
-import { ProfilesApi } from '../api/profile';
-import { UsersApi } from '../api/user';
+import { User, LoginResult } from '@models/user';
+import { Profile } from '@models/profile';
+import { ProfilesApi } from '@api/profile';
+import { UsersApi } from '@api/user';
 
 export class UserStore {
   @observable
