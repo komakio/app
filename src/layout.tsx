@@ -12,6 +12,7 @@ import { useCodepushStore } from './stores';
 import { waitForSomeMs } from './utils/timeout';
 import RNBootSplash from 'react-native-bootsplash';
 import { statusBarHeight } from './utils/status-bar';
+import { Animations } from './utils/animations';
 
 const bootsplashImageSize = 200;
 
@@ -59,13 +60,13 @@ export const Layout = memo(({ children }) => {
     Animated.timing(translateY.current, {
       useNativeDriver,
       toValue: -Dimensions.get('window').height / 2 + 20 + statusBarHeight,
-      easing: Easing.bezier(0.645, 0.045, 0.355, 1),
+      easing: Animations.Easing.standard,
     }).start();
 
     Animated.timing(scale.current, {
       useNativeDriver,
       toValue: 0.7,
-      easing: Easing.bezier(0.645, 0.045, 0.355, 1),
+      easing: Animations.Easing.standard,
     }).start();
 
     Animated.timing(opacity.current, {
