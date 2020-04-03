@@ -4,6 +4,14 @@ import { Router } from './router';
 import { Layout } from './layout';
 
 import { includeCodePush } from './code-push';
+import { Alert } from 'react-native';
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
+const isHermes = () => !!global.HermesInternal;
+if (isHermes()) {
+  Alert.alert('Hermes');
+}
 
 export const App = includeCodePush(() => {
   return (
