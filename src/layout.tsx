@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     height: bootsplashImageSize,
     width: bootsplashImageSize,
   },
-  mainView: { top: 80 },
+  mainView: { top: statusBarHeight + 50 },
 });
 
 const useNativeDriver = true;
@@ -59,10 +59,7 @@ export const Layout = memo(({ children }) => {
 
     Animated.timing(translateY.current, {
       useNativeDriver,
-      toValue:
-        -Dimensions.get('window').height / 2 +
-        20 +
-        Math.max(statusBarHeight, 10), // set a small padding on android
+      toValue: -Dimensions.get('window').height / 2 + 30 + statusBarHeight,
       easing: Animations.Easing.standard,
     }).start();
 
@@ -76,7 +73,7 @@ export const Layout = memo(({ children }) => {
       useNativeDriver,
       toValue: 1,
       duration: 100,
-      delay: 150,
+      delay: 270,
     }).start();
   };
 
