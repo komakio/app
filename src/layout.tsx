@@ -59,7 +59,10 @@ export const Layout = memo(({ children }) => {
 
     Animated.timing(translateY.current, {
       useNativeDriver,
-      toValue: -Dimensions.get('window').height / 2 + 20 + statusBarHeight,
+      toValue:
+        -Dimensions.get('window').height / 2 +
+        20 +
+        Math.max(statusBarHeight, 10), // set a small padding on android
       easing: Animations.Easing.standard,
     }).start();
 
