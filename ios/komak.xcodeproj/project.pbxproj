@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* komakTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* komakTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2895F8C1768E4CACB9DDEBC1 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F9865CF0D44897A1B20993 /* MaterialCommunityIcons.ttf */; };
@@ -31,6 +30,7 @@
 		C3E09735DE164159B40D3E17 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 699909C29F1A4453AD3BE076 /* AntDesign.ttf */; };
 		D780E020EA3D413EABE35412 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3455E1165D34D3DA3C44D81 /* Fontisto.ttf */; };
 		E16E70EF4ADB4AF881A2DB99 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91239101A25D468B9B28C0D3 /* FontAwesome5_Solid.ttf */; };
+		E42DFC0C2436853B002445BF /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E42DFC0B2436853A002445BF /* BootSplash.storyboard */; };
 		E4D722F12427F6A600BB155E /* GoogleService-Info-Production.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4D722F02427F6A600BB155E /* GoogleService-Info-Production.plist */; };
 		E4D94633242F21290006B7B1 /* FirebaseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D94632242F21290006B7B1 /* FirebaseSetup.swift */; };
 		E4D94635242F24A30006B7B1 /* GoogleService-Info-Staging.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4D94634242F24A30006B7B1 /* GoogleService-Info-Staging.plist */; };
@@ -57,7 +57,6 @@
 		13B07F961A680F5B00A75B9A /* Komak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Komak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = komak/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = komak/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = komak/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = komak/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = komak/main.m; sourceTree = "<group>"; };
@@ -93,6 +92,7 @@
 		DB38B0FDBB08466F9344DF83 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		DCE465432C2EECCA81579FBC /* Pods-komak.releasestorestaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-komak.releasestorestaging.xcconfig"; path = "Target Support Files/Pods-komak/Pods-komak.releasestorestaging.xcconfig"; sourceTree = "<group>"; };
 		E3455E1165D34D3DA3C44D81 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		E42DFC0B2436853A002445BF /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = komak/BootSplash.storyboard; sourceTree = "<group>"; };
 		E4D722F02427F6A600BB155E /* GoogleService-Info-Production.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Production.plist"; sourceTree = "<group>"; };
 		E4D722F22427FB9100BB155E /* Komak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Komak.entitlements; path = komak/Komak.entitlements; sourceTree = "<group>"; };
 		E4D94631242F21290006B7B1 /* komak-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "komak-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -154,7 +154,6 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				E4D94632242F21290006B7B1 /* FirebaseSetup.swift */,
 				E4D94631242F21290006B7B1 /* komak-Bridging-Header.h */,
@@ -206,6 +205,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				E42DFC0B2436853A002445BF /* BootSplash.storyboard */,
 				E4D94636242F27E60006B7B1 /* GoogleService-Info-Dev.plist */,
 				E4D94634242F24A30006B7B1 /* GoogleService-Info-Staging.plist */,
 				E4D722F02427F6A600BB155E /* GoogleService-Info-Production.plist */,
@@ -357,7 +357,6 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				E4D94637242F27E60006B7B1 /* GoogleService-Info-Dev.plist in Resources */,
-				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				C3E09735DE164159B40D3E17 /* AntDesign.ttf in Resources */,
 				E4D94635242F24A30006B7B1 /* GoogleService-Info-Staging.plist in Resources */,
 				50F66E96689B42EB80FDAF5A /* Entypo.ttf in Resources */,
@@ -365,6 +364,7 @@
 				E91A89B18E5948CF80A4E1DD /* Feather.ttf in Resources */,
 				EEEC7912664449838A5BC7F3 /* FontAwesome.ttf in Resources */,
 				2A3A34BBDCD346D3B281A8DA /* FontAwesome5_Brands.ttf in Resources */,
+				E42DFC0C2436853B002445BF /* BootSplash.storyboard in Resources */,
 				791C96E57D844BAD9B293231 /* FontAwesome5_Regular.ttf in Resources */,
 				E16E70EF4ADB4AF881A2DB99 /* FontAwesome5_Solid.ttf in Resources */,
 				D780E020EA3D413EABE35412 /* Fontisto.ttf in Resources */,
@@ -553,18 +553,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13B07FB21A68108700A75B9A /* Base */,
-			);
-			name = LaunchScreen.xib;
-			path = komak;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -629,12 +617,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = komak/Komak.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = PVZAQR5AWK;
 				INFOPLIST_FILE = komak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -661,11 +649,11 @@
 				CODE_SIGN_ENTITLEMENTS = komak/Komak.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_TEAM = PVZAQR5AWK;
 				INFOPLIST_FILE = komak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -839,11 +827,11 @@
 				CODE_SIGN_ENTITLEMENTS = komak/Komak.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_TEAM = PVZAQR5AWK;
 				INFOPLIST_FILE = komak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -942,11 +930,11 @@
 				CODE_SIGN_ENTITLEMENTS = komak/Komak.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_TEAM = PVZAQR5AWK;
 				INFOPLIST_FILE = komak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
