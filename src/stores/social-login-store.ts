@@ -45,14 +45,17 @@ export class SocialLoginStore {
       return data;
     } catch (error) {
       console.log(error);
-      console.log((error as AxiosError)?.response.data);
+      console.log((error as AxiosError)?.response);
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         return null;
       } else if (error.code === statusCodes.IN_PROGRESS) {
+        this.rootStore.exceptionsStore.report(error);
         // operation (e.g. sign in) is in progress already
       } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        this.rootStore.exceptionsStore.report(error);
         // play services not available or outdated
       } else {
+        this.rootStore.exceptionsStore.report(error);
         // some other error happened
       }
       Alert.alert('Google login failed');
