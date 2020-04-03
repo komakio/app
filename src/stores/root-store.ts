@@ -6,6 +6,7 @@ import { CodePushStore } from './code-push-store';
 import { SocialLoginStore } from './social-login-store';
 import { RequestsStore } from './requests-store';
 import { AppStateStore } from './app-state-store';
+import { ExceptionsStore } from './exceptions-store';
 
 export class RootStore {
   public appStateStore = new AppStateStore(this);
@@ -15,6 +16,7 @@ export class RootStore {
   public codePushStore = new CodePushStore(this);
   public socialLoginStore = new SocialLoginStore(this);
   public requestsStore = new RequestsStore(this);
+  public exceptionsStore = new ExceptionsStore(this);
 }
 
 export const RootStoreContext: Context<RootStore> = createContext<RootStore>(
