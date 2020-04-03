@@ -60,19 +60,19 @@ export const Layout = memo(({ children }) => {
       useNativeDriver,
       toValue: -Dimensions.get('window').height / 2 + 30 + statusBarHeight,
       easing: Animations.Easing.standard,
-    }).start();
+    }).start(() => {
+      Animated.timing(opacity.current, {
+        useNativeDriver,
+        toValue: 1,
+        duration: 100,
+        easing: Animations.Easing.standard,
+      }).start();
+    });
 
     Animated.timing(scale.current, {
       useNativeDriver,
       toValue: 0.7,
       easing: Animations.Easing.standard,
-    }).start();
-
-    Animated.timing(opacity.current, {
-      useNativeDriver,
-      toValue: 1,
-      duration: 100,
-      delay: 270,
     }).start();
   };
 
