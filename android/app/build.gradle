@@ -128,12 +128,15 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    dexOptions {
+       javaMaxHeapSize "3g"
+    }
 
     defaultConfig {
         applicationId "io.komak.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 51
+        versionCode 56
         versionName "1.1.0"
         multiDexEnabled true
     }
