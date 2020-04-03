@@ -1,52 +1,85 @@
-import React, { memo, useState, useEffect } from 'react';
-import { View, StyleSheet, StatusBar } from 'react-native';
-import { statusBarHeight } from './utils/status-bar';
-import { animate } from './utils/animate';
-import { AnimatedText } from './shared/text';
+import React, { memo, useEffect, useRef, useState } from 'react';
+import {
+  View,
+  StyleSheet,
+  StatusBar,
+  Animated,
+  Dimensions,
+  Easing,
+} from 'react-native';
 import { colors } from './shared/variables/colors';
 import { useCodepushStore } from './stores';
 import { waitForSomeMs } from './utils/timeout';
+import RNBootSplash from 'react-native-bootsplash';
+import { statusBarHeight } from './utils/status-bar';
 
-const headerHeight = 50;
+const bootsplashImageSize = 200;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: statusBarHeight + headerHeight,
-    backgroundColor: 'white',
   },
-  animatedHeaderContainer: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    alignItems: 'stretch',
+  text: {
+    fontSize: 24,
+    fontWeight: '700',
+    margin: 20,
+    lineHeight: 30,
+    color: '#333',
+    textAlign: 'center',
+  },
+  bootsplash: {
+    flex: 1,
     justifyContent: 'center',
-    flexDirection: 'row',
-    paddingTop: statusBarHeight,
+    alignItems: 'center',
+    zIndex: 0,
   },
-  header: {
-    alignContent: 'center',
-    justifyContent: 'center',
-    display: 'flex',
-    height: headerHeight,
-    fontWeight: 'bold',
+  logo: {
+    height: bootsplashImageSize,
+    width: bootsplashImageSize,
   },
-  headerText: {
-    color: 'black',
-  },
-  mainView: { flex: 1 },
+  mainView: { top: 80 },
 });
 
+const useNativeDriver = true;
+
 export const Layout = memo(({ children }) => {
-  const [ready, setReady] = useState<boolean>(false);
   const codePushStore = useCodepushStore();
+
+  const opacity = useRef(new Animated.Value(0));
+  const scale = useRef(new Animated.Value(1));
+  const translateY = useRef(new Animated.Value(0));
+
+  const startAnimation = async () => {
+    try {
+      RNBootSplash.hide();
+    } catch {
+      /* Do nothing - TODO remove that when production deployment */
+    }
+
+    Animated.timing(translateY.current, {
+      useNativeDriver,
+      toValue: -Dimensions.get('window').height / 2 + 20 + statusBarHeight,
+      easing: Easing.bezier(0.645, 0.045, 0.355, 1),
+    }).start();
+
+    Animated.timing(scale.current, {
+      useNativeDriver,
+      toValue: 0.7,
+      easing: Easing.bezier(0.645, 0.045, 0.355, 1),
+    }).start();
+
+    Animated.timing(opacity.current, {
+      useNativeDriver,
+      toValue: 1,
+      duration: 100,
+      delay: 150,
+    }).start();
+  };
 
   useEffect(() => {
     const init = async () => {
       await Promise.all([codePushStore.initialCheck(), waitForSomeMs(1000)]);
-      animate(500);
-      setReady(true);
+      startAnimation();
     };
 
     init();
@@ -55,31 +88,31 @@ export const Layout = memo(({ children }) => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={colors.grey200} barStyle="dark-content" />
-      <View style={styles.animatedHeaderContainer}>
-        <View
+      <Animated.View style={[StyleSheet.absoluteFill, styles.bootsplash]}>
+        <Animated.Image
+          source={require('../assets/bootsplash_logo.png')}
+          fadeDuration={0}
           style={[
-            styles.header,
+            styles.logo,
             {
-              alignSelf: ready ? 'flex-start' : 'center',
+              transform: [
+                { translateY: translateY.current },
+                { scale: scale.current },
+              ],
             },
           ]}
-        >
-          <AnimatedText
-            transition="fontSize"
-            bold={true}
-            style={[
-              styles.headerText,
-              {
-                fontSize: ready ? 36 : 48,
-              },
-            ]}
-          >
-            KOMAK
-          </AnimatedText>
-        </View>
-      </View>
+        />
+      </Animated.View>
 
-      {ready && <View style={styles.mainView}>{children}</View>}
+      <Animated.View
+        style={[
+          StyleSheet.absoluteFill,
+          styles.mainView,
+          { opacity: opacity.current },
+        ]}
+      >
+        {children}
+      </Animated.View>
     </View>
   );
 });
