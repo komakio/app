@@ -1,11 +1,11 @@
 import React, { useState, memo } from 'react';
 import { StyleSheet, View, Alert } from 'react-native';
 import { useNavigation, CommonActions } from '@react-navigation/native';
-import { Text } from '../../shared/text';
+import { Text } from '@shared/text';
 import { ScrollView } from 'react-native-gesture-handler';
-import { CheckboxFormElement } from '../../shared/button';
-import { BottomNavbar } from '../nav-bar/nav-bar';
-import { useProfileFlowStore } from '../../stores';
+import { CheckboxFormElement } from '@shared/button';
+import { BottomNavbar } from '@modules/nav-bar/nav-bar';
+import { useProfileFlowStore } from '@stores';
 import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({

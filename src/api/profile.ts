@@ -1,5 +1,5 @@
 import { axiosInstance } from './base';
-import { Profile } from '../models/profile';
+import { Profile } from '@models/profile';
 
 export class ProfilesApi {
   public static async getProfiles(accessToken: string): Promise<Profile[]> {

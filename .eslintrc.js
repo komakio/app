@@ -33,6 +33,7 @@ module.exports = {
     "react-native-a11y/has-valid-accessibility-role": 0,
 
     '@typescript-eslint/no-unused-vars': 'warn',
+    'import/no-unresolved': 0,
     // '@typescript-eslint/ban-ts-ignore': 0,
     // 'prefer-const': [
     //   'error',

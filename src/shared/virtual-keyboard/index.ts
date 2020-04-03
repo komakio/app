@@ -1,1 +1,1 @@
-export * from './virtual-keyboard';
+export * from '@shared/virtual-keyboard';

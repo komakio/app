@@ -3,12 +3,12 @@ import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
 
 import { observer } from 'mobx-react-lite';
 import { useNavigation } from '@react-navigation/native';
-import { Text } from '../../../shared/text';
-import { TextInput } from '../../../shared/text-input';
-import { useProfileFlowStore, useUserStore } from '../../../stores';
-import { Button } from '../../../shared/button';
-import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
-import { Profile } from '../../../models/profile';
+import { Text } from '@shared/text';
+import { TextInput } from '@shared/text-input';
+import { useProfileFlowStore, useUserStore } from '@stores';
+import { Button } from '@shared/button';
+import { ModalArrowClose } from '@shared/modal/modal-arrow-close';
+import { Profile } from '@models/profile';
 import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({

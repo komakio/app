@@ -1,6 +1,6 @@
 import { RootStore } from './root-store';
-import { Messaging } from '../utils/messaging';
-import { UsersApi } from '../api/user';
+import { Messaging } from '@utils/messaging';
+import { UsersApi } from '@api/user';
 import { autorun, observable } from 'mobx';
 
 export class NotificationsStore {

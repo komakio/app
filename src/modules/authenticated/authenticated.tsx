@@ -6,8 +6,8 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { AuthenticatedSponsors } from './sponsors';
 import { Platform, StyleSheet } from 'react-native';
 import { IconWithBadge } from './icon-with-badge';
-import { useNotificationsStore } from '../../stores';
-import { colors } from '../../shared/variables/colors';
+import { useNotificationsStore } from '@stores';
+import { colors } from '@shared/variables/colors';
 import { RequestsList } from './requests/list';
 import { AuthenticatedSettings } from './settings';
 import { useTranslation } from 'react-i18next';

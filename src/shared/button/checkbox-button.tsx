@@ -5,9 +5,9 @@ import {
   NativeTouchEvent,
   View,
 } from 'react-native';
-import { Text } from '../text';
-import { colors } from '../variables/colors';
-import { ApprovedIcon } from '../approved-icon';
+import { Text } from '@shared/text';
+import { colors } from '@shared/variables/colors';
+import { ApprovedIcon } from '@shared/approved-icon';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Touchable } from './touchable';
 

@@ -4,10 +4,10 @@ import {
   NativeSyntheticEvent,
   NativeTouchEvent,
 } from 'react-native';
-import { Text } from '../../shared/text';
-import { colors } from '../../shared/variables/colors';
+import { Text } from '@shared/text';
+import { colors } from '@shared/variables/colors';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Touchable } from '../../shared/button';
+import { Touchable } from '@shared/button';
 
 const styles = StyleSheet.create({
   container: {

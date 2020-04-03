@@ -6,8 +6,8 @@ import {
   View,
   PixelRatio,
 } from 'react-native';
-import { Text } from '../text';
-import { colors } from '../variables/colors';
+import { Text } from '@shared/text';
+import { colors } from '@shared/variables/colors';
 
 const styles = StyleSheet.create({
   container: {

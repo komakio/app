@@ -9,15 +9,15 @@ import {
 
 import { observer } from 'mobx-react-lite';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
-import { Text } from '../../../shared/text';
-import { TextInput } from '../../../shared/text-input';
-import { useProfileFlowStore, useUserStore } from '../../../stores';
-import { Button, Touchable } from '../../../shared/button';
-import { ModalArrowClose } from '../../../shared/modal/modal-arrow-close';
-import { Profile } from '../../../models/profile';
+import { Text } from '@shared/text';
+import { TextInput } from '@shared/text-input';
+import { useProfileFlowStore, useUserStore } from '@stores';
+import { Button, Touchable } from '@shared/button';
+import { ModalArrowClose } from '@shared/modal/modal-arrow-close';
+import { Profile } from '@models/profile';
 import { useTranslation } from 'react-i18next';
-import { LocationApi, GeolocationResult } from '../../../api/location';
-import { makeCancelable, CancelablePromise } from '../../../utils/promise';
+import { LocationApi, GeolocationResult } from '@api/location';
+import { makeCancelable, CancelablePromise } from '@utils/promise';
 
 const styles = StyleSheet.create({
   container: {

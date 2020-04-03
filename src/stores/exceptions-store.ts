@@ -1,6 +1,6 @@
 import * as Sentry from '@sentry/react-native';
 
-import { Environment } from '../environment';
+import { Environment } from 'environment';
 import { RootStore } from './root-store';
 
 export class ExceptionsStore {

@@ -1,5 +1,5 @@
 import { axiosInstance } from './base';
-import { Profile } from '../models/profile';
+import { Profile } from '@models/profile';
 
 export class RequestsApi {
   public static async createRequest(accessToken: string, profileId: string) {

@@ -7,16 +7,16 @@ import {
   GestureResponderEvent,
 } from 'react-native';
 import { useNavigation, CommonActions } from '@react-navigation/native';
-import { Text } from '../../shared/text';
-import { useProfileFlowStore } from '../../stores';
-import { Geolocation } from '../../utils/geolocation';
+import { Text } from '@shared/text';
+import { useProfileFlowStore } from '@stores';
+import { Geolocation } from '@utils/geolocation';
 import { observer } from 'mobx-react-lite';
 import { useTranslation, Trans } from 'react-i18next';
 import { ScrollView } from 'react-native-gesture-handler';
-import { CheckBoxButton } from '../../shared/button/checkbox-button';
-import { BottomNavbar } from '../nav-bar/nav-bar';
-import { colors } from '../../shared/variables/colors';
-import { CheckboxLink } from '../../shared/checkbox-link';
+import { CheckBoxButton } from '@shared/button/checkbox-button';
+import { BottomNavbar } from '@modules/nav-bar/nav-bar';
+import { colors } from '@shared/variables/colors';
+import { CheckboxLink } from '@shared/checkbox-link';
 
 const styles = StyleSheet.create({
   parentContainer: {

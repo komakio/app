@@ -1,11 +1,10 @@
-import React, { memo, useEffect, useRef, useState } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 import {
   View,
   StyleSheet,
   StatusBar,
   Animated,
   Dimensions,
-  Easing,
 } from 'react-native';
 import { colors } from './shared/variables/colors';
 import { useCodepushStore } from './stores';

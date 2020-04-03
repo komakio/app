@@ -7,11 +7,11 @@ import appleAuth, {
 } from '@invertase/react-native-apple-authentication';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Text } from '../../shared/text';
-import { useUserStore } from '../../stores';
-import { Touchable } from '../../shared/button';
-import { colors } from '../../shared/variables/colors';
-import { BottomNavbar } from '../nav-bar';
+import { Text } from '@shared/text';
+import { useUserStore } from '@stores';
+import { Touchable } from '@shared/button';
+import { colors } from '@shared/variables/colors';
+import { BottomNavbar } from '@modules/nav-bar';
 import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({

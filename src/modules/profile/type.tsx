@@ -2,11 +2,11 @@ import React, { memo } from 'react';
 
 import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Text } from '../../shared/text';
-import { ProfileFlowStore } from '../../stores/profile-flow-store';
-import { useProfileFlowStore, useUserStore } from '../../stores';
-import { Button } from '../../shared/button';
-import { BottomNavbar } from '../nav-bar';
+import { Text } from '@shared/text';
+import { ProfileFlowStore } from '@stores/profile-flow-store';
+import { useProfileFlowStore, useUserStore } from '@stores';
+import { Button } from '@shared/button';
+import { BottomNavbar } from '@modules/nav-bar';
 import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({

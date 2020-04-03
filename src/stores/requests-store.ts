@@ -1,8 +1,8 @@
 import { RootStore } from './root-store';
-import { RequestsApi } from '../api/request';
-import { Request } from '../models/request';
+import { RequestsApi } from '@api/request';
+import { Request } from '@models/request';
 import { autorun, observable } from 'mobx';
-import { Profile } from '../models/profile';
+import { Profile } from '@models/profile';
 
 export class RequestsStore {
   @observable
