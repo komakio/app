@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 18,
-    marginBottom: 20,
+    marginBottom: 5,
   },
   input: {
     borderWidth: 4 / PixelRatio.get(),

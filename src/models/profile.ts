@@ -4,6 +4,9 @@ interface Location {
 }
 export class Address {
   raw: string;
+  extra?: string;
+  postalCode?: string;
+  city?: string;
   country?: string;
   location: Location;
 }

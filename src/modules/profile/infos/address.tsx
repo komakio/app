@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
+    paddingHorizontal: 20,
     fontWeight: 'bold',
   },
   buttonContainer: {
@@ -73,6 +74,9 @@ export const ProfileInfosAddress = observer(() => {
   const [rawAddress, setRawAddress] = useState<Profile['address']['raw']>(
     profile?.address?.raw || profileFlowStore.address || ''
   );
+  const [addressExtra, setAddressExtra] = useState<Profile['address']['extra']>(
+    profile?.address?.extra || profileFlowStore.addressExtra || ''
+  );
 
   const onChooseResult = (result: GeolocationResult) => () => {
     setResults(null);
@@ -87,6 +91,7 @@ export const ProfileInfosAddress = observer(() => {
         address: {
           ...profile.address,
           raw: rawAddress,
+          extra: addressExtra,
         },
       });
     } else {
@@ -137,9 +142,7 @@ export const ProfileInfosAddress = observer(() => {
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
       <ModalArrowClose />
 
-      <View>
-        <Text style={styles.title}>{t('PROFILE_ADDRESS_TITLE')}</Text>
-      </View>
+      <Text style={styles.title}>{t('PROFILE_ADDRESS_TITLE')}</Text>
 
       <TextInput
         label={t('PROFILE_ADDRESS_ADDRESS')}
@@ -169,6 +172,13 @@ export const ProfileInfosAddress = observer(() => {
       {searchStatus === 'no-results' && (
         <Text style={styles.resultText}>{t('NO_RESULTS')}</Text>
       )}
+
+      <TextInput
+        label={t('PROFILE_ADDRESS_EXTRA')}
+        value={addressExtra}
+        onChangeText={(extra) => setAddressExtra(extra)}
+        autoCorrect={false}
+      />
 
       {(!params?.latLongRequired || profileFlowStore.coords) && (
         <View style={styles.buttonContainer}>
