@@ -16,6 +16,9 @@ const codePushProductionDeploymentKey =
 export class Environment {
   public static bundleId = DeviceInfo.getBundleId();
 
+  public static sentryDsn =
+    'https://24a07ce0050049789dc781fc7e550f73@sentry.anchor.io/2';
+
   public static environment: EnvironmentType =
     Environment.bundleId === 'io.komak.app.dev'
       ? 'development'
