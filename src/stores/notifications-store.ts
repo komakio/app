@@ -3,6 +3,7 @@ import { Messaging } from '@utils/messaging';
 import { UsersApi } from '@api/user';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 import { autorun, observable } from 'mobx';
+import { Platform } from 'react-native';
 
 export class NotificationsStore {
   @observable
@@ -20,7 +21,9 @@ export class NotificationsStore {
   }
 
   public async showAllAsSeen() {
-    PushNotificationIOS.setApplicationIconBadgeNumber(0);
+    if (Platform.OS === 'ios') {
+      PushNotificationIOS.setApplicationIconBadgeNumber(0);
+    }
   }
 
   public async registerForNotifications() {
