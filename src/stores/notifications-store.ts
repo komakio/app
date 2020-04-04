@@ -1,6 +1,7 @@
 import { RootStore } from './root-store';
 import { Messaging } from '@utils/messaging';
 import { UsersApi } from '@api/user';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
 import { autorun, observable } from 'mobx';
 
 export class NotificationsStore {
@@ -16,6 +17,10 @@ export class NotificationsStore {
         this.synchronizeToken();
       }
     });
+  }
+
+  public async showAllAsSeen() {
+    PushNotificationIOS.setApplicationIconBadgeNumber(0);
   }
 
   public async registerForNotifications() {

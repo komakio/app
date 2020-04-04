@@ -5,7 +5,7 @@ import { TabContainer } from '../common/tab-container';
 import { Button } from '@shared/button';
 import { useNavigation } from '@react-navigation/native';
 import { EmptyBox } from '../common/empty-box';
-import { useUserStore, useRequestsStore } from '@stores';
+import { useUserStore, useRequestsStore, useNotificationsStore } from '@stores';
 import { observer } from 'mobx-react-lite';
 import { RequestListItem } from './request-list-item';
 import { useTranslation } from 'react-i18next';
@@ -20,7 +20,12 @@ export const RequestsList = observer(() => {
   const navigation = useNavigation();
   const { profile } = useUserStore();
   const requestsStore = useRequestsStore();
+  const notificationsStore = useNotificationsStore();
   const { t } = useTranslation();
+
+  useEffect(() => {
+    notificationsStore.showAllAsSeen();
+  }, [notificationsStore]);
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
