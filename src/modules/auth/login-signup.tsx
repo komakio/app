@@ -2,15 +2,12 @@ import React, { memo } from 'react';
 
 import { StyleSheet, View } from 'react-native';
 import { useNavigation, CommonActions } from '@react-navigation/native';
-import appleAuth, {
-  AppleButton,
-} from '@invertase/react-native-apple-authentication';
+import appleAuth from '@invertase/react-native-apple-authentication';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Text } from '@shared/text';
 import { useUserStore } from '@stores';
-import { Touchable } from '@shared/button';
-import { colors } from '@shared/variables/colors';
+import { Button } from '@shared/button';
 import { BottomNavbar } from '@modules/nav-bar';
 import { useTranslation } from 'react-i18next';
 
@@ -26,31 +23,17 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 25,
-    marginBottom: 20,
+    marginBottom: 30,
     textAlign: 'center',
   },
-  googleButton: {
-    minWidth: 250,
-    height: 60,
-    margin: 10,
-    borderRadius: 5,
-    backgroundColor: colors.red400,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    paddingHorizontal: 10,
-  },
-  googleText: {
+  buttonText: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: 'bold',
-    fontVariant: ['lining-nums'],
     marginLeft: 5,
   },
-  appleButton: {
-    width: 250,
-    height: 60,
-    margin: 10,
+  buttonWithMarginBottom: {
+    marginBottom: 10,
   },
 });
 
@@ -82,21 +65,19 @@ export const LoginSignup = memo(() => {
         <Text style={styles.title} bold={true}>
           {t('SIGNIN_TITLE')}
         </Text>
-        <Touchable
+        <Button
+          style={styles.buttonWithMarginBottom}
           onPress={socialSignup('google')}
-          containerStyle={styles.googleButton}
-          accessibilityRole="button"
+          theme="red"
         >
-          <Icon name="google" size={20} color="white" />
-          <Text style={styles.googleText}>{t('SIGNIN_GOOGLE')}</Text>
-        </Touchable>
+          <Icon name="google" size={25} color="white" />
+          <Text style={styles.buttonText}>Google</Text>
+        </Button>
         {appleAuth.isSupported && (
-          <AppleButton
-            style={styles.appleButton}
-            buttonStyle={AppleButton.Style.BLACK}
-            buttonType={AppleButton.Type.SIGN_IN}
-            onPress={socialSignup('apple')}
-          />
+          <Button onPress={socialSignup('apple')} theme="black">
+            <Icon name="apple" size={25} color="white" />
+            <Text style={styles.buttonText}>Apple</Text>
+          </Button>
         )}
       </View>
       <BottomNavbar onBack={navigation.goBack} />

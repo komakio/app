@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     borderRadius: 30,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     alignItems: 'center',
   },
 
@@ -55,6 +55,11 @@ const styles = StyleSheet.create({
     borderColor: colors.grey300,
   },
 
+  blackButton: {
+    backgroundColor: 'black',
+    borderColor: 'black',
+  },
+
   redButton: {
     backgroundColor: colors.red400,
     borderColor: colors.red400,
@@ -82,7 +87,7 @@ const styles = StyleSheet.create({
 interface ButtonProps {
   onPress: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
   size?: 'small' | 'big' | 'smaller';
-  theme?: 'blue' | 'green' | 'red' | 'grey';
+  theme?: 'blue' | 'green' | 'red' | 'grey' | 'black';
   disabled?: boolean;
   style?: StyleProp<ViewStyle>;
 }
@@ -105,6 +110,7 @@ export const Button: FC<ButtonProps> = memo(
       theme === 'red' && styles.redButton,
       theme === 'green' && styles.greenButton,
       theme === 'grey' && styles.greyButton,
+      theme === 'black' && styles.blackButton,
       disabled && styles.disabledButton,
     ];
 

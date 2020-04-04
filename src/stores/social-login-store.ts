@@ -8,6 +8,7 @@ import {
 import appleAuth, {
   AppleAuthRequestOperation,
   AppleAuthRequestScope,
+  RNAppleAuth,
 } from '@invertase/react-native-apple-authentication';
 import { Alert } from 'react-native';
 import { LoginResult } from '@models/user';
@@ -60,16 +61,20 @@ export class SocialLoginStore {
   }
 
   public async appleLogin(): Promise<LoginResult> {
+    let appleAuthRequestResponse: RNAppleAuth.AppleAuthRequestResponse;
     try {
       // performs login request
-      const appleAuthRequestResponse = await appleAuth.performRequest({
+      appleAuthRequestResponse = await appleAuth.performRequest({
         requestedOperation: AppleAuthRequestOperation.LOGIN,
         requestedScopes: [
           AppleAuthRequestScope.EMAIL,
           AppleAuthRequestScope.FULL_NAME,
         ],
       });
-
+    } catch (e) {
+      return null;
+    }
+    try {
       const firstName = appleAuthRequestResponse.fullName.givenName;
       const lastName = appleAuthRequestResponse.fullName.familyName;
       const data = await UsersApi.loginApple(
@@ -81,7 +86,6 @@ export class SocialLoginStore {
 
       return data;
     } catch (e) {
-      console.log(e);
       Alert.alert('Apple login failed');
       return null;
     }

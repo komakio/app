@@ -1,9 +1,8 @@
 import React, { FC } from 'react';
 
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useUserStore } from '@stores';
 import { observer } from 'mobx-react-lite';
-import { View } from 'react-native-animatable';
 import { colors } from '@shared/variables/colors';
 import { Text } from '@shared/text';
 import { Request } from '@models/request';

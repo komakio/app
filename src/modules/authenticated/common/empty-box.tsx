@@ -1,8 +1,7 @@
 import React, { memo, FC } from 'react';
 
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { colors } from '@shared/variables/colors';
-import { View } from 'react-native-animatable';
 import { Text } from '@shared/text';
 
 const styles = StyleSheet.create({
