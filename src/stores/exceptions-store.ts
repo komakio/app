@@ -14,7 +14,7 @@ export class ExceptionsStore {
     }
     try {
       Sentry.init({
-        dsn: 'https://70da0c24b7a04d41939443ccc906ef98@sentry.anchor.io/16',
+        dsn: Environment.sentryDsn,
       });
     } catch {
       /* Do nothing - TODO remove that when production deployment */
