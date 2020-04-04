@@ -136,7 +136,7 @@ android {
         applicationId "io.komak.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 56
+        versionCode 59
         versionName "1.1.0"
         multiDexEnabled true
     }
