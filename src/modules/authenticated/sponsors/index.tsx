@@ -1,9 +1,8 @@
 import React, { memo } from 'react';
 
-import { StyleSheet, View, Linking } from 'react-native';
+import { StyleSheet, View, Linking, Image } from 'react-native';
 import { Text } from '@shared/text';
 import { Button } from '@shared/button';
-import { Image } from 'react-native-animatable';
 import { TabContainer } from '../common/tab-container';
 import { colors } from '@shared/variables/colors';
 import { useTranslation } from 'react-i18next';

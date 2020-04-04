@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { StyleSheet } from 'react-native';
-import { View, Text } from 'react-native-animatable';
+import { StyleSheet, View } from 'react-native';
+import { Text } from '@shared/text';
 
 const styles = StyleSheet.create({
   container: {
