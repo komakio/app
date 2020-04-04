@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import {
   View,
   StyleSheet,
@@ -13,6 +13,7 @@ import RNBootSplash from 'react-native-bootsplash';
 import { statusBarHeight } from '../utils/status-bar';
 import { Animations } from '../utils/animations';
 import { CodePushProgress } from './code-push-progress';
+import { Background } from './background';
 
 const bootsplashImageSize = 200;
 
@@ -49,6 +50,7 @@ export const Layout = memo(({ children }) => {
   const opacity = useRef(new Animated.Value(0));
   const scale = useRef(new Animated.Value(1));
   const translateY = useRef(new Animated.Value(0));
+  const [ready, setReady] = useState<boolean>(false);
 
   const startAnimation = async () => {
     Animated.timing(translateY.current, {
@@ -75,6 +77,7 @@ export const Layout = memo(({ children }) => {
     const init = async () => {
       await Promise.all([codePushStore.initialCheck(), waitForSomeMs(1000)]);
       startAnimation();
+      setReady(true);
     };
 
     init();
@@ -101,6 +104,11 @@ export const Layout = memo(({ children }) => {
         />
       </Animated.View>
 
+      <Animated.View
+        style={[StyleSheet.absoluteFill, { opacity: opacity.current }]}
+      >
+        <Background ready={ready} />
+      </Animated.View>
       <Animated.View
         style={[
           StyleSheet.absoluteFill,
