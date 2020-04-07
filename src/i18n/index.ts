@@ -4,6 +4,7 @@ import moment from 'moment';
 
 import 'moment/locale/af';
 import 'moment/locale/ar';
+import 'moment/locale/bg';
 import 'moment/locale/ca';
 import 'moment/locale/cs';
 import 'moment/locale/da';
@@ -24,6 +25,7 @@ import 'moment/locale/ms';
 import 'moment/locale/nl';
 import 'moment/locale/pl';
 import 'moment/locale/pt';
+import 'moment/locale/pt-br';
 import 'moment/locale/ro';
 import 'moment/locale/ru';
 import 'moment/locale/sr';
@@ -40,6 +42,7 @@ const resources = {
   en: { translation: require('./en.json') },
   af: { translation: require('./languages/af-ZA.json') },
   ar: { translation: require('./languages/ar-SA.json') },
+  bg: { translation: require('./languages/bg-BG.json') },
   ca: { translation: require('./languages/ca-ES.json') },
   cs: { translation: require('./languages/cs-CZ.json') },
   da: { translation: require('./languages/da-DK.json') },
@@ -61,6 +64,7 @@ const resources = {
   no: { translation: require('./languages/no-NO.json') },
   pl: { translation: require('./languages/pl-PL.json') },
   pt: { translation: require('./languages/pt-PT.json') },
+  'pt-BR': { translation: require('./languages/pt-BR.json') },
   ro: { translation: require('./languages/ro-RO.json') },
   ru: { translation: require('./languages/ru-RU.json') },
   sr: { translation: require('./languages/sr-SP.json') },
