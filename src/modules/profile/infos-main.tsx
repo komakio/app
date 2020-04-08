@@ -73,34 +73,30 @@ export const InfosMain = observer(() => {
   };
 
   const goToNext = async () => {
-    Alert.alert(
-      `I confirm that I've read and agree to the terms of services and the privacy policy.`,
-      '',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Confirm',
-          onPress: async () => {
-            if (profileFlowStore.role === 'helper') {
-              navigation.navigate('consents');
-              return;
-            }
+    Alert.alert(t('CONSENTS_CONFIRM'), '', [
+      { text: t('ACTIONS_CANCEL'), style: 'cancel' },
+      {
+        text: t('ACTIONS_CONFIRM'),
+        onPress: async () => {
+          if (profileFlowStore.role === 'helper') {
+            navigation.navigate('consents');
+            return;
+          }
 
-            const res = await profileFlowStore.saveProfile();
-            if (!res) {
-              Alert.alert('Error saving profile');
-              return;
-            }
-            navigation.dispatch(
-              CommonActions.reset({
-                index: 1,
-                routes: [{ name: 'authenticated' }],
-              })
-            );
-          },
+          const res = await profileFlowStore.saveProfile();
+          if (!res) {
+            Alert.alert('Error saving profile');
+            return;
+          }
+          navigation.dispatch(
+            CommonActions.reset({
+              index: 1,
+              routes: [{ name: 'authenticated' }],
+            })
+          );
         },
-      ]
-    );
+      },
+    ]);
     return;
   };
 
