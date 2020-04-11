@@ -42,7 +42,6 @@ export const AuthenticatedSponsors = memo(() => {
       <View style={[styles.box, styles.boxCenter]}>
         <Text style={styles.reachOutText}>{t('SPONSORS_REACH_OUT')}</Text>
         <Button
-          size="big"
           theme="green"
           onPress={() => Linking.openURL('https://komak.io/contact/')}
         >

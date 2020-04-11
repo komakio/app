@@ -66,6 +66,7 @@ export const AuthenticatedSettings = observer(() => {
         <Button
           style={styles.logoutButton}
           theme="red"
+          size="small"
           onPress={async () => {
             await userStore.logout();
             navigation.dispatch(

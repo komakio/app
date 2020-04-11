@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
   commonButton: {
     display: 'flex',
     borderRadius: 30,
-    height: 50,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -25,9 +24,14 @@ const styles = StyleSheet.create({
   },
 
   smallButton: {
-    width: 100,
+    width: 140,
     height: 40,
     fontSize: 14,
+  },
+
+  defaultSizeButton: {
+    height: 50,
+    width: 200,
   },
 
   bigButton: {
@@ -100,6 +104,7 @@ export const Button: FC<ButtonProps> = memo(
     const buttonStyles = [
       styles.commonButton,
       size === 'small' && styles.smallButton,
+      size === 'default' && styles.defaultSizeButton,
       size === 'big' && styles.bigButton,
       theme === 'blue' && styles.blueButton,
       theme === 'red' && styles.redButton,
