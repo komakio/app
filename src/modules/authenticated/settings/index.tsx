@@ -52,7 +52,7 @@ export const AuthenticatedSettings = observer(() => {
             {t('PROFILE_VIEW_PHONE')}
           </CheckBoxButton>
         </View>
-        {profile?.role === 'needer' && (
+        {/* {profile?.role === 'needer' && (
           <View style={styles.buttonContainer}>
             <CheckBoxButton
               onPress={() => navigation.navigate('profile-infos-address')}
@@ -61,7 +61,7 @@ export const AuthenticatedSettings = observer(() => {
               {t('PROFILE_VIEW_ADDRESS')}
             </CheckBoxButton>
           </View>
-        )}
+        )} */}
 
         <Button
           style={styles.logoutButton}

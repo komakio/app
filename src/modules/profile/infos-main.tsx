@@ -162,7 +162,7 @@ export const InfosMain = observer(() => {
           </CheckBoxButton>
         </View>
 
-        {profileFlowStore.role === 'needer' && (
+        {/* {profileFlowStore.role === 'needer' && (
           <View style={styles.buttonContainer}>
             <CheckBoxButton
               onPress={() => navigation.navigate('profile-infos-address')}
@@ -171,7 +171,7 @@ export const InfosMain = observer(() => {
               {t('PROFILE_SETUP_ADDRESS')}
             </CheckBoxButton>
           </View>
-        )}
+        )} */}
 
         <View style={styles.buttonContainer}>
           <CheckboxLink

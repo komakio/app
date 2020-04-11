@@ -173,12 +173,12 @@ export const ProfileInfosAddress = observer(() => {
         <Text style={styles.resultText}>{t('NO_RESULTS')}</Text>
       )}
 
-      <TextInput
+      {/* <TextInput
         label={t('PROFILE_ADDRESS_EXTRA')}
         value={addressExtra}
         onChangeText={(extra) => setAddressExtra(extra)}
         autoCorrect={false}
-      />
+      /> */}
 
       {(!params?.latLongRequired || profileFlowStore.coords) && (
         <View style={styles.buttonContainer}>

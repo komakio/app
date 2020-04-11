@@ -95,26 +95,31 @@ export const AcceptedRequestView = observer(() => {
           {otherPersonProfile.firstName} {otherPersonProfile.lastName}
         </Text>
 
-        {otherPersonProfile.address?.raw ? (
+        {/* {otherPersonProfile.address?.raw ? (
           <Text style={styles.fieldTitle}>{t('REQUESTS_REQUEST_ADDRESS')}</Text>
         ) : null}
         {otherPersonProfile.address?.raw ? (
           <Text style={styles.fieldValue}>
             {otherPersonProfile.address?.raw}
           </Text>
-        ) : null}
+        ) : null} */}
 
         <Text style={styles.fieldTitle}>
           {t('REQUESTS_REQUEST_PHONE_NUMBER')}
         </Text>
         <Text style={styles.fieldValue}>
+          {otherPersonProfile.phone?.dialCode || ''}{' '}
           {otherPersonProfile.phone?.number}
         </Text>
 
         <Button
           style={styles.telButton}
           onPress={() =>
-            Linking.openURL(`tel:${otherPersonProfile.phone?.number}`)
+            Linking.openURL(
+              `tel:${otherPersonProfile.phone?.dialCode || ''}${
+                otherPersonProfile.phone?.number
+              }`
+            )
           }
         >
           {t('ACTIONS_CALL')}
