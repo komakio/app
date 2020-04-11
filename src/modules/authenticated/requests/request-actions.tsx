@@ -75,7 +75,6 @@ export const RequestActions: FC<PendingRequestViewProps> = memo(
         {request.requesterProfileId === profile?._id &&
           request.status === 'pending' && (
             <View style={styles.buttonContainer}>
-              <View style={styles.buttonFlex} />
               <Button
                 onPress={cancelRequest}
                 theme="blue"
@@ -84,6 +83,7 @@ export const RequestActions: FC<PendingRequestViewProps> = memo(
               >
                 {t('ACTIONS_CANCEL')}
               </Button>
+              <View style={styles.buttonFlex} />
             </View>
           )}
         {request.requesterProfileId !== profile?._id &&
