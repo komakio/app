@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
   commonButton: {
     display: 'flex',
     borderRadius: 30,
+    height: 50,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -92,13 +93,12 @@ export const Button: FC<ButtonProps> = memo(
     onPress,
     theme = 'green',
     children,
-    size = 'small',
+    size = 'default',
     disabled = false,
     style,
   }) => {
     const buttonStyles = [
       styles.commonButton,
-      size === 'small' && styles.smallButton,
       size === 'small' && styles.smallButton,
       size === 'big' && styles.bigButton,
       theme === 'blue' && styles.blueButton,
