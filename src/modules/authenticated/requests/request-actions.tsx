@@ -8,12 +8,15 @@ import { useNavigation } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    marginTop: 10,
+    marginTop: 20,
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-end',
   },
   buttonMargin: {
-    marginRight: 10,
+    marginLeft: 10,
+  },
+  buttonFlex: {
+    flex: 1,
   },
 });
 
@@ -57,11 +60,13 @@ export const RequestActions: FC<PendingRequestViewProps> = memo(
       <View>
         {request.status === 'accepted' && (
           <View style={styles.buttonContainer}>
+            <View style={styles.buttonFlex} />
             <Button
+              style={styles.buttonFlex}
               onPress={() =>
                 navigation.navigate('requests-request-accepted', request)
               }
-              size="smaller"
+              size="small"
             >
               {t('ACTIONS_OPEN')}
             </Button>
@@ -70,7 +75,13 @@ export const RequestActions: FC<PendingRequestViewProps> = memo(
         {request.requesterProfileId === profile?._id &&
           request.status === 'pending' && (
             <View style={styles.buttonContainer}>
-              <Button onPress={cancelRequest} theme="blue" size="smaller">
+              <View style={styles.buttonFlex} />
+              <Button
+                onPress={cancelRequest}
+                theme="blue"
+                style={styles.buttonFlex}
+                size="small"
+              >
                 {t('ACTIONS_CANCEL')}
               </Button>
             </View>
@@ -79,14 +90,19 @@ export const RequestActions: FC<PendingRequestViewProps> = memo(
           request.status === 'pending' && (
             <View style={styles.buttonContainer}>
               <Button
-                size="smaller"
+                size="small"
+                theme="red"
+                onPress={refuseRequest}
+                style={styles.buttonFlex}
+              >
+                {t('ACTIONS_REFUSE')}
+              </Button>
+              <Button
+                size="small"
                 onPress={acceptRequest}
-                style={styles.buttonMargin}
+                style={[styles.buttonFlex, styles.buttonMargin]}
               >
                 {t('ACTIONS_ACCEPT')}
-              </Button>
-              <Button size="smaller" theme="red" onPress={refuseRequest}>
-                {t('ACTIONS_REFUSE')}
               </Button>
             </View>
           )}
