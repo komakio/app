@@ -29,7 +29,9 @@ export class NotificationsStore {
   public async registerForNotifications() {
     await Messaging.requestPermission();
     await Messaging.registerForRemoteNotifications();
-    Messaging.onMessage();
+    Messaging.onMessage(() => {
+      this.rootStore.requestsStore.getRequests();
+    });
     Messaging.onToken((registrationToken) => {
       this.registrationToken = registrationToken;
     });
