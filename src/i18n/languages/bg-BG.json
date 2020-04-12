@@ -51,8 +51,8 @@
   "CONSENTS_CONTACT": "I have not come in contact with anyone suspected of being infected or sick in the past 14 days.",
   "CONSENTS_SOCIAL": "I have been practising social distancing.",
   "CONSENTS_CONFIRM": "I confirm that I've read and agree to the terms of services and the privacy policy.",
-  "STATUS_TITLE_CHANGE": "Change your status",
-  "STATUS_TITLE": "What is your status?",
+  "STATUS_TITLE_CHANGE": "Промяна на състоянието ви",
+  "STATUS_TITLE": "Какво е състоянието ви?",
   "STATUS_HEALTHY": "Здрави",
   "STATUS_IN_NEED": "В нужда",
   "PROFILE_SETUP_TITLE": "We just need a few things to set you up.",
@@ -64,7 +64,7 @@
   "PROFILE_SETUP_TERMS_CONFIRM": "I have read and agree with the <0>terms of service</0>",
   "PROFILE_SETUP_PRIVACY_POLICY_CONFIRM": "I understand and consent to the collection and use of my personal information, including my Health Data, as described in the <0>privacy policy</0>",
   "PROFILE_VIEW_TITLE": "Профил",
-  "PROFILE_VIEW_STATUS": "Your status",
+  "PROFILE_VIEW_STATUS": "Вашето състояние",
   "PROFILE_VIEW_NAME": "Вашето име",
   "PROFILE_VIEW_PHONE": "Вашият телефонен номер",
   "PROFILE_VIEW_ADDRESS": "Вашият адрес",
@@ -78,7 +78,7 @@
   "PROFILE_ADDRESS_ADDRESS": "Street address",
   "PROFILE_ADDRESS_EXTRA": "Apartment / floor / other",
   "SPONSORS_TITLE": "Спонсори",
-  "SPONSORS_HOSTING": "Hosting",
+  "SPONSORS_HOSTING": "Хостване",
   "SPONSORS_REACH_OUT": "Reach out if your company can help.",
   "SPONSORS_REACH_OUT_CTA": "Help out"
 }
