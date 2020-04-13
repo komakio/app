@@ -55,6 +55,18 @@ export class UsersApi {
     return res.data;
   }
 
+  public static async patchUser(
+    accessToken: string,
+    data: Partial<User>
+  ): Promise<LoginResult> {
+    const res = await axiosInstance.patch('/v1/users', data, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    return res.data;
+  }
+
   public static async getCurrent(accessToken: string): Promise<User> {
     const res = await axiosInstance.get('/v1/users/current', {
       headers: {
