@@ -52,12 +52,12 @@ Komak is built with 3 groups of stakeholders in mind:
 - Matching volunteers with those in need
 - Accept or reject help requests
 - Call or text the people you match with
+- Submit requests via web form
 - (Planned) Select the area you want to help within 
 - (Planned) Create an "in need" account for someone else (your grandparents, for example)
 - (Planned) Identity verification
 - (Planned) Communicating special needs with requests
 - (Planned) Selecting availability time windows
-- (Planned) Submit requests via web form
 
 ## Contribute
 
