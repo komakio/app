@@ -32,6 +32,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginTop: 10,
   },
+  inputsContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    paddingHorizontal: 20,
+  },
   commonInput: {
     marginVertical: 40,
     backgroundColor: 'white',
@@ -96,13 +101,7 @@ export const ProfileInfosGroup = observer(() => {
         <Text style={styles.title}>{t('PROFILE_GROUP_TITLE')}</Text>
       </View>
 
-      <View
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          paddingHorizontal: 20,
-        }}
-      >
+      <View style={styles.inputsContainer}>
         <TextInput
           value={groupId}
           onChangeText={onChangeGroupId}

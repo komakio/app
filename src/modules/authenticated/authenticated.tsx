@@ -25,6 +25,8 @@ const styles = StyleSheet.create({
   text: { fontSize: 14, fontFamily: 'Sen' },
 });
 
+const initialTab = 'authenticated-requests';
+
 const screens = [
   {
     name: 'authenticated-sponsors',
@@ -65,7 +67,7 @@ export const Authenticated = memo(() => {
         activeColor={ACTIVE_TAB_COLOR}
         inactiveColor={INACTIVE_TAB_COLOR}
         barStyle={styles.bar}
-        initialRouteName="authenticated-requests"
+        initialRouteName={initialTab}
       >
         {screens.map((screen) => (
           <Tab.Screen
@@ -110,7 +112,7 @@ export const Authenticated = memo(() => {
           );
         },
       })}
-      initialRouteName="authenticated-requests"
+      initialRouteName={initialTab}
       tabBarOptions={{
         activeTintColor: ACTIVE_TAB_COLOR,
         inactiveTintColor: INACTIVE_TAB_COLOR,
