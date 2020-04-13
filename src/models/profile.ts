@@ -16,6 +16,12 @@ interface Phone {
   number: string;
 }
 
+export interface Group {
+  createdAt?: string;
+  name: string;
+  url?: string;
+}
+
 export interface Profile {
   _id?: string;
   self?: boolean;
@@ -24,4 +30,5 @@ export interface Profile {
   address: Address;
   role: 'helper' | 'needer';
   phone: Phone;
+  group?: Group;
 }

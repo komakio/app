@@ -56,9 +56,9 @@ export const AuthenticatedSettings = observer(() => {
         <View style={styles.buttonContainer}>
           <CheckBoxButton
             onPress={() => navigation.navigate('profile-infos-group')}
-            // checked={!!profile?.phone?.number}
+            checked={!!profile?.group}
           >
-            {t('PROFILE_VIEW_GROUP')}
+            {profile?.group?.name || t('PROFILE_VIEW_GROUP')}
           </CheckBoxButton>
         </View>
 

@@ -109,13 +109,12 @@ export class UserStore {
       return;
     }
 
-    const a = await ProfilesApi.addVolunteeerGroup(
+    const group = await ProfilesApi.addVolunteeerGroup(
       this.accessToken.token,
       profileId,
       groupSecret
     );
-    console.log(a);
-    // this.profiles[0] = { ...this.profile, ...profilePatchData };
+    this.profiles[0] = { ...this.profile, group };
   }
 
   public async waitReady() {
