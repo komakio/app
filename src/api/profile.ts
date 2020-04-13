@@ -1,5 +1,5 @@
 import { axiosInstance } from './base';
-import { Profile } from '@models/profile';
+import { Profile, Group } from '@models/profile';
 
 export class ProfilesApi {
   public static async getProfiles(accessToken: string): Promise<Profile[]> {
@@ -31,5 +31,22 @@ export class ProfilesApi {
       },
     });
     return res.data;
+  }
+
+  public static async addVolunteeerGroup(
+    accessToken: string,
+    profileId: string,
+    groupSecret: string
+  ): Promise<Group> {
+    const res = await axiosInstance.patch(
+      `/v1/profiles/${profileId}/group`,
+      { secret: groupSecret },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    return res.data.group;
   }
 }

@@ -14,6 +14,7 @@ import { ProfileInfosAddress } from '@modules/profile/infos/address';
 import { InfosMain } from '@modules/profile/infos-main';
 import { AcceptedRequestView } from '@modules/authenticated/request/accepted';
 import { SettingProfileStatus } from '@modules/authenticated/settings/setting-profile-status';
+import { ProfileInfosGroup } from '@modules/profile/infos/group';
 
 const Stack = createStackNavigator();
 const RootStack = createStackNavigator();
@@ -70,6 +71,11 @@ export const Router = memo(() => {
       <Stack.Screen
         name="profile-infos-phone"
         component={ProfileInfosPhone}
+        options={modalOptions}
+      />
+      <Stack.Screen
+        name="profile-infos-group"
+        component={ProfileInfosGroup}
         options={modalOptions}
       />
       <Stack.Screen
