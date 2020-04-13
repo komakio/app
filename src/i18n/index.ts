@@ -75,14 +75,10 @@ const resources = {
   'zh-CN': { translation: require('./languages/zh-CN.json') },
   'zh-TW': { translation: require('./languages/zh-TW.json') },
 };
-const languages = Object.keys(resources);
-
-const language = RNLocalize.findBestAvailableLanguage(languages).languageTag;
-// NORWAY is nb with moment
-moment.locale(language === 'no' ? 'nb' : language);
+export const languages = Object.keys(resources);
 
 i18nLib.init({
-  lng: language,
+  lng: 'en',
   fallbackLng: 'en',
   resources: resources,
   keySeparator: false,

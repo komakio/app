@@ -103,6 +103,16 @@ export class UserStore {
     this.profiles[0] = { ...this.profile, ...profilePatchData };
   }
 
+  public async patchUser(userPatchData: Partial<User>) {
+    this.accessToken = await Storage.getJson('accessToken');
+    if (!this.accessToken) {
+      return;
+    }
+
+    this.user = { ...this.user, ...userPatchData };
+    await UsersApi.patchUser(this.accessToken.token, userPatchData);
+  }
+
   public async addVolunteerGroup(profileId: string, groupSecret: string) {
     this.accessToken = await Storage.getJson('accessToken');
     if (!this.accessToken) {

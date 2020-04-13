@@ -7,10 +7,12 @@ import { SocialLoginStore } from './social-login-store';
 import { RequestsStore } from './requests-store';
 import { AppStateStore } from './app-state-store';
 import { ExceptionsStore } from './exceptions-store';
+import { LanguageStore } from './language-store';
 
 export class RootStore {
   public appStateStore = new AppStateStore(this);
   public userStore = new UserStore(this);
+  public languageStore = new LanguageStore(this);
   public profileFlowStore = new ProfileFlowStore(this);
   public notificationsStore = new NotificationsStore(this);
   public codePushStore = new CodePushStore(this);

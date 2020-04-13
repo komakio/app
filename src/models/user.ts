@@ -3,6 +3,7 @@ export interface User {
   authType: 'google' | 'apple';
   createdAt: string;
   lastLoginAt: string;
+  language: string;
 }
 
 export interface LoginResult {
