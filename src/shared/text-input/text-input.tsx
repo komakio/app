@@ -5,6 +5,7 @@ import {
   TextInputProps as RNTextInputProps,
   View,
   PixelRatio,
+  ViewStyle,
 } from 'react-native';
 import { Text } from '@shared/text';
 import { colors } from '@shared/variables/colors';
@@ -34,18 +35,23 @@ const styles = StyleSheet.create({
 });
 
 interface TextInputProps extends RNTextInputProps {
-  label: string;
+  label?: string;
+  containerStyle?: ViewStyle;
 }
 
-export const TextInput: FC<TextInputProps> = memo((props) => (
-  <View style={styles.container}>
-    <Text bold={true} style={styles.label}>
-      {props.label}
-    </Text>
-    <RNTextInput
-      {...props}
-      placeholderTextColor={colors.grey300}
-      style={[styles.input, props.style]}
-    />
-  </View>
-));
+export const TextInput: FC<TextInputProps> = memo(
+  ({ label, containerStyle, style, ...props }) => (
+    <View style={[styles.container, containerStyle]}>
+      {label && (
+        <Text bold={true} style={styles.label}>
+          {label}
+        </Text>
+      )}
+      <RNTextInput
+        {...props}
+        placeholderTextColor={colors.grey300}
+        style={[styles.input, style]}
+      />
+    </View>
+  )
+);

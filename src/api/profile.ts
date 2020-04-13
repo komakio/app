@@ -32,4 +32,21 @@ export class ProfilesApi {
     });
     return res.data;
   }
+
+  public static async addVolunteeerGroup(
+    accessToken: string,
+    profileId: string,
+    groupSecret: string
+  ) {
+    const res = await axiosInstance.patch(
+      `/v1/profiles/${profileId}/group`,
+      { secret: groupSecret },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    return res.data;
+  }
 }

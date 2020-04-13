@@ -103,6 +103,21 @@ export class UserStore {
     this.profiles[0] = { ...this.profile, ...profilePatchData };
   }
 
+  public async addVolunteerGroup(profileId: string, groupSecret: string) {
+    this.accessToken = await Storage.getJson('accessToken');
+    if (!this.accessToken) {
+      return;
+    }
+
+    const a = await ProfilesApi.addVolunteeerGroup(
+      this.accessToken.token,
+      profileId,
+      groupSecret
+    );
+    console.log(a);
+    // this.profiles[0] = { ...this.profile, ...profilePatchData };
+  }
+
   public async waitReady() {
     if (this.profiles) {
       return Promise.resolve();
