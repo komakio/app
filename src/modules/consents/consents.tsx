@@ -64,7 +64,7 @@ export const Consents = memo(() => {
     navigation.dispatch(
       CommonActions.reset({
         index: 1,
-        routes: [{ name: 'authenticated' }],
+        routes: [{ name: 'onboarding' }],
       })
     );
   };

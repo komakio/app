@@ -15,6 +15,7 @@ import { InfosMain } from '@modules/profile/infos-main';
 import { AcceptedRequestView } from '@modules/authenticated/request/accepted';
 import { SettingProfileStatus } from '@modules/authenticated/settings/setting-profile-status';
 import { ProfileInfosGroup } from '@modules/profile/infos/group';
+import { Onboarding } from '@modules/onboarding';
 
 const Stack = createStackNavigator();
 const RootStack = createStackNavigator();
@@ -44,7 +45,7 @@ export const RouterMain = memo(() => {
       <Stack.Screen name="profile-type" component={ProfileType} />
       <Stack.Screen name="profile-infos" component={InfosMain} />
       <Stack.Screen name="consents" component={Consents} />
-      {/* <Stack.Screen name="infographic" component={Infographic} /> */}
+      <Stack.Screen name="onboarding" component={Onboarding} />
       <Stack.Screen name="authenticated" component={Authenticated} />
     </Stack.Navigator>
   );

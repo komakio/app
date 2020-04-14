@@ -1,11 +1,17 @@
 import React, { memo } from 'react';
 
-import { StyleSheet, View, Image } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Image,
+  GestureResponderEvent,
+  Linking,
+} from 'react-native';
 import { useNavigation, CommonActions } from '@react-navigation/native';
 import { Text } from '@shared/text';
 import { BottomNavbar } from '../nav-bar';
 import { useProfileFlowStore } from '@stores';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import Swiper from 'react-native-swiper';
 
 const styles = StyleSheet.create({
@@ -22,7 +28,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   textContainer: {
-    height: 200,
+    height: 230,
     marginBottom: 30,
   },
   title: {
@@ -38,64 +44,64 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
   },
+  textLink: {
+    textDecorationLine: 'underline',
+  },
 });
 
 const screensHelpers = [
   {
     image: require('@images/onboarding/neighbors.png'),
-    title: 'How it works',
-    subtitle:
-      'When someone close to you needs help, you’ll receive a notification', // neighbors
+    title: 'ONBOARDING_HOW_IT_WORKS',
+    subtitle: 'ONBOARDING_HELPER_TEXT_1', // neighbors
   },
   {
     image: require('@images/onboarding/accept.png'),
-    title: 'How it works',
-    subtitle: 'When you hit the “Accept” button, you will be matched with them', // accept
+    title: 'ONBOARDING_HOW_IT_WORKS',
+    subtitle: 'ONBOARDING_HELPER_TEXT_2', // accept
   },
   {
     image: require('@images/onboarding/call.png'),
-    title: 'How it works',
-    subtitle: 'Call or text the volunteer to communicate your request', // call
+    title: 'ONBOARDING_HOW_IT_WORKS',
+    subtitle: 'ONBOARDING_HELPER_TEXT_3', // call
   },
   {
     image: require('@images/onboarding/request.png'),
-    title: 'What now?',
-    subtitle: 'You can either send a request now or when you will need it', // request
+    title: 'ONBOARDING_WHAT_NOW',
+    subtitle: 'ONBOARDING_HELPER_TEXT_4', // request
   },
   {
     image: require('@images/onboarding/doctors.png'),
-    title: 'User instructions',
-    subtitle: 'Please read through our safety instructions', // doctors
+    title: 'ONBOARDING_USER_INSTRUCTIONS',
+    subtitle: 'ONBOARDING_HELPER_TEXT_5', // doctors
   },
 ];
 
 const screensNeeder = [
   {
     image: require('@images/onboarding/collaboration.png'),
-    title: 'How it works',
-    subtitle:
-      'You can send out a request for help by pressing the “Request help button”', // collaboration
+    title: 'ONBOARDING_HOW_IT_WORKS',
+    subtitle: 'ONBOARDING_NEEDER_TEXT_1', // collaboration
   },
   {
     image: require('@images/onboarding/accept.png'),
-    title: 'How it works',
-    subtitle:
-      'When someone accepts your request, you get a notification and their contact information', // accept
+    title: 'ONBOARDING_HOW_IT_WORKS',
+    subtitle: 'ONBOARDING_NEEDER_TEXT_2', // accept
   },
   {
     image: require('@images/onboarding/call.png'),
-    title: 'How it works',
-    subtitle: 'Call or text the volunteer to communicate your request', // call
+    title: 'ONBOARDING_HOW_IT_WORKS',
+    subtitle: 'ONBOARDING_NEEDER_TEXT_3', // call
   },
   {
     image: require('@images/onboarding/request.png'),
-    title: 'What now?',
-    subtitle: 'You can either send a request now or when you will need it', // request
+    title: 'ONBOARDING_WHAT_NOW',
+    subtitle: 'ONBOARDING_NEEDER_TEXT_4', // request
   },
   {
     image: require('@images/onboarding/doctors.png'),
-    title: 'User instructions',
-    subtitle: 'Please read through our safety instructions', // doctors
+    title: 'ONBOARDING_USER_INSTRUCTIONS',
+    subtitle: 'ONBOARDING_NEEDER_TEXT_5', // doctors
   },
 ];
 
@@ -105,7 +111,12 @@ export const Onboarding = memo(() => {
   const { t } = useTranslation();
 
   const screens =
-    profileFlowStore.role === 'helper' ? screensHelpers : screensNeeder;
+    profileFlowStore.role === 'needer' ? screensNeeder : screensHelpers;
+
+  const onClickLink = (link: string) => (event: GestureResponderEvent) => {
+    event.stopPropagation();
+    Linking.openURL(link);
+  };
 
   return (
     <Swiper
@@ -136,8 +147,20 @@ export const Onboarding = memo(() => {
           <Image style={styles.image} source={screen.image} />
 
           <View style={styles.textContainer}>
-            <Text style={styles.title}>{screen.title}</Text>
-            <Text style={styles.subtitle}>{screen.subtitle}</Text>
+            <Text style={styles.title}>{t(screen.title)}</Text>
+
+            <Text style={styles.subtitle}>
+              <Trans
+                i18nKey={screen.subtitle}
+                components={[
+                  <Text
+                    onPress={onClickLink('https://komak.io/user-instructions/')}
+                    key="textComponent"
+                    style={styles.textLink}
+                  ></Text>,
+                ]}
+              />
+            </Text>
           </View>
         </View>
       ))}
