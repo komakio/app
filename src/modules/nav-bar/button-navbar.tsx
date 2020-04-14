@@ -46,7 +46,7 @@ interface NavButtonProps {
   onPress: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
   checked?: boolean;
   iconName: 'arrow-left' | 'arrow-right';
-  text: 'Back' | 'Next';
+  text: string;
   isNext?: boolean;
 }
 

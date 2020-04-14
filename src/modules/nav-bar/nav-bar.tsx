@@ -24,10 +24,11 @@ const styles = StyleSheet.create({
 interface BottomNavbarProps {
   onBack?: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
   onNext?: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
+  nextLabel?: string;
 }
 
 export const BottomNavbar: FC<BottomNavbarProps> = memo(
-  ({ onBack, onNext }) => {
+  ({ onBack, onNext, nextLabel }) => {
     const { t } = useTranslation();
 
     return (
@@ -41,11 +42,12 @@ export const BottomNavbar: FC<BottomNavbarProps> = memo(
             text={t('ACTIONS_BACK')}
           />
         )}
+        {!onBack && onNext && <View style={{ flex: 1 }} />}
         {onNext && (
           <NavButton
             onPress={onNext}
             iconName="arrow-right"
-            text={t('ACTIONS_NEXT')}
+            text={nextLabel || t('ACTIONS_NEXT')}
             isNext={true}
           />
         )}

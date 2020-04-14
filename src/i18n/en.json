@@ -21,6 +21,7 @@
   "ACTIONS_SMS": "SMS",
   "ACTIONS_LATER": "Ask me later",
   "ACTIONS_CONFIRM": "Confirm",
+  "ACTIONS_START": "Start",
 
   "TABS_SPONSORS": "Sponsors",
   "TABS_REQUESTS": "Requests",
