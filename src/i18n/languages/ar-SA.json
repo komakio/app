@@ -1,7 +1,7 @@
 {
   "GEOLOCATION_ERROR_TITLE": "خطأ جغرافي a geographical mistake",
   "GEOLOCATION_PERMISSION_DENIED": "يتعذر وصولنا الى موقعك. هل قمت بالموافقه على وصول التطبيق الى موقعك؟",
-  "GEOLOCATION_POSITION_UNAVAILABLE": "We couldn't get your position. Is your GPS activated?",
+  "GEOLOCATION_POSITION_UNAVAILABLE": "يتعذر الوصول الى موقعك. الرجاء التحقق من تفعيل نظام تحديد المواقع",
   "GEOLOCATION_TIMEOUT": "A timeout occured",
   "GEOLOCATION_DESCRIPTION": "نحن بحاجة إلى تحديث موقعك الجغرافي مرة واحدة لمطابقته مع الناس من حولك.",
   "GEOLOCATION_CHOOSE_MANUAL": "الرجاء ادراج العنوان",
