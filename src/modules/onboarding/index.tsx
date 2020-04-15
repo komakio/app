@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { useNavigation, CommonActions } from '@react-navigation/native';
 import { Text } from '@shared/text';
-import { BottomNavbar } from '../nav-bar';
+import { BottomNavbar, bottomNavbarHeight } from '../nav-bar';
 import { useProfileFlowStore } from '@stores';
 import { useTranslation, Trans } from 'react-i18next';
 import Swiper from 'react-native-swiper';
@@ -17,7 +17,7 @@ import Swiper from 'react-native-swiper';
 const styles = StyleSheet.create({
   slide: {
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 40,
   },
@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   textContainer: {
-    height: 230,
-    marginBottom: 30,
+    height: 200,
+    marginBottom: bottomNavbarHeight,
   },
   title: {
     color: 'black',
@@ -57,12 +57,12 @@ const screensHelpers = [
   },
   {
     image: require('@images/onboarding/accept.png'),
-    title: 'ONBOARDING_HOW_IT_WORKS',
+    title: 'ONBOARDING_ACCEPT_DECLINE',
     subtitle: 'ONBOARDING_HELPER_TEXT_2', // accept
   },
   {
     image: require('@images/onboarding/call.png'),
-    title: 'ONBOARDING_HOW_IT_WORKS',
+    title: 'ONBOARDING_CONTACT_THEM',
     subtitle: 'ONBOARDING_HELPER_TEXT_3', // call
   },
   {
@@ -73,7 +73,7 @@ const screensHelpers = [
   {
     image: require('@images/onboarding/doctors.png'),
     title: 'ONBOARDING_USER_INSTRUCTIONS',
-    subtitle: 'ONBOARDING_HELPER_TEXT_5', // doctors
+    subtitle: 'ONBOARDING_SAFETY_INSTRUCTIONS', // doctors
   },
 ];
 
@@ -85,7 +85,7 @@ const screensNeeder = [
   },
   {
     image: require('@images/onboarding/accept.png'),
-    title: 'ONBOARDING_HOW_IT_WORKS',
+    title: 'ONBOARDING_CONTACT_THEM',
     subtitle: 'ONBOARDING_NEEDER_TEXT_2', // accept
   },
   {
@@ -101,7 +101,7 @@ const screensNeeder = [
   {
     image: require('@images/onboarding/doctors.png'),
     title: 'ONBOARDING_USER_INSTRUCTIONS',
-    subtitle: 'ONBOARDING_NEEDER_TEXT_5', // doctors
+    subtitle: 'ONBOARDING_SAFETY_INSTRUCTIONS', // doctors
   },
 ];
 

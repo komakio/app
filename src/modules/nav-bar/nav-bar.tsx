@@ -8,13 +8,15 @@ import {
 import { NavButton } from './button-navbar';
 import { useTranslation } from 'react-i18next';
 
+export const bottomNavbarHeight = 60;
+
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: 60,
+    height: bottomNavbarHeight,
   },
   transparent: {
     backgroundColor: 'transparent',
