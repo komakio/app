@@ -1,11 +1,11 @@
 {
-    "BACKEND_NOTIFICATION_REQUEST_STARTED_V1": "{{name}} is in need of your help.",
-    "BACKEND_NOTIFICATION_REQUEST_ACCEPT_V1": "{{name}} accepted you request.",
-    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_SUBJECT": "Good news, {{name}} has agreed to help you out!",
-    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_TITLE": "Hey {{name}},",
-    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_PARAGRAPH1": "{{name}} has agreed to help you out. Give them a call to let them know what you need help with. You can find their contact details below.",
-    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_PARAGRAPH2": "Remember to follow our <0>user instructions</0> and avoid direct contact for everyone’s safety.",
-    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_NAME": "Name: {{name}}",
-    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_PHONE": "Phone number: {{number}}",
-    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_SIGNATURE": "Have a great day, <br />The Komak Team"
+    "BACKEND_NOTIFICATION_REQUEST_STARTED_V1": "{{name}} في حاجة إلى مساعدتك.",
+    "BACKEND_NOTIFICATION_REQUEST_ACCEPT_V1": "وافق {{name}} على طلبك.",
+    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_SUBJECT": "أخبار جيدة، وافق {{name}} على مساعدتك!",
+    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_TITLE": "مرحبا {{name}}،",
+    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_PARAGRAPH1": "وافق {{name}} على مساعدتك. قم بالاتصال بهم لإبلاغهم بما تحتاج إلى مساعدة به. يمكنك العثور على تفاصيل الاتصال الخاصة بهم أدناه.",
+    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_PARAGRAPH2": "تذكر أن تتبع <0>تعليماتنا</0> وتجنب الاتصال المباشر من أجل سلامة الجميع.",
+    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_NAME": "الاسم: {{name}}",
+    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_PHONE": "رقم الهاتف: {{number}}",
+    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_SIGNATURE": "احصل على يوم رائع، <br />فريق كوماك"
 }
