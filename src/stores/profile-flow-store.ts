@@ -76,8 +76,7 @@ export class ProfileFlowStore {
       !this.dialCode ||
       !this.coords ||
       !this.serviceTerms ||
-      !this.policyTerms ||
-      (this.role === 'needer' && !this.address)
+      !this.policyTerms
     ) {
       return false;
     }
