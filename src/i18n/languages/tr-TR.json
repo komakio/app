@@ -71,7 +71,7 @@
   "PROFILE_VIEW_ADDRESS": "Adresiniz",
   "PROFILE_VIEW_GROUP": "Gönüllü grup",
   "PROFILE_VIEW_LOGOUT": "Çıkış",
-  "PROFILE_GROUP_TITLE": "You're part of a volunteer group? Type your group password to get verified.",
+  "PROFILE_GROUP_TITLE": "Bir gönüllü grubunun parçası mısınız? Doğrulanmak için grubunuzun şifresini girin.",
   "PROFILE_GROUP_ERROR": "Grubunuzu bulamadık, şifreniz doğru mudur?",
   "PROFILE_NAME_TITLE": "Lütfen ad ve soyadınızı giriniz",
   "PROFILE_NAME_FIRSTNAME": "İlk İsim",
@@ -95,7 +95,7 @@
   "ONBOARDING_HELPER_TEXT_2": "\"Kabul et\" butonuna basınca onlar ile eşleşeceksiniz.",
   "ONBOARDING_HELPER_TEXT_3": "You then call or text the person in need to understand what their request is.",
   "ONBOARDING_HELPER_TEXT_4": "If there is no request pending, we will send you a notification as soon as someone needs help.",
-  "ONBOARDING_NEEDER_TEXT_1": "You can send out a request for help by pressing the “Request help button”.",
+  "ONBOARDING_NEEDER_TEXT_1": "Yardım için talebinizi \"Yardım talebi buton\"undan yollayabilirsiniz.",
   "ONBOARDING_NEEDER_TEXT_2": "Biri sizin talebinizi kabul ettiğinde onların iletişim bilgilerini bildirim olarak alacaksınız.",
   "ONBOARDING_NEEDER_TEXT_3": "Gönüllüye isteğinizi iletmek için arayabilir veya mesaj atabilirsiniz.",
   "ONBOARDING_NEEDER_TEXT_4": "Şu anda veya daha sonra ihtiyacınız olduğunda istek yollayabilirsiniz."
