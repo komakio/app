@@ -31,6 +31,12 @@ export class LanguageStore {
     }
     i18n.changeLanguage(this.language);
     // NORWAY is nb with moment
-    moment.locale(this.language === 'no' ? 'nb' : this.language);
+    moment.locale(
+      this.language.indexOf('ur-') === 0
+        ? 'ur'
+        : this.language === 'no'
+        ? 'nb'
+        : this.language
+    );
   }
 }
