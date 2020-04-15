@@ -4,7 +4,7 @@
   "GEOLOCATION_POSITION_UNAVAILABLE": "Nie mogliśmy zlokalizować Twojej pozycji. Czy Twój GPS jest aktywowany?",
   "GEOLOCATION_TIMEOUT": "Upłynął limit czasu żądania",
   "GEOLOCATION_DESCRIPTION": "We need your geolocation once to match you with people around you.",
-  "GEOLOCATION_CHOOSE_MANUAL": "Type my address",
+  "GEOLOCATION_CHOOSE_MANUAL": "Wprowadź mój adres",
   "NO_RESULTS": "No results",
   "ACTIONS_BACK": "Wróć",
   "ACTIONS_NEXT": "Dalej",
