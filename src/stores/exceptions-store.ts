@@ -32,4 +32,8 @@ export class ExceptionsStore {
       /* Do nothing - TODO remove that when production deployment */
     }
   }
+
+  public report(err: Error) {
+    Sentry.captureException(err);
+  }
 }
