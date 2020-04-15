@@ -1,5 +1,5 @@
 {
-  "GEOLOCATION_ERROR_TITLE": "Geolocation error",
+  "GEOLOCATION_ERROR_TITLE": "Błąd geolokalizacji",
   "GEOLOCATION_PERMISSION_DENIED": "Nasz dostęp został odrzucony. Czy zezwoliłeś aplikacji na dostęp do Twojej lokalizacji?",
   "GEOLOCATION_POSITION_UNAVAILABLE": "Nie mogliśmy zlokalizować Twojej pozycji. Czy Twój GPS jest aktywowany?",
   "GEOLOCATION_TIMEOUT": "Upłynął limit czasu żądania",
