@@ -1,5 +1,5 @@
 {
-  "GEOLOCATION_ERROR_TITLE": "Geolocation error",
+  "GEOLOCATION_ERROR_TITLE": "جغرافیائی محل وقوع میں خرابی",
   "GEOLOCATION_PERMISSION_DENIED": "Our access has been denied. Have you approved the application to access your location?",
   "GEOLOCATION_POSITION_UNAVAILABLE": "We couldn't get your position. Is your GPS activated?",
   "GEOLOCATION_TIMEOUT": "A timeout occured",
