@@ -91,12 +91,12 @@
   "ONBOARDING_CONTACT_THEM": "Les contacter",
   "ONBOARDING_SAFETY_INSTRUCTIONS": "Veuillez lire nos <0>instructions de sécurité</0>",
   "ONBOARDING_USER_INSTRUCTIONS": "Instructions utilisateur",
-  "ONBOARDING_HELPER_TEXT_1": "When someone close to you needs help, you’ll receive a notification.",
-  "ONBOARDING_HELPER_TEXT_2": "When you hit the “Accept” button, you will be matched with them.",
-  "ONBOARDING_HELPER_TEXT_3": "You then call or text the person in need to understand what their request is.",
-  "ONBOARDING_HELPER_TEXT_4": "If there is no request pending, we will send you a notification as soon as someone needs help.",
-  "ONBOARDING_NEEDER_TEXT_1": "You can send out a request for help by pressing the “Request help button”.",
-  "ONBOARDING_NEEDER_TEXT_2": "When someone accepts your request, you get a notification and their contact information.",
-  "ONBOARDING_NEEDER_TEXT_3": "Call or text the volunteer to communicate your request.",
-  "ONBOARDING_NEEDER_TEXT_4": "You can either send a request now or when you will need it."
+  "ONBOARDING_HELPER_TEXT_1": "Lorsque quelqu'un près de vous a besoin d'aide, vous recevrez une notification.",
+  "ONBOARDING_HELPER_TEXT_2": "Lorsque vous appuyez sur le bouton \"Accepter\", vous serez mis en correspondance avec eux.",
+  "ONBOARDING_HELPER_TEXT_3": "Vous appelez ou envoyez un SMS à la personne qui a besoin d'aide.",
+  "ONBOARDING_HELPER_TEXT_4": "S'il n'y a pas de demande en attente, nous vous enverrons une notification dès que quelqu'un aura besoin d'aide.",
+  "ONBOARDING_NEEDER_TEXT_1": "Vous pouvez envoyer une demande d'aide en appuyant sur le bouton \"Demander de l'aide\".",
+  "ONBOARDING_NEEDER_TEXT_2": "Lorsque quelqu'un accepte votre demande, vous recevez une notification et ses coordonnées.",
+  "ONBOARDING_NEEDER_TEXT_3": "Appelez ou envoyez un SMS au volontaire pour communiquer vos besoins.",
+  "ONBOARDING_NEEDER_TEXT_4": "Vous pouvez envoyer une demande maintenant ou quand vous en aurez besoin."
 }
