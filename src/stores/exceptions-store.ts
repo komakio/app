@@ -33,8 +33,4 @@ export class ExceptionsStore {
   public report(err: Error) {
     Sentry.captureException(err);
   }
-
-  public report(err: Error) {
-    Sentry.captureException(err);
-  }
 }
