@@ -23,14 +23,11 @@ export class ExceptionsStore {
     if (Environment.environment === 'development') {
       return;
     }
-    try {
-      Sentry.init({
-        dsn: Environment.sentryDsn,
-        environment: Environment.environment,
-      });
-    } catch {
-      /* Do nothing - TODO remove that when production deployment */
-    }
+
+    Sentry.init({
+      dsn: Environment.sentryDsn,
+      environment: Environment.environment,
+    });
   }
 
   public report(err: Error) {
