@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   StyleSheet,
   View,
@@ -8,13 +8,14 @@ import {
 } from 'react-native';
 
 import { observer } from 'mobx-react-lite';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { Text } from '@shared/text';
 import { useUserStore } from '@stores';
 import { Button } from '@shared/button';
 import { ModalArrowClose } from '@shared/modal/modal-arrow-close';
 import { useTranslation } from 'react-i18next';
 import { AxiosError } from 'axios';
+import { colors } from '@shared/variables/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -43,6 +44,9 @@ const styles = StyleSheet.create({
     height: 60,
     fontSize: 35,
     textAlign: 'center',
+    borderWidth: 1,
+    borderColor: colors.grey400,
+    borderRadius: 5,
   },
   textInput: { width: 100 },
   numberInput: { marginLeft: 5, flex: 1 },
@@ -53,10 +57,10 @@ export const ProfileInfosGroup = observer(() => {
   const userStore = useUserStore();
   const { t } = useTranslation();
   const groupNumberRef = useRef<TextInput>();
+  const textNumberRef = useRef<TextInput>();
 
   const [groupId, setGroupId] = useState<string>();
   const [groupNumber, setGroupNumber] = useState<string>();
-
   const onBack = () => {
     navigation.goBack();
   };
@@ -93,6 +97,12 @@ export const ProfileInfosGroup = observer(() => {
     }
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      textNumberRef.current?.focus();
+    }, 250);
+  }, [textNumberRef]);
+
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
       <ModalArrowClose />
@@ -107,8 +117,10 @@ export const ProfileInfosGroup = observer(() => {
           onChangeText={onChangeGroupId}
           autoCorrect={false}
           autoFocus={true}
+          ref={textNumberRef}
           style={[styles.commonInput, styles.textInput]}
           placeholder="ABC"
+          placeholderTextColor={colors.grey300}
         ></TextInput>
         <TextInput
           ref={groupNumberRef}
@@ -117,6 +129,7 @@ export const ProfileInfosGroup = observer(() => {
           keyboardType="number-pad"
           style={[styles.commonInput, styles.numberInput]}
           placeholder="123456"
+          placeholderTextColor={colors.grey300}
         ></TextInput>
       </View>
 
