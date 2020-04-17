@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 
 export const CodePushProgress = observer(() => {
   const codePushStore = useCodepushStore();
-  const t = useTranslation();
+  const { t } = useTranslation();
 
   if (typeof codePushStore.downloadProgress !== 'number') {
     return null;
