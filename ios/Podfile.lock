@@ -434,7 +434,7 @@ PODS:
     - ReactCommon/callinvoker (= 0.62.2)
   - RNAppleAuthentication (0.1.1):
     - React
-  - RNBootSplash (2.1.0):
+  - RNBootSplash (2.2.3):
     - React
   - RNCAsyncStorage (1.8.1):
     - React
@@ -761,7 +761,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: 4356114dbcba4ce66991096e51a66e61eda51256
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
   RNAppleAuthentication: 9cca53676f5f010ffbf33eb99604383bfe0eb020
-  RNBootSplash: 52a95aa14b7832efb2fdc236ec38665356cd921a
+  RNBootSplash: 3407c419520213c292651a14ee3594c59cdae376
   RNCAsyncStorage: 00bdf63f7f1e0f11d3323533dba4f222e58bf092
   RNCMaskedView: 90dd32f5b786bd562e876e1421ea77c700cbf71e
   RNCPushNotificationIOS: de54f074e577e684c0619d4271a5b451e8a37ee1

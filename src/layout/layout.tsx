@@ -6,12 +6,14 @@ import {
   Animated,
   Dimensions,
 } from 'react-native';
-import { colors } from './shared/variables/colors';
-import { useCodepushStore } from './stores';
-import { waitForSomeMs } from './utils/timeout';
+import { colors } from '../shared/variables/colors';
+import { useCodepushStore } from '../stores';
+import { waitForSomeMs } from '../utils/timeout';
 import RNBootSplash from 'react-native-bootsplash';
-import { statusBarHeight } from './utils/status-bar';
-import { Animations } from './utils/animations';
+import { statusBarHeight } from '../utils/status-bar';
+import { Animations } from '../utils/animations';
+import { CodePushProgress } from './code-push-progress';
+import { Image } from 'react-native-paper/lib/typescript/src/components/Avatar/Avatar';
 
 const bootsplashImageSize = 200;
 
@@ -50,8 +52,6 @@ export const Layout = memo(({ children }) => {
   const translateY = useRef(new Animated.Value(0));
 
   const startAnimation = async () => {
-    RNBootSplash.hide();
-
     Animated.timing(translateY.current, {
       useNativeDriver,
       toValue: -Dimensions.get('window').height / 2 + 30 + statusBarHeight,
@@ -84,10 +84,12 @@ export const Layout = memo(({ children }) => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={colors.grey200} barStyle="dark-content" />
+      <CodePushProgress />
       <Animated.View style={[StyleSheet.absoluteFill, styles.bootsplash]}>
         <Animated.Image
-          source={require('../assets/bootsplash_logo.png')}
+          source={require('../../assets/bootsplash_logo.png')}
           fadeDuration={0}
+          onLoadEnd={RNBootSplash.hide}
           style={[
             styles.logo,
             {
