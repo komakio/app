@@ -4,7 +4,7 @@
   "GEOLOCATION_POSITION_UNAVAILABLE": "Nous n'avons pu vous localiser. Est-ce que votre GPS est activé ?",
   "GEOLOCATION_TIMEOUT": "La requête a échoué",
   "GEOLOCATION_DESCRIPTION": "Nous avons besoin de votre géolocalisation une fois pour vous faire correspondre avec les gens autour de vous.",
-  "GEOLOCATION_CHOOSE_MANUAL": "Type address",
+  "GEOLOCATION_CHOOSE_MANUAL": "Insérer mon adresse",
   "NO_RESULTS": "Aucun résultat",
   "ACTIONS_BACK": "Retour",
   "ACTIONS_NEXT": "Suivant",
