@@ -32,6 +32,7 @@ import 'moment/locale/sr';
 import 'moment/locale/sv';
 import 'moment/locale/tr';
 import 'moment/locale/uk';
+import 'moment/locale/ur';
 import 'moment/locale/vi';
 import 'moment/locale/zh-cn';
 import 'moment/locale/zh-tw';
@@ -71,6 +72,8 @@ const resources = {
   sv: { translation: require('./languages/sv-SE.json') },
   tr: { translation: require('./languages/tr-TR.json') },
   uk: { translation: require('./languages/uk-UA.json') },
+  'ur-PK': { translation: require('./languages/ur-PK.json') },
+  'ur-IN': { translation: require('./languages/ur-IN.json') },
   vi: { translation: require('./languages/vi-VN.json') },
   'zh-CN': { translation: require('./languages/zh-CN.json') },
   'zh-TW': { translation: require('./languages/zh-TW.json') },
