@@ -2,7 +2,6 @@ import { RootStore } from './root-store';
 
 import codePush from 'react-native-code-push';
 import { Environment } from 'environment';
-import { waitForSomeMs } from '@utils/timeout';
 import { observable } from 'mobx';
 
 export class CodePushStore {
@@ -22,6 +21,7 @@ export class CodePushStore {
       Environment.codePushDeploymentKey
     );
     if (update && update.isMandatory) {
+      this.downloadProgress = 0;
       const codePushPackage = await update.download((progress) => {
         this.downloadProgress = Math.round(
           (progress.receivedBytes / progress.totalBytes) * 100

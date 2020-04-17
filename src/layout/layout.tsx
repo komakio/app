@@ -13,6 +13,7 @@ import RNBootSplash from 'react-native-bootsplash';
 import { statusBarHeight } from '../utils/status-bar';
 import { Animations } from '../utils/animations';
 import { CodePushProgress } from './code-push-progress';
+import { Image } from 'react-native-paper/lib/typescript/src/components/Avatar/Avatar';
 
 const bootsplashImageSize = 200;
 
@@ -51,8 +52,6 @@ export const Layout = memo(({ children }) => {
   const translateY = useRef(new Animated.Value(0));
 
   const startAnimation = async () => {
-    RNBootSplash.hide();
-
     Animated.timing(translateY.current, {
       useNativeDriver,
       toValue: -Dimensions.get('window').height / 2 + 30 + statusBarHeight,
@@ -90,6 +89,7 @@ export const Layout = memo(({ children }) => {
         <Animated.Image
           source={require('../../assets/bootsplash_logo.png')}
           fadeDuration={0}
+          onLoadEnd={RNBootSplash.hide}
           style={[
             styles.logo,
             {

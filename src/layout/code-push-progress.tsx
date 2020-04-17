@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     bottom: 100,
     left: 0,
     right: 0,
+    zIndex: 100,
   },
   text: {
     fontSize: 25,
@@ -27,6 +28,7 @@ export const CodePushProgress = observer(() => {
   if (typeof codePushStore.downloadProgress !== 'number') {
     return null;
   }
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
