@@ -2,13 +2,14 @@ import { RootStore } from './root-store';
 
 import codePush from 'react-native-code-push';
 import { Environment } from 'environment';
+import { waitForSomeMs } from '@utils/timeout';
+import { observable } from 'mobx';
 
 export class CodePushStore {
-  public rootStore: RootStore;
+  @observable
+  public downloadProgress: number;
 
-  constructor(rootStore: RootStore) {
-    this.rootStore = rootStore;
-
+  constructor(private rootStore: RootStore) {
     this.init();
   }
 
@@ -21,7 +22,12 @@ export class CodePushStore {
       Environment.codePushDeploymentKey
     );
     if (update && update.isMandatory) {
-      const codePushPackage = await update.download();
+      const codePushPackage = await update.download((progress) => {
+        this.downloadProgress = Math.round(
+          (progress.receivedBytes / progress.totalBytes) * 100
+        );
+      });
+      this.downloadProgress = null;
       await codePushPackage.install(codePush.InstallMode.IMMEDIATE);
     } else if (update) {
       update

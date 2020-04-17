@@ -1,7 +1,7 @@
 import React from 'react';
 import { Providers } from './providers';
 import { Router } from './router';
-import { Layout } from './layout';
+import { Layout } from './layout/layout';
 
 import { includeCodePush } from './code-push';
 import { Alert } from 'react-native';
