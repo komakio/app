@@ -1,6 +1,6 @@
 {
-  "GEOLOCATION_ERROR_TITLE": "Geolocation error",
-  "GEOLOCATION_PERMISSION_DENIED": "Our access has been denied. Have you approved the application to access your location?",
+  "GEOLOCATION_ERROR_TITLE": "Lỗi định vị địa lý",
+  "GEOLOCATION_PERMISSION_DENIED": "Truy cập đã bị từ chối. Bạn đã phê duyệt ứng dụng để truy cập vị trí của bạn chưa?",
   "GEOLOCATION_POSITION_UNAVAILABLE": "We couldn't get your position. Is your GPS activated?",
   "GEOLOCATION_TIMEOUT": "A timeout occured",
   "GEOLOCATION_DESCRIPTION": "We need your geolocation once to match you with people around you.",
