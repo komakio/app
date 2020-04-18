@@ -95,10 +95,10 @@
   "ONBOARDING_USER_INSTRUCTIONS": "دستورالعملهای کاربر",
   "ONBOARDING_HELPER_TEXT_1": "اگر شخصی در نزدیکیتان محتاج کمک باشد، شما مطلع خواهید شد.",
   "ONBOARDING_HELPER_TEXT_2": "وقتی دگمه« قبول » را فشار بدهید، با شخص نیازمند مرتبط میشوید.",
-  "ONBOARDING_HELPER_TEXT_3": "You then call or text the person in need to understand what their request is.",
-  "ONBOARDING_HELPER_TEXT_4": "If there is no request pending, we will send you a notification as soon as someone needs help.",
-  "ONBOARDING_NEEDER_TEXT_1": "You can send out a request for help by pressing the “Request help button”.",
-  "ONBOARDING_NEEDER_TEXT_2": "When someone accepts your request, you get a notification and their contact information.",
-  "ONBOARDING_NEEDER_TEXT_3": "Call or text the volunteer to communicate your request.",
+  "ONBOARDING_HELPER_TEXT_3": "سپس، با او تماس گرفته و یا پیام داده تا از درخواستش مطلع شوید.",
+  "ONBOARDING_HELPER_TEXT_4": "اگر درخواستی موجود نباشد به محض دریافت ان شما را با اعلانی مطلع می کنیم.",
+  "ONBOARDING_NEEDER_TEXT_1": "شما می توانید با فشار دادن دگمه «درخواست کمک » تقاضای کمک کنید.",
+  "ONBOARDING_NEEDER_TEXT_2": "وقتی درخواست شما مورد قبول واقع شد ، اعلان و شماره تماس انها را دریافت خواهید کرد.",
+  "ONBOARDING_NEEDER_TEXT_3": "برای ارتباط با داوطلب به او پیام داده یا زنگ بزنید.",
   "ONBOARDING_NEEDER_TEXT_4": "You can either send a request now or when you will need it."
 }
