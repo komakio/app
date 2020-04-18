@@ -53,14 +53,16 @@ export const AuthenticatedSettings = observer(() => {
           </CheckBoxButton>
         </View>
 
-        <View style={styles.buttonContainer}>
-          <CheckBoxButton
-            onPress={() => navigation.navigate('profile-infos-group')}
-            checked={!!profile?.group}
-          >
-            {profile?.group?.name || t('PROFILE_VIEW_GROUP')}
-          </CheckBoxButton>
-        </View>
+        {profile?.role === 'helper' && (
+          <View style={styles.buttonContainer}>
+            <CheckBoxButton
+              onPress={() => navigation.navigate('profile-infos-group')}
+              checked={!!profile?.group}
+            >
+              {profile?.group?.name || t('PROFILE_VIEW_GROUP')}
+            </CheckBoxButton>
+          </View>
+        )}
 
         {/* {profile?.role === 'needer' && (
           <View style={styles.buttonContainer}>
