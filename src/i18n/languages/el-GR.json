@@ -38,6 +38,7 @@
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "Είστε βέβαιοι ότι θέλετε να ακυρώσετε την αίτηση σας;",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "έχει συμφωνήσει να σας βοηθήσει.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "Η αίτηση έχει ακυρωθεί.",
+  "REQUESTS_HELPER_GROUP": "Volunteer group",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "έχει συμφωνήσει να σας βοηθήσει! Καλέστε τον ή στείλτε του μήνυμα για να τον ενημερώσετε τι χρειάζεστε! Θυμηθείτε να αποφύγετε απευθείας επαφή για την ασφάλεια όλων.",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER": "Έχετε συμφωνήσει να βοηθήσετε τον/την {{name}}! Καλέστε τον/την ή στείλτε του/της μήνυμα για να ενημερωθείτε τι χρειάζεται! Θυμηθείτε να αποφύγετε απευθείας επαφή για την ασφάλεια όλων.",
   "REQUESTS_REQUEST_NAME": "Όνομα",
