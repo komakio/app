@@ -38,6 +38,7 @@
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "Weet je zeker dat je je aanvraag wilt annuleren?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} is akkoord gegaan om je te helpen.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "De aanvraag is geannuleerd",
+  "REQUESTS_HELPER_GROUP": "Volunteer group",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "{{name}} has agreed to help you out! Call them or send a message to tell them what you need! Remember to avoid direct contact for everyone’s safety.",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER": "You’ve agreed to help {{name}}. Call them or send a message to understand what they need! Remember to avoid direct contact for everyone’s safety.",
   "REQUESTS_REQUEST_NAME": "Naam",
