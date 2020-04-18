@@ -4,6 +4,7 @@ import {
   KeyboardAvoidingView,
   Linking,
   ScrollView,
+  View,
 } from 'react-native';
 
 import { observer } from 'mobx-react-lite';
@@ -15,6 +16,7 @@ import { Button } from '@shared/button';
 import { Request } from '@models/request';
 import { Profile } from '@models/profile';
 import { useTranslation } from 'react-i18next';
+import { Badge } from '@shared/badge';
 
 const styles = StyleSheet.create({
   container: {
@@ -41,6 +43,12 @@ const styles = StyleSheet.create({
   },
   smsButton: {
     marginBottom: 20,
+  },
+  link: {
+    textDecorationLine: 'underline',
+  },
+  centered: {
+    alignSelf: 'center',
   },
 });
 
@@ -83,6 +91,9 @@ export const AcceptedRequestView = observer(() => {
     return;
   }
 
+  const isOtherPersonVerified =
+    request.requesterProfileId === profile?._id && request.acceptorGroupName;
+
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
       <ModalArrowClose />
@@ -90,11 +101,30 @@ export const AcceptedRequestView = observer(() => {
       <ScrollView>
         <Text style={styles.title}>{title}</Text>
 
+        <View style={styles.centered}>
+          {isOtherPersonVerified ? (
+            <Badge>Verified</Badge>
+          ) : (
+            <Badge theme="secondary">Non-verified</Badge>
+          )}
+        </View>
+
         <Text style={styles.fieldTitle}>{t('REQUESTS_REQUEST_NAME')}</Text>
         <Text style={styles.fieldValue}>
           {otherPersonProfile.firstName} {otherPersonProfile.lastName}
         </Text>
 
+        {isOtherPersonVerified && (
+          <View>
+            <Text style={styles.fieldTitle}>{t('REQUESTS_HELPER_GROUP')}</Text>
+            <Text
+              style={[styles.fieldValue, styles.link]}
+              onPress={() => Linking.openURL(request.acceptorGroupUrl)}
+            >
+              {request.acceptorGroupName}
+            </Text>
+          </View>
+        )}
         {/* {otherPersonProfile.address?.raw ? (
           <Text style={styles.fieldTitle}>{t('REQUESTS_REQUEST_ADDRESS')}</Text>
         ) : null}
