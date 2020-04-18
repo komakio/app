@@ -38,6 +38,7 @@
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "Czy na pewno chcesz anulować to zlecenie?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} zgodził się Tobie pomóc.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "Zlecenie zostało anulowane",
+  "REQUESTS_HELPER_GROUP": "Volunteer group",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "{{name}} zgodził/a się Tobie pomóc! Zadzwoń lub wyślij wiadomość, aby powiedzieć, czego potrzebujesz! Pamiętaj, aby dla bezpieczeństwa wszystkich unikać bezpośredniego kontaktu.",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER": "Zgodziłeś się pomóc {{name}}. Zadzwoń albo wyślij wiadomość, aby dowiedzieć się czego potrzebuje! Pamiętaj, aby unikać bezpośredniego kontaktu, dla bezpieczeństwa wszystkich.",
   "REQUESTS_REQUEST_NAME": "Imię",
