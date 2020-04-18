@@ -38,6 +38,7 @@
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "Er du sikker på at du vil avbryte forespørselen din?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} har godtatt å hjelpe deg.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "Forespørselen ble avbrutt",
+  "REQUESTS_HELPER_GROUP": "Volunteer group",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "{{name}} har godtatt å hjelpe deg! Ring eller send dem en melding og si hva du trenger. Husk å unngå direkte kontakt for alles sikkerhet.",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER": "Du har blitt godtatt å hjelpe {{name}}. Ring dem, eller send en melding for å høre hva de trenger! Husk å unngå direkte kontakt for alles sikkerhet.",
   "REQUESTS_REQUEST_NAME": "Navn",
