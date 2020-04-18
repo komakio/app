@@ -77,7 +77,8 @@
   "PROFILE_SETUP_PRIVACY_POLICY_CONFIRM": "I understand and consent to the collection and use of my personal information, including my Health Data, as described in the <0>privacy policy</0>",
 
   "PROFILE_VIEW_TITLE": "Profile",
-  "PROFILE_VIEW_STATUS": "Your status",
+  "PROFILE_VIEW_STATUS_HELPER": "You are healthy",
+  "PROFILE_VIEW_STATUS_NEEDER": "You are in need",
   "PROFILE_VIEW_NAME": "Your name",
   "PROFILE_VIEW_PHONE": "Your phone number",
   "PROFILE_VIEW_ADDRESS": "Your address",
