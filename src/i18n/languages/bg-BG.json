@@ -38,6 +38,7 @@
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "Наистина ли искате да се откажете от искането си?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} се съгласи да ви помогне.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "Искането е отменено",
+  "REQUESTS_HELPER_GROUP": "Volunteer group",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "{{name}} се съгласи да ви помогне! Обадете се или им напишете съобщение, за да им кажете от какво се нуждаете! Не забравяйте избягването на пряк контакт за всеобща безопасност.",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER": "Съгласихте се да помогнете на {{name}}. Обадете им се или им напишете съобщение, за да разберете от какво се нуждаят! Помнете да избягвате прекия контакт за всеобща безопасност.",
   "REQUESTS_REQUEST_NAME": "Име",

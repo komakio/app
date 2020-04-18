@@ -38,6 +38,7 @@
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "Bạn có chắc muốn huỷ lệnh yêu cầu?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} đã đồng ý giúp đỡ bạn",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "Đã huỷ yêu cầu.",
+  "REQUESTS_HELPER_GROUP": "Volunteer group",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "{{name}} đã đồng ý giúp bạn! Hãy gọi hoặc nhắn tin cho bạn ấy! Không tiếp xúc trực tiếp cho sự an toàn của cả hai bên.",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER": "Bạn đã đồng ý giúp {{name}} ! Hãy gọi hoặc nhắn tin cho bạn ấy! Không tiếp xúc trực tiếp cho sự an toàn của cả hai bên.",
   "REQUESTS_REQUEST_NAME": "Tên",

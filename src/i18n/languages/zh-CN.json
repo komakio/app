@@ -38,6 +38,7 @@
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "您确定要取消您的请求吗？",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} 同意帮助您。",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "请求已被取消",
+  "REQUESTS_HELPER_GROUP": "Volunteer group",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "{{name}} 已同意帮助您！呼叫他们或发送消息告诉他们你需要什么！ 请记住，为了每个人的安全避免直接联系。",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER": "{{name}} 已同意帮助你{{name}} ！呼叫他们或发送消息告诉他们你需要什么！ 请记住，为了大家的安全避免直接接触。",
   "REQUESTS_REQUEST_NAME": "姓名：",

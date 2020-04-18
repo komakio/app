@@ -38,6 +38,7 @@
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "İsteğinizi iptal etmek istediğinizden emin misiniz?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} size yardımcı olmayı kabul etmiştir.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "Talebiniz iptal edilmiştir",
+  "REQUESTS_HELPER_GROUP": "Volunteer group",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "{{name}} size yardım etmeyi kabul etmiştir! Onları arayarak veya mesaj atarak neye ihtiyacınız olduğunu söyleyin! Herkesin güvenliği için sosyal mesafeyi korumayı unutmayın.",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER": "{{name}}'a yardım etmeyi kabul ettiniz. İhtiyaçlarının neler olduğunu anlamak için onları arayın veya mesaj atın. Herkesin güvenliği için doğrudan temastan kaçınmayı unutmayın.",
   "REQUESTS_REQUEST_NAME": "İsim",

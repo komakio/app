@@ -38,6 +38,7 @@
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "هل أنت متأكد من أنك تريد إلغاء هذا الطلب؟",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "وافق {{name}} على مساعدتك.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "تم إلغاء الطلب",
+  "REQUESTS_HELPER_GROUP": "Volunteer group",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "لقد وافقت على مساعدة {{name}}. اتصل بهم أو أرسل رسالة لفهم ما يحتاجونه! تذكر أن تتجنب الاتصال المباشر من أجل سلامة الجميع.",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER": "لقد وافقت على مساعدة {{name}}. اتصل بهم أو أرسل رسالة لفهم ما يحتاجونه! تذكر أن تتجنب الاتصال المباشر من أجل سلامة الجميع.",
   "REQUESTS_REQUEST_NAME": "الاسم",

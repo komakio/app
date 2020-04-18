@@ -38,6 +38,7 @@
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "Adakah anda pasti membatalkan permintaan?",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} telah bersetuju membantu anda.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "Permintaan telah dibatalkan",
+  "REQUESTS_HELPER_GROUP": "Volunteer group",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "{{name}} telah bersetuju untuk membantu anda! Panggil mereka atau menghantar pesanan apa yang anda perlu! Berhati-hati supaya menjauhkan diri untuk keselamatan semua orang.",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER": "Anda bersetuju untuk membantu {{name}}. Panggil mereka atau hantar pesanan untuk memahami apa yang mereka perlu! Berhati-hati untuk menjauhkan diri bagi keselamatan semua orang.",
   "REQUESTS_REQUEST_NAME": "Nama",

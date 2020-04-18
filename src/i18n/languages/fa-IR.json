@@ -38,6 +38,7 @@
   "REQUESTS_REQUEST_PENDING_CANCEL_CONFIRM_SUBTITLE": "آیا مطمئنید میخواهید درخواستتان لغو شود؟",
   "REQUESTS_REQUEST_ACCEPTED_DETAILS_HELPER": "{{name}} موافق کمک به شماست.",
   "REQUESTS_REQUEST_CANCELED_DETAILS": "درخواست شما لغو شد",
+  "REQUESTS_HELPER_GROUP": "Volunteer group",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_NEEDER": "{{name}} موافق کمک به شماست. با ایشان از طریق پیامک یا تلفنی تماس بگیرید و درخواست خود را بگویید . لطفا به خاطر بسپارید که از تماس مستقیم بپرهیزید.",
   "REQUESTS_REQUEST_ACCEPTED_TITLE_HELPER": "شما موافق کمک به {{name}} هستید. با ایشان از طریق پیامک یا تلفنی تماس بگیرید. لطفا به خاطر بسپارید که از تماس مستقیم بپرهیزید.",
   "REQUESTS_REQUEST_NAME": "نام",
