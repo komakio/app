@@ -3,6 +3,8 @@ export interface Request {
   status: 'pending' | 'accepted' | 'canceled';
   requesterShortName: string;
   acceptorShortName: string;
+  acceptorGroupName: string;
+  acceptorGroupUrl: string;
   requesterProfileId: string;
   acceptorProfileId: string;
   acceptorDistance: number;
