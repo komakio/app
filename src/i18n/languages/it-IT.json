@@ -93,12 +93,12 @@
   "ONBOARDING_CONTACT_THEM": "Contatalli",
   "ONBOARDING_SAFETY_INSTRUCTIONS": "Si prega di rispettare le leggi locali e requisiti di salute e sicurezza",
   "ONBOARDING_USER_INSTRUCTIONS": "Istruzioni per l'utente",
-  "ONBOARDING_HELPER_TEXT_1": "When someone close to you needs help, you’ll receive a notification.",
-  "ONBOARDING_HELPER_TEXT_2": "When you hit the “Accept” button, you will be matched with them.",
-  "ONBOARDING_HELPER_TEXT_3": "You then call or text the person in need to understand what their request is.",
-  "ONBOARDING_HELPER_TEXT_4": "If there is no request pending, we will send you a notification as soon as someone needs help.",
-  "ONBOARDING_NEEDER_TEXT_1": "You can send out a request for help by pressing the “Request help button”.",
-  "ONBOARDING_NEEDER_TEXT_2": "When someone accepts your request, you get a notification and their contact information.",
-  "ONBOARDING_NEEDER_TEXT_3": "Call or text the volunteer to communicate your request.",
-  "ONBOARDING_NEEDER_TEXT_4": "You can either send a request now or when you will need it."
+  "ONBOARDING_HELPER_TEXT_1": "Quando qualcuno vicino a te gli serve aiuto, riceverai una notifica.",
+  "ONBOARDING_HELPER_TEXT_2": "Quando scegli la opzione 'Accetta', sarai abbinato a loro.",
+  "ONBOARDING_HELPER_TEXT_3": "Dopo devi chiamare o scrivergli all persona che gli serve aiuto per capire cosa e la loro richiesta.",
+  "ONBOARDING_HELPER_TEXT_4": "Se non c'e una richiesta in attesa, ti invieremo una notifica appena qualcuno gli serve aiuto.",
+  "ONBOARDING_NEEDER_TEXT_1": "Puoi mandare una richiesta per aiuto premendo \"Pulsante di richiesta aiuto\".",
+  "ONBOARDING_NEEDER_TEXT_2": "Quando qualcuno accetta la tua richiesta, riceverai una notifica e le loro informazioni di contatto.",
+  "ONBOARDING_NEEDER_TEXT_3": "Chiama o SMS il volontario per comunicare la tua richiesta.",
+  "ONBOARDING_NEEDER_TEXT_4": "Puoi mandare una richiesta adesso o quando ne avrai bisogno."
 }
