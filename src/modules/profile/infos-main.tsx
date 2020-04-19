@@ -53,25 +53,6 @@ export const InfosMain = observer(() => {
   const profileFlowStore = useProfileFlowStore();
   const { t } = useTranslation();
 
-  const getGeolocation = async () => {
-    try {
-      const infos = await Geolocation.get(t);
-      profileFlowStore.coords = [infos.coords.longitude, infos.coords.latitude];
-    } catch (error) {
-      Alert.alert(t('GEOLOCATION_ERROR_TITLE'), t(error), [
-        { text: t('ACTIONS_CANCEL'), style: 'cancel' },
-        {
-          text: t('GEOLOCATION_CHOOSE_MANUAL'),
-          onPress: () => {
-            navigation.navigate('profile-infos-address', {
-              latLongRequired: true,
-            });
-          },
-        },
-      ]);
-    }
-  };
-
   const goToNext = async () => {
     Alert.alert(t('CONSENTS_CONFIRM'), '', [
       { text: t('ACTIONS_CANCEL'), style: 'cancel' },
@@ -146,7 +127,7 @@ export const InfosMain = observer(() => {
 
         <View style={styles.buttonContainer}>
           <CheckBoxButton
-            onPress={getGeolocation}
+            onPress={() => profileFlowStore.getGeolocation(navigation)}
             checked={!!profileFlowStore.coords}
           >
             {t('PROFILE_SETUP_GEOLOCATION')}
