@@ -1,7 +1,16 @@
 import RNGeolocation, {
   GeolocationResponse,
 } from '@react-native-community/geolocation';
-import { PermissionsAndroid, PermissionStatus, Platform } from 'react-native';
+import GeolocationService, {
+  PositionError,
+  GeoPosition,
+} from 'react-native-geolocation-service';
+import {
+  PermissionsAndroid,
+  PermissionStatus,
+  Platform,
+  Alert,
+} from 'react-native';
 import { TFunction } from 'i18next';
 
 export class Geolocation {
@@ -14,7 +23,35 @@ export class Geolocation {
       throw new Error('GEOLOCATION_PERMISSION_DENIED');
     }
 
-    return this.getLocation();
+    try {
+      const location = await this.getLocationNewLib();
+      Alert.alert('Success new location');
+      return location;
+    } catch {
+      Alert.alert('Error new location');
+      return this.getLocation();
+    }
+  }
+
+  private static getLocationNewLib(): Promise<GeoPosition> {
+    return new Promise((resolve, reject) => {
+      GeolocationService.getCurrentPosition(
+        (info) => resolve(info),
+        (error) => {
+          if (error.code === PositionError.PERMISSION_DENIED) {
+            return reject('GEOLOCATION_PERMISSION_DENIED');
+          }
+          if (error.code === PositionError.POSITION_UNAVAILABLE) {
+            return reject('GEOLOCATION_POSITION_UNAVAILABLE');
+          }
+          if (error.code === PositionError.TIMEOUT) {
+            return reject('GEOLOCATION_TIMEOUT');
+          }
+          reject(error);
+        },
+        { enableHighAccuracy: true }
+      );
+    });
   }
 
   private static getLocation(): Promise<GeolocationResponse> {
