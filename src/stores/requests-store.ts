@@ -29,7 +29,7 @@ export class RequestsStore {
     }
 
     const requests = await RequestsApi.getAllRequests(
-      this.userStore.accessToken.token,
+      this.userStore.accessToken?.token,
       this.userStore.profile._id
     );
     this.requests = requests;
@@ -40,7 +40,7 @@ export class RequestsStore {
       return;
     }
     await RequestsApi.createRequest(
-      this.userStore.accessToken.token,
+      this.userStore.accessToken?.token,
       this.userStore.profile._id
     );
     this.getRequests();
@@ -48,7 +48,7 @@ export class RequestsStore {
 
   public async acceptRequest(requestId: string): Promise<void> {
     await RequestsApi.acceptRequest(
-      this.userStore.accessToken.token,
+      this.userStore.accessToken?.token,
       requestId,
       this.userStore.profile._id
     );
@@ -57,7 +57,7 @@ export class RequestsStore {
 
   public async refuseRequest(requestId: string): Promise<void> {
     await RequestsApi.refuseRequest(
-      this.userStore.accessToken.token,
+      this.userStore.accessToken?.token,
       requestId,
       this.userStore.profile._id
     );
@@ -66,7 +66,7 @@ export class RequestsStore {
 
   public async cancelRequest(requestId: string): Promise<void> {
     await RequestsApi.cancelRequest(
-      this.userStore.accessToken.token,
+      this.userStore.accessToken?.token,
       requestId,
       this.userStore.profile._id
     );
@@ -78,7 +78,7 @@ export class RequestsStore {
     profileId: string
   ): Promise<Profile> {
     return RequestsApi.getProfileFromRequest(
-      this.userStore.accessToken.token,
+      this.userStore.accessToken?.token,
       requestId,
       profileId
     );
