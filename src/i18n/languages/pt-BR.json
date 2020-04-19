@@ -73,6 +73,8 @@
   "PROFILE_VIEW_ADDRESS": "Seu endereço",
   "PROFILE_VIEW_GROUP": "Grupo voluntário",
   "PROFILE_VIEW_LOGOUT": "Sair",
+  "PROFILE_VIEW_LOCATION_UPDATE": "Update location",
+  "PROFILE_VIEW_LOCATION_UPDATED": "Location has been updated.",
   "PROFILE_GROUP_TITLE": "You're part of a volunteer group? Type your group password to get verified.",
   "PROFILE_GROUP_ERROR": "Não conseguimos encontrar o seu grupo. A senha está correta?",
   "PROFILE_NAME_TITLE": "Por favor, digite seu nome e sobrenome",
