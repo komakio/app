@@ -14,14 +14,13 @@ const styles = StyleSheet.create({
 
 interface HiddenSelectProps {
   open: boolean;
-  label?: { label: string; value: string };
   onClose: () => void;
   items: PickerSelect['props']['items'];
   initialValue: string;
 }
 
 export const HiddenSelect: FC<HiddenSelectProps> = memo(
-  ({ open, onClose, label, initialValue, items }) => {
+  ({ open, onClose, initialValue, items }) => {
     const pickerSelectRef = useRef<PickerSelect>();
     const languageStore = useLanguageStore();
     const { t } = useTranslation();
@@ -42,8 +41,10 @@ export const HiddenSelect: FC<HiddenSelectProps> = memo(
         value={value}
         style={{
           inputIOS: styles.input,
+          //   inputAndroid: styles.input,
         }}
-        placeholder={label ? { label } : {}}
+        // useNativeAndroidPickerStyle={false}
+        placeholder={{}}
         doneText={t('ACTIONS_DONE')}
         onDonePress={() => languageStore.setLanguage(value)}
         onClose={onClose}

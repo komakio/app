@@ -25,7 +25,6 @@ export class Geolocation {
 
     try {
       const location = await this.getLocationNewLib();
-      Alert.alert('Success new location');
       return location;
     } catch {
       Alert.alert('Error new location');
