@@ -3,7 +3,7 @@ import { useNavigation, CommonActions } from '@react-navigation/native';
 import { CheckBoxButton, Button } from '@shared/button';
 import { useUserStore, useLanguageStore, useProfileFlowStore } from '@stores';
 import { TabContainer } from '../common/tab-container';
-import { StyleSheet, View, ScrollView, Platform } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
 import { languages } from '@i18n/index';
