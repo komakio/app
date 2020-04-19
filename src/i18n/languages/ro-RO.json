@@ -73,6 +73,8 @@
   "PROFILE_VIEW_ADDRESS": "Adresă",
   "PROFILE_VIEW_GROUP": "Grup de voluntari",
   "PROFILE_VIEW_LOGOUT": "Deconectare",
+  "PROFILE_VIEW_LOCATION_UPDATE": "Update location",
+  "PROFILE_VIEW_LOCATION_UPDATED": "Location has been updated.",
   "PROFILE_GROUP_TITLE": "Faceți parte dintr-un grup de voluntari? Introduceți parola pentru a primi verificarea.",
   "PROFILE_GROUP_ERROR": "Nu am putut găsi grupul. Verificați parola introdusă.",
   "PROFILE_NAME_TITLE": "Vă rugăm să completați numele și prenumele",
