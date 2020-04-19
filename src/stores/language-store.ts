@@ -47,7 +47,7 @@ export class LanguageStore {
         ? 'ur'
         : this.language === 'no'
         ? 'nb'
-        : this.language
+        : this.language.toLowerCase()
     );
   };
 }
