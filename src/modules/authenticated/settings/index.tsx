@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigation, CommonActions } from '@react-navigation/native';
 import { CheckBoxButton, Button } from '@shared/button';
 import { useUserStore } from '@stores';
@@ -6,6 +6,9 @@ import { TabContainer } from '../common/tab-container';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
+import { languages } from '@i18n/index';
+import PickerSelect from 'react-native-picker-select';
+import { HiddenSelect } from '@shared/select/hidden-select';
 
 const styles = StyleSheet.create({
   buttonContainer: {
@@ -23,6 +26,7 @@ export const AuthenticatedSettings = observer(() => {
   const userStore = useUserStore();
   const { profile } = userStore;
   const { t } = useTranslation();
+  const [languageOpen, setLanguageOpen] = useState<boolean>();
 
   return (
     <TabContainer title={t('PROFILE_VIEW_TITLE')}>
@@ -63,6 +67,20 @@ export const AuthenticatedSettings = observer(() => {
             </CheckBoxButton>
           </View>
         )}
+
+        <View style={styles.buttonContainer}>
+          <CheckBoxButton onPress={() => setLanguageOpen(true)} checked={true}>
+            {languages.find((l) => l.key === userStore.user.language)?.label}
+          </CheckBoxButton>
+        </View>
+
+        <HiddenSelect
+          initialValue={userStore.user.language}
+          open={languageOpen}
+          onClose={() => setLanguageOpen(false)}
+          items={languages.map((l) => ({ label: l.label, value: l.key }))}
+        />
+        {/* <PickerSelect onValueChange={() => {}} items={[]} /> */}
 
         {/* {profile?.role === 'needer' && (
           <View style={styles.buttonContainer}>
