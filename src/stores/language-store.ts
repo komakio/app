@@ -9,7 +9,9 @@ export class LanguageStore {
   public language: string;
 
   constructor(private rootStore: RootStore) {
-    this.language = RNLocalize.findBestAvailableLanguage(languages).languageTag;
+    this.language = RNLocalize.findBestAvailableLanguage(
+      languages.map((l) => l.key)
+    ).languageTag;
 
     this.setLanguage();
 
