@@ -69,6 +69,7 @@ export class ProfileFlowStore {
             },
           }
         );
+        Alert.alert(t('PROFILE_VIEW_LOCATION_UPDATED'));
       }
     } catch (error) {
       Alert.alert(t('GEOLOCATION_ERROR_TITLE'), t(error), [
