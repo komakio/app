@@ -5,12 +5,7 @@ import GeolocationService, {
   PositionError,
   GeoPosition,
 } from 'react-native-geolocation-service';
-import {
-  PermissionsAndroid,
-  PermissionStatus,
-  Platform,
-  Alert,
-} from 'react-native';
+import { PermissionsAndroid, PermissionStatus, Platform } from 'react-native';
 import { TFunction } from 'i18next';
 
 export class Geolocation {
@@ -27,7 +22,6 @@ export class Geolocation {
       const location = await this.getLocationNewLib();
       return location;
     } catch {
-      Alert.alert('Error new location');
       return this.getLocation();
     }
   }
