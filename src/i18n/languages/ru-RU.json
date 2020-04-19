@@ -73,6 +73,8 @@
   "PROFILE_VIEW_ADDRESS": "Ваш адрес",
   "PROFILE_VIEW_GROUP": "Volunteer group",
   "PROFILE_VIEW_LOGOUT": "Выйти",
+  "PROFILE_VIEW_LOCATION_UPDATE": "Update location",
+  "PROFILE_VIEW_LOCATION_UPDATED": "Location has been updated.",
   "PROFILE_GROUP_TITLE": "You're part of a volunteer group? Type your group password to get verified.",
   "PROFILE_GROUP_ERROR": "We couldn't find your group. Is the password correct?",
   "PROFILE_NAME_TITLE": "Введите имя и фамилию",
