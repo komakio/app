@@ -39,7 +39,7 @@ export const Intro = memo(() => {
       }
     };
     isLoggedIn();
-  });
+  }, [navigation, userStore]);
 
   return (
     <View style={styles.container}>

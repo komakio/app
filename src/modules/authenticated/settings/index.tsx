@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigation, CommonActions } from '@react-navigation/native';
 import { CheckBoxButton, Button } from '@shared/button';
-import { useUserStore } from '@stores';
+import { useUserStore, useLanguageStore } from '@stores';
 import { TabContainer } from '../common/tab-container';
-import { StyleSheet, View, ScrollView, Platform } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
 import { languages } from '@i18n/index';
@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
 export const AuthenticatedSettings = observer(() => {
   const navigation = useNavigation();
   const userStore = useUserStore();
+  const languageStore = useLanguageStore();
   const { profile } = userStore;
   const { t } = useTranslation();
   const [languageOpen, setLanguageOpen] = useState<boolean>();
@@ -56,25 +57,22 @@ export const AuthenticatedSettings = observer(() => {
           </CheckBoxButton>
         </View>
 
-        {Platform.OS === 'ios' && (
+        <HiddenSelect
+          initialValue={userStore.user.language}
+          open={languageOpen}
+          onClose={() => setLanguageOpen(false)}
+          onChoose={languageStore.setLanguage}
+          items={languages.map((l) => ({ label: l.label, value: l.key }))}
+        >
           <View style={styles.buttonContainer}>
             <CheckBoxButton
               onPress={() => setLanguageOpen(true)}
               checked={true}
             >
-              {languages.find((l) => l.key === userStore.user.language)?.label}
+              {languages.find((l) => l.key === languageStore.language)?.label}
             </CheckBoxButton>
           </View>
-        )}
-
-        {Platform.OS === 'ios' && (
-          <HiddenSelect
-            initialValue={userStore.user.language}
-            open={languageOpen}
-            onClose={() => setLanguageOpen(false)}
-            items={languages.map((l) => ({ label: l.label, value: l.key }))}
-          />
-        )}
+        </HiddenSelect>
 
         {profile?.role === 'helper' && (
           <View style={styles.buttonContainer}>
@@ -86,17 +84,6 @@ export const AuthenticatedSettings = observer(() => {
             </CheckBoxButton>
           </View>
         )}
-
-        {/* {profile?.role === 'needer' && (
-          <View style={styles.buttonContainer}>
-            <CheckBoxButton
-              onPress={() => navigation.navigate('profile-infos-address')}
-              checked={!!profile?.address?.raw}
-            >
-              {t('PROFILE_VIEW_ADDRESS')}
-            </CheckBoxButton>
-          </View>
-        )} */}
 
         <Button
           style={styles.logoutButton}
