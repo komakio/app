@@ -56,17 +56,6 @@ export const AuthenticatedSettings = observer(() => {
           </CheckBoxButton>
         </View>
 
-        {profile?.role === 'helper' && (
-          <View style={styles.buttonContainer}>
-            <CheckBoxButton
-              onPress={() => navigation.navigate('profile-infos-group')}
-              checked={!!profile?.group}
-            >
-              {profile?.group?.name || t('PROFILE_VIEW_GROUP')}
-            </CheckBoxButton>
-          </View>
-        )}
-
         {Platform.OS === 'ios' && (
           <View style={styles.buttonContainer}>
             <CheckBoxButton
@@ -85,6 +74,17 @@ export const AuthenticatedSettings = observer(() => {
             onClose={() => setLanguageOpen(false)}
             items={languages.map((l) => ({ label: l.label, value: l.key }))}
           />
+        )}
+
+        {profile?.role === 'helper' && (
+          <View style={styles.buttonContainer}>
+            <CheckBoxButton
+              onPress={() => navigation.navigate('profile-infos-group')}
+              checked={!!profile?.group}
+            >
+              {profile?.group?.name || t('PROFILE_VIEW_GROUP')}
+            </CheckBoxButton>
+          </View>
         )}
 
         {/* {profile?.role === 'needer' && (
