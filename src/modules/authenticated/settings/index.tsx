@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigation, CommonActions } from '@react-navigation/native';
 import { CheckBoxButton, Button } from '@shared/button';
-import { useUserStore, useLanguageStore } from '@stores';
+import { useUserStore, useLanguageStore, useProfileFlowStore } from '@stores';
 import { TabContainer } from '../common/tab-container';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import { observer } from 'mobx-react-lite';
@@ -14,8 +14,12 @@ const styles = StyleSheet.create({
     width: '100%',
     marginVertical: 10,
   },
+  locationButton: {
+    marginTop: 20,
+    width: 200,
+  },
   logoutButton: {
-    marginTop: 40,
+    marginTop: 10,
     marginBottom: 20,
   },
 });
@@ -24,6 +28,7 @@ export const AuthenticatedSettings = observer(() => {
   const navigation = useNavigation();
   const userStore = useUserStore();
   const languageStore = useLanguageStore();
+  const profileFlowStore = useProfileFlowStore();
   const { profile } = userStore;
   const { t } = useTranslation();
   const [languageOpen, setLanguageOpen] = useState<boolean>();
@@ -84,6 +89,14 @@ export const AuthenticatedSettings = observer(() => {
             </CheckBoxButton>
           </View>
         )}
+
+        <Button
+          size="small"
+          style={styles.locationButton}
+          onPress={() => profileFlowStore.getGeolocation(navigation)}
+        >
+          {t('PROFILE_VIEW_LOCATION_UPDATE')}
+        </Button>
 
         <Button
           style={styles.logoutButton}

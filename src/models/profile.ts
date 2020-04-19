@@ -3,7 +3,7 @@ interface Location {
   coordinates: [number, number];
 }
 export class Address {
-  raw: string;
+  raw?: string;
   extra?: string;
   postalCode?: string;
   city?: string;

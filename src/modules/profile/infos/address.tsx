@@ -92,6 +92,10 @@ export const ProfileInfosAddress = observer(() => {
           ...profile.address,
           raw: rawAddress,
           extra: addressExtra,
+          location: {
+            type: 'Point',
+            coordinates: profileFlowStore.coords,
+          },
         },
       });
     } else {
