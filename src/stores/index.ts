@@ -24,3 +24,8 @@ export const useCodepushStore = () => {
   const rootStore = useRootStore();
   return rootStore.codePushStore;
 };
+
+export const useLanguageStore = () => {
+  const rootStore = useRootStore();
+  return rootStore.languageStore;
+};
