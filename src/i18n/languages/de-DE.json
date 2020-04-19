@@ -73,6 +73,8 @@
   "PROFILE_VIEW_ADDRESS": "Ihre Adresse",
   "PROFILE_VIEW_GROUP": "Ehrenamtliche Arbeit",
   "PROFILE_VIEW_LOGOUT": "Abmelden",
+  "PROFILE_VIEW_LOCATION_UPDATE": "Update location",
+  "PROFILE_VIEW_LOCATION_UPDATED": "Location has been updated.",
   "PROFILE_GROUP_TITLE": "Sind Sie Teil einer ehrenamtlichen Gruppe? Geben Sie ihr Gruppenpasswort ein, um sich zu verifizieren.",
   "PROFILE_GROUP_ERROR": "Wir konnten Ihre Gruppe nicht finden. Ist Ihr Passwort korrekt?",
   "PROFILE_NAME_TITLE": "Bitte geben Sie Ihren Vor- und Nachnamen ein",

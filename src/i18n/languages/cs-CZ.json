@@ -73,6 +73,8 @@
   "PROFILE_VIEW_ADDRESS": "Vaše adresa",
   "PROFILE_VIEW_GROUP": "Volunteer group",
   "PROFILE_VIEW_LOGOUT": "Odhlasit",
+  "PROFILE_VIEW_LOCATION_UPDATE": "Update location",
+  "PROFILE_VIEW_LOCATION_UPDATED": "Location has been updated.",
   "PROFILE_GROUP_TITLE": "You're part of a volunteer group? Type your group password to get verified.",
   "PROFILE_GROUP_ERROR": "We couldn't find your group. Is the password correct?",
   "PROFILE_NAME_TITLE": "Prosím zadejte vaše celé jméno",

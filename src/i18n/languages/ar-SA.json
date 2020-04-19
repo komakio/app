@@ -73,6 +73,8 @@
   "PROFILE_VIEW_ADDRESS": "العنوان",
   "PROFILE_VIEW_GROUP": "فريق المتطوعين",
   "PROFILE_VIEW_LOGOUT": "تسجيل خروج",
+  "PROFILE_VIEW_LOCATION_UPDATE": "Update location",
+  "PROFILE_VIEW_LOCATION_UPDATED": "Location has been updated.",
   "PROFILE_GROUP_TITLE": "أنت جزء من مجموعة متطوعين؟ اكتب كلمة مرور مجموعتك للحصول على التحقق.",
   "PROFILE_GROUP_ERROR": "لم نتمكن من العثور على مجموعتك. هل كلمة المرور صحيحة؟",
   "PROFILE_NAME_TITLE": "الرجاء إدخال اسمك الكامل",

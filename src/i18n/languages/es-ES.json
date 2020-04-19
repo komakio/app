@@ -73,6 +73,8 @@
   "PROFILE_VIEW_ADDRESS": "Dirección",
   "PROFILE_VIEW_GROUP": "Voluntariado",
   "PROFILE_VIEW_LOGOUT": "Cerrar sesión",
+  "PROFILE_VIEW_LOCATION_UPDATE": "Update location",
+  "PROFILE_VIEW_LOCATION_UPDATED": "Location has been updated.",
   "PROFILE_GROUP_TITLE": "¿Eres parte de un grupo de voluntarios? Escribe la contraseña del grupo para ser verificado.",
   "PROFILE_GROUP_ERROR": "No hemos encontrado su grupo. ¿Es correcta la contraseña?",
   "PROFILE_NAME_TITLE": "Introduce tu nombre y apellidos",

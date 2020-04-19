@@ -73,6 +73,8 @@
   "PROFILE_VIEW_ADDRESS": "您的地址",
   "PROFILE_VIEW_GROUP": "志愿者群组",
   "PROFILE_VIEW_LOGOUT": "退出登录",
+  "PROFILE_VIEW_LOCATION_UPDATE": "Update location",
+  "PROFILE_VIEW_LOCATION_UPDATED": "Location has been updated.",
   "PROFILE_GROUP_TITLE": "您是志愿者组的成员？请输入您的组密码以获得验证。",
   "PROFILE_GROUP_ERROR": "我们找不到您的群组。密码正确吗？",
   "PROFILE_NAME_TITLE": "请输入您的名字和姓氏",
