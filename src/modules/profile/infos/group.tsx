@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.grey400,
     borderRadius: 5,
+    color: colors.grey400,
   },
   textInput: { width: 100 },
   numberInput: { marginLeft: 5, flex: 1 },

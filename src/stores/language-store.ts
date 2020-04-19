@@ -3,17 +3,14 @@ import * as RNLocalize from 'react-native-localize';
 import moment from 'moment';
 import { languages, i18n } from '@i18n/index';
 import { autorun, observable } from 'mobx';
+import { Storage } from '@utils/storage';
 
 export class LanguageStore {
   @observable
   public language: string;
 
   constructor(private rootStore: RootStore) {
-    this.language = RNLocalize.findBestAvailableLanguage(
-      languages.map((l) => l.key)
-    ).languageTag;
-
-    this.setLanguage();
+    this.init();
 
     autorun(() => {
       if (
@@ -27,9 +24,21 @@ export class LanguageStore {
     });
   }
 
-  public setLanguage(lang?: string) {
+  public async init() {
+    const bestLanguage = RNLocalize.findBestAvailableLanguage(
+      languages.map((l) => l.key)
+    ).languageTag;
+    const storageLanguage = await Storage.get('lang');
+
+    this.language = storageLanguage || bestLanguage;
+
+    this.setLanguage();
+  }
+
+  public setLanguage = (lang?: string) => {
     if (lang) {
       this.language = lang;
+      Storage.set('lang', this.language);
     }
     i18n.changeLanguage(this.language);
     // NORWAY is nb with moment
@@ -40,5 +49,5 @@ export class LanguageStore {
         ? 'nb'
         : this.language
     );
-  }
+  };
 }

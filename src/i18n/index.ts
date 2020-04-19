@@ -1,6 +1,4 @@
-import * as RNLocalize from 'react-native-localize';
 import i18nLib from 'i18next';
-import moment from 'moment';
 
 import 'moment/locale/af';
 import 'moment/locale/ar';
