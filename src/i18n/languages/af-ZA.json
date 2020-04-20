@@ -1,9 +1,9 @@
 {
-  "GEOLOCATION_ERROR_TITLE": "Geolocation error",
+  "GEOLOCATION_ERROR_TITLE": "Geografiese ligging fout",
   "GEOLOCATION_PERMISSION_DENIED": "Ons toegang is geweier. Het u die aansoek goedgekeur om toegang tot u ligging te kry?",
   "GEOLOCATION_POSITION_UNAVAILABLE": "Ons kon nie u posisie kry nie. Is u GPS geaktiveer?",
   "GEOLOCATION_TIMEOUT": "Daar was 'n tydsverloop",
-  "GEOLOCATION_DESCRIPTION": "We need your geolocation once to match you with people around you.",
+  "GEOLOCATION_DESCRIPTION": "Ons het u eenmalige geografiese ligging nodig om u met mense in u omgewing te verbind.",
   "GEOLOCATION_CHOOSE_MANUAL": "Type address",
   "NO_RESULTS": "No results",
   "ACTIONS_BACK": "Vorige",
