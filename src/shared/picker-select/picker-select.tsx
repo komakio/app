@@ -23,8 +23,6 @@ export const PickerSelect: FC<TextInputProps> = memo(
           inputIOS: textInputStyles.input,
         }}
         {...props}
-        // placeholderTextColor={colors.grey300}
-        // style={[styles.input, style]}
       />
     </View>
   )
