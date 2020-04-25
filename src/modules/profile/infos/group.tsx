@@ -83,7 +83,7 @@ export const ProfileInfosGroup = observer(() => {
 
   const onChangeGroupId = (value: string) => {
     if (value.length <= 3) {
-      setGroupId(value.toUpperCase());
+      setGroupId(value?.toUpperCase());
     }
     if (value.length === 3) {
       groupNumberRef.current.focus();
@@ -91,7 +91,7 @@ export const ProfileInfosGroup = observer(() => {
   };
   const onChangeGroupNumber = (value: string) => {
     if (value.length <= 8) {
-      setGroupNumber(value.toUpperCase());
+      setGroupNumber(value?.toUpperCase());
     }
     if (value.length === 8) {
       onSubmit(`${groupId}-${value}`);
