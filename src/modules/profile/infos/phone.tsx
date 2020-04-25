@@ -9,6 +9,8 @@ import { useProfileFlowStore, useUserStore } from '@stores';
 import { Button } from '@shared/button';
 import { ModalArrowClose } from '@shared/modal/modal-arrow-close';
 import { useTranslation } from 'react-i18next';
+import { COUNTRIES_DIAL_CODES } from '@utils/countries';
+import { PickerSelect } from '@shared/picker-select/picker-select';
 
 const styles = StyleSheet.create({
   container: {
@@ -34,6 +36,9 @@ export const ProfileInfosPhone = observer(() => {
   const userStore = useUserStore();
   const { t } = useTranslation();
 
+  const [dialCode, setDialCode] = useState<string>(
+    userStore?.profile?.phone?.dialCode || profileFlowStore.dialCode || ''
+  );
   const [phone, setPhone] = useState<string>(
     userStore?.profile?.phone?.number || profileFlowStore.phone || ''
   );
@@ -43,10 +48,12 @@ export const ProfileInfosPhone = observer(() => {
       userStore.patchProfile(userStore.profile._id, {
         phone: {
           number: phone,
+          dialCode,
         },
       });
     } else {
       profileFlowStore.phone = phone;
+      profileFlowStore.dialCode = dialCode;
     }
 
     navigation.goBack();
@@ -60,10 +67,25 @@ export const ProfileInfosPhone = observer(() => {
         <Text style={styles.title}>{t('PROFILE_PHONE_TITLE')}</Text>
       </View>
 
+      <PickerSelect
+        value={dialCode}
+        label={t('PROFILE_PHONE_DIALCODE')}
+        placeholder={{
+          label: t('PROFILE_PHONE_DIALCODE_PLACEHOLDER'),
+          value: null,
+        }}
+        doneText={t('ACTIONS_DONE')}
+        onValueChange={setDialCode}
+        items={COUNTRIES_DIAL_CODES.map((l) => ({
+          label: `${l.name} (${l.dialCode})`,
+          value: l.dialCode,
+        }))}
+      />
+
       <TextInput
         label={t('PROFILE_PHONE_PHONE')}
         value={phone}
-        onChangeText={(phone) => setPhone(phone)}
+        onChangeText={setPhone}
         keyboardType="number-pad"
       />
 
