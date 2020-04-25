@@ -10,7 +10,7 @@ import {
 import { Text } from '@shared/text';
 import { colors } from '@shared/variables/colors';
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   container: {
     width: '100%',
     paddingHorizontal: 20,

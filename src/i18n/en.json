@@ -99,6 +99,8 @@
 
   "PROFILE_PHONE_TITLE": "Please enter your phone number",
   "PROFILE_PHONE_PHONE": "Phone",
+  "PROFILE_PHONE_DIALCODE": "Dial code",
+  "PROFILE_PHONE_DIALCODE_PLACEHOLDER": "Choose your country",
 
   "PROFILE_ADDRESS_TITLE": "Please enter your address",
   "PROFILE_ADDRESS_ADDRESS": "Street address",
