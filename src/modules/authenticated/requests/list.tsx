@@ -9,6 +9,7 @@ import { useUserStore, useRequestsStore, useNotificationsStore } from '@stores';
 import { observer } from 'mobx-react-lite';
 import { RequestListItem } from './request-list-item';
 import { useTranslation } from 'react-i18next';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const styles = StyleSheet.create({
   button: {
@@ -41,8 +42,11 @@ export const RequestsList = observer(() => {
   const hasRequests = !!requestsStore.requests?.length;
 
   return (
-    <TabContainer title={t('REQUESTS_TITLE')} flex={!hasRequests}>
-      <View style={{ flex: 1, width: '100%', paddingBottom: 30 }}>
+    <TabContainer title={t('REQUESTS_TITLE')} flex={true}>
+      <ScrollView
+        style={{ width: '100%' }}
+        contentContainerStyle={!hasRequests && { flex: 1 }}
+      >
         {!hasRequests && (
           <EmptyBox
             title={
@@ -56,17 +60,16 @@ export const RequestsList = observer(() => {
           requestsStore.requests?.map((request) => (
             <RequestListItem key={request._id} request={request} />
           ))}
-      </View>
+      </ScrollView>
 
-      {/* {profile?.role === 'helper' && (
-        <ShareButton style={styles.button} url="https://komak.io" />
-      )} */}
       {profile?.role === 'needer' &&
         requestsStore?.requests?.filter((r) => r.status === 'pending')
           .length === 0 && (
-          <Button size="big" style={styles.button} onPress={requestHelp}>
-            {t('REQUESTS_REQUEST_HELP')}
-          </Button>
+          <View style={{ paddingTop: 30 }}>
+            <Button size="big" style={styles.button} onPress={requestHelp}>
+              {t('REQUESTS_REQUEST_HELP')}
+            </Button>
+          </View>
         )}
     </TabContainer>
   );
