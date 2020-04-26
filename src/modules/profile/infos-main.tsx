@@ -9,7 +9,6 @@ import {
 import { useNavigation, CommonActions } from '@react-navigation/native';
 import { Text } from '@shared/text';
 import { useProfileFlowStore } from '@stores';
-import { Geolocation } from '@utils/geolocation';
 import { observer } from 'mobx-react-lite';
 import { useTranslation, Trans } from 'react-i18next';
 import { ScrollView } from 'react-native-gesture-handler';

@@ -2,7 +2,6 @@ import * as Sentry from '@sentry/react-native';
 
 import { Environment } from 'environment';
 import { RootStore } from './root-store';
-import { useEffect } from 'react';
 import { autorun } from 'mobx';
 
 export class ExceptionsStore {
