@@ -1,5 +1,5 @@
 import React, { memo, FC } from 'react';
-import { View, ViewStyle } from 'react-native';
+import { View, ViewStyle, Platform } from 'react-native';
 import { Text } from '@shared/text';
 import RNPickerSelect, { PickerSelectProps } from 'react-native-picker-select';
 import { styles as textInputStyles } from '../text-input';
@@ -20,6 +20,14 @@ export const PickerSelect: FC<TextInputProps> = memo(
       <RNPickerSelect
         style={{
           inputAndroid: textInputStyles.input,
+          viewContainer:
+            Platform.OS === 'android'
+              ? {
+                  ...textInputStyles.input,
+                  paddingVertical: 5,
+                  paddingHorizontal: 10,
+                }
+              : null,
           inputIOS: textInputStyles.input,
         }}
         {...props}
