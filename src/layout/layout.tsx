@@ -13,7 +13,6 @@ import RNBootSplash from 'react-native-bootsplash';
 import { statusBarHeight } from '../utils/status-bar';
 import { Animations } from '../utils/animations';
 import { CodePushProgress } from './code-push-progress';
-import { Image } from 'react-native-paper/lib/typescript/src/components/Avatar/Avatar';
 
 const bootsplashImageSize = 200;
 

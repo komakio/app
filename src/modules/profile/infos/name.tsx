@@ -66,7 +66,7 @@ export const ProfileInfosName = observer(() => {
       <TextInput
         label={t('PROFILE_NAME_FIRSTNAME')}
         value={firstName}
-        onChangeText={(firstName) => setFirstName(firstName)}
+        onChangeText={setFirstName}
         autoCorrect={false}
         // placeholderTextColor={colors.blue}
       />
@@ -74,7 +74,7 @@ export const ProfileInfosName = observer(() => {
       <TextInput
         label={t('PROFILE_NAME_LASTNAME')}
         value={lastName}
-        onChangeText={(lastName) => setLastName(lastName)}
+        onChangeText={setLastName}
         autoCorrect={false}
         // placeholderTextColor={colors.blue}
       />
