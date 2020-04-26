@@ -27,10 +27,10 @@ export class LanguageStore {
   public async init() {
     const bestLanguage = RNLocalize.findBestAvailableLanguage(
       languages.map((l) => l.key)
-    ).languageTag;
+    )?.languageTag;
     const storageLanguage = await Storage.get('lang');
 
-    this.language = storageLanguage || bestLanguage;
+    this.language = storageLanguage || bestLanguage || 'en';
 
     this.setLanguage();
   }

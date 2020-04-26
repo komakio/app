@@ -5,6 +5,8 @@ import { Geolocation } from '@utils/geolocation';
 import { i18n } from '@i18n/index';
 import { Alert } from 'react-native';
 import { NavigationProp, NavigationState } from '@react-navigation/native';
+import * as RNLocalize from 'react-native-localize';
+import { COUNTRIES_DIAL_CODES } from '@utils/countries';
 
 export class ProfileFlowStore {
   public rootStore: RootStore;
@@ -22,7 +24,7 @@ export class ProfileFlowStore {
   public phone = '';
 
   @observable
-  public dialCode = '-';
+  public dialCode = '';
 
   @observable
   public address = '';
@@ -41,6 +43,13 @@ export class ProfileFlowStore {
 
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
+
+    const possibleCountry = COUNTRIES_DIAL_CODES.find(
+      (c) => c.code === RNLocalize.getCountry()
+    );
+    if (possibleCountry) {
+      this.dialCode = possibleCountry.dialCode;
+    }
   }
 
   public async getGeolocation(
@@ -97,6 +106,7 @@ export class ProfileFlowStore {
           self: true,
           phone: {
             number: this.phone,
+            dialCode: this.dialCode,
           },
           address: {
             raw: this.address,

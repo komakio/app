@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flex: 1,
     marginHorizontal: 20,
+    minHeight: 500,
   },
   result: {
     paddingVertical: 15,

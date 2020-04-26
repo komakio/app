@@ -21,7 +21,7 @@ interface HiddenSelectProps {
   onClose: () => void;
   onChoose: (value: string) => void;
   items: PickerSelect['props']['items'];
-  initialValue: string;
+  initialValue?: string;
 }
 
 export const HiddenSelect: FC<HiddenSelectProps> = memo(
