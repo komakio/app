@@ -14,6 +14,10 @@ import { Alert } from 'react-native';
 import { LoginResult } from '@models/user';
 import { AxiosError } from 'axios';
 import { Environment } from 'environment';
+import {
+  LoginManager as FacebookLoginManager,
+  AccessToken,
+} from 'react-native-fbsdk';
 
 export class SocialLoginStore {
   public rootStore: RootStore;
@@ -29,6 +33,39 @@ export class SocialLoginStore {
     });
   }
 
+  public async facebookLogin(): Promise<LoginResult> {
+    try {
+      await FacebookLoginManager.logInWithPermissions(['public_profile']);
+      const tokens = await AccessToken.getCurrentAccessToken();
+      console.log(tokens);
+      // console.log(result);
+      // const firstName = userInfo.user.givenName;
+      // const lastName = userInfo.user.familyName;
+
+      // const data = await UsersApi.loginGoogle(userInfo.idToken);
+      // this.rootStore.profileFlowStore.firstName = firstName;
+      // this.rootStore.profileFlowStore.lastName = lastName;
+      // console.log(data);
+      // return data;
+    } catch (error) {
+      console.log(error);
+      // console.log((error as AxiosError)?.response);
+      // if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+      //   return null;
+      // } else if (error.code === statusCodes.IN_PROGRESS) {
+      //   this.rootStore.exceptionsStore.report(error);
+      //   // operation (e.g. sign in) is in progress already
+      // } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+      //   this.rootStore.exceptionsStore.report(error);
+      //   // play services not available or outdated
+      // } else {
+      //   this.rootStore.exceptionsStore.report(error);
+      //   // some other error happened
+      // }
+      // Alert.alert('Google login failed');
+      return null;
+    }
+  }
   public async googleLogin(): Promise<LoginResult> {
     try {
       //   await GoogleSignin.hasPlayServices();

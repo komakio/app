@@ -26,7 +26,7 @@ export class UserStore {
     this.init();
   }
 
-  public async socialSignup(type: 'google' | 'apple') {
+  public async socialSignup(type: 'google' | 'apple' | 'facebook') {
     let data;
     if (type === 'apple') {
       data = await this.rootStore.socialLoginStore.appleLogin();
@@ -36,6 +36,12 @@ export class UserStore {
     }
     if (type === 'google') {
       data = await this.rootStore.socialLoginStore.googleLogin();
+      if (!data) {
+        return false;
+      }
+    }
+    if (type === 'facebook') {
+      data = await this.rootStore.socialLoginStore.facebookLogin();
       if (!data) {
         return false;
       }

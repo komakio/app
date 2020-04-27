@@ -42,7 +42,9 @@ export const LoginSignup = memo(() => {
   const userStore = useUserStore();
   const { t } = useTranslation();
 
-  const socialSignup = (socialMedia: 'google' | 'apple') => async () => {
+  const socialSignup = (
+    socialMedia: 'google' | 'apple' | 'facebook'
+  ) => async () => {
     const signupSuccess = await userStore.socialSignup(socialMedia);
     if (!signupSuccess) {
       return;
@@ -72,6 +74,14 @@ export const LoginSignup = memo(() => {
         >
           <Icon name="google" size={25} color="white" />
           <Text style={styles.buttonText}>Google</Text>
+        </Button>
+        <Button
+          style={styles.buttonWithMarginBottom}
+          onPress={socialSignup('facebook')}
+          theme="blue"
+        >
+          <Icon name="facebook" size={25} color="white" />
+          <Text style={styles.buttonText}>Facebook</Text>
         </Button>
         {appleAuth.isSupported && (
           <Button onPress={socialSignup('apple')} theme="black">
