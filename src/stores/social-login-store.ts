@@ -17,6 +17,8 @@ import { Environment } from 'environment';
 import {
   LoginManager as FacebookLoginManager,
   AccessToken,
+  GraphRequest,
+  GraphRequestManager,
 } from 'react-native-fbsdk';
 
 export class SocialLoginStore {
@@ -35,50 +37,53 @@ export class SocialLoginStore {
 
   public async facebookLogin(): Promise<LoginResult> {
     try {
-      await FacebookLoginManager.logInWithPermissions(['public_profile']);
-      const tokens = await AccessToken.getCurrentAccessToken();
-      console.log(tokens);
-      // console.log(result);
-      // const firstName = userInfo.user.givenName;
-      // const lastName = userInfo.user.familyName;
+      const response = await FacebookLoginManager.logInWithPermissions([
+        'public_profile',
+      ]);
+      if (response.isCancelled) {
+        return;
+      }
 
-      // const data = await UsersApi.loginGoogle(userInfo.idToken);
-      // this.rootStore.profileFlowStore.firstName = firstName;
-      // this.rootStore.profileFlowStore.lastName = lastName;
-      // console.log(data);
-      // return data;
+      const infoRequest = new GraphRequest('/me', null, (err, response) => {
+        if (err) {
+          return;
+        }
+        const name = (response as any)?.name;
+        if (name.indexOf(' ') === -1) {
+          this.rootStore.profileFlowStore.firstName = name;
+          return;
+        }
+
+        this.rootStore.profileFlowStore.firstName = name
+          .split(' ')
+          .slice(0, -1)
+          .join(' ');
+        this.rootStore.profileFlowStore.lastName = name
+          .split(' ')
+          .slice(-1)
+          .join(' ');
+      });
+      new GraphRequestManager().addRequest(infoRequest).start();
+
+      const tokens = await AccessToken.getCurrentAccessToken();
+
+      const data = await UsersApi.loginFacebook(tokens.accessToken);
+      console.log(data);
+      return data;
     } catch (error) {
-      console.log(error);
-      // console.log((error as AxiosError)?.response);
-      // if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-      //   return null;
-      // } else if (error.code === statusCodes.IN_PROGRESS) {
-      //   this.rootStore.exceptionsStore.report(error);
-      //   // operation (e.g. sign in) is in progress already
-      // } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-      //   this.rootStore.exceptionsStore.report(error);
-      //   // play services not available or outdated
-      // } else {
-      //   this.rootStore.exceptionsStore.report(error);
-      //   // some other error happened
-      // }
-      // Alert.alert('Google login failed');
+      this.rootStore.exceptionsStore.report(error);
       return null;
     }
   }
   public async googleLogin(): Promise<LoginResult> {
     try {
-      //   await GoogleSignin.hasPlayServices();
-      console.log('Try to login');
       const userInfo = await GoogleSignin.signIn();
-      console.log(userInfo);
       const firstName = userInfo.user.givenName;
       const lastName = userInfo.user.familyName;
 
       const data = await UsersApi.loginGoogle(userInfo.idToken);
       this.rootStore.profileFlowStore.firstName = firstName;
       this.rootStore.profileFlowStore.lastName = lastName;
-      console.log(data);
       return data;
     } catch (error) {
       console.log(error);
