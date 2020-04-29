@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     height: bottomNavbarHeight,
+    marginBottom: 15,
   },
   transparent: {
     backgroundColor: 'transparent',
