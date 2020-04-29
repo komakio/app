@@ -54,7 +54,7 @@ export const Intro = memo(() => {
           <Button
             size="big" 
             onPress={() => navigation.navigate('login-signup')}>
-            {t('INTRO_GET_STARTED')}
+              {t('INTRO_GET_STARTED')}
           </Button>
         </View>
       </View>
