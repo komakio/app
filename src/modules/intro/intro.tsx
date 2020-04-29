@@ -16,10 +16,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 30,
-    // flex: 1,
-    // alignItems: 'center',
-    // justifyContent: 'flex-end',
-    // paddingHorizontal: 20,
   },
   title: {
     fontSize: 28,
