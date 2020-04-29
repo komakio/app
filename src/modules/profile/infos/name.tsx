@@ -14,18 +14,18 @@ import { useTranslation } from 'react-i18next';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingHorizontal: 30,
     alignItems: 'center',
     justifyContent: 'center',
   },
   title: {
-    fontSize: 24,
-    paddingHorizontal: 20,
+    fontSize: 28,
     fontWeight: 'bold',
   },
   buttonContainer: {
     alignSelf: 'flex-start',
-    paddingHorizontal: 20,
     marginTop: 10,
+    paddingHorizontal: 20,
   },
 });
 
