@@ -52,10 +52,10 @@ export const Intro = memo(() => {
         </Text>
         <View style={styles.buttonContainer}>
           <Button
-           size="big" 
+            size="big" 
             onPress={() => navigation.navigate('login-signup')}
-        >
-              {t('INTRO_GET_STARTED')}
+          >
+            {t('INTRO_GET_STARTED')}
           </Button>
         </View>
       </View>
