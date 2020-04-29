@@ -8,11 +8,18 @@ import { useUserStore } from '@stores';
 import { useTranslation } from 'react-i18next';
 
 const styles = StyleSheet.create({
+  parentContainer: {
+    flex: 1,
+  },
   container: {
     flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    justifyContent: 'flex-end',
-    paddingHorizontal: 20,
+    paddingHorizontal: 30,
+    // flex: 1,
+    // alignItems: 'center',
+    // justifyContent: 'flex-end',
+    // paddingHorizontal: 20,
   },
   title: {
     fontSize: 28,
@@ -42,14 +49,16 @@ export const Intro = memo(() => {
   }, [navigation, userStore]);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title} bold={true}>
-        {t('INTRO_TITLE')}
-      </Text>
-      <View style={styles.buttonContainer}>
-        <Button size="big" onPress={() => navigation.navigate('login-signup')}>
-          {t('INTRO_GET_STARTED')}
-        </Button>
+    <View style={styles.parentContainer}>
+      <View style={styles.container}>
+        <Text style={styles.title} bold={true}>
+          {t('INTRO_TITLE')}
+        </Text>
+        <View style={styles.buttonContainer}>
+          <Button size="big" onPress={() => navigation.navigate('login-signup')}>
+            {t('INTRO_GET_STARTED')}
+          </Button>
+        </View>
       </View>
     </View>
   );
