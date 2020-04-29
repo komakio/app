@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   logoutButton: {
     marginTop: 10,
     marginBottom: 20,
+    width: 200,
   },
 });
 
@@ -89,7 +90,7 @@ export const AuthenticatedSettings = observer(() => {
             </CheckBoxButton>
           </View>
         )}
-
+        
         <Button
           size="small"
           style={styles.locationButton}
@@ -97,7 +98,7 @@ export const AuthenticatedSettings = observer(() => {
         >
           {t('PROFILE_VIEW_LOCATION_UPDATE')}
         </Button>
-
+      
         <Button
           style={styles.logoutButton}
           theme="red"
