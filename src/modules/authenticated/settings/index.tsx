@@ -90,7 +90,6 @@ export const AuthenticatedSettings = observer(() => {
             </CheckBoxButton>
           </View>
         )}
-        
         <Button
           size="small"
           style={styles.locationButton}
@@ -98,7 +97,6 @@ export const AuthenticatedSettings = observer(() => {
         >
           {t('PROFILE_VIEW_LOCATION_UPDATE')}
         </Button>
-      
         <Button
           style={styles.logoutButton}
           theme="red"
