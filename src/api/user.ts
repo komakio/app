@@ -19,7 +19,7 @@ export class UsersApi {
 
   public static async loginFacebook(accessToken: string): Promise<LoginResult> {
     const res = await axiosInstance.post('/v1/users/login/facebook', {
-      identityToken: accessToken,
+      fbAccessToken: accessToken,
     });
     return res.data;
   }
