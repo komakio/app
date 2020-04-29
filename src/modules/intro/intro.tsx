@@ -52,8 +52,9 @@ export const Intro = memo(() => {
         </Text>
         <View style={styles.buttonContainer}>
           <Button
-            size="big" 
-            onPress={() => navigation.navigate('login-signup')}>
+           size="big" 
+            onPress={() => navigation.navigate('login-signup')}
+        >
               {t('INTRO_GET_STARTED')}
           </Button>
         </View>
