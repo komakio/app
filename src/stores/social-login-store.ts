@@ -14,6 +14,12 @@ import { Alert } from 'react-native';
 import { LoginResult } from '@models/user';
 import { AxiosError } from 'axios';
 import { Environment } from 'environment';
+import {
+  LoginManager as FacebookLoginManager,
+  AccessToken,
+  GraphRequest,
+  GraphRequestManager,
+} from 'react-native-fbsdk';
 
 export class SocialLoginStore {
   public rootStore: RootStore;
@@ -29,19 +35,55 @@ export class SocialLoginStore {
     });
   }
 
+  public async facebookLogin(): Promise<LoginResult> {
+    try {
+      const response = await FacebookLoginManager.logInWithPermissions([
+        'public_profile',
+      ]);
+      if (response.isCancelled) {
+        return;
+      }
+
+      const infoRequest = new GraphRequest('/me', null, (err, response) => {
+        if (err) {
+          return;
+        }
+        const name = (response as any)?.name;
+        if (name.indexOf(' ') === -1) {
+          this.rootStore.profileFlowStore.firstName = name;
+          return;
+        }
+
+        this.rootStore.profileFlowStore.firstName = name
+          .split(' ')
+          .slice(0, -1)
+          .join(' ');
+        this.rootStore.profileFlowStore.lastName = name
+          .split(' ')
+          .slice(-1)
+          .join(' ');
+      });
+      new GraphRequestManager().addRequest(infoRequest).start();
+
+      const tokens = await AccessToken.getCurrentAccessToken();
+
+      const data = await UsersApi.loginFacebook(tokens.accessToken);
+      console.log(data);
+      return data;
+    } catch (error) {
+      this.rootStore.exceptionsStore.report(error);
+      return null;
+    }
+  }
   public async googleLogin(): Promise<LoginResult> {
     try {
-      //   await GoogleSignin.hasPlayServices();
-      console.log('Try to login');
       const userInfo = await GoogleSignin.signIn();
-      console.log(userInfo);
       const firstName = userInfo.user.givenName;
       const lastName = userInfo.user.familyName;
 
       const data = await UsersApi.loginGoogle(userInfo.idToken);
       this.rootStore.profileFlowStore.firstName = firstName;
       this.rootStore.profileFlowStore.lastName = lastName;
-      console.log(data);
       return data;
     } catch (error) {
       console.log(error);

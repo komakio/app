@@ -17,6 +17,13 @@ export class UsersApi {
     return res.data;
   }
 
+  public static async loginFacebook(accessToken: string): Promise<LoginResult> {
+    const res = await axiosInstance.post('/v1/users/login/facebook', {
+      fbAccessToken: accessToken,
+    });
+    return res.data;
+  }
+
   public static async deleteRegistrationToken(
     accessToken: string,
     registrationToken: string
