@@ -58,10 +58,10 @@ export const InfosMain = observer(() => {
       {
         text: t('ACTIONS_CONFIRM'),
         onPress: async () => {
-          if (profileFlowStore.role === 'helper') {
-            navigation.navigate('consents');
-            return;
-          }
+          // if (profileFlowStore.role === 'helper') {
+          //   navigation.navigate('consents');
+          //   return;
+          // }
 
           const res = await profileFlowStore.saveProfile();
           if (!res) {
