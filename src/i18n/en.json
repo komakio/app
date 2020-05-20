@@ -6,6 +6,8 @@
   "GEOLOCATION_DESCRIPTION": "We need your geolocation once to match you with people around you.",
   "GEOLOCATION_CHOOSE_MANUAL": "Type address",
 
+  "NO_NETWORK": "No Network",
+
   "CODEPUSH_DOWNLOADING": "Downloading...",
   
   "NO_RESULTS": "No results",

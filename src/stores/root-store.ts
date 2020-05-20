@@ -8,9 +8,11 @@ import { RequestsStore } from './requests-store';
 import { AppStateStore } from './app-state-store';
 import { ExceptionsStore } from './exceptions-store';
 import { LanguageStore } from './language-store';
+import { NetworkStore } from './network-store';
 
 export class RootStore {
   public appStateStore = new AppStateStore(this);
+  public networkStore = new NetworkStore(this);
   public userStore = new UserStore(this);
   public languageStore = new LanguageStore(this);
   public profileFlowStore = new ProfileFlowStore(this);

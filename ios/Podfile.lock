@@ -369,6 +369,8 @@ PODS:
     - React
   - react-native-maps (0.27.1):
     - React
+  - react-native-netinfo (5.9.0):
+    - React
   - react-native-safe-area-context (0.7.3):
     - React
   - react-native-webview (9.0.2):
@@ -521,6 +523,7 @@ DEPENDENCIES:
   - react-native-fbsdk (from `../node_modules/react-native-fbsdk`)
   - "react-native-geolocation (from `../node_modules/@react-native-community/geolocation`)"
   - react-native-maps (from `../node_modules/react-native-maps`)
+  - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -633,6 +636,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-community/geolocation"
   react-native-maps:
     :path: "../node_modules/react-native-maps"
+  react-native-netinfo:
+    :path: "../node_modules/@react-native-community/netinfo"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-webview:
@@ -748,6 +753,7 @@ SPEC CHECKSUMS:
   react-native-fbsdk: c35d42169e64aaf66f01713c1e18d0674f7f6519
   react-native-geolocation: cbd9d6bd06bac411eed2671810f454d4908484a8
   react-native-maps: f4b89da81626ad7f151a8bfcb79733295d31ce5c
+  react-native-netinfo: 2beabb5930a15eef58093c66910cd5b733acc8dd
   react-native-safe-area-context: 8260e5157617df4b72865f44006797f895b2ada7
   react-native-webview: 838be111a7805977e5fc4fa6b66ae293f6c17384
   React-RCTActionSheet: f41ea8a811aac770e0cc6e0ad6b270c644ea8b7c

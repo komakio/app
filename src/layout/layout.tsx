@@ -14,6 +14,7 @@ import { statusBarHeight } from '../utils/status-bar';
 import { Animations } from '../utils/animations';
 import { CodePushProgress } from './code-push-progress';
 import { Background } from './background';
+import { NotLoggedIn } from './not-logged-in';
 
 const bootsplashImageSize = 200;
 
@@ -86,6 +87,7 @@ export const Layout = memo(({ children }) => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={colors.grey200} barStyle="dark-content" />
+
       <CodePushProgress />
       <Animated.View style={[StyleSheet.absoluteFill, styles.bootsplash]}>
         <Animated.Image
@@ -117,6 +119,7 @@ export const Layout = memo(({ children }) => {
         ]}
       >
         {children}
+        <NotLoggedIn />
       </Animated.View>
     </View>
   );

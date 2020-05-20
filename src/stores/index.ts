@@ -29,3 +29,8 @@ export const useLanguageStore = () => {
   const rootStore = useRootStore();
   return rootStore.languageStore;
 };
+
+export const useNetworkStore = () => {
+  const rootStore = useRootStore();
+  return rootStore.networkStore;
+};
