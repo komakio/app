@@ -99,11 +99,11 @@
   "ONBOARDING_SAFETY_INSTRUCTIONS": "Please comply with local laws and health and safety requirements.",
   "ONBOARDING_USER_INSTRUCTIONS": "User instructions",
   "ONBOARDING_HELPER_TEXT_1": "When someone close to you needs help, you’ll receive a notification.",
-  "ONBOARDING_HELPER_TEXT_2": "When you hit the “Accept” button, you will be matched with them.",
-  "ONBOARDING_HELPER_TEXT_3": "You then call or text the person in need to understand what their request is.",
-  "ONBOARDING_HELPER_TEXT_4": "If there is no request pending, we will send you a notification as soon as someone needs help.",
-  "ONBOARDING_NEEDER_TEXT_1": "You can send out a request for help by pressing the “Request help button”.",
-  "ONBOARDING_NEEDER_TEXT_2": "When someone accepts your request, you get a notification and their contact information.",
-  "ONBOARDING_NEEDER_TEXT_3": "Call or text the volunteer to communicate your request.",
-  "ONBOARDING_NEEDER_TEXT_4": "You can either send a request now or when you will need it."
+  "ONBOARDING_HELPER_TEXT_2": "\"Elfogad\" gombra kattintva párosításra kerül vele.",
+  "ONBOARDING_HELPER_TEXT_3": "Ezután felhívja vagy üzenetben keresi fel a személyt hogy megtudja mire van szüksége.",
+  "ONBOARDING_HELPER_TEXT_4": "Ha nincs függő kérelem, értesítjük amint valakinek segítségre van szüksége.",
+  "ONBOARDING_NEEDER_TEXT_1": "Kérelmet a \"Segítségkérés\" gomb megnyomásával tud benyújtani.",
+  "ONBOARDING_NEEDER_TEXT_2": "Amint valaki elfogadja kérelmét, értesítjük és elküldjük önnek az elérhetőségeit.",
+  "ONBOARDING_NEEDER_TEXT_3": "Hívja fel vagy üzenjen az önkéntesnek hogy tudtára adja kérelmét.",
+  "ONBOARDING_NEEDER_TEXT_4": "Kérelmet benyújthat most, vagy amikor szüksége van rá."
 }
