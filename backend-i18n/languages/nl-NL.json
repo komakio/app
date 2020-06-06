@@ -4,7 +4,7 @@
     "BACKEND_EMAIL_REQUEST_ACCEPT_V1_SUBJECT": "Good news, {{name}} has agreed to help you out!",
     "BACKEND_EMAIL_REQUEST_ACCEPT_V1_TITLE": "Hallo {{name}},",
     "BACKEND_EMAIL_REQUEST_ACCEPT_V1_PARAGRAPH1": "{{name}} has agreed to help you out. Give them a call to let them know what you need help with. You can find their contact details below.",
-    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_PARAGRAPH2": "Remember to follow our <0>user instructions</0> and avoid direct contact for everyone’s safety.",
+    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_PARAGRAPH2": "Vergeet niet onze <0>gebruikershandleiding</0> op te volgen en direct contact te vermijden voor ieders veiligheid.",
     "BACKEND_EMAIL_REQUEST_ACCEPT_V1_NAME": "Naam: {{name}}",
     "BACKEND_EMAIL_REQUEST_ACCEPT_V1_PHONE": "Telefoonnummer: {{number}}",
     "BACKEND_EMAIL_REQUEST_ACCEPT_V1_SIGNATURE": "Een fijne dag, <br /> The Komak Team"
