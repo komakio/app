@@ -4,7 +4,7 @@
   "GEOLOCATION_POSITION_UNAVAILABLE": "We konden je locatie niet vinden. Is je GPS geactiveerd?",
   "GEOLOCATION_TIMEOUT": "Er is een fout opgetreden",
   "GEOLOCATION_DESCRIPTION": "Wij hebben uw geolocatie nodig om uw te matchen met mensen om uw heen.",
-  "GEOLOCATION_CHOOSE_MANUAL": "Type address",
+  "GEOLOCATION_CHOOSE_MANUAL": "Vul uw adres in",
   "CODEPUSH_DOWNLOADING": "Downloading...",
   "NO_RESULTS": "Geen resultaten",
   "ACTIONS_BACK": "Terug",
