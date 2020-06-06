@@ -27,7 +27,7 @@
   "TABS_PROFILE": "Profiel",
   "REQUESTS_TITLE": "Aanvragen",
   "REQUESTS_EMPTY_DISCLAIMER_NEEDER": "Stuur een verzoek en dan zullen wij een vrijwiliger voor u zoeken in de buurt. We sturen u dan een notificatie als iemand akkoord heeft gestemd om u te helpen. ",
-  "REQUESTS_EMPTY_DISCLAIMER_HELPER": "Thank you for volunteering to help out! We’ll send you a notification when someone is in need of help!",
+  "REQUESTS_EMPTY_DISCLAIMER_HELPER": "Dankuwel voor het aanbieden om te helpen! We sturen u een notificatie wanneer iemand hulp nodig heeft!",
   "REQUESTS_REQUEST_HELP": "Vraag om hulp",
   "REQUESTS_REQUEST_PENDING": "Aanvraag in afwachting",
   "REQUESTS_REQUEST_ACCEPTED": "Aanvraag geaccepteerd",
@@ -77,7 +77,7 @@
   "PROFILE_VIEW_LOCATION_UPDATE": "Locatie updaten",
   "PROFILE_VIEW_LOCATION_UPDATED": "Locatie is bijgewerkt.",
   "PROFILE_GROUP_TITLE": "Bent u lid van een vrijwilligersgroep? Typ uw groepswachtwoord in om geverifieerd te worden.",
-  "PROFILE_GROUP_ERROR": "Wij konden uw groep niet vinden. Gebruikt u het juiste wachtwoord?",
+  "PROFILE_GROUP_ERROR": "Wij kunnen uw groep niet vinden. Gebruikt u het juiste wachtwoord?",
   "PROFILE_NAME_TITLE": "Vul alsjeblieft je voor- en achternaam in",
   "PROFILE_NAME_FIRSTNAME": "Voornaam",
   "PROFILE_NAME_LASTNAME": "Achternaam",
@@ -100,10 +100,10 @@
   "ONBOARDING_USER_INSTRUCTIONS": "Gebruikershandleiding",
   "ONBOARDING_HELPER_TEXT_1": "Als iemand dicht bij u hulp nodig heeft, krijgt u een melding.",
   "ONBOARDING_HELPER_TEXT_2": "Wanneer u op de knop \"Accepteren\" drukt, wordt u met hen gematcht.",
-  "ONBOARDING_HELPER_TEXT_3": "U belt of sms't dan de persoon die hulp nodig heeft om te weten wat hun verzoek is.",
+  "ONBOARDING_HELPER_TEXT_3": "U belt of SMS't dan de persoon die hulp nodig heeft om te weten wat hun verzoek is.",
   "ONBOARDING_HELPER_TEXT_4": "Als er geen verzoek in behandeling is, sturen wij u een bericht zodra iemand hulp nodig heeft.",
-  "ONBOARDING_NEEDER_TEXT_1": "U kan een verzoek voor hulp sturen door te drukken op \"\"",
-  "ONBOARDING_NEEDER_TEXT_2": "When someone accepts your request, you get a notification and their contact information.",
-  "ONBOARDING_NEEDER_TEXT_3": "Call or text the volunteer to communicate your request.",
-  "ONBOARDING_NEEDER_TEXT_4": "You can either send a request now or when you will need it."
+  "ONBOARDING_NEEDER_TEXT_1": "U kan een verzoek voor hulp sturen door te drukken op \"Verzoek help knop\".",
+  "ONBOARDING_NEEDER_TEXT_2": "Wanneer iemand uw verzoek accepteert ontvangt u een notificatie en hun contact gegevens.",
+  "ONBOARDING_NEEDER_TEXT_3": "Bel of SMS een vrijwilliger om u verzoek te communiceeren.",
+  "ONBOARDING_NEEDER_TEXT_4": "U kan nu een verzoek sturen of pas als u het nodig heeft."
 }
