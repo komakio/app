@@ -1,7 +1,7 @@
 {
     "BACKEND_NOTIFICATION_REQUEST_STARTED_V1": "{{name}} heeft uw hulp nodig.",
     "BACKEND_NOTIFICATION_REQUEST_ACCEPT_V1": "{{name}} heeft uw verzoek geaccepteerd.",
-    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_SUBJECT": "Goed nieuws, {{name}} heeft toegestemd om u te helpen!",
+    "BACKEND_EMAIL_REQUEST_ACCEPT_V1_SUBJECT": "Goed nieuws, {{name}} is akkord gegaan om u te helpen!",
     "BACKEND_EMAIL_REQUEST_ACCEPT_V1_TITLE": "Hallo {{name}},",
     "BACKEND_EMAIL_REQUEST_ACCEPT_V1_PARAGRAPH1": "{{name}} has agreed to help you out. Give them a call to let them know what you need help with. You can find their contact details below.",
     "BACKEND_EMAIL_REQUEST_ACCEPT_V1_PARAGRAPH2": "Vergeet niet onze <0>gebruikershandleiding</0> op te volgen en direct contact te vermijden voor ieders veiligheid.",
