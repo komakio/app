@@ -17,7 +17,7 @@ export class CodePushStore {
       console.log('Should sync, but in dev mode.');
       return;
     }
-    if (!this.rootStore.networkStore.checkIsConnected()) {
+    if (!(await this.rootStore.networkStore.checkIsConnected())) {
       return;
     }
     const update = await codePush.checkForUpdate(
