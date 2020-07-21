@@ -48,10 +48,6 @@ export const Consents = memo(() => {
       enabled: false,
       description: t('CONSENTS_CONTACT'),
     },
-    {
-      enabled: false,
-      description: t('CONSENTS_SOCIAL'),
-    },
   ]);
 
   const allConsents = checkboxes.every((c) => c.enabled);
