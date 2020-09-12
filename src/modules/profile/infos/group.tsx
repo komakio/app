@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import { observer } from 'mobx-react-lite';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { Text } from '@shared/text';
 import { useUserStore } from '@stores';
 import { Button } from '@shared/button';
@@ -83,7 +83,7 @@ export const ProfileInfosGroup = observer(() => {
 
   const onChangeGroupId = (value: string) => {
     if (value.length <= 3) {
-      setGroupId(value.toUpperCase());
+      setGroupId(value?.toUpperCase());
     }
     if (value.length === 3) {
       groupNumberRef.current.focus();
@@ -91,7 +91,7 @@ export const ProfileInfosGroup = observer(() => {
   };
   const onChangeGroupNumber = (value: string) => {
     if (value.length <= 8) {
-      setGroupNumber(value.toUpperCase());
+      setGroupNumber(value?.toUpperCase());
     }
     if (value.length === 8) {
       onSubmit(`${groupId}-${value}`);

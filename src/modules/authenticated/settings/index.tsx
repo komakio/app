@@ -41,7 +41,7 @@ export const AuthenticatedSettings = observer(() => {
             onPress={() => navigation.navigate('setting-profile-status')}
             checked={!!profile?.role}
           >
-            {t(`PROFILE_VIEW_STATUS_${profile?.role.toUpperCase()}`)}
+            {t(`PROFILE_VIEW_STATUS_${profile?.role?.toUpperCase()}`)}
           </CheckBoxButton>
         </View>
         <View style={styles.buttonContainer}>
@@ -63,7 +63,7 @@ export const AuthenticatedSettings = observer(() => {
         </View>
 
         <HiddenSelect
-          initialValue={userStore.user.language}
+          initialValue={userStore.user?.language}
           open={languageOpen}
           onClose={() => setLanguageOpen(false)}
           onChoose={languageStore.setLanguage}

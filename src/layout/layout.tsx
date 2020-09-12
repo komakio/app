@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import {
   View,
   StyleSheet,
@@ -6,12 +6,14 @@ import {
   Animated,
   Dimensions,
 } from 'react-native';
-import { colors } from './shared/variables/colors';
-import { useCodepushStore } from './stores';
-import { waitForSomeMs } from './utils/timeout';
+import { colors } from '../shared/variables/colors';
+import { useCodepushStore } from '../stores';
+import { waitForSomeMs } from '../utils/timeout';
 import RNBootSplash from 'react-native-bootsplash';
-import { statusBarHeight } from './utils/status-bar';
-import { Animations } from './utils/animations';
+import { statusBarHeight } from '../utils/status-bar';
+import { Animations } from '../utils/animations';
+import { CodePushProgress } from './code-push-progress';
+import { Background } from './background';
 
 const bootsplashImageSize = 200;
 
@@ -48,14 +50,9 @@ export const Layout = memo(({ children }) => {
   const opacity = useRef(new Animated.Value(0));
   const scale = useRef(new Animated.Value(1));
   const translateY = useRef(new Animated.Value(0));
+  const [ready, setReady] = useState<boolean>(false);
 
   const startAnimation = async () => {
-    try {
-      RNBootSplash.hide();
-    } catch {
-      /* Do nothing - TODO remove that when production deployment */
-    }
-
     Animated.timing(translateY.current, {
       useNativeDriver,
       toValue: -Dimensions.get('window').height / 2 + 30 + statusBarHeight,
@@ -80,6 +77,7 @@ export const Layout = memo(({ children }) => {
     const init = async () => {
       await Promise.all([codePushStore.initialCheck(), waitForSomeMs(1000)]);
       startAnimation();
+      setReady(true);
     };
 
     init();
@@ -88,10 +86,12 @@ export const Layout = memo(({ children }) => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={colors.grey200} barStyle="dark-content" />
+      <CodePushProgress />
       <Animated.View style={[StyleSheet.absoluteFill, styles.bootsplash]}>
         <Animated.Image
-          source={require('../assets/bootsplash_logo.png')}
+          source={require('../../assets/bootsplash_logo.png')}
           fadeDuration={0}
+          onLoadEnd={RNBootSplash.hide}
           style={[
             styles.logo,
             {
@@ -104,6 +104,11 @@ export const Layout = memo(({ children }) => {
         />
       </Animated.View>
 
+      <Animated.View
+        style={[StyleSheet.absoluteFill, { opacity: opacity.current }]}
+      >
+        <Background ready={ready} />
+      </Animated.View>
       <Animated.View
         style={[
           StyleSheet.absoluteFill,

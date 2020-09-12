@@ -2,7 +2,6 @@ import * as Sentry from '@sentry/react-native';
 
 import { Environment } from 'environment';
 import { RootStore } from './root-store';
-import { useEffect } from 'react';
 import { autorun } from 'mobx';
 
 export class ExceptionsStore {
@@ -23,13 +22,14 @@ export class ExceptionsStore {
     if (Environment.environment === 'development') {
       return;
     }
-    try {
-      Sentry.init({
-        dsn: Environment.sentryDsn,
-        environment: Environment.environment,
-      });
-    } catch {
-      /* Do nothing - TODO remove that when production deployment */
-    }
+
+    Sentry.init({
+      dsn: Environment.sentryDsn,
+      environment: Environment.environment,
+    });
+  }
+
+  public report(err: Error) {
+    Sentry.captureException(err);
   }
 }

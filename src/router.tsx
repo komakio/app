@@ -28,16 +28,20 @@ const modalOptions = {
   },
 };
 
+export const screenOptions = {
+  headerShown: false,
+  cardStyle: {
+    backgroundColor: 'transparent',
+  },
+  cardOverlayEnabled: false,
+};
+
 export const RouterMain = memo(() => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false,
+        ...screenOptions,
         ...RouterAnimations.stackLeftRightFull,
-        cardStyle: {
-          backgroundColor: 'transparent',
-        },
-        cardOverlayEnabled: false,
       }}
     >
       <Stack.Screen name="intro" component={Intro} />
@@ -53,16 +57,7 @@ export const RouterMain = memo(() => {
 
 export const Router = memo(() => {
   return (
-    <RootStack.Navigator
-      screenOptions={{
-        headerShown: false,
-        cardStyle: {
-          backgroundColor: 'transparent',
-        },
-        cardOverlayEnabled: false,
-      }}
-      mode="modal"
-    >
+    <RootStack.Navigator screenOptions={screenOptions} mode="modal">
       <RootStack.Screen name="Main" component={RouterMain} />
       <Stack.Screen
         name="profile-infos-name"

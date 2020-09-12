@@ -1,4 +1,4 @@
-export const COUNTRIES = [
+export const COUNTRIES_DIAL_CODES = [
   { name: 'Afghanistan', dialCode: '+93', code: 'AF' },
   { name: 'Albania', dialCode: '+355', code: 'AL' },
   { name: 'Algeria', dialCode: '+213', code: 'DZ' },
@@ -32,7 +32,6 @@ export const COUNTRIES = [
   { name: 'Burundi', dialCode: '+257', code: 'BI' },
   { name: 'Cambodia', dialCode: '+855', code: 'KH' },
   { name: 'Cameroon', dialCode: '+237', code: 'CM' },
-  { name: 'Canada', dialCode: '+1', code: 'CA' },
   { name: 'Cape Verde', dialCode: '+238', code: 'CV' },
   { name: 'Cayman Islands', dialCode: '+ 345', code: 'KY' },
   { name: 'Central African Republic', dialCode: '+236', code: 'CF' },
@@ -191,7 +190,7 @@ export const COUNTRIES = [
   { name: 'Ukraine', dialCode: '+380', code: 'UA' },
   { name: 'United Arab Emirates', dialCode: '+971', code: 'AE' },
   { name: 'United Kingdom', dialCode: '+44', code: 'GB' },
-  { name: 'United States', dialCode: '+1', code: 'US' },
+  { name: 'United States - Canada', dialCode: '+1', code: 'US' },
   { name: 'Uruguay', dialCode: '+598', code: 'UY' },
   { name: 'Uzbekistan', dialCode: '+998', code: 'UZ' },
   { name: 'Vanuatu', dialCode: '+678', code: 'VU' },

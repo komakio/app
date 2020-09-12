@@ -5,6 +5,8 @@
   "GEOLOCATION_TIMEOUT": "A timeout occured",
   "GEOLOCATION_DESCRIPTION": "We need your geolocation once to match you with people around you.",
   "GEOLOCATION_CHOOSE_MANUAL": "Type address",
+
+  "CODEPUSH_DOWNLOADING": "Downloading...",
   
   "NO_RESULTS": "No results",
   "ACTIONS_BACK": "Back",
@@ -60,7 +62,6 @@
   "CONSENTS_SYMPTOMS": "I am not showing any symptoms of COVID-19 (coughing, fever, shortness of breath, etc.).",
   "CONSENTS_TRAVEL": "I have not travelled out of the country in the past 14 days.",
   "CONSENTS_CONTACT": "I have not come in contact with anyone suspected of being infected or sick in the past 14 days.",
-  "CONSENTS_SOCIAL": "I have been practising social distancing.",
   "CONSENTS_CONFIRM": "I confirm that I've read and agree to the terms of services and the privacy policy.",
 
   "STATUS_TITLE_CHANGE": "Change your status",
@@ -97,6 +98,8 @@
 
   "PROFILE_PHONE_TITLE": "Please enter your phone number",
   "PROFILE_PHONE_PHONE": "Phone",
+  "PROFILE_PHONE_DIALCODE": "Dial code",
+  "PROFILE_PHONE_DIALCODE_PLACEHOLDER": "Choose your country",
 
   "PROFILE_ADDRESS_TITLE": "Please enter your address",
   "PROFILE_ADDRESS_ADDRESS": "Street address",

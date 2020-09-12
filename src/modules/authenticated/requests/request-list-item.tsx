@@ -73,9 +73,11 @@ export const RequestListItem: FC<RequestListItemProps> = observer(
 
     return (
       <View style={styles.container}>
-        <Text bold={true} style={styles.title}>
-          {t(`REQUESTS_REQUEST_${request.status.toUpperCase()}`)}
-        </Text>
+        {request.status && (
+          <Text bold={true} style={styles.title}>
+            {t(`REQUESTS_REQUEST_${request.status.toUpperCase()}`)}
+          </Text>
+        )}
         <Text style={styles.subtitle}>{text}</Text>
 
         <Text style={styles.infos}>

@@ -9,7 +9,6 @@ import {
 import { useNavigation, CommonActions } from '@react-navigation/native';
 import { Text } from '@shared/text';
 import { useProfileFlowStore } from '@stores';
-import { Geolocation } from '@utils/geolocation';
 import { observer } from 'mobx-react-lite';
 import { useTranslation, Trans } from 'react-i18next';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -59,10 +58,10 @@ export const InfosMain = observer(() => {
       {
         text: t('ACTIONS_CONFIRM'),
         onPress: async () => {
-          if (profileFlowStore.role === 'helper') {
-            navigation.navigate('consents');
-            return;
-          }
+          // if (profileFlowStore.role === 'helper') {
+          //   navigation.navigate('consents');
+          //   return;
+          // }
 
           const res = await profileFlowStore.saveProfile();
           if (!res) {
@@ -142,17 +141,6 @@ export const InfosMain = observer(() => {
             {t('PROFILE_SETUP_PHONE')}
           </CheckBoxButton>
         </View>
-
-        {/* {profileFlowStore.role === 'needer' && (
-          <View style={styles.buttonContainer}>
-            <CheckBoxButton
-              onPress={() => navigation.navigate('profile-infos-address')}
-              checked={!!profileFlowStore.address}
-            >
-              {t('PROFILE_SETUP_ADDRESS')}
-            </CheckBoxButton>
-          </View>
-        )} */}
 
         <View style={styles.buttonContainer}>
           <CheckboxLink
