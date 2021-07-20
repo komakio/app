@@ -32,7 +32,7 @@
     "moment": "2.24.0",
     "react": "16.11.0",
     "react-i18next": "11.3.4",
-    "react-native": "0.62.2",
+    "react-native": "0.62.3",
     "react-native-bootsplash": "2.2.3",
     "react-native-code-push": "6.2.0",
     "react-native-config": "1.0.0",
