@@ -34,7 +34,7 @@
     "react-i18next": "11.3.4",
     "react-native": "0.62.2",
     "react-native-bootsplash": "2.2.3",
-    "react-native-code-push": "6.2.0",
+    "react-native-code-push": "7.0.5",
     "react-native-config": "1.0.0",
     "react-native-device-info": "5.5.3",
     "react-native-fbsdk": "1.1.2",
